@@ -5,7 +5,7 @@ export enum Routes {
   home = "/",
   bureau = "/bureau-etudes",
   produits = "/produits",
-  support = "/support",
   contact = "/contact",
-  news = "/news",
+  support = "/support",
+  blog = "/blog",
 }

@@ -1,22 +1,14 @@
 import { useEffect, useRef, useState } from "react";
 import { useScroll } from "framer-motion";
-import { Container, Text, Button, Flex, Box, HStack } from "@chakra-ui/react";
+import { Container, Button, Flex, Box, HStack } from "@chakra-ui/react";
 
 import NextLink from "next/link";
 
-// import { AppLogo } from "./logo";
-
-import HamburgerMenu from "./hamburger-menu";
+import HamburgerMenu from "@app/app/components/header/hamburger-menu";
 import { Routes } from "@app/app/config/routes/routes";
 import { useActive } from "@app/app/hooks/use-active";
-
-export const data = [
-  { id: 1, label: "Produits", path: "/products" },
-  { id: 2, label: "Services", path: "/services" },
-  { id: 3, label: "Support", path: "/support" },
-  { id: 4, label: "Equipe", path: "/about" },
-  { id: 5, label: "Nous rejoindre", path: "/contact" },
-];
+import { AppLogo } from "@app/app/components/logo/logo";
+import { menuItems } from "@app/app/components/menu-items/menu-items";
 
 export default function Header() {
   const ref = useRef<HTMLHeadingElement>(null);
@@ -43,13 +35,13 @@ export default function Header() {
     >
       <Container maxW="container.xl">
         <Flex py="4" align="center" justify="space-between">
-          {/* <AppLogo /> */}
-          <h2>Logo</h2>
+          <AppLogo />
+          {/* <h2>Logo</h2> */}
           <HStack
             align="center"
             display={{ base: "none", md: "none", lg: "block" }}
           >
-            {data.map(({ id, label, path }) => (
+            {menuItems.map(({ id, label, path }) => (
               <Button
                 key={id}
                 letterSpacing="1px"
@@ -78,7 +70,7 @@ export default function Header() {
             ))}
           </HStack>
 
-          <HamburgerMenu />
+          {/* <HamburgerMenu /> */}
         </Flex>
       </Container>
     </Box>
