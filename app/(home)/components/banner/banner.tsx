@@ -1,4 +1,4 @@
-import { data } from "@lib/static-data/banner";
+import { data } from "@app/app/lib/static-data/home/banner";
 import {
   SimpleGrid,
   VStack,

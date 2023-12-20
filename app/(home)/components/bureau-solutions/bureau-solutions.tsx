@@ -1,65 +1,66 @@
-import { Link } from "@chakra-ui/next-js";
 import {
-  Box,
-  HStack,
-  Text,
-  Divider,
+  bureauData,
+  solutionsData,
+} from "@app/app/lib/static-data/home/bureau-solutions";
+import {
+  Center,
   Container,
+  Divider,
   VStack,
   Heading,
+  Text,
+  Link,
 } from "@chakra-ui/react";
 
 const BureauSolutions = () => {
   return (
-    <Container maxW="container.lg" my="28">
-      <HStack justify="center" align="start">
-        <VStack align="start" spacing="8">
-          <Heading
-            // letterSpacing={1}
-            size={{ base: "md", md: "lg" }}
-            fontWeight="bold"
-            textTransform="uppercase"
-          >
-            Bureau d’études
-          </Heading>
-          <Text>
-            Des solutions d'ingénierie innovantes, une expertise approfondie, et
-            une passion pour l'excellence. Découvrez nos services d'étude et
-            d'ingénierie maintenant.
-          </Text>
-          <Link href="" color="#1799cf">
-            Découvrir Nos Services
-          </Link>
-        </VStack>
+    <Container maxW="container.lg" my={40}>
+      <Center height={40}>
+        <>
+          {bureauData.map(({ title, description, linkText, path }) => (
+            <VStack align="start" spacing="8">
+              <Heading
+                size={{ base: "md", md: "lg" }}
+                fontWeight="bold"
+                textTransform="uppercase"
+              >
+                {title}
+              </Heading>
+              <Text>{description}</Text>
+              <Link href={path} color="#1799cf" _hover={{ textDecor: "none" }}>
+                <span>{linkText}</span>
+                <span style={{ marginLeft: "15px" }}>&rarr;</span>
+              </Link>
+            </VStack>
+          ))}
+        </>
 
         <Divider
           orientation="vertical"
-          borderColor="green.300"
-          display={{ base: "none", md: "none", lg: "block" }}
+          mx={10}
+          borderColor="#1799cf"
           borderWidth={1}
           height="100%"
-          mx={5}
         />
-
-        <VStack align="start" spacing="8">
-          <Heading
-            // letterSpacing={1}
-            size={{ base: "md", md: "lg" }}
-            fontWeight="bold"
-            textTransform="uppercase"
-          >
-            Solutions Matériels
-          </Heading>
-          <Text>
-            Équipez-vous pour l'avenir avec notre sélection exclusive de
-            matériel réseau. Performant, fiable, et à la pointe de la
-            technologie pour vos futurs projets.
-          </Text>
-          <Link href="" color="#1799cf">
-            Explorer le Catalogue
-          </Link>
-        </VStack>
-      </HStack>
+        <>
+          {solutionsData.map(({ title, description, linkText, path }) => (
+            <VStack align="start" spacing="8">
+              <Heading
+                size={{ base: "md", md: "lg" }}
+                fontWeight="bold"
+                textTransform="uppercase"
+              >
+                {title}
+              </Heading>
+              <Text>{description}</Text>
+              <Link href={path} color="#1799cf" _hover={{ textDecor: "none" }}>
+                <span>{linkText}</span>
+                <span style={{ marginLeft: "15px" }}>&rarr;</span>
+              </Link>
+            </VStack>
+          ))}
+        </>
+      </Center>
     </Container>
   );
 };
