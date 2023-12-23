@@ -11,76 +11,70 @@ import {
   Text,
   Link,
   Box,
+  Flex,
 } from "@chakra-ui/react";
 
 const BureauSolutions = () => {
   return (
-    <Container maxW="container.lg" my={40}>
-      <Center height="100px">
-        <Box>
+    <Container maxW="container.lg" my={{ base: "20", md: "20", lg: "40" }}>
+      <Flex
+        flexDirection={{ base: "column", md: "column", lg: "row" }}
+        textAlign={{ base: "center", md: "center", lg: "left" }}
+      >
+        <Box flex="1">
           {bureauData.map(({ title, description, linkText, path }) => (
-            <VStack align="start" spacing="8" key={title}>
-              <Box>
-                <Heading
-                  size={{ base: "md", md: "md" }}
-                  fontWeight="bold"
-                  textTransform="uppercase"
-                >
-                  {title}
-                </Heading>
-              </Box>
-              <Box>
-                <Text>{description}</Text>
-              </Box>
-              <Box>
-                <Link
-                  href={path}
-                  color="#1799cf"
-                  _hover={{ textDecor: "none" }}
-                >
-                  <span>{linkText}</span>
-                  <span style={{ marginLeft: "15px" }}>&rarr;</span>
-                </Link>
-              </Box>
+            <VStack
+              key={title}
+              spacing={5}
+              align={{ base: "center", md: "center", lg: "start" }}
+              mb={12}
+            >
+              <Heading
+                size={{ base: "md", md: "md", lg: "lg" }}
+                textTransform="uppercase"
+              >
+                {title}
+              </Heading>
+              <Text>{description}</Text>
+              <Link href={path} color="#1799cf" _hover={{ textDecor: "none" }}>
+                <span>{linkText}</span>
+                <span style={{ marginLeft: "15px" }}>&rarr;</span>
+              </Link>
             </VStack>
           ))}
         </Box>
-
-        <Divider
-          orientation="vertical"
-          mx={10}
-          borderColor="#1799cf"
-          borderWidth={2}
-        />
         <Box>
+          <Divider
+            orientation="vertical"
+            borderColor="#1799cf"
+            display={{ base: "none", md: "none", lg: "block" }}
+            borderWidth={1}
+            height="100%"
+            mx={35}
+          />
+        </Box>
+        <Box flex="1">
           {solutionsData.map(({ title, description, linkText, path }) => (
-            <VStack align="start" spacing="8" key={title}>
-              <Box>
-                <Heading
-                  size={{ base: "md", md: "md" }}
-                  fontWeight="bold"
-                  textTransform="uppercase"
-                >
-                  {title}
-                </Heading>
-              </Box>
-              <Box>
-                <Text>{description}</Text>
-              </Box>
-              <Box>
-                <Link
-                  href={path}
-                  color="#1799cf"
-                  _hover={{ textDecor: "none" }}
-                >
-                  <span>{linkText}</span>
-                  <span style={{ marginLeft: "15px" }}>&rarr;</span>
-                </Link>
-              </Box>
+            <VStack
+              key={title}
+              spacing={5}
+              align={{ base: "center", md: "center", lg: "start" }}
+            >
+              <Heading
+                size={{ base: "md", md: "md", lg: "lg" }}
+                textTransform="uppercase"
+              >
+                {title}
+              </Heading>
+              <Text>{description}</Text>
+              <Link href={path} color="#1799cf" _hover={{ textDecor: "none" }}>
+                <span>{linkText}</span>
+                <span style={{ marginLeft: "15px" }}>&rarr;</span>
+              </Link>
             </VStack>
           ))}
         </Box>
-      </Center>
+      </Flex>
     </Container>
   );
 };
