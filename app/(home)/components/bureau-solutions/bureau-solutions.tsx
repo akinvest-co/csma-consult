@@ -16,7 +16,7 @@ import {
 
 const BureauSolutions = () => {
   return (
-    <Container maxW="container.lg" my={{ base: "20", md: "20", lg: "40" }}>
+    <Container maxW="container.lg" my="40">
       <Flex
         flexDirection={{ base: "column", md: "column", lg: "row" }}
         textAlign={{ base: "center", md: "center", lg: "left" }}

@@ -1,5 +1,5 @@
-import { Box, Container, SimpleGrid, VStack, Text } from "@chakra-ui/react";
 import { dataStats } from "@app/app/lib/static-data/home/stats";
+import { Box, Container, SimpleGrid, VStack, Text } from "@chakra-ui/react";
 
 const Stats = () => {
   return (
