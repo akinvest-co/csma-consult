@@ -1,3 +1,3 @@
 export default function BureauEtudes() {
-  return <div>Bureau d'etudes</div>;
+  return <div>Page Bureau Etudes</div>;
 }
