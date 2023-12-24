@@ -1,17 +1,9 @@
+import product from "@app/public/images/QSFP28-100G.jpg";
+
 export const blogData = [
   {
-    title: "Introduction au QSFP28-100G",
-    image: "lien_de_l_image_1.jpg",
-    description:
-      "Découvrez les caractéristiques et les avantages du module QSFP28-100G. Cette introduction complète vous donnera un aperçu des performances exceptionnelles offertes par cette solution de communication.",
-    authorName: "Auteur 1",
-    date: "01 janvier 2023",
-    authorImage: "lien_de_l_image_auteur_1.jpg",
-    category: "Catégorie 1",
-  },
-  {
     title: "Mise en œuvre du QSFP28-100G dans les réseaux",
-    image: "lien_de_l_image_2.jpg",
+    image: product,
     description:
       "Explorez les meilleures pratiques et les étapes clés pour intégrer avec succès le module QSFP28-100G dans votre infrastructure réseau. Ce guide détaillé couvre les aspects techniques et opérationnels.",
     authorName: "Auteur 2",
@@ -21,7 +13,7 @@ export const blogData = [
   },
   {
     title: "Avantages économiques du QSFP28-100G",
-    image: "lien_de_l_image_3.jpg",
+    image: product,
     description:
       "Décryptez les avantages économiques et les gains de coûts associés à l'utilisation du module QSFP28-100G. Apprenez comment cette technologie peut améliorer l'efficacité de votre infrastructure tout en réduisant les coûts.",
     authorName: "Auteur 3",
@@ -31,7 +23,7 @@ export const blogData = [
   },
   {
     title: "Sécurité et fiabilité du QSFP28-100G",
-    image: "lien_de_l_image_4.jpg",
+    image: product,
     description:
       "Plongez dans les aspects de sécurité et de fiabilité du module QSFP28-100G. Comprenez les protocoles de sécurité et les mesures prises pour assurer une communication fiable dans divers environnements.",
     authorName: "Auteur 4",
@@ -41,7 +33,7 @@ export const blogData = [
   },
   {
     title: "Innovations futures dans la technologie QSFP28-100G",
-    image: "lien_de_l_image_5.jpg",
+    image: product,
     description:
       "Explorez les tendances et les développements futurs prévus pour la technologie QSFP28-100G. Découvrez comment cette technologie évoluera pour répondre aux besoins croissants des réseaux de communication modernes.",
     authorName: "Auteur 5",
@@ -50,8 +42,8 @@ export const blogData = [
     category: "Catégorie 5",
   },
   {
-    title: "Comparaison des modules QSFP28-100G populaires sur le marché",
-    image: "lien_de_l_image_6.jpg",
+    title: "Comparaison des modules QSFP28-100G sur le marché",
+    image: product,
     description:
       "Évaluez les différents modules QSFP28-100G disponibles sur le marché avec cette comparaison approfondie. Découvrez les spécifications, les performances et les caractéristiques qui distinguent ces produits.",
     authorName: "Auteur 6",
@@ -61,7 +53,7 @@ export const blogData = [
   },
   {
     title: "Utilisations pratiques du QSFP28-100G dans les centres de données",
-    image: "lien_de_l_image_7.jpg",
+    image: product,
     description:
       "Découvrez comment intégrer efficacement le module QSFP28-100G dans les centres de données. Explorez les cas d'utilisation pratiques et les bénéfices de cette technologie pour les opérations de centre de données.",
     authorName: "Auteur 7",
