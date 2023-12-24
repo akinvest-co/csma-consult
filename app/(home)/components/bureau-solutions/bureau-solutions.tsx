@@ -38,7 +38,7 @@ const BureauSolutions = () => {
               <Text>{description}</Text>
               <Link href={path} color="#1799cf" _hover={{ textDecor: "none" }}>
                 <span>{linkText}</span>
-                <span style={{ marginLeft: "15px" }}>&rarr;</span>
+                {/* <span style={{ marginLeft: "15px" }}>&rarr;</span> */}
               </Link>
             </VStack>
           ))}
@@ -69,7 +69,7 @@ const BureauSolutions = () => {
               <Text>{description}</Text>
               <Link href={path} color="#1799cf" _hover={{ textDecor: "none" }}>
                 <span>{linkText}</span>
-                <span style={{ marginLeft: "15px" }}>&rarr;</span>
+                {/* <span style={{ marginLeft: "15px" }}>&rarr;</span> */}
               </Link>
             </VStack>
           ))}
