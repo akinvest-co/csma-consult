@@ -112,16 +112,25 @@ export default function News() {
                 }}
               />
               <VStack spacing="4" mt="4" align="start">
-                <Text
-                  fontSize="small"
-                  bgColor="#e1f2fd"
-                  py="1"
-                  px="2"
-                  borderRadius="md"
-                  color="#0b6999"
+                <HStack
+                  alignItems="center"
+                  justifyContent="space-between"
+                  w="100%"
                 >
-                  {blog.category}
-                </Text>
+                  <Text
+                    fontSize="small"
+                    bgColor="#e1f2fd"
+                    py="1"
+                    px="2"
+                    borderRadius="md"
+                    color="#0b6999"
+                  >
+                    {blog.category}
+                  </Text>
+                  <Text fontSize="small" color="hsl(0, 0%, 50%)">
+                    {blog.date}
+                  </Text>
+                </HStack>
                 <Heading fontSize="lg" lineHeight="short" noOfLines={2}>
                   {blog.title}
                 </Heading>
