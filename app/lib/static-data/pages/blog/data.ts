@@ -7,7 +7,7 @@ export const blogData = [
     description:
       "Explorez les meilleures pratiques et les étapes clés pour intégrer avec succès le module QSFP28-100G dans votre infrastructure réseau. Ce guide détaillé couvre les aspects techniques et opérationnels.",
 
-    date: "2 janvier 2023",
+    date: "2 janvier 2024",
     category: "Catégorie 1",
   },
   {
@@ -16,7 +16,7 @@ export const blogData = [
     description:
       "Décryptez les avantages économiques et les gains de coûts associés à l'utilisation du module QSFP28-100G. Apprenez comment cette technologie peut améliorer l'efficacité de votre infrastructure tout en réduisant les coûts.",
 
-    date: "3 janvier 2023",
+    date: "3 fev 2024",
     category: "Catégorie 2",
   },
   {
@@ -25,7 +25,7 @@ export const blogData = [
     description:
       "Plongez dans les aspects de sécurité et de fiabilité du module QSFP28-100G. Comprenez les protocoles de sécurité et les mesures prises pour assurer une communication fiable dans divers environnements.",
 
-    date: "4 janvier 2023",
+    date: "4 mars 2024",
     category: "Catégorie 3",
   },
   {
@@ -34,7 +34,7 @@ export const blogData = [
     description:
       "Explorez les tendances et les développements futurs prévus pour la technologie QSFP28-100G. Découvrez comment cette technologie évoluera pour répondre aux besoins croissants des réseaux de communication modernes.",
 
-    date: "5 janvier 2023",
+    date: "5 avril 2023",
     category: "Catégorie 4",
   },
   {
