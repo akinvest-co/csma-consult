@@ -67,7 +67,7 @@ const Features = () => {
               >
                 {/* <Text>{icon}</Text> */}
               </Box>
-              <Heading size="md" fontWeight="bold">
+              <Heading fontSize="2xl" fontWeight="bold">
                 {title}
               </Heading>
             </HStack>

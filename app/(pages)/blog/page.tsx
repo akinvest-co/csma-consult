@@ -41,13 +41,13 @@ export default function News() {
             Actualités et Mises à Jour
           </Heading>
         </Flex>
-        <Box position="absolute" bottom="-15px">
+        <Box position="absolute" bottom="-20px">
           <Input
             placeholder="produit, categorie,..."
             bgColor="white"
             borderRadius="xl"
             focusBorderColor="#1799cf"
-            p="5"
+            p="6"
             w="400px"
           />
         </Box>
@@ -59,43 +59,38 @@ export default function News() {
             variant="outline"
             letterSpacing="1px"
             textTransform="uppercase"
-            bg={activeCategory === "Catégorie 1" ? "#1799cf" : "#fff"}
-            color={activeCategory === "Catégorie 1" ? "#fff" : "#1799cf"}
+            bg={activeCategory === "Catégorie 1" ? "#e1f2fd" : "#0b6999"}
+            color={activeCategory === "Catégorie 1" ? "#0b6999" : "#e1f2fd"}
             onClick={() => handleCategoryClick("Catégorie 1")}
-            _hover={{ bg: "#0c84bd" }}
+            _hover={{
+              bg: "#e1f2fd",
+              color: "#0b6999",
+            }}
             fontSize="1rem"
             py="1rem"
             px="2rem"
           >
-            Catégorie 1
+            QSFP28-100G
           </Button>
           <Button
             variant="outline"
             letterSpacing="1px"
             textTransform="uppercase"
-            bg={activeCategory === "Catégorie 1" ? "#1799cf" : "#fff"}
-            color={activeCategory === "Catégorie 1" ? "#fff" : "#1799cf"}
-            onClick={() => handleCategoryClick("Catégorie 2")}
-            _hover={{ bg: "#0c84bd" }}
             fontSize="1rem"
             py="1rem"
             px="2rem"
           >
-            Catégorie 2
+            QSFP+
           </Button>
           <Button
             variant="outline"
             letterSpacing="1px"
             textTransform="uppercase"
-            bg={activeCategory === "Catégorie 1" ? "#1799cf" : "#fff"}
-            color={activeCategory === "Catégorie 1" ? "#fff" : "#1799cf"}
-            onClick={() => handleCategoryClick("Catégorie 3")}
-            _hover={{ bg: "#0c84bd" }}
             fontSize="1rem"
             py="1rem"
             px="2rem"
           >
-            Catégorie 3
+            PFSBA+
           </Button>
         </Flex>
         <SimpleGrid columns={{ sm: 2, md: 3 }} spacing="40px">
@@ -117,7 +112,16 @@ export default function News() {
                 }}
               />
               <VStack spacing="4" mt="4" align="start">
-                <Text fontSize="small">{blog.category}</Text>
+                <Text
+                  fontSize="small"
+                  bgColor="#e1f2fd"
+                  py="1"
+                  px="2"
+                  borderRadius="md"
+                  color="#0b6999"
+                >
+                  {blog.category}
+                </Text>
                 <Heading fontSize="lg" lineHeight="short" noOfLines={2}>
                   {blog.title}
                 </Heading>

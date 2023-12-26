@@ -9,7 +9,7 @@ export const blogData = [
     authorName: "Auteur 2",
     date: "02 janvier 2023",
     authorImage: "lien_de_l_image_auteur_2.jpg",
-    category: "Catégorie 2",
+    category: "Catégorie 1",
   },
   {
     title: "Avantages économiques du QSFP28-100G",
@@ -19,7 +19,7 @@ export const blogData = [
     authorName: "Auteur 3",
     date: "03 janvier 2023",
     authorImage: "lien_de_l_image_auteur_3.jpg",
-    category: "Catégorie 3",
+    category: "Catégorie 2",
   },
   {
     title: "Sécurité et fiabilité du QSFP28-100G",
@@ -29,7 +29,7 @@ export const blogData = [
     authorName: "Auteur 4",
     date: "04 janvier 2023",
     authorImage: "lien_de_l_image_auteur_4.jpg",
-    category: "Catégorie 4",
+    category: "Catégorie 3",
   },
   {
     title: "Innovations futures dans la technologie QSFP28-100G",
@@ -39,7 +39,7 @@ export const blogData = [
     authorName: "Auteur 5",
     date: "05 janvier 2023",
     authorImage: "lien_de_l_image_auteur_5.jpg",
-    category: "Catégorie 5",
+    category: "Catégorie 4",
   },
   {
     title: "Comparaison des modules QSFP28-100G sur le marché",
@@ -49,7 +49,7 @@ export const blogData = [
     authorName: "Auteur 6",
     date: "06 janvier 2023",
     authorImage: "lien_de_l_image_auteur_6.jpg",
-    category: "Catégorie 6",
+    category: "Catégorie 5",
   },
   {
     title: "Utilisations pratiques du QSFP28-100G dans les centres de données",
@@ -59,7 +59,37 @@ export const blogData = [
     authorName: "Auteur 7",
     date: "07 janvier 2023",
     authorImage: "lien_de_l_image_auteur_7.jpg",
+    category: "Catégorie 6",
+  },
+  {
+    title: "Mise en œuvre du QSFP28-100G dans les réseaux optiques",
+    image: product,
+    description:
+      "Explorez les meilleures pratiques et les étapes clés pour intégrer avec succès le module QSFP28-100G dans votre infrastructure réseau. Ce guide détaillé couvre les aspects techniques et opérationnels.",
+    authorName: "Auteur 2",
+    date: "02 janvier 2023",
+    authorImage: "lien_de_l_image_auteur_2.jpg",
     category: "Catégorie 7",
+  },
+  {
+    title: "Comparaison des modules QSFP28-100G sur le marché",
+    image: product,
+    description:
+      "Évaluez les différents modules QSFP28-100G disponibles sur le marché avec cette comparaison approfondie. Découvrez les spécifications, les performances et les caractéristiques qui distinguent ces produits.",
+    authorName: "Auteur 6",
+    date: "06 janvier 2023",
+    authorImage: "lien_de_l_image_auteur_6.jpg",
+    category: "Catégorie 8",
+  },
+  {
+    title: "Avantages économiques du QSFP28-100G",
+    image: product,
+    description:
+      "Décryptez les avantages économiques et les gains de coûts associés à l'utilisation du module QSFP28-100G. Apprenez comment cette technologie peut améliorer l'efficacité de votre infrastructure tout en réduisant les coûts.",
+    authorName: "Auteur 3",
+    date: "03 janvier 2023",
+    authorImage: "lien_de_l_image_auteur_3.jpg",
+    category: "Catégorie 9",
   },
   // Ajoutez d'autres blogs au besoin
 ];
