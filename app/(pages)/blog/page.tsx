@@ -14,10 +14,18 @@ import {
   SimpleGrid,
   Flex,
   Input,
+  Button,
 } from "@chakra-ui/react";
 import Image from "next/image";
+import { useState } from "react";
 
 export default function News() {
+  const [activeCategory, setActiveCategory] = useState("Catégorie 1");
+
+  const handleCategoryClick = (category: any) => {
+    setActiveCategory(category);
+  };
+
   return (
     <Layout title="Blog">
       <Flex
@@ -35,24 +43,61 @@ export default function News() {
         </Flex>
         <Box position="absolute" bottom="-15px">
           <Input
-            placeholder="Par produit, categorie,..."
+            placeholder="produit, categorie,..."
             bgColor="white"
             borderRadius="xl"
-            p="3"
-            w="350px"
+            focusBorderColor="#1799cf"
+            p="5"
+            w="400px"
           />
         </Box>
       </Flex>
 
       <Container maxW="container.lg" my="20">
-        {/* <VStack align="start" mb="10">
-          <Heading>Actualités et Mises à Jour</Heading>
-          <Text>
-            Trouvez l'inspiration et trouvez le produit parfait pour accompagner
-            votre quotidien.
-          </Text>
-        </VStack> */}
-
+        <Flex mb="20" justifyContent="space-evenly">
+          <Button
+            variant="outline"
+            letterSpacing="1px"
+            textTransform="uppercase"
+            bg={activeCategory === "Catégorie 1" ? "#1799cf" : "#fff"}
+            color={activeCategory === "Catégorie 1" ? "#fff" : "#1799cf"}
+            onClick={() => handleCategoryClick("Catégorie 1")}
+            _hover={{ bg: "#0c84bd" }}
+            fontSize="1rem"
+            py="1rem"
+            px="2rem"
+          >
+            Catégorie 1
+          </Button>
+          <Button
+            variant="outline"
+            letterSpacing="1px"
+            textTransform="uppercase"
+            bg={activeCategory === "Catégorie 1" ? "#1799cf" : "#fff"}
+            color={activeCategory === "Catégorie 1" ? "#fff" : "#1799cf"}
+            onClick={() => handleCategoryClick("Catégorie 2")}
+            _hover={{ bg: "#0c84bd" }}
+            fontSize="1rem"
+            py="1rem"
+            px="2rem"
+          >
+            Catégorie 2
+          </Button>
+          <Button
+            variant="outline"
+            letterSpacing="1px"
+            textTransform="uppercase"
+            bg={activeCategory === "Catégorie 1" ? "#1799cf" : "#fff"}
+            color={activeCategory === "Catégorie 1" ? "#fff" : "#1799cf"}
+            onClick={() => handleCategoryClick("Catégorie 3")}
+            _hover={{ bg: "#0c84bd" }}
+            fontSize="1rem"
+            py="1rem"
+            px="2rem"
+          >
+            Catégorie 3
+          </Button>
+        </Flex>
         <SimpleGrid columns={{ sm: 2, md: 3 }} spacing="40px">
           {blogData.map((blog, index) => (
             <Box
