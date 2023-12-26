@@ -29,18 +29,28 @@ export default function News() {
 
         <SimpleGrid columns={{ sm: 2, md: 3 }} spacing="40px">
           {blogData.map((blog, index) => (
-            <Box key={index}>
+            <Box
+              key={index}
+              padding="20px"
+              borderRadius="xl"
+              overflow="hidden"
+              boxShadow="rgb(145 158 171 / 24%) 0px 0px 2px 0px,rgb(145 158 171 / 24%) 0px 16px 32px -4px"
+            >
               <Image
                 src={blog.image}
                 alt={blog.title}
                 objectFit="cover"
-                style={{ borderRadius: "5px", overflow: "hidden" }}
+                style={{
+                  borderRadius: "5px",
+                  overflow: "hidden",
+                }}
               />
-              <VStack spacing="4" mt="4">
-                <Text fontSize="lg" fontWeight="bold" noOfLines={2}>
+              <VStack spacing="4" mt="4" align="start">
+                <Text fontSize="small">{blog.category}</Text>
+                <Heading fontSize="lg" lineHeight="short" noOfLines={2}>
                   {blog.title}
-                </Text>
-                <Text fontSize="sm" noOfLines={2}>
+                </Heading>
+                <Text fontSize="sm" noOfLines={2} color="hsl(0, 0%, 50%)">
                   {blog.description}
                 </Text>
               </VStack>
