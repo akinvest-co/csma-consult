@@ -2,7 +2,7 @@ import product from "@app/public/images/QSFP28-100G.jpg";
 
 export const blogData = [
   {
-    title: "Mise en œuvre du QSFP28-100G dans les réseaux optiques",
+    title: "Mise en œuvre du QSFP28-100G optiques",
     image: product,
     description:
       "Explorez les meilleures pratiques et les étapes clés pour intégrer avec succès le module QSFP28-100G dans votre infrastructure réseau. Ce guide détaillé couvre les aspects techniques et opérationnels.",
@@ -47,7 +47,7 @@ export const blogData = [
     category: "Catégorie 5",
   },
   {
-    title: "Utilisations pratiques du QSFP28-100G dans les centres de données",
+    title: "Utilisations pratiques du QSFP28-100G centrales",
     image: product,
     description:
       "Découvrez comment intégrer efficacement le module QSFP28-100G dans les centres de données. Explorez les cas d'utilisation pratiques et les bénéfices de cette technologie pour les opérations de centre de données.",
@@ -56,7 +56,7 @@ export const blogData = [
     category: "Catégorie 6",
   },
   {
-    title: "Mise en œuvre du QSFP28-100G dans les réseaux optiques",
+    title: "Mise en œuvre du QSFP28-100G optiques",
     image: product,
     description:
       "Explorez les meilleures pratiques et les étapes clés pour intégrer avec succès le module QSFP28-100G dans votre infrastructure réseau. Ce guide détaillé couvre les aspects techniques et opérationnels.",

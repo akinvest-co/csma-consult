@@ -131,7 +131,12 @@ export default function News() {
                     {blog.date}
                   </Text>
                 </HStack>
-                <Heading fontSize="lg" lineHeight="short" noOfLines={2}>
+                <Heading
+                  // fontWeight="normal"
+                  fontSize="lg"
+                  lineHeight="short"
+                  noOfLines={2}
+                >
                   {blog.title}
                 </Heading>
                 <Text fontSize="sm" noOfLines={2} color="hsl(0, 0%, 50%)">
