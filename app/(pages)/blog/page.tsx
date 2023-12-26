@@ -12,20 +12,46 @@ import {
   Box,
   Heading,
   SimpleGrid,
+  Flex,
+  Input,
 } from "@chakra-ui/react";
 import Image from "next/image";
 
 export default function News() {
   return (
     <Layout title="Blog">
-      <Container maxW="container.lg" mt="10" mb="20">
-        <VStack align="start" mb="10">
+      <Flex
+        flexDirection="column"
+        bgColor="#1799cf"
+        py="8"
+        position="relative"
+        zIndex="1"
+        alignItems="center"
+      >
+        <Flex flex="1" justifyContent="center" alignItems="center">
+          <Heading color="white" mb="5">
+            Actualités et Mises à Jour
+          </Heading>
+        </Flex>
+        <Box position="absolute" bottom="-15px">
+          <Input
+            placeholder="Par produit, categorie,..."
+            bgColor="white"
+            borderRadius="xl"
+            p="3"
+            w="350px"
+          />
+        </Box>
+      </Flex>
+
+      <Container maxW="container.lg" my="20">
+        {/* <VStack align="start" mb="10">
           <Heading>Actualités et Mises à Jour</Heading>
           <Text>
             Trouvez l'inspiration et trouvez le produit parfait pour accompagner
             votre quotidien.
           </Text>
-        </VStack>
+        </VStack> */}
 
         <SimpleGrid columns={{ sm: 2, md: 3 }} spacing="40px">
           {blogData.map((blog, index) => (
