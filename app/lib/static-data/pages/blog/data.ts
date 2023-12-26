@@ -2,7 +2,7 @@ import product from "@app/public/images/QSFP28-100G.jpg";
 
 export const blogData = [
   {
-    title: "Mise en œuvre du QSFP28-100G dans les réseaux",
+    title: "Mise en œuvre du QSFP28-100G dans les réseaux optiques",
     image: product,
     description:
       "Explorez les meilleures pratiques et les étapes clés pour intégrer avec succès le module QSFP28-100G dans votre infrastructure réseau. Ce guide détaillé couvre les aspects techniques et opérationnels.",
