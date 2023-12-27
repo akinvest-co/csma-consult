@@ -18,7 +18,8 @@
     "next-seo": "^6.4.0",
     "react": "^18",
     "react-dom": "^18",
-    "sharp": "^0.33.1"
+    "sharp": "^0.33.1",
+    "tabler-icons-react": "^1.56.0"
   },
   "devDependencies": {
     "@types/node": "^20",

@@ -35,6 +35,9 @@ dependencies:
   sharp:
     specifier: ^0.33.1
     version: 0.33.1
+  tabler-icons-react:
+    specifier: ^1.56.0
+    version: 1.56.0(react@18.2.0)
 
 devDependencies:
   '@types/node':
@@ -3906,6 +3909,14 @@ packages:
   /supports-preserve-symlinks-flag@1.0.0:
     resolution: {integrity: sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w==}
     engines: {node: '>= 0.4'}
+
+  /tabler-icons-react@1.56.0(react@18.2.0):
+    resolution: {integrity: sha512-FOme3w6PJIWDpeXqQ4xjArQqdxzrr9xNy7PSSgWpRzOUQ71RyZ7jt6WThsfyLBz5os78TPJRA8f/0NLjnKcx9A==}
+    peerDependencies:
+      react: '>= 16.8.0'
+    dependencies:
+      react: 18.2.0
+    dev: false
 
   /tapable@2.2.1:
     resolution: {integrity: sha512-GNzQvQTOIP6RyTfE2Qxb8ZVlNmw0n88vp1szwWRimP02mnTsx3Wtn5qRdqY9w2XduFNUgvOwhNnQsjwCp+kqaQ==}

@@ -15,9 +15,12 @@ import {
   Flex,
   Input,
   Button,
+  InputGroup,
+  InputLeftElement,
 } from "@chakra-ui/react";
 import Image from "next/image";
 import { useState } from "react";
+import { Search } from "tabler-icons-react";
 
 export default function News() {
   const [activeCategory, setActiveCategory] = useState("Catégorie 1");
@@ -49,6 +52,17 @@ export default function News() {
             focusBorderColor="#1799cf"
             p="6"
             w="400px"
+            pl="12"
+          />
+          <Search
+            size={22}
+            color="#A0AEC0"
+            style={{
+              position: "absolute",
+              top: "50%",
+              transform: "translateY(-50%)",
+              left: "8px",
+            }}
           />
         </Box>
       </Flex>
@@ -131,12 +145,7 @@ export default function News() {
                     {blog.date}
                   </Text>
                 </HStack>
-                <Heading
-                  // fontWeight="normal"
-                  fontSize="lg"
-                  lineHeight="short"
-                  noOfLines={2}
-                >
+                <Heading fontSize="lg" lineHeight="short" noOfLines={2}>
                   {blog.title}
                 </Heading>
                 <Text fontSize="sm" noOfLines={2} color="hsl(0, 0%, 50%)">
