@@ -4,8 +4,6 @@ import Layout from "@app/app/layout/layout.page";
 import { blogData } from "@app/app/lib/static-data/pages/blog";
 import {
   Container,
-  Grid,
-  GridItem,
   Text,
   HStack,
   VStack,
@@ -15,16 +13,36 @@ import {
   Flex,
   Input,
   Button,
-  InputGroup,
-  InputLeftElement,
 } from "@chakra-ui/react";
 import Image from "next/image";
+import { useSearchParams, usePathname, useRouter } from "next/navigation";
 import { useState } from "react";
 import { Search } from "tabler-icons-react";
 
 export default function News() {
-  const [activeCategory, setActiveCategory] = useState("Catégorie 1");
+  const searchPararms = useSearchParams();
+  const pathname = usePathname();
+  const { replace } = useRouter();
 
+  const [searchTerm, setSearchTerm] = useState("");
+
+  const filterdData = blogData.filter((item) =>
+    item.title.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
+  function handleSearch(term: string) {
+    const params = new URLSearchParams(searchPararms);
+
+    if (term) {
+      params.set("query", term);
+    } else {
+      params.delete("query");
+    }
+
+    replace(`${pathname}?${params.toString()}`);
+  }
+
+  const [activeCategory, setActiveCategory] = useState("Catégorie 1");
   const handleCategoryClick = (category: any) => {
     setActiveCategory(category);
   };
@@ -36,7 +54,6 @@ export default function News() {
         bgColor="#1799cf"
         py="8"
         position="relative"
-        zIndex="1"
         alignItems="center"
       >
         <Flex flex="1" justifyContent="center" alignItems="center">
@@ -46,24 +63,31 @@ export default function News() {
         </Flex>
         <Box position="absolute" bottom="-20px">
           <Input
-            placeholder="produit, categorie,..."
+            placeholder="Produit, catégorie,..."
             bgColor="white"
             borderRadius="xl"
             focusBorderColor="#1799cf"
             p="6"
             w="400px"
             pl="12"
-          />
-          <Search
-            size={22}
-            color="#A0AEC0"
-            style={{
-              position: "absolute",
-              top: "50%",
-              transform: "translateY(-50%)",
-              left: "8px",
+            zIndex="2"
+            style={{ borderLeft: "none" }}
+            onChange={(e) => {
+              setSearchTerm(e.target.value);
+              handleSearch(e.target.value);
             }}
+            defaultValue={searchPararms.get("query")?.toString()}
           />
+          <Box
+            position="absolute"
+            top="50%"
+            transform="translateY(-50%)"
+            left="4"
+            pointerEvents="none"
+            zIndex="3"
+          >
+            <Search size={22} color="#A0AEC0" />
+          </Box>
         </Box>
       </Flex>
 
@@ -108,7 +132,7 @@ export default function News() {
           </Button>
         </Flex>
         <SimpleGrid columns={{ sm: 2, md: 3 }} spacing="40px">
-          {blogData.map((blog, index) => (
+          {filterdData.map((blog, index) => (
             <Box
               key={index}
               padding="20px"

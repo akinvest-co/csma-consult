@@ -45,7 +45,7 @@ export default function Header() {
               <Button
                 key={id}
                 letterSpacing="1px"
-                textTransform="uppercase"
+                // textTransform="uppercase"
                 href={path}
                 as={NextLink}
                 fontSize="1rem"
