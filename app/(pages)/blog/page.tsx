@@ -67,7 +67,7 @@ export default function News() {
         alignItems="center"
       >
         <Flex flex="1" justifyContent="center" alignItems="center">
-          <Heading color="white" mb="5">
+          <Heading color="white" mb="5" textAlign="center">
             Actualités et Mises à Jour
           </Heading>
         </Flex>
@@ -78,7 +78,7 @@ export default function News() {
             borderRadius="xl"
             focusBorderColor="#1799cf"
             p="6"
-            w="400px"
+            w={{ base: "100%", md: "400px" }}
             pl="12"
             zIndex="2"
             style={{ borderLeft: "none" }}
@@ -102,7 +102,12 @@ export default function News() {
       </Flex>
 
       <Container maxW="container.lg" my="20">
-        <HStack mb="20" spacing="8" justify="center">
+        <HStack
+          mb={{ base: "10", md: "20" }}
+          spacing={{ base: "2", md: "8" }}
+          justify={{ base: "flex-start", md: "center" }}
+          flexWrap="wrap"
+        >
           {blogData.slice(0, 5).map((blog, index) => (
             <Button
               key={index}
@@ -118,7 +123,7 @@ export default function News() {
             </Button>
           ))}
         </HStack>
-        <SimpleGrid columns={{ sm: 2, md: 3 }} spacing="40px">
+        <SimpleGrid columns={{ sm: 2, md: 2, lg: 3 }} spacing="40px">
           {filteredData.map((blog, index) => (
             <Box
               key={index}
