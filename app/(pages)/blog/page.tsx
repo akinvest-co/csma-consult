@@ -25,12 +25,27 @@ export default function News() {
   const { replace } = useRouter();
 
   const [searchTerm, setSearchTerm] = useState("");
+  const [selectedCategory, setSelectedCategory] = useState("");
 
-  const filterdData = blogData.filter((item) =>
-    item.title.toLowerCase().includes(searchTerm.toLowerCase())
-  );
+  const filteredData = blogData.filter((item) => {
+    const titleMatch = item.title
+      .toLowerCase()
+      .includes(searchTerm.toLowerCase());
+    const categoryMatch = selectedCategory
+      ? item.category === selectedCategory
+      : true;
+
+    return titleMatch && categoryMatch;
+  });
+
+  const handleCategoryClick = (category: string) => {
+    setSelectedCategory(category === selectedCategory ? "" : category);
+    setSearchTerm("");
+  };
 
   function handleSearch(term: string) {
+    setSearchTerm(term);
+    setSelectedCategory("");
     const params = new URLSearchParams(searchPararms);
 
     if (term) {
@@ -41,11 +56,6 @@ export default function News() {
 
     replace(`${pathname}?${params.toString()}`);
   }
-
-  const [activeCategory, setActiveCategory] = useState("Catégorie 1");
-  const handleCategoryClick = (category: any) => {
-    setActiveCategory(category);
-  };
 
   return (
     <Layout title="Blog">
@@ -63,7 +73,7 @@ export default function News() {
         </Flex>
         <Box position="absolute" bottom="-20px">
           <Input
-            placeholder="Produit, catégorie,..."
+            placeholder="Cherchez un produit..."
             bgColor="white"
             borderRadius="xl"
             focusBorderColor="#1799cf"
@@ -92,47 +102,24 @@ export default function News() {
       </Flex>
 
       <Container maxW="container.lg" my="20">
-        <Flex mb="20" justifyContent="space-evenly">
-          <Button
-            variant="outline"
-            letterSpacing="1px"
-            textTransform="uppercase"
-            bg={activeCategory === "Catégorie 1" ? "#e1f2fd" : "#0b6999"}
-            color={activeCategory === "Catégorie 1" ? "#0b6999" : "#e1f2fd"}
-            onClick={() => handleCategoryClick("Catégorie 1")}
-            _hover={{
-              bg: "#e1f2fd",
-              color: "#0b6999",
-            }}
-            fontSize="1rem"
-            py="1rem"
-            px="2rem"
-          >
-            QSFP28-100G
-          </Button>
-          <Button
-            variant="outline"
-            letterSpacing="1px"
-            textTransform="uppercase"
-            fontSize="1rem"
-            py="1rem"
-            px="2rem"
-          >
-            QSFP+
-          </Button>
-          <Button
-            variant="outline"
-            letterSpacing="1px"
-            textTransform="uppercase"
-            fontSize="1rem"
-            py="1rem"
-            px="2rem"
-          >
-            PFSBA+
-          </Button>
-        </Flex>
+        <HStack mb="20" spacing="8" justify="center">
+          {blogData.slice(0, 5).map((blog, index) => (
+            <Button
+              key={index}
+              variant={blog.category === selectedCategory ? "solid" : "outline"}
+              onClick={() => handleCategoryClick(blog.category)}
+              letterSpacing="1px"
+              textTransform="uppercase"
+              fontSize="0.9rem"
+              py="1rem"
+              px="1rem"
+            >
+              {blog.category}
+            </Button>
+          ))}
+        </HStack>
         <SimpleGrid columns={{ sm: 2, md: 3 }} spacing="40px">
-          {filterdData.map((blog, index) => (
+          {filteredData.map((blog, index) => (
             <Box
               key={index}
               padding="20px"
