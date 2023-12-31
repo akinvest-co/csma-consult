@@ -97,7 +97,6 @@ export default function BlogList() {
           ))}
         </HStack>
 
-        {/* Section des articles filtrés */}
         <SimpleGrid columns={{ sm: 2, md: 2, lg: 3 }} spacing="40px">
           {filteredData.map((blog: BlogItem, index: number) => (
             <Box
