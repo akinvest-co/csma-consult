@@ -30,7 +30,14 @@ export default function News() {
   const filteredData = blogData.filter((item) => {
     const titleMatch = item.title
       .toLowerCase()
-      .includes(searchTerm.toLowerCase());
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "")
+      .includes(
+        searchTerm
+          .toLowerCase()
+          .normalize("NFD")
+          .replace(/[\u0300-\u036f]/g, "")
+      );
     const categoryMatch = selectedCategory
       ? item.category === selectedCategory
       : true;
