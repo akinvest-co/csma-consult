@@ -112,6 +112,9 @@ export default function News() {
             <Button
               key={index}
               variant={blog.category === selectedCategory ? "solid" : "outline"}
+              bgColor={blog.category === selectedCategory ? "#e1f2fd" : "white"}
+              color={blog.category === selectedCategory ? "#0b6999" : "normal"}
+              _hover={{ bgColor: "#e1f2fd", color: "#0b6999" }}
               onClick={() => handleCategoryClick(blog.category)}
               letterSpacing="1px"
               textTransform="uppercase"
