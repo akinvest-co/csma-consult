@@ -1,3 +1,5 @@
+"use client";
+
 import { useEffect, useRef, useState } from "react";
 import { useScroll } from "framer-motion";
 import { Container, Button, Flex, Box, HStack } from "@chakra-ui/react";

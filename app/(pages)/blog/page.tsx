@@ -1,3 +1,5 @@
+"use client";
+
 import Layout from "@app/app/layout/layout.page";
 import { blogData } from "@app/app/lib/static-data/pages/blog";
 import useSearchActions from "@app/app/lib/static-data/pages/blog/actions";
