@@ -1,6 +1,7 @@
 import product from "@app/public/images/QSFP28-100G.jpg";
+import { BlogItem } from "./definitions";
 
-export const blogData = [
+export const blogData: BlogItem[] = [
   {
     title: "Mise en œuvre du QSFP28-100G optiques",
     image: product,

@@ -1,7 +1,7 @@
-"use client";
-
 import Layout from "@app/app/layout/layout.page";
 import { blogData } from "@app/app/lib/static-data/pages/blog";
+import useSearchActions from "@app/app/lib/static-data/pages/blog/actions";
+import { BlogItem } from "@app/app/lib/static-data/pages/blog/definitions";
 import {
   Container,
   Text,
@@ -15,54 +15,16 @@ import {
   Button,
 } from "@chakra-ui/react";
 import Image from "next/image";
-import { useSearchParams, usePathname, useRouter } from "next/navigation";
-import { useState } from "react";
 import { Search } from "tabler-icons-react";
-import Fuse from "fuse.js";
 
 export default function News() {
-  const searchPararms = useSearchParams();
-  const pathname = usePathname();
-  const { replace } = useRouter();
-
-  const [searchTerm, setSearchTerm] = useState("");
-  const [selectedCategory, setSelectedCategory] = useState("");
-
-  const fuseOptions = {
-    keys: ["title", "category"],
-    includeScore: true,
-    threshold: 0.4,
-  };
-
-  const fuse = new Fuse(blogData, fuseOptions);
-
-  const searchData = searchTerm
-    ? fuse.search(searchTerm).map((result) => result.item)
-    : blogData;
-
-  const filteredData =
-    selectedCategory && searchTerm === ""
-      ? blogData.filter((item) => item.category === selectedCategory)
-      : searchData;
-
-  const handleCategoryClick = (category: string) => {
-    setSelectedCategory(category === selectedCategory ? "" : category);
-    setSearchTerm("");
-  };
-
-  function handleSearch(term: string) {
-    setSearchTerm(term);
-    setSelectedCategory("");
-    const params = new URLSearchParams(searchPararms);
-
-    if (term) {
-      params.set("query", term);
-    } else {
-      params.delete("query");
-    }
-
-    replace(`${pathname}?${params.toString()}`);
-  }
+  const {
+    searchTerm,
+    selectedCategory,
+    handleCategoryClick,
+    handleSearch,
+    filteredData,
+  } = useSearchActions(blogData);
 
   return (
     <Layout title="Blog">
@@ -90,10 +52,9 @@ export default function News() {
             zIndex="2"
             style={{ borderLeft: "none" }}
             onChange={(e) => {
-              setSearchTerm(e.target.value);
               handleSearch(e.target.value);
             }}
-            defaultValue={searchPararms.get("query")?.toString()}
+            defaultValue={searchTerm}
           />
           <Box
             position="absolute"
@@ -108,6 +69,7 @@ export default function News() {
         </Box>
       </Flex>
 
+      {/* Section de catégories */}
       <Container maxW="container.lg" my="20">
         <HStack
           mb={{ base: "10", md: "20" }}
@@ -115,7 +77,7 @@ export default function News() {
           justify={{ base: "flex-start", md: "center" }}
           flexWrap="wrap"
         >
-          {blogData.slice(0, 5).map((blog, index) => (
+          {blogData.slice(0, 5).map((blog: BlogItem, index: number) => (
             <Button
               key={index}
               variant={blog.category === selectedCategory ? "solid" : "outline"}
@@ -133,8 +95,10 @@ export default function News() {
             </Button>
           ))}
         </HStack>
+
+        {/* Section des articles filtrés */}
         <SimpleGrid columns={{ sm: 2, md: 2, lg: 3 }} spacing="40px">
-          {filteredData.map((blog, index) => (
+          {filteredData.map((blog: BlogItem, index: number) => (
             <Box
               key={index}
               padding="20px"
@@ -152,6 +116,7 @@ export default function News() {
                 }}
               />
               <VStack spacing="4" mt="4" align="start">
+                {/* Détails de l'article */}
                 <HStack
                   alignItems="center"
                   justifyContent="space-between"
