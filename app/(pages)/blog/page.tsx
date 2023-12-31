@@ -18,6 +18,7 @@ import Image from "next/image";
 import { useSearchParams, usePathname, useRouter } from "next/navigation";
 import { useState } from "react";
 import { Search } from "tabler-icons-react";
+import Fuse from "fuse.js";
 
 export default function News() {
   const searchPararms = useSearchParams();
@@ -27,23 +28,22 @@ export default function News() {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("");
 
-  const filteredData = blogData.filter((item) => {
-    const titleMatch = item.title
-      .toLowerCase()
-      .normalize("NFD")
-      .replace(/[\u0300-\u036f]/g, "")
-      .includes(
-        searchTerm
-          .toLowerCase()
-          .normalize("NFD")
-          .replace(/[\u0300-\u036f]/g, "")
-      );
-    const categoryMatch = selectedCategory
-      ? item.category === selectedCategory
-      : true;
+  const fuseOptions = {
+    keys: ["title", "category"],
+    includeScore: true,
+    threshold: 0.4,
+  };
 
-    return titleMatch && categoryMatch;
-  });
+  const fuse = new Fuse(blogData, fuseOptions);
+
+  const searchData = searchTerm
+    ? fuse.search(searchTerm).map((result) => result.item)
+    : blogData;
+
+  const filteredData =
+    selectedCategory && searchTerm === ""
+      ? blogData.filter((item) => item.category === selectedCategory)
+      : searchData;
 
   const handleCategoryClick = (category: string) => {
     setSelectedCategory(category === selectedCategory ? "" : category);
@@ -80,7 +80,7 @@ export default function News() {
         </Flex>
         <Box position="absolute" bottom="-20px">
           <Input
-            placeholder="Cherchez un produit..."
+            placeholder="Cherchez un produit, catégorie..."
             bgColor="white"
             borderRadius="xl"
             focusBorderColor="#1799cf"
