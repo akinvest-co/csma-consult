@@ -4,6 +4,7 @@ import Layout from "@app/app/layout/layout.page";
 import { blogData } from "@app/app/lib/static-data/pages/blog";
 import useSearchActions from "@app/app/lib/static-data/pages/blog/actions";
 import { BlogItem } from "@app/app/lib/static-data/pages/blog/definitions";
+import { Link } from "@chakra-ui/next-js";
 import {
   Container,
   Text,
@@ -135,9 +136,11 @@ export default function BlogList() {
                     {blog.date}
                   </Text>
                 </HStack>
-                <Heading fontSize="lg" lineHeight="short" noOfLines={2}>
-                  {blog.title}
-                </Heading>
+                <Link href={`blog/${blog.title}`}>
+                  <Heading fontSize="lg" lineHeight="short" noOfLines={2}>
+                    {blog.title}
+                  </Heading>
+                </Link>
                 <Text fontSize="sm" noOfLines={2} color="hsl(0, 0%, 50%)">
                   {blog.description}
                 </Text>
