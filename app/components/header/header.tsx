@@ -6,11 +6,11 @@ import { Container, Button, Flex, Box, HStack } from "@chakra-ui/react";
 
 import NextLink from "next/link";
 
-import HamburgerMenu from "@app/app/components/header/hamburger-menu";
 import { Routes } from "@app/app/config/routes/routes";
 import { useActive } from "@app/app/hooks/use-active";
 import { AppLogo } from "@app/app/components/logo/logo";
 import { menuItems } from "@app/app/components/menu-items/menu-items";
+import HumbergerMenu from "./hamburger-menu";
 
 export default function Header() {
   const ref = useRef<HTMLHeadingElement>(null);
@@ -72,7 +72,7 @@ export default function Header() {
             ))}
           </HStack>
 
-          {/* <HamburgerMenu /> */}
+          <HumbergerMenu />
         </Flex>
       </Container>
     </Box>
