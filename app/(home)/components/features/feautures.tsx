@@ -56,7 +56,7 @@ const Features = () => {
             }}
           >
             <HStack spacing={4}>
-              <Box
+            <Box
                 border="1px solid #bde6fa"
                 bg="#e1f2fd"
                 padding={2}
@@ -65,7 +65,7 @@ const Features = () => {
                 h="48px"
                 textAlign="center"
               >
-                {/* <Text>{icon}</Text> */}
+                <Image src={icon} alt="" />
               </Box>
               <Heading fontSize="2xl" fontWeight="bold">
                 {title}
