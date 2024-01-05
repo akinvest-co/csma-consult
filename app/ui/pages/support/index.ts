@@ -1,1 +1,1 @@
-export * from "./support.view"
+export * from './support.view'

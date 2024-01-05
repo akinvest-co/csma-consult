@@ -1,5 +1,5 @@
-import ContactForm from "@app/app/ui/pages/contact/components/contact.view";
+import ContactView from '@app/app/ui/pages/contact/components/contact.view'
 
 export default function Contact() {
-  return <Contact />
+  return <ContactView />
 }

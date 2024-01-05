@@ -1,11 +1,11 @@
-import Layout from "@app/app/layout/layout.page";
-import { Container, SimpleGrid } from "@chakra-ui/react";
-import ContactInfo from "./contact-info";
-import ContactForm from "./contact-form";
+import Layout from '@app/app/layout/layout.page'
+import { Container, SimpleGrid } from '@chakra-ui/react'
+import ContactInfo from './contact-info'
+import ContactForm from './contact-form'
 
-const Contact = () => {
+const ContactView = () => {
   return (
-    <Layout title="Nous réjoindre">
+    <Layout>
       <Container maxW="container.xl">
         <SimpleGrid
           columns={{ base: 1, md: 1, lg: 2 }}
@@ -19,7 +19,7 @@ const Contact = () => {
         </SimpleGrid>
       </Container>
     </Layout>
-  );
-};
+  )
+}
 
-export default Contact;
+export default ContactView
