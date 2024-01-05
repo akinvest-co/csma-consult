@@ -1,13 +1,6 @@
-import {
-  Container,
-  Text,
-  Heading,
-  VStack,
-  Box,
-  SimpleGrid,
-} from '@chakra-ui/react'
+import { contactInfo } from '@app/app/lib/static-data/pages/conctact'
+import { Text, Heading, VStack, Box, SimpleGrid } from '@chakra-ui/react'
 import NextImage from 'next/image'
-import { contactInfo } from './data'
 
 const Contact = () => {
   return (
@@ -18,8 +11,8 @@ const Contact = () => {
           Discutons, nous sommes sympas !
         </Heading>
         <Text color="rgba(107,114,128,1)">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit, lorem ipsum
-          dolor sit amet consectetur adipisicing elit.
+          Nous sommes impatients d'avoir de vos nouvelles et de vous accompagner
+          dans toutes vos démarches. Merci de nous faire confiance.
         </Text>
       </VStack>
 
@@ -48,7 +41,16 @@ const Contact = () => {
             <Heading size="md">{title}</Heading>
             <Box>
               <Text color="rgba(107,114,128,1)">{intro}</Text>
-              <Text color="rgba(107,114,128,1)">{address}</Text>
+              {title === 'Notre adresse e-mail' ? (
+                <a
+                  href={`mailto:${address}`}
+                  style={{ textDecoration: 'underline' }}
+                >
+                  {address}
+                </a>
+              ) : (
+                <Text color="rgba(107,114,128,1)">{address}</Text>
+              )}
             </Box>
           </VStack>
         ))}
