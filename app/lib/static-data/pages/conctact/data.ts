@@ -1,4 +1,3 @@
-import icon from 'public/images/icon-analytic.gif'
 import emailIcon from 'public/images/icon-email.gif'
 import callIcon from 'public/images/call-icon.gif'
 import locationIcon from 'public/images/location-icon.gif'

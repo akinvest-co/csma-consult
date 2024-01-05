@@ -33,7 +33,7 @@ const ContactForm = () => {
           <Input
             id="email"
             name="user_email"
-            placeholder="Votre email"
+            placeholder="nikuzediop@gmail.com"
             value=""
           />
 
