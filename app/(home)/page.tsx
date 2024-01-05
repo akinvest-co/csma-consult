@@ -6,6 +6,7 @@ import Stats from './components/stats/stats'
 import Features from './components/features/feautures'
 import Products from './components/products/products'
 import About from './components/about/about'
+import Partners from './components/partners/partners'
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
       <Products />
       <Features />
       <About />
+      <Partners />
     </Layout>
   )
 }
