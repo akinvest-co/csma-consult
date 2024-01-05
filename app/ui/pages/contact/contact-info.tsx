@@ -1,4 +1,4 @@
-import { contactInfo } from "@app/app/lib/static-data/contact/data";
+import { contactInfo } from "@app/app/lib/static-data/pages/contact/data";
 import {
     Container,
     Text,
