@@ -43,7 +43,7 @@ const PartnersView = () => {
               borderRadius="xl"
               overflow="hidden"
             >
-              <Image src={partner.image} alt={partner.alt} />
+              <Image src={partner.image} alt={partner.alt} placeholder="blur" />
             </GridItem>
           ))}
         </Grid>
