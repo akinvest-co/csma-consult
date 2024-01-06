@@ -1,52 +1,52 @@
-import { useState } from "react";
-import Fuse from "fuse.js";
+import { useState } from 'react'
+import Fuse from 'fuse.js'
 import {
   BlogItem,
   SearchActions,
-} from "@app/app/lib/static-data/pages/blog/definitions";
-import { usePathname, useRouter, useSearchParams } from "next/navigation";
+} from '@app/app/lib/static-data/pages/blog/definitions'
+import { usePathname, useRouter, useSearchParams } from 'next/navigation'
 
 const useSearchActions = (blogData: BlogItem[]): SearchActions => {
-  const [searchTerm, setSearchTerm] = useState("");
-  const [selectedCategory, setSelectedCategory] = useState("");
+  const [searchTerm, setSearchTerm] = useState('')
+  const [selectedCategory, setSelectedCategory] = useState('')
 
   const fuseOptions = {
-    keys: ["title", "category"],
-  };
+    keys: ['title', 'category'],
+  }
 
-  const fuse = new Fuse(blogData, fuseOptions);
+  const fuse = new Fuse(blogData, fuseOptions)
 
   const searchData = searchTerm
     ? fuse.search(searchTerm).map((result) => result.item)
-    : blogData;
+    : blogData
 
   const filteredData =
-    selectedCategory && searchTerm === ""
+    selectedCategory && searchTerm === ''
       ? blogData.filter((item) => item.category === selectedCategory)
-      : searchData;
+      : searchData
 
   const handleCategoryClick = (category: string) => {
-    setSelectedCategory(category === selectedCategory ? "" : category);
-    setSearchTerm("");
-  };
+    setSelectedCategory(category === selectedCategory ? '' : category)
+    setSearchTerm('')
+  }
 
-  const searchParams = useSearchParams();
-  const pathname = usePathname();
-  const { replace } = useRouter();
+  const searchParams = useSearchParams()
+  const pathname = usePathname()
+  const { replace } = useRouter()
 
   const handleSearch = (term: string) => {
-    const params = new URLSearchParams(searchParams);
+    const params = new URLSearchParams(searchParams)
     if (term) {
-      params.set("query", term);
+      params.set('query', term)
     } else {
-      params.delete("query");
+      params.delete('query')
     }
 
-    replace(`${pathname}?${params.toString()}`);
+    replace(`${pathname}?${params.toString()}`)
 
-    setSearchTerm(term);
-    setSelectedCategory("");
-  };
+    setSearchTerm(term)
+    setSelectedCategory('')
+  }
 
   return {
     searchTerm,
@@ -54,7 +54,7 @@ const useSearchActions = (blogData: BlogItem[]): SearchActions => {
     handleCategoryClick,
     handleSearch,
     filteredData,
-  };
-};
+  }
+}
 
-export default useSearchActions;
+export default useSearchActions

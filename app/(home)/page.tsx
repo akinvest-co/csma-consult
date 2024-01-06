@@ -15,7 +15,7 @@ export default function Home() {
       <Stats />
       <Products />
       <Features />
-      <About />
+      {/* <About /> */}
       <Partners />
     </Layout>
   )

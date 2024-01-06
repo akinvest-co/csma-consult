@@ -2,42 +2,52 @@ import { partnersData } from '@app/app/lib/static-data/home/partners'
 import {
   Container,
   SimpleGrid,
-  Box,
   VStack,
   Heading,
   Text,
+  Box,
+  Grid,
+  GridItem,
 } from '@chakra-ui/react'
 import Image from 'next/image'
 
 const PartnersView = () => {
   return (
     <Container maxW="container.xl" mb="28">
-      {partnersData.map(({ id, title, intro, brandLogo }) => (
-        <SimpleGrid
-          columns={{ base: 1, md: 1, lg: 5 }}
-          spacing="10"
-          justifyContent="space-between"
-          alignItems="center"
-          key={id}
+      <VStack>
+        <Heading textTransform="uppercase" size="xl" textAlign="center">
+          Services Partenaires
+        </Heading>
+        <Text
+          textAlign="center"
+          w={{ base: 'normal', md: 'inherit', lg: '600px' }}
+          lineHeight="1.5"
+          color="rgba(107,114,128,1)"
         >
-          <VStack align="start">
-            <Heading
-              size={{ base: '2xl', md: '2xl', lg: 'xl' }}
-              letterSpacing="1px"
-              lineHeight="short"
-            >
-              {title}
-            </Heading>
-            <Text color="rgba(107,114,128,1)">{intro}</Text>
-          </VStack>
+          Succès et Safisfaction garantie
+        </Text>
+      </VStack>
 
-          {brandLogo.map(({ id, image }) => (
-            <VStack key={id}>
-              <Image src={image} alt="brand logo" placeholder="blur" priority />
-            </VStack>
+      <Container mt="20" maxW="container.md">
+        <Grid
+          templateRows="repeat(2, 1fr)"
+          templateColumns="repeat(4, 1fr)"
+          gap={5}
+        >
+          {partnersData.map((partner) => (
+            <GridItem
+              key={partner.id}
+              rowSpan={partner.id === 1 || partner.id === 4 ? 2 : 1}
+              colSpan={1}
+              w="90px"
+              borderRadius="xl"
+              overflow="hidden"
+            >
+              <Image src={partner.image} alt={partner.alt} />
+            </GridItem>
           ))}
-        </SimpleGrid>
-      ))}
+        </Grid>
+      </Container>
     </Container>
   )
 }

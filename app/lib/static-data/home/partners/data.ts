@@ -1,27 +1,39 @@
-import imgr from '/public/images/imgr.png'
+import arc from 'public/images/arc.jpeg'
+import enedis from 'public/images/enedis.jpeg'
+import netgeo from 'public/images/netgeo.jpeg'
+import orange from 'public/images/orange.jpeg'
+import ratp from 'public/images/ratp.jpeg'
+import trademark from 'public/images/trademark.jpeg'
 
 export const partnersData = [
   {
     id: 1,
-    title: 'Partenaires et outils',
-    intro: 'Nos meilleurs partenaires avec qui, nous avons travaillé.',
-    brandLogo: [
-      {
-        id: 1,
-        image: imgr,
-      },
-      {
-        id: 2,
-        image: imgr,
-      },
-      {
-        id: 3,
-        image: imgr,
-      },
-      {
-        id: 4,
-        image: imgr,
-      },
-    ],
+    alt: 'Arc Log',
+    image: arc,
+  },
+  {
+    id: 2,
+    alt: 'Enedis Logo',
+    image: enedis,
+  },
+  {
+    id: 3,
+    alt: 'Net Geo Logo',
+    image: netgeo,
+  },
+  {
+    id: 4,
+    alt: 'Orange Logo',
+    image: orange,
+  },
+  {
+    id: 5,
+    alt: 'Ratp Logo',
+    image: ratp,
+  },
+  {
+    id: 6,
+    alt: 'Trademark Logo',
+    image: trademark,
   },
 ]
