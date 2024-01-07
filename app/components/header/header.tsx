@@ -1,28 +1,28 @@
-"use client";
+"use client"
 
-import { useEffect, useRef, useState } from "react";
-import { useScroll } from "framer-motion";
-import { Container, Button, Flex, Box, HStack } from "@chakra-ui/react";
+import { useEffect, useRef, useState } from "react"
+import { useScroll } from "framer-motion"
+import { Container, Button, Flex, Box, HStack } from "@chakra-ui/react"
 
-import NextLink from "next/link";
+import NextLink from "next/link"
 
-import { Routes } from "@app/app/config/routes/routes";
-import { useActive } from "@app/app/hooks/use-active";
-import { AppLogo } from "@app/app/components/logo/logo";
-import { menuItems } from "@app/app/components/menu-items/menu-items";
-import HumbergerMenu from "./hamburger-menu";
+import { Routes } from "@app/app/config/routes/routes"
+import { useActive } from "@app/app/hooks/use-active"
+import { AppLogo } from "@app/app/components/logo/logo"
+import { menuItems } from "@app/app/components/menu-items/menu-items"
+import HumbergerMenu from "./hamburger-menu"
 
 export default function Header() {
-  const ref = useRef<HTMLHeadingElement>(null);
-  const [y, setY] = useState(0);
-  const { height = 0 } = ref.current?.getBoundingClientRect() ?? {};
-  const { scrollY } = useScroll();
+  const ref = useRef<HTMLHeadingElement>(null)
+  const [y, setY] = useState(0)
+  const { height = 0 } = ref.current?.getBoundingClientRect() ?? {}
+  const { scrollY } = useScroll()
 
   useEffect(() => {
-    return scrollY.onChange(() => setY(scrollY.get()));
-  }, [scrollY]);
+    return scrollY.onChange(() => setY(scrollY.get()))
+  }, [scrollY])
 
-  const { isActive } = useActive();
+  const { isActive } = useActive()
 
   return (
     <Box
@@ -76,5 +76,5 @@ export default function Header() {
         </Flex>
       </Container>
     </Box>
-  );
+  )
 }

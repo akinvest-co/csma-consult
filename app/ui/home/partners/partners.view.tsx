@@ -14,12 +14,7 @@ const PartnersView = () => {
   return (
     <Container maxW="container.xl" mb="28">
       <VStack>
-        <Heading
-          textTransform="uppercase"
-          size="xl"
-          textAlign="center"
-          letterSpacing="1px"
-        >
+        <Heading textTransform="uppercase" size="xl" textAlign="center">
           Services Partenaires
         </Heading>
         <Text
