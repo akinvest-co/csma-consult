@@ -1,4 +1,4 @@
-import { featuresData } from "@app/app/lib/static-data/home/features";
+import { featuresData } from "@app/app/lib/static-data/home/features"
 import {
   Container,
   SimpleGrid,
@@ -7,8 +7,8 @@ import {
   Text,
   HStack,
   Box,
-} from "@chakra-ui/react";
-import Image from "next/image";
+} from "@chakra-ui/react"
+import Image from "next/image"
 
 const Features = () => {
   return (
@@ -34,30 +34,30 @@ const Features = () => {
             spacing={5}
             borderRight={{
               base: "none",
-              md: id % 2 !== 0 ? "1px solid rgb(229, 231, 235)" : "none",
+              md: id % 2 !== 0 ? "2px dashed rgb(229, 231, 235)" : "none",
               lg:
                 id === 1 || id === 2 || id === 4 || id === 5
-                  ? "1px solid rgb(229, 231, 235)"
+                  ? "2px dashed rgb(229, 231, 235)"
                   : "none",
             }}
             borderBottom={{
               base:
                 id === 1 || id === 2 || id === 3 || id === 4 || id === 5
-                  ? "1px solid rgb(229, 231, 235)"
+                  ? "2px dashed rgb(229, 231, 235)"
                   : "none",
               md:
                 id === 1 || id === 2 || id === 3 || id === 4
-                  ? "1px solid rgb(229, 231, 235)"
+                  ? "2px dashed rgb(229, 231, 235)"
                   : "none",
               lg:
                 id === 1 || id === 2 || id === 3
-                  ? "1px solid rgb(229, 231, 235)"
+                  ? "2px dashed rgb(229, 231, 235)"
                   : "none",
             }}
           >
             <HStack spacing={4}>
-            <Box
-                border="1px solid #bde6fa"
+              <Box
+                border="2px dashed #bde6fa"
                 bg="#e1f2fd"
                 padding={2}
                 borderRadius="full"
@@ -71,14 +71,14 @@ const Features = () => {
                 {title}
               </Heading>
             </HStack>
-            <Text lineHeight="2" fontSize="md" color="rgba(107,114,128,1)">
+            <Text lineHeight="2" color="rgba(107,114,128,1)">
               {description}
             </Text>
           </VStack>
         ))}
       </SimpleGrid>
     </Container>
-  );
-};
+  )
+}
 
-export default Features;
+export default Features
