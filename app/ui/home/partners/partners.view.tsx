@@ -1,15 +1,14 @@
-import { partnersData } from '@app/app/lib/static-data/home/partners'
+import { partnersData } from "@app/app/lib/static-data/home/partners"
 import {
   Container,
-  SimpleGrid,
   VStack,
   Heading,
   Text,
   Box,
   Grid,
   GridItem,
-} from '@chakra-ui/react'
-import Image from 'next/image'
+} from "@chakra-ui/react"
+import Image from "next/image"
 
 const PartnersView = () => {
   return (
@@ -20,7 +19,7 @@ const PartnersView = () => {
         </Heading>
         <Text
           textAlign="center"
-          w={{ base: 'normal', md: 'inherit', lg: '600px' }}
+          w={{ base: "normal", md: "inherit", lg: "600px" }}
           lineHeight="1.5"
           color="rgba(107,114,128,1)"
         >
@@ -31,15 +30,19 @@ const PartnersView = () => {
       <Container mt="20" maxW="container.md">
         <Grid
           templateRows="repeat(2, 1fr)"
-          templateColumns="repeat(4, 1fr)"
+          templateColumns={{ base: "repeat(3, 1fr)", md: "repeat(4, 1fr)" }}
+          alignItems="center"
           gap={5}
         >
           {partnersData.map((partner) => (
             <GridItem
               key={partner.id}
-              rowSpan={partner.id === 1 || partner.id === 4 ? 2 : 1}
+              rowSpan={{
+                base: 1,
+                md: partner.id === 1 || partner.id === 4 ? 2 : 1,
+              }}
               colSpan={1}
-              w="90px"
+              w={{ base: "50px", md: "90px" }}
               borderRadius="xl"
               overflow="hidden"
             >
