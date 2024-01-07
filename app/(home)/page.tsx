@@ -6,7 +6,6 @@ import Stats from "./components/stats/stats"
 import Features from "./components/features/feautures"
 import Products from "./components/products/products"
 import Partners from "./components/partners/partners"
-import Contact from "./components/contact/contact"
 
 export default function Home() {
   return (
