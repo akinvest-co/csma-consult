@@ -14,14 +14,14 @@ import {
   FormHelperText,
   Textarea,
   Button,
-} from '@chakra-ui/react'
-import NextImage from 'next/image'
-import { contactInfo } from '@app/app/lib/static-data/pages/conctact'
+} from "@chakra-ui/react"
+import NextImage from "next/image"
+import { contactInfo } from "@app/app/lib/static-data/pages/conctact"
 import {
   supportDataAccount,
   supportDataContact,
-} from '@app/app/lib/static-data/pages/support'
-import Layout from '@app/app/layout/layout.page'
+} from "@app/app/lib/static-data/pages/support"
+import Layout from "@app/app/layout/layout.page"
 
 const Support = () => {
   return (
@@ -34,12 +34,12 @@ const Support = () => {
               bgRepeat="no-repeat"
               bgPos="bottom"
               bgSize="cover"
-              h="60vh"
+              h="50vh"
               filter="brightness(45%)"
             ></Box>
             <Flex
               position="absolute"
-              top="5"
+              top="10"
               color="white"
               flexDirection="column"
               align="center"
@@ -49,15 +49,15 @@ const Support = () => {
             >
               <VStack spacing="10">
                 <Heading
-                  fontSize={{ base: '4xl', md: '6xl' }}
-                  w={{ md: '100%', lg: '70%' }}
+                  fontSize={{ base: "4xl", md: "6xl" }}
+                  w={{ md: "100%", lg: "70%" }}
                 >
                   {title}
                 </Heading>
                 <Text
                   lineHeight="2"
                   opacity=".8"
-                  w={{ base: '300px', md: 'inherit', lg: '400px' }}
+                  w={{ base: "300px", md: "inherit", lg: "400px" }}
                 >
                   {intro}
                 </Text>
@@ -70,14 +70,14 @@ const Support = () => {
           <Box my="28">
             <VStack align="center" textAlign="center" mb="12" spacing="8">
               <Heading
-                w={{ md: '100%', lg: '50%' }}
+                w={{ md: "100%", lg: "50%" }}
                 lineHeight="shorter"
                 size="2xl"
               >
                 Nos Coordonnées Support de base
               </Heading>
               <Text
-                w={{ base: 'inherit', md: 'inherit', lg: '400px' }}
+                w={{ base: "inherit", md: "inherit", lg: "400px" }}
                 color="rgba(107,114,128,1)"
               >
                 Pour obtenir les infos de support internationaux pour nos
@@ -109,15 +109,15 @@ const Support = () => {
                   <Heading size="md">{title}</Heading>
                   <Box color="rgba(107,114,128,1)">
                     <Text>{intro}</Text>
-                    {title === 'Notre adresse e-mail' ? (
+                    {title === "Notre adresse e-mail" ? (
                       <a
                         href={`mailto:${address}`}
-                        style={{ textDecoration: 'underline' }}
+                        style={{ textDecoration: "underline" }}
                       >
                         {address}
                       </a>
                     ) : (
-                      <Text color="rgba(107,114,128,1)">{address}</Text>
+                      <Text>{address}</Text>
                     )}
                   </Box>
                 </VStack>
@@ -148,10 +148,10 @@ const Support = () => {
                       >
                         <span
                           style={{
-                            color: '#1799cf',
-                            fontSize: '24px',
-                            marginRight: '10px',
-                            fontWeight: '900',
+                            color: "#1799cf",
+                            fontSize: "24px",
+                            marginRight: "10px",
+                            fontWeight: "900",
                           }}
                         >
                           ✓
@@ -190,7 +190,7 @@ const Support = () => {
                 letterSpacing="1px"
                 borderRadius="999rem"
                 color="white"
-                _hover={{ bg: '#0c84bd' }}
+                _hover={{ bg: "#0c84bd" }}
               >
                 Suivre votre ticket
               </Button>

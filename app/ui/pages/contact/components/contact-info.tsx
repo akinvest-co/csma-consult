@@ -1,6 +1,6 @@
-import { contactInfo } from '@app/app/lib/static-data/pages/conctact'
-import { Text, Heading, VStack, Box, SimpleGrid } from '@chakra-ui/react'
-import NextImage from 'next/image'
+import { contactInfo } from "@app/app/lib/static-data/pages/conctact"
+import { Text, Heading, VStack, Box, SimpleGrid } from "@chakra-ui/react"
+import NextImage from "next/image"
 
 const Contact = () => {
   return (
@@ -39,17 +39,17 @@ const Contact = () => {
               <NextImage src={icon} alt="" />
             </Box>
             <Heading size="md">{title}</Heading>
-            <Box>
-              <Text color="rgba(107,114,128,1)">{intro}</Text>
-              {title === 'Notre adresse e-mail' ? (
+            <Box color="rgba(107,114,128,1)">
+              <Text>{intro}</Text>
+              {title === "Notre adresse e-mail" ? (
                 <a
                   href={`mailto:${address}`}
-                  style={{ textDecoration: 'underline' }}
+                  style={{ textDecoration: "underline" }}
                 >
                   {address}
                 </a>
               ) : (
-                <Text color="rgba(107,114,128,1)">{address}</Text>
+                <Text>{address}</Text>
               )}
             </Box>
           </VStack>
