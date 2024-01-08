@@ -66,11 +66,12 @@ export default function ProduitsView() {
                   md:
                     id === 4 || id === 8
                       ? "none"
-                      : "1px solid rgb(229, 231, 235)",
+                      : "2px dashed rgb(229, 231, 235)",
                 }}
                 borderBottom={{
-                  base: id < 8 ? "1px solid rgb(229, 231, 235)" : "none",
-                  md: id < 5 ? "1px solid rgb(229, 231, 235)" : "none",
+                  base: id < 8 ? "2px dashed rgb(229, 231, 235)" : "none",
+                  md: id < 7 ? "2px dashed rgb(229, 231, 235)" : "none",
+                  lg: id < 5 ? "2px dashed rgb(229, 231, 235)" : "none",
                 }}
               >
                 <Box
