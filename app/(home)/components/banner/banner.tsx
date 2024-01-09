@@ -1,4 +1,4 @@
-import { data } from "@app/app/lib/static-data/home/banner";
+import { data } from "@app/app/lib/static-data/home/banner"
 import {
   SimpleGrid,
   VStack,
@@ -7,15 +7,15 @@ import {
   Button,
   Box,
   Container,
-} from "@chakra-ui/react";
-import Image from "next/image";
+} from "@chakra-ui/react"
+import Image from "next/image"
 
-import NextLink from "next/link";
+import NextLink from "next/link"
 
 const Banner = () => {
   return (
     <Box>
-      <Container maxW="container.xl" my="20">
+      <Container maxW="container.xl" mt="20" mb="28">
         {data.map(({ id, title, intro, image }) => (
           <SimpleGrid
             columns={{ base: 1, lg: 2 }}
@@ -74,7 +74,7 @@ const Banner = () => {
         ))}
       </Container>
     </Box>
-  );
-};
+  )
+}
 
-export default Banner;
+export default Banner

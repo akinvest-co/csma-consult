@@ -6,11 +6,13 @@ import Stats from "./components/stats/stats"
 import Features from "./components/features/feautures"
 import Partners from "./components/partners/partners"
 import Produits from "./components/produits/produits"
+import BureauEtudes from "./components/bureau-etudes/bureau"
 
 export default function Home() {
   return (
     <Layout>
       <Banner />
+      <BureauEtudes />
       <Stats />
       <Produits />
       <Features />
