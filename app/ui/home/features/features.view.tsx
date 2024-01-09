@@ -10,7 +10,7 @@ import {
 } from "@chakra-ui/react"
 import Image from "next/image"
 
-const Features = () => {
+const FeaturesView = () => {
   return (
     <Container maxW="container.xl" my="28">
       <VStack align="center">
@@ -81,4 +81,4 @@ const Features = () => {
   )
 }
 
-export default Features
+export default FeaturesView
