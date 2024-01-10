@@ -28,23 +28,46 @@ export default function ProduitsView() {
           <Heading fontSize="2xl" mb="7" color="white">
             Par Catégories
           </Heading>
-          <SimpleGrid columns={{ base: 2, md: 4 }} spacing="10">
-            <Select placeholder="CDE & Convertisseur" bg="white">
+          <SimpleGrid
+            columns={{ base: 2, md: 4 }}
+            spacing={{ base: "5", md: "10" }}
+          >
+            <Select
+              size="sm"
+              borderRadius="xl"
+              placeholder="CDE & Convertisseur"
+              bg="white"
+            >
               <option value="option1">Produits 1</option>
               <option value="option2">Produits 2</option>
               <option value="option3">Produits 3</option>
             </Select>
-            <Select placeholder="Modules Optiques" bg="white">
+            <Select
+              size="sm"
+              borderRadius="xl"
+              placeholder="Modules Optiques"
+              bg="white"
+            >
               <option value="option1">Produits 1</option>
               <option value="option2">Produits 2</option>
               <option value="option3">Produits 3</option>
             </Select>
-            <Select placeholder="Jarretiers & DAAC/AOC" bg="white">
+            <Select
+              size="sm"
+              borderRadius="xl"
+              placeholder="Jarretiers & DAAC/AOC"
+              bg="white"
+            >
               <option value="option1">Produits 1</option>
               <option value="option2">Produits 2</option>
               <option value="option3">Produits 3</option>
             </Select>
-            <Select placeholder="XMUX & DEMUX" bg="white">
+            <Select
+              size="sm"
+              borderRadius="xl"
+              placeholder="XMUX & DEMUX"
+              bg="white"
+            >
               <option value="option1">Produits 1</option>
               <option value="option2">Produits 2</option>
               <option value="option3">Produits 3</option>

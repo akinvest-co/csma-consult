@@ -89,9 +89,9 @@ export default function BlogList() {
               onClick={() => handleCategoryClick(blog.category)}
               letterSpacing="1px"
               textTransform="uppercase"
-              fontSize="0.9rem"
-              py="1rem"
-              px="1rem"
+              fontSize={{ base: "0.6rem", md: "0.9rem" }}
+              py={{ base: "0.5rem", md: "1rem" }}
+              px={{ base: "0.5rem", md: "1rem" }}
             >
               {blog.category}
             </Button>
