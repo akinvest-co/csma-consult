@@ -15,7 +15,7 @@ import { productsData } from "@app/app/lib/static-data/home/produits"
 
 const ProduitsView = () => {
   return (
-    <Container maxW="container.xl" mt="28">
+    <Container maxW="container.xl" my="28">
       <HStack justify="space-between" align="center">
         <Heading textTransform="uppercase" size="xl" letterSpacing="1px">
           Nos produits disponibles

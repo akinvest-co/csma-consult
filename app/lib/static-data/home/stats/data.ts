@@ -1,4 +1,4 @@
-export const dataStats = [
+export const statsData = [
   {
     id: 1,
     stats: "200+",
@@ -19,4 +19,4 @@ export const dataStats = [
     stats: "10+",
     description: "Partenaires Satisfaits",
   },
-];
+]

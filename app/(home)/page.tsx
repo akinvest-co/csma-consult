@@ -14,8 +14,8 @@ export default function Home() {
       <Banner />
       <BureauEtudes />
       <Stats />
-      <Produits />
       <Features />
+      <Produits />
       <Partners />
     </Layout>
   )

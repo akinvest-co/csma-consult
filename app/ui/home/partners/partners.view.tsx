@@ -4,7 +4,6 @@ import {
   VStack,
   Heading,
   Text,
-  Box,
   Grid,
   GridItem,
 } from "@chakra-ui/react"
@@ -14,7 +13,12 @@ const PartnersView = () => {
   return (
     <Container maxW="container.xl" mb="28">
       <VStack>
-        <Heading textTransform="uppercase" size="xl" textAlign="center">
+        <Heading
+          textTransform="uppercase"
+          size="xl"
+          textAlign="center"
+          letterSpacing="1px"
+        >
           Services Partenaires
         </Heading>
         <Text
