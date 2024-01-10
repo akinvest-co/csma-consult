@@ -18,7 +18,7 @@ const ProduitsView = () => {
     <Container maxW="container.xl" my="28">
       <HStack justify="space-between" align="center">
         <Heading textTransform="uppercase" size="xl" letterSpacing="1px">
-          Nos produits disponibles
+          Nos produits phares
         </Heading>
 
         <Button
