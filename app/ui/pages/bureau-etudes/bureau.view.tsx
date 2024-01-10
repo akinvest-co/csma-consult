@@ -52,7 +52,7 @@ export default function BureauView() {
               py="20"
             >
               <Box borderRadius="xl" overflow="hidden">
-                <Image src={img} alt={title} />
+                <Image src={img} alt={title} placeholder="blur" />
               </Box>
               <VStack
                 align={{ md: "center", lg: "start" }}
@@ -127,7 +127,7 @@ export default function BureauView() {
               overflow="hidden"
               order={{ base: "-1", md: "-1", lg: "1" }}
             >
-              <Image src={img} alt={title} />
+              <Image src={img} alt={title} placeholder="blur" />
             </Box>
           </SimpleGrid>
         ))}
@@ -186,7 +186,7 @@ export default function BureauView() {
               py="20"
             >
               <Box borderRadius="xl" overflow="hidden">
-                <Image src={img} alt={title} />
+                <Image src={img} alt={title} placeholder="blur" />
               </Box>
               <VStack
                 align={{ md: "center", lg: "start" }}
@@ -261,7 +261,7 @@ export default function BureauView() {
               overflow="hidden"
               order={{ base: "-1", md: "-1", lg: "1" }}
             >
-              <Image src={img} alt={title} />
+              <Image src={img} alt={title} placeholder="blur" />
             </Box>
           </SimpleGrid>
         ))}
