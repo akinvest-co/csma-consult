@@ -14,10 +14,15 @@ export default function BureauView() {
   return (
     <Container maxW="container.lg" mb="28">
       <Flex flexDirection={{ base: "column", md: "column", lg: "row" }}>
-        <Box flex="1">
+        <Box flex="1" mb={{ base: "20", md: "20", lg: "0" }}>
           {bureauData.etudes.map(({ id, title, descr, linkText }, index) => (
             <VStack key={id} align="center" spacing="7">
-              <Heading letterSpacing="1px">{title}</Heading>
+              <Heading
+                letterSpacing="1px"
+                fontSize={{ base: "2xl", md: "3xl" }}
+              >
+                {title}
+              </Heading>
               <Text lineHeight="1.7" textAlign="center" fontSize="16px">
                 {descr}
               </Text>
@@ -43,7 +48,12 @@ export default function BureauView() {
         <Box flex="1">
           {bureauData.solutions.map(({ id, title, descr, linkText }, index) => (
             <VStack key={id} align="center" spacing="7">
-              <Heading letterSpacing="1px">{title}</Heading>
+              <Heading
+                letterSpacing="1px"
+                fontSize={{ base: "2xl", md: "3xl" }}
+              >
+                {title}
+              </Heading>
               <Text lineHeight="1.7" textAlign="center" fontSize="16px">
                 {descr}
               </Text>
