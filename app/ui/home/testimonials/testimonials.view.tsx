@@ -9,7 +9,6 @@ import {
   Image,
   Box,
   HStack,
-  Flex,
 } from "@chakra-ui/react"
 import styled from "styled-components"
 import NextImage from "next/image"
