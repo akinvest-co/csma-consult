@@ -7,6 +7,7 @@ import Partners from "./components/partners/partners"
 import Produits from "./components/produits/produits"
 import BureauEtudes from "./components/bureau-etudes/bureau"
 import Features from "./components/features/features"
+import Testimonials from "./components/testimonials/testimonials"
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
       <Stats />
       <Features />
       <Produits />
+      <Testimonials />
       <Partners />
     </Layout>
   )
