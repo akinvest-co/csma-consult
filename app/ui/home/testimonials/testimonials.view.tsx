@@ -1,3 +1,4 @@
+import { partnersData } from "@app/app/lib/static-data/home/partners"
 import { testimonialsData } from "@app/app/lib/static-data/home/testimonials"
 import {
   Container,
@@ -5,16 +6,18 @@ import {
   VStack,
   Text,
   Heading,
-  Box,
   Image,
+  Box,
   HStack,
+  Flex,
 } from "@chakra-ui/react"
 import styled from "styled-components"
+import NextImage from "next/image"
 
 const TestimonialsView = () => {
   return (
     <Box
-      bgGradient="linear(-90deg, rgba(255, 254, 252, 0.5) 50%, #F7FAFC 100%)"
+      bgGradient="linear(-90deg, rgba(255, 254, 252, 0.2) 50%, #F7FAFC 100%)"
       my="28"
       py="20"
     >
@@ -24,7 +27,7 @@ const TestimonialsView = () => {
             <SimpleGrid
               columns={{ base: 1, md: 1, lg: 2 }}
               spacing="20"
-              //   alignItems="center"
+              // alignItems="center"
               key={id}
             >
               <VStack align={{ base: "center", md: "start" }} spacing="6">
@@ -53,6 +56,24 @@ const TestimonialsView = () => {
             </SimpleGrid>
           ),
         )}
+
+        <HStack
+          justifyContent="space-around"
+          mt="20"
+          flexWrap="wrap"
+          spacing={{ base: "5", md: "0" }}
+        >
+          {partnersData.map((partner) => (
+            <Box key={partner.id} w="90px" borderRadius="md" overflow="hidden">
+              <NextImage
+                src={partner.image}
+                alt={partner.alt}
+                objectFit="cover"
+                placeholder="blur"
+              />
+            </Box>
+          ))}
+        </HStack>
       </Container>
     </Box>
   )
