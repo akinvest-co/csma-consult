@@ -18,7 +18,6 @@ import {
   VStack,
   SimpleGrid,
   Button,
-  Flex,
   HStack,
 } from "@chakra-ui/react"
 import Image from "next/image"
@@ -57,7 +56,7 @@ export default function BureauView() {
               </Box>
               <VStack
                 align={{ md: "center", lg: "start" }}
-                spacing="10"
+                spacing={{ base: "5", md: "10" }}
                 color="white"
               >
                 <Heading
@@ -97,7 +96,10 @@ export default function BureauView() {
             spacing="20"
             alignItems="center"
           >
-            <VStack align={{ md: "center", lg: "start" }} spacing="10">
+            <VStack
+              align={{ md: "center", lg: "start" }}
+              spacing={{ base: "5", md: "10" }}
+            >
               <Heading
                 letterSpacing="1px"
                 fontSize={{ base: "2xl", md: "2xl", lg: "3xl" }}
@@ -190,7 +192,7 @@ export default function BureauView() {
               </Box>
               <VStack
                 align={{ md: "center", lg: "start" }}
-                spacing="10"
+                spacing={{ base: "5", md: "10" }}
                 color="white"
               >
                 <Heading
@@ -230,7 +232,10 @@ export default function BureauView() {
             spacing="20"
             alignItems="center"
           >
-            <VStack align={{ md: "center", lg: "start" }} spacing="10">
+            <VStack
+              align={{ md: "center", lg: "start" }}
+              spacing={{ base: "5", md: "10" }}
+            >
               <Heading
                 letterSpacing="1px"
                 fontSize={{ base: "2xl", md: "2xl", lg: "3xl" }}
