@@ -32,7 +32,7 @@ export default function BureauView() {
                 fontWeight="bold"
                 letterSpacing="1px"
               >
-                {linkText} &rArr;
+                {linkText}
               </Link>
             </VStack>
           ))}
@@ -63,7 +63,7 @@ export default function BureauView() {
                 fontWeight="bold"
                 letterSpacing="1px"
               >
-                {linkText} &rArr;
+                {linkText}
               </Link>
             </VStack>
           ))}
