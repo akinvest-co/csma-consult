@@ -19,6 +19,7 @@ import {
   SimpleGrid,
   Button,
   Flex,
+  HStack,
 } from "@chakra-ui/react"
 import Image from "next/image"
 
@@ -80,7 +81,7 @@ export default function BureauView() {
                   textTransform="uppercase"
                   textAlign={{ base: "center", md: "center", lg: "left" }}
                 >
-                  {linkText} &rArr;
+                  {linkText}
                 </Link>
               </VStack>
             </SimpleGrid>
@@ -118,7 +119,7 @@ export default function BureauView() {
                 textTransform="uppercase"
                 textAlign={{ base: "center", md: "center", lg: "left" }}
               >
-                {linkText} &rArr;
+                {linkText}
               </Link>
             </VStack>
 
@@ -133,11 +134,10 @@ export default function BureauView() {
         ))}
       </Container>
 
-      <Container maxW="container.xl" my="28">
-        <Flex
-          alignItems="center"
-          justifyContent="space-between"
+      <Container maxW="container.lg" my="28">
+        <HStack
           flexDir={{ base: "column", md: "column", lg: "row" }}
+          spacing={{ base: "5", md: "5", lg: "20" }}
         >
           <VStack
             spacing="5"
@@ -171,7 +171,7 @@ export default function BureauView() {
           >
             Nous Contacter
           </Button>
-        </Flex>
+        </HStack>
       </Container>
 
       <Box bgColor="#1799cf">
@@ -214,7 +214,7 @@ export default function BureauView() {
                   textTransform="uppercase"
                   textAlign="center"
                 >
-                  {linkText} &rArr;
+                  {linkText}
                 </Link>
               </VStack>
             </SimpleGrid>
@@ -252,7 +252,7 @@ export default function BureauView() {
                 textTransform="uppercase"
                 textAlign={{ base: "center", md: "center", lg: "left" }}
               >
-                {linkText} &rArr;
+                {linkText}
               </Link>
             </VStack>
 
