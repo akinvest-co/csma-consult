@@ -6,22 +6,16 @@ const StatsView = () => {
     <Box bg="#1799cf" color="white">
       <Container maxW="container.lg">
         <SimpleGrid
-          w="full"
           columns={{ base: 1, md: 2, lg: 4 }}
           spacing={{ base: "0", md: "10", lg: "10" }}
+          justifyContent="center"
         >
           {statsData.map(({ id, description, stats }) => (
             <VStack
               my="10"
-              align={{ base: "center", lg: "start" }}
+              align={{ base: "center", lg: "center" }}
               spacing="2"
               key={id}
-              borderRight={{
-                base: "none",
-                md: "none",
-                lg:
-                  id === 1 || id === 2 || id === 3 ? "1px solid white" : "none",
-              }}
             >
               <Text fontSize="3xl" fontWeight="bold" textTransform="uppercase">
                 {stats}
