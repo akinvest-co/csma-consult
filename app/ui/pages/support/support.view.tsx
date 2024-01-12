@@ -27,19 +27,19 @@ const Support = () => {
   return (
     <Layout>
       <Box>
-        {supportDataContact.map(({ id, bgImage, title, intro }) => (
+        {supportDataContact.map(({ id, bgImage, title }) => (
           <Box key={id} position="relative">
             <Box
               bgImage={bgImage}
               bgRepeat="no-repeat"
               bgPos="bottom"
               bgSize="cover"
-              h="50vh"
+              h="40vh"
               filter="brightness(45%)"
             ></Box>
             <Flex
               position="absolute"
-              top="10"
+              top="20"
               color="white"
               flexDirection="column"
               align="center"
@@ -54,13 +54,6 @@ const Support = () => {
                 >
                   {title}
                 </Heading>
-                <Text
-                  lineHeight="2"
-                  opacity=".8"
-                  w={{ base: "300px", md: "inherit", lg: "400px" }}
-                >
-                  {intro}
-                </Text>
               </VStack>
             </Flex>
           </Box>
