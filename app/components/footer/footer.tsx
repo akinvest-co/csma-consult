@@ -8,20 +8,20 @@ import {
   SimpleGrid,
   Stack,
   Text,
-} from "@chakra-ui/react";
+} from "@chakra-ui/react"
 
-import iconFacebook from "public/images/fb-icon.png";
-import iconTwitter from "public/images/twitter-icon.png";
-import iconLinkedin from "public/images/linkedinIcon.png";
+import iconFacebook from "public/images/fb-icon.png"
+import iconTwitter from "public/images/twitter-icon.png"
+import iconLinkedin from "public/images/linkedinIcon.png"
 
-import NextLink from "next/link";
-import NextImage from "next/image";
+import NextLink from "next/link"
+import NextImage from "next/image"
 
-import { menuItems } from "@app/app/components/menu-items/menu-items";
+import { menuItems } from "@app/app/components/menu-items/menu-items"
 
 export default function Footer() {
   return (
-    <Box as="footer" bg="#1d1d1f" w="full" color="#c8cbce">
+    <Box as="footer" bg="black" w="full" color="#c8cbce">
       <Container maxW="container.xl" py="10">
         <SimpleGrid
           columns={{ base: 1, md: 2 }}
@@ -30,30 +30,24 @@ export default function Footer() {
         >
           <Stack>
             <Heading as="h1" fontSize="2xl">
-              CSMA OPTIQUE
+              CSMA CONSULT
             </Heading>
-            <Text>Materiels informatiques des fibres optiques</Text>
+            <Text>Expertise et matériels télécom</Text>
           </Stack>
 
           <Flex
-            align={{ base: "flex-start", md: "center" }}
+            alignItems={{ base: "flex-start", md: "center" }}
+            justifyContent="center"
             flexDirection={{ base: "column", md: "row" }}
             mt={{ base: "5", md: 0 }}
           >
-            <Heading
-              fontSize="2xl"
-              mb="3"
-              display={{ base: "block", md: "none" }}
-            >
-              Menu
-            </Heading>
             {menuItems.map(({ id, label, path }) => (
               <Link
                 key={id}
                 as={NextLink}
                 href={path}
-                marginRight={id === 4 ? 0 : "30px"}
-                marginBottom={id === 4 ? 0 : "1"}
+                marginRight={id === 5 ? 0 : "30px"}
+                marginBottom={id === 5 ? 0 : "1"}
                 fontWeight={{ base: "none", md: "bold" }}
               >
                 {label}
@@ -70,15 +64,17 @@ export default function Footer() {
         >
           <Stack>
             <Heading fontSize="lg">Adresse</Heading>
-            <Text color="rgba(107,114,128,1)">2 Rue des Frères Lumière</Text>
-            <Text color="rgba(107,114,128,1)">95280 JOUY-LE-MOUTIER</Text>
+            <Text color="rgba(107,114,128,1)">324 Rue de Dublin</Text>
+            <Text color="rgba(107,114,128,1)">77550 MOISSY-CRAMAYEL</Text>
           </Stack>
           <Stack mt={{ base: "5", md: "5", lg: 0 }}>
             <Heading fontSize="lg">Contact</Heading>
             <Text color="rgba(107,114,128,1)">
-              <a href="mailto:contact@csma.fr">contact@csma.fr</a>
+              <a href="mailto:contact@csmaconsult.com">
+                contact@csmaconsult.com
+              </a>
             </Text>
-            <Text color="rgba(107,114,128,1)">+33 1 34 30 02 28</Text>
+            <Text color="rgba(107,114,128,1)">+33 1 88 61 10 87</Text>
           </Stack>
 
           <HStack spacing="3" mt={{ base: "5", md: "5", lg: 0 }}>
@@ -95,5 +91,5 @@ export default function Footer() {
         </Flex>
       </Container>
     </Box>
-  );
+  )
 }
