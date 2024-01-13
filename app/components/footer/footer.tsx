@@ -17,7 +17,10 @@ import iconLinkedin from "public/images/linkedinIcon.png"
 import NextLink from "next/link"
 import NextImage from "next/image"
 
-import { menuItems } from "@app/app/components/menu-items/menu-items"
+import {
+  footerMenu,
+  menuItems,
+} from "@app/app/components/menu-items/menu-items"
 
 export default function Footer() {
   return (
@@ -90,19 +93,20 @@ export default function Footer() {
           </HStack>
         </Flex>
 
-        <HStack mt="10" textTransform="uppercase" justify="center">
-          <Link href="#" fontWeight="bold">
-            © {new Date().getFullYear()} CSMA CONSULT
-          </Link>
-          <Link href="#" fontWeight="bold">
-            Plan du site
-          </Link>
-          <Link href="#" fontWeight="bold">
-            PoliTIQUE DE CONFIDENTIALITÉ
-          </Link>
-          <Link href="#" fontWeight="bold">
-            Mentions légales
-          </Link>
+        <HStack justifyContent="center" mt="10" spacing="5" flexWrap="wrap">
+          {footerMenu.map(({ id, label, path }) => (
+            <>
+              {id < 2 ? (
+                <Text fontWeight="bold">
+                  © {new Date().getFullYear()} {label}
+                </Text>
+              ) : (
+                <Link href={path} fontWeight="bold" textTransform="uppercase">
+                  {label}
+                </Link>
+              )}
+            </>
+          ))}
         </HStack>
       </Container>
     </Box>
