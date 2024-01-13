@@ -6,7 +6,7 @@ import Stats from "./components/stats/stats"
 import Produits from "./components/produits/produits"
 import BureauEtudes from "./components/bureau-etudes/bureau"
 import Features from "./components/features/features"
-import TestimonialsView from "../ui/home/testimonials/testimonials.view"
+import Testimonials from "./components/testimonials/testimonials"
 
 export default function Home() {
   return (
@@ -16,7 +16,7 @@ export default function Home() {
       <Stats />
       <Features />
       <Produits />
-      <TestimonialsView />
+      <Testimonials />
     </Layout>
   )
 }
