@@ -89,6 +89,21 @@ export default function Footer() {
             </Link>
           </HStack>
         </Flex>
+
+        <HStack mt="10" textTransform="uppercase" justify="center">
+          <Link href="#" fontWeight="bold">
+            © {new Date().getFullYear()} CSMA CONSULT
+          </Link>
+          <Link href="#" fontWeight="bold">
+            Plan du site
+          </Link>
+          <Link href="#" fontWeight="bold">
+            PoliTIQUE DE CONFIDENTIALITÉ
+          </Link>
+          <Link href="#" fontWeight="bold">
+            Mentions légales
+          </Link>
+        </HStack>
       </Container>
     </Box>
   )
