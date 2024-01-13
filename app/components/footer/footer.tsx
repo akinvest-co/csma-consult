@@ -10,16 +10,13 @@ import {
   Text,
 } from "@chakra-ui/react"
 
-import iconFacebook from "public/images/fb-icon.png"
-import iconTwitter from "public/images/twitter-icon.png"
-import iconLinkedin from "public/images/linkedinIcon.png"
-
 import NextLink from "next/link"
 import NextImage from "next/image"
 
 import {
   footerMenu,
   menuItems,
+  socialLogo,
 } from "@app/app/components/menu-items/menu-items"
 
 export default function Footer() {
@@ -81,15 +78,11 @@ export default function Footer() {
           </Stack>
 
           <HStack spacing="3" mt={{ base: "5", md: "5", lg: 0 }}>
-            <Link as={NextLink} href="https://facebook.com/csma">
-              <NextImage src={iconFacebook} alt="" />
-            </Link>
-            <Link as={NextLink} href="https://twitter.com/csma">
-              <NextImage src={iconTwitter} alt="" />
-            </Link>
-            <Link as={NextLink} href="https://linkedin.com/csma">
-              <NextImage src={iconLinkedin} alt="" />
-            </Link>
+            {socialLogo.map(({ id, logo, social }) => (
+              <Link key={id} as={NextLink} href={social}>
+                <NextImage src={logo} alt="" width={30} />
+              </Link>
+            ))}
           </HStack>
         </Flex>
 
