@@ -21,16 +21,16 @@ export const socialLogo = [
   {
     id: 1,
     logo: logoFacebook,
-    social: "#",
+    social: "/#",
   },
   {
     id: 2,
     logo: logoTwitter,
-    social: "#",
+    social: "/#",
   },
   {
     id: 3,
     logo: logoLinkedIn,
-    social: "#",
+    social: "/#",
   },
 ]
