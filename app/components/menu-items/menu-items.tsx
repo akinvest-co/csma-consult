@@ -8,9 +8,9 @@ export const menuItems = [
 
 export const footerMenu = [
   { id: 1, label: "CSMA CONSULT" },
-  { id: 2, label: " Plan du site", path: "#" },
-  { id: 3, label: "Politique de confidentialité", path: "#" },
-  { id: 4, label: "Mentions légales", path: "#" },
+  { id: 2, label: " Plan du site", path: "/plan" },
+  { id: 3, label: "Politique de confidentialité", path: "/politiques" },
+  { id: 4, label: "Mentions légales", path: "/mentions-legales" },
 ]
 
 import logoFacebook from "public/images/fb-logo.png"
