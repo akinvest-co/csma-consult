@@ -43,4 +43,4 @@ export const featuresData = [
     description:
       "Une installation impeccable. Faites confiance à notre équipe pour des préparatifs dossiers ingénierie pour du raccordement sans accroc.",
   },
-];
+]

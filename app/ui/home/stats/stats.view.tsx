@@ -3,7 +3,7 @@ import { Box, Container, SimpleGrid, VStack, Text } from "@chakra-ui/react"
 
 const StatsView = () => {
   return (
-    <Box bg="#1799cf" color="white">
+    <Box bg="#44C4EE" color="white">
       <Container maxW="container.lg">
         <SimpleGrid
           columns={{ base: 1, md: 2, lg: 4 }}
