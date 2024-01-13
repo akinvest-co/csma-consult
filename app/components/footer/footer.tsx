@@ -24,7 +24,7 @@ import {
 
 export default function Footer() {
   return (
-    <Box as="footer" bg="black" w="full" color="#c8cbce">
+    <Box as="footer" bg="#1d1d1f" w="full" color="#c8cbce">
       <Container maxW="container.xl" py="10">
         <SimpleGrid
           columns={{ base: 1, md: 2 }}
@@ -35,7 +35,7 @@ export default function Footer() {
             <Heading as="h1" fontSize="2xl">
               CSMA CONSULT
             </Heading>
-            <Text>Expertise et matériels télécom</Text>
+            <Text>Expertise et Solutions Télécom</Text>
           </Stack>
 
           <Flex
@@ -77,7 +77,7 @@ export default function Footer() {
                 contact@csmaconsult.com
               </a>
             </Text>
-            <Text color="rgba(107,114,128,1)">+33 1 88 61 10 87</Text>
+            <Text color="rgba(107,114,128,1)">+01 88 61 10 56</Text>
           </Stack>
 
           <HStack spacing="3" mt={{ base: "5", md: "5", lg: 0 }}>

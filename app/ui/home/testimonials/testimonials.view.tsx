@@ -1,5 +1,7 @@
-import { partnersData } from "@app/app/lib/static-data/home/partners"
-import { testimonialsData } from "@app/app/lib/static-data/home/testimonials"
+import {
+  partnersImages,
+  testimonialsData,
+} from "@app/app/lib/static-data/home/testimonials"
 import {
   Container,
   SimpleGrid,
@@ -62,7 +64,7 @@ const TestimonialsView = () => {
           flexWrap="wrap"
           spacing={{ base: "5", md: "0" }}
         >
-          {partnersData.map((partner) => (
+          {partnersImages.map((partner) => (
             <Box key={partner.id} w="90px" borderRadius="md" overflow="hidden">
               <NextImage
                 src={partner.image}
