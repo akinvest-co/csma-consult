@@ -6,8 +6,7 @@ import {
   Input,
   Textarea,
   VStack,
-  Spinner,
-} from '@chakra-ui/react'
+} from "@chakra-ui/react"
 
 const ContactForm = () => {
   return (
@@ -70,11 +69,9 @@ const ContactForm = () => {
           py="6"
           letterSpacing="1px"
           color="white"
-          _hover={{ bg: '#0c84bd' }}
+          _hover={{ bg: "#0c84bd" }}
           className="btn-black"
           borderRadius="999rem"
-          loadingText="En cours d'envoi..."
-          spinner={<Spinner size="md" />}
         >
           Envoyer
         </Button>
