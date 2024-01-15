@@ -1,3 +1,4 @@
+import { addEntry } from "@app/app/lib/actions/actions"
 import {
   Button,
   FormControl,
@@ -7,8 +8,11 @@ import {
   Textarea,
   VStack,
 } from "@chakra-ui/react"
+import { useFormState } from "react-dom"
 
 const ContactForm = () => {
+  const [state, formAction] = useFormState(addEntry, null)
+
   return (
     <VStack
       spacing="10"
