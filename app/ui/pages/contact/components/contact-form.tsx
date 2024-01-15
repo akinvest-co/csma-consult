@@ -1,4 +1,6 @@
-import { addEntry } from "@app/app/lib/actions/actions"
+"use client"
+
+import { addEntry } from "@app/app/lib/actions/_actions"
 import {
   Button,
   FormControl,
