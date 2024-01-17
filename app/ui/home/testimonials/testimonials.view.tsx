@@ -69,7 +69,7 @@ const TestimonialsView = () => {
               <NextImage
                 src={partner.image}
                 alt={partner.alt}
-                objectFit="cover"
+                // objectFit="cover"
                 placeholder="blur"
               />
             </Box>

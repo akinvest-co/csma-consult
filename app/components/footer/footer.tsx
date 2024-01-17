@@ -90,7 +90,7 @@ export default function Footer() {
 
         <HStack justifyContent="center" mt="10" spacing="5" flexWrap="wrap">
           {footerMenu.map(({ id, label, path }) => (
-            <>
+            <Box key={id}>
               {id < 2 ? (
                 <Text fontWeight="bold">
                   © {new Date().getFullYear()} {label}
@@ -100,7 +100,7 @@ export default function Footer() {
                   {label}
                 </Link>
               )}
-            </>
+            </Box>
           ))}
         </HStack>
       </Container>
