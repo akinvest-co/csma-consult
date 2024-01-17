@@ -1,4 +1,4 @@
-import product from "@app/public/images/bureauetudes.jpg"
+import product from "@app/public/images/banner.jpeg"
 
 export const bureauDataIng = [
   {
