@@ -1,7 +1,5 @@
 "use client"
 
-import { useForm } from "@mantine/form"
-
 import {
   Button,
   FormControl,
@@ -12,29 +10,10 @@ import {
   VStack,
   Box,
 } from "@chakra-ui/react"
+import { useContactForm } from "@app/app/validation/contactForm"
 
 const ContactForm = () => {
-  const form = useForm({
-    initialValues: {
-      user_name: "",
-      user_email: "",
-      user_subject: "",
-      user_message: "",
-    },
-
-    validate: {
-      user_name: (value) => (value ? null : "Prénom et Nom sont requis"),
-      user_email: (value) =>
-        /^\S+@\S+$/.test(value) ? null : "Email invalide",
-      user_subject: (value) => (value ? null : "Objet est requis"),
-      user_message: (value) => (value ? null : "Message est requis"),
-    },
-  })
-
-  const onSubmit = (values: any) => {
-    console.log(values)
-    // Traitement des données du formulaire
-  }
+  const { form, onSubmit } = useContactForm()
 
   return (
     <Box boxShadow="0px 0px 25px rgba(54, 91, 125, 0.2)" p="6" rounded="2xl">

@@ -60,14 +60,12 @@ const BannerView = () => {
               </Button>
             </VStack>
 
-            <Box>
+            <Box borderRadius="md" overflow="hidden">
               <Image
                 src={image}
                 alt="Illustration Banner"
                 placeholder="blur"
                 priority
-                width={450}
-                height={450}
               />
             </Box>
           </SimpleGrid>

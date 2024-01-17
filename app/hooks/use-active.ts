@@ -1,11 +1,11 @@
-import { usePathname } from "next/navigation";
-import { Routes } from "../config/routes/routes";
+import { usePathname } from "next/navigation"
+import { Routes } from "../config/routes/routes"
 
 export function useActive() {
-  const pathname = usePathname();
+  const pathname = usePathname()
   const isActive = (path: keyof typeof Routes) => {
-    return pathname === path;
-  };
+    return pathname === path
+  }
 
-  return { isActive };
+  return { isActive }
 }
