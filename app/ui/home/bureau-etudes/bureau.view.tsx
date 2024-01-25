@@ -15,7 +15,7 @@ export default function BureauView() {
     <Container maxW="container.lg" mb="28">
       <Flex flexDirection={{ base: "column", md: "column", lg: "row" }}>
         <Box flex="1" mb={{ base: "20", md: "20", lg: "0" }}>
-          {bureauData.etudes.map(({ id, title, descr, linkText }, index) => (
+          {bureauData.etudes.map(({ id, title, descr, linkText, path }) => (
             <VStack key={id} align="center" spacing="7">
               <Heading
                 letterSpacing="1px"
@@ -27,7 +27,7 @@ export default function BureauView() {
                 {descr}
               </Text>
               <Link
-                href="#"
+                href={path}
                 color="#1799cf"
                 fontWeight="bold"
                 letterSpacing="1px"
@@ -46,7 +46,7 @@ export default function BureauView() {
           />
         </Box>
         <Box flex="1">
-          {bureauData.solutions.map(({ id, title, descr, linkText }, index) => (
+          {bureauData.solutions.map(({ id, title, descr, linkText, path }) => (
             <VStack key={id} align="center" spacing="7">
               <Heading
                 letterSpacing="1px"
@@ -58,7 +58,7 @@ export default function BureauView() {
                 {descr}
               </Text>
               <Link
-                href="#"
+                href={path}
                 color="#1799cf"
                 fontWeight="bold"
                 letterSpacing="1px"

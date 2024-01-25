@@ -10,7 +10,7 @@ export function useContactForm() {
     },
 
     validate: {
-      user_name: (value) => (value ? null : "Prénom et Nom sont requis"),
+      user_name: (value) => (value ? null : "Entrez votre Prénom et Nom"),
       user_email: (value) =>
         /^\S+@\S+$/.test(value) ? null : "Email invalide",
       user_message: (value) => (value ? null : "Message est requis"),

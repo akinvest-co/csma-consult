@@ -46,7 +46,7 @@ const BannerView = () => {
               <Button
                 size="xl"
                 as={NextLink}
-                href="/products"
+                href="/produits"
                 letterSpacing="1px"
                 textTransform="uppercase"
                 bg="#1799cf"
