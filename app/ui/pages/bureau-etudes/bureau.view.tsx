@@ -25,9 +25,11 @@ import Image from "next/image"
 export default function BureauView() {
   return (
     <Layout>
-      <Container maxW="container.xl" mt="10">
+      <Container maxW="container.xl" mt="20">
         <VStack align="center" spacing="5">
-          <Heading letterSpacing="1px">BUREAU D’ÉTUDES</Heading>
+          <Heading letterSpacing="1px" size="xl">
+            BUREAU D’ÉTUDES
+          </Heading>
           <Text
             textAlign="center"
             w={{ base: "100%", md: "100%", lg: "600px" }}
