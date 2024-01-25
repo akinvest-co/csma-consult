@@ -32,7 +32,7 @@ export const bureauDataRecettes = [
     descr:
       "La Réception commence par une vérification minutieuse de la conformité aux normes en vigueur, suivie de tests et de validations garantissant un fonctionnement optimal. La prise en main des équipements, validée et mise en service en mode isolé, est réalisée avec précision. ",
     linkText: "En savoir plus",
-    path: "/",
+    path: "/recettes",
   },
 ]
 
@@ -44,6 +44,6 @@ export const bureauDataCentre = [
     descr:
       "La Surveillance de trafic assure un suivi attentif des services en activité et inactifs, avec une réponse rapide aux problèmes signalés. La gestion efficace des équipements et le dépannage à distance garantissent une réactivité, incluant la mobilisation d'équipes en cas de besoin tel qu’une maintenance réseau.",
     linkText: "En savoir plus",
-    path: "/",
+    path: "/supervision",
   },
 ]

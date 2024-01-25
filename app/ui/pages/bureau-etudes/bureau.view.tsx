@@ -42,7 +42,7 @@ export default function BureauView() {
       </Container>
       <Box bgColor="#1799cf">
         <Container maxW="container.xl">
-          {bureauDataIng.map(({ id, img, title, descr, linkText }) => (
+          {bureauDataIng.map(({ id, img, title, descr, linkText, path }) => (
             <SimpleGrid
               columns={{ base: 1, md: 1, lg: 2 }}
               my="28"
@@ -74,7 +74,7 @@ export default function BureauView() {
                   {descr}
                 </Text>
                 <Link
-                  href="#"
+                  href={path}
                   fontWeight="bold"
                   letterSpacing="1px"
                   textTransform="uppercase"
@@ -89,7 +89,7 @@ export default function BureauView() {
       </Box>
 
       <Container maxW="container.xl">
-        {bureauDataInfr.map(({ id, img, title, descr, linkText }) => (
+        {bureauDataInfr.map(({ id, img, title, descr, linkText, path }) => (
           <SimpleGrid
             columns={{ base: 1, md: 1, lg: 2 }}
             key={id}
@@ -115,7 +115,7 @@ export default function BureauView() {
                 {descr}
               </Text>
               <Link
-                href="#"
+                href={path}
                 fontWeight="bold"
                 letterSpacing="1px"
                 textTransform="uppercase"
@@ -178,54 +178,56 @@ export default function BureauView() {
 
       <Box bgColor="#1799cf">
         <Container maxW="container.xl">
-          {bureauDataRecettes.map(({ id, img, title, descr, linkText }) => (
-            <SimpleGrid
-              columns={{ base: 1, md: 1, lg: 2 }}
-              my="28"
-              key={id}
-              spacing="20"
-              alignItems="center"
-              py="20"
-            >
-              <Box borderRadius="xl" overflow="hidden">
-                <Image src={img} alt={title} placeholder="blur" />
-              </Box>
-              <VStack
-                align={{ md: "center", lg: "start" }}
-                spacing={{ base: "5", md: "10" }}
-                color="white"
+          {bureauDataRecettes.map(
+            ({ id, img, title, descr, linkText, path }) => (
+              <SimpleGrid
+                columns={{ base: 1, md: 1, lg: 2 }}
+                my="28"
+                key={id}
+                spacing="20"
+                alignItems="center"
+                py="20"
               >
-                <Heading
-                  letterSpacing="1px"
-                  fontSize={{ base: "2xl", md: "2xl", lg: "3xl" }}
-                  textAlign={{ base: "center", md: "center", lg: "left" }}
+                <Box borderRadius="xl" overflow="hidden">
+                  <Image src={img} alt={title} placeholder="blur" />
+                </Box>
+                <VStack
+                  align={{ md: "center", lg: "start" }}
+                  spacing={{ base: "5", md: "10" }}
+                  color="white"
                 >
-                  {title}
-                </Heading>
-                <Text
-                  lineHeight="1.7"
-                  fontSize={{ md: "md", lg: "lg" }}
-                  textAlign={{ base: "center", md: "center", lg: "left" }}
-                >
-                  {descr}
-                </Text>
-                <Link
-                  href="#"
-                  fontWeight="bold"
-                  letterSpacing="1px"
-                  textTransform="uppercase"
-                  textAlign="center"
-                >
-                  {linkText}
-                </Link>
-              </VStack>
-            </SimpleGrid>
-          ))}
+                  <Heading
+                    letterSpacing="1px"
+                    fontSize={{ base: "2xl", md: "2xl", lg: "3xl" }}
+                    textAlign={{ base: "center", md: "center", lg: "left" }}
+                  >
+                    {title}
+                  </Heading>
+                  <Text
+                    lineHeight="1.7"
+                    fontSize={{ md: "md", lg: "lg" }}
+                    textAlign={{ base: "center", md: "center", lg: "left" }}
+                  >
+                    {descr}
+                  </Text>
+                  <Link
+                    href={path}
+                    fontWeight="bold"
+                    letterSpacing="1px"
+                    textTransform="uppercase"
+                    textAlign="center"
+                  >
+                    {linkText}
+                  </Link>
+                </VStack>
+              </SimpleGrid>
+            ),
+          )}
         </Container>
       </Box>
 
       <Container maxW="container.xl" mb="20">
-        {bureauDataCentre.map(({ id, img, title, descr, linkText }) => (
+        {bureauDataCentre.map(({ id, img, title, descr, linkText, path }) => (
           <SimpleGrid
             columns={{ base: 1, md: 1, lg: 2 }}
             key={id}
@@ -251,7 +253,7 @@ export default function BureauView() {
                 {descr}
               </Text>
               <Link
-                href="#"
+                href={path}
                 fontWeight="bold"
                 letterSpacing="1px"
                 textTransform="uppercase"
