@@ -1,4 +1,6 @@
-import BureauView from '@app/app/ui/pages/bureau-etudes/bureau.view'
+import type { Metadata } from "next"
+
+import BureauView from "@app/app/ui/pages/bureau-etudes/bureau.view"
 
 export default function BureauEtudes() {
   return <BureauView />
