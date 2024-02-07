@@ -8,7 +8,7 @@ export const bureauDataIng = [
     descr:
       "Notre expertise se révèle dans la gestion précise et la fiabilité des informations du SIG essentielle pour l'exploitation des réseaux d'opérateurs d'infrastructures télécoms. La mises à jour en temps réel assurent une réactivité constante. Le relevé des infrastructures existantes garantit une compréhension exhaustive pour des interventions efficaces.",
     linkText: "En savoir plus",
-    path: "/etudes-ingénierie",
+    path: "/etudes-ingenierie",
   },
 ]
 

@@ -12,7 +12,7 @@ import {
 export default function EtudesIngVIew() {
   return (
     <Layout>
-      <Container maxW="container.lg" my="20">
+      <Container maxW="container.xl" my="20">
         <SimpleGrid
           columns={{ base: 1, md: 1, lg: 2 }}
           spacing="20"
