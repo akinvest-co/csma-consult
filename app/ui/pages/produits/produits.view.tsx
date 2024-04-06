@@ -1,7 +1,8 @@
-"use client"
-
 import Layout from "@app/app/layout/layout.page"
-import { productsData } from "@app/app/lib/static-data/home/produits"
+import { getProducts } from "@app/app/lib/api/products"
+import { Products } from "@app/app/types/products.types"
+import icon from "public/images/shoppingicon.gif"
+
 import {
   Container,
   Heading,
@@ -15,7 +16,9 @@ import {
 } from "@chakra-ui/react"
 import Image from "next/image"
 
-export default function ProduitsView() {
+export default async function ProduitsView() {
+  const { data: products } = await getProducts()
+
   return (
     <Layout>
       <Container maxW="container.xl" mt="10">
@@ -77,73 +80,76 @@ export default function ProduitsView() {
       </Box>
       <Container maxW="container.xl" my="20">
         <SimpleGrid columns={{ base: 1, md: 2, lg: 4 }}>
-          {productsData.map(
-            ({ id, imageProduct, categorie, nomMateriel, state, icon }) => (
-              <VStack
-                key={id}
-                align="start"
-                p="2rem"
-                spacing="5"
-                borderRight={{
-                  base: "none",
-                  md:
-                    id === 4 || id === 8
-                      ? "none"
-                      : "2px dashed rgb(229, 231, 235)",
-                }}
-                borderBottom={{
-                  base: id < 8 ? "2px dashed rgb(229, 231, 235)" : "none",
-                  md: id < 7 ? "2px dashed rgb(229, 231, 235)" : "none",
-                  lg: id < 5 ? "2px dashed rgb(229, 231, 235)" : "none",
-                }}
+          {products.slice(0, 8).map((product: Products, index: number) => (
+            <VStack
+              key={product.id}
+              align="start"
+              p="1.5rem"
+              spacing="3"
+              borderRight={{
+                md: index % 2 === 0 ? "2px dashed rgb(229, 231, 235)" : "none",
+                lg:
+                  index !== 3 && index !== 7
+                    ? "2px dashed rgb(229, 231, 235)"
+                    : "none",
+              }}
+              borderBottom={{
+                base: index < 7 ? "2px dashed rgb(229, 231, 235)" : "none",
+                md: index < 6 ? "2px dashed rgb(229, 231, 235)" : "none",
+                lg: index < 4 ? "2px dashed rgb(229, 231, 235)" : "none",
+              }}
+            >
+              <Box
+                borderRadius="xl"
+                overflow="hidden"
+                bgColor="#f5f6f6"
+                position="relative"
+                padding="5"
+                h="230px"
+                w="100%"
               >
-                <Box
-                  borderRadius="xl"
-                  overflow="hidden"
-                  bgColor="#f5f6f6"
-                  position="relative"
-                  padding="5"
-                  h="230px"
-                  w="100%"
+                <Image
+                  src={product.attributes.image.data.attributes.url}
+                  fill
+                  alt={product.attributes.name}
+                  style={{
+                    objectFit: "cover",
+                    transition: "transform 0.2s",
+                  }}
+                  priority
+                  // onMouseOver={(e) => {
+                  //   e.currentTarget.style.transform = "scale(1.1)"
+                  // }}
+                  // onMouseOut={(e) => {
+                  //   e.currentTarget.style.transform = "scale(1)"
+                  // }}
+                />
+              </Box>
+              <HStack
+                justify="space-between"
+                align="center"
+                w="full"
+                fontSize="0.7rem"
+              >
+                <Text color="#0b6999">
+                  {product.attributes.category.data.attributes.name}
+                </Text>
+              </HStack>
+              <HStack justify="space-between" align="center" w="full">
+                <Text
+                  fontWeight="900"
+                  letterSpacing="1px"
+                  fontSize="15px"
+                  textTransform="uppercase"
                 >
-                  <Image
-                    src={imageProduct}
-                    fill
-                    alt={nomMateriel}
-                    placeholder="blur"
-                    style={{
-                      objectFit: "cover",
-                      transition: "transform 0.2s",
-                    }}
-                    priority
-                    onMouseOver={(e) => {
-                      e.currentTarget.style.transform = "scale(1.1)"
-                    }}
-                    onMouseOut={(e) => {
-                      e.currentTarget.style.transform = "scale(1)"
-                    }}
-                  />
-                </Box>
-                <HStack
-                  justify="space-between"
-                  align="center"
-                  w="full"
-                  fontSize="0.7rem"
-                >
-                  <Text color="#0b6999">{categorie}</Text>
-                  <Text>{state}</Text>
-                </HStack>
-                <HStack justify="space-between" align="center" w="full">
-                  <Text fontWeight="900" letterSpacing="1px" fontSize="15px">
-                    {nomMateriel}
-                  </Text>
-                  <Link href="/devis">
-                    <Image src={icon} alt="" style={{ width: "25px" }} />
-                  </Link>
-                </HStack>
-              </VStack>
-            ),
-          )}
+                  {product.attributes.name}
+                </Text>
+                <Link href="/devis">
+                  <Image src={icon} alt="" style={{ width: "25px" }} />
+                </Link>
+              </HStack>
+            </VStack>
+          ))}
         </SimpleGrid>
       </Container>
     </Layout>

@@ -38,7 +38,6 @@ export default function Header() {
       <Container maxW="container.xl">
         <Flex py="4" align="center" justify="space-between">
           <AppLogo />
-          {/* <h2>Logo</h2> */}
           <HStack
             align="center"
             display={{ base: "none", md: "none", lg: "block" }}
