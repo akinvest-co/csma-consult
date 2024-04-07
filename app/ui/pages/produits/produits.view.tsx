@@ -113,10 +113,6 @@ export default async function ProduitsView() {
                   src={product.attributes.image.data.attributes.url}
                   fill
                   alt={product.attributes.name}
-                  style={{
-                    objectFit: "cover",
-                    transition: "transform 0.2s",
-                  }}
                   priority
                 />
               </Link>
