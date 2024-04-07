@@ -1,5 +1,6 @@
 import { extendTheme } from "@chakra-ui/react"
 import { Plus_Jakarta_Sans } from "next/font/google"
+import { withProse } from "@nikolovlazar/chakra-ui-prose"
 
 const font = Plus_Jakarta_Sans({
   subsets: ["latin"],
@@ -7,9 +8,12 @@ const font = Plus_Jakarta_Sans({
   fallback: ["Helvetica", "Arial", "sans-serif"],
 })
 
-export const theme = extendTheme({
-  fonts: {
-    heading: font.style.fontFamily,
-    body: font.style.fontFamily,
+export const theme = extendTheme(
+  {
+    fonts: {
+      heading: font.style.fontFamily,
+      body: font.style.fontFamily,
+    },
   },
-})
+  withProse(),
+)
