@@ -6,3 +6,11 @@ export async function getProducts() {
 
   return res.json()
 }
+
+export async function getProduct(productId: number) {
+  const res = await fetch(
+    `https://csma-consult.onrender.com/api/products/${productId}?populate=*`,
+  )
+
+  return res.json()
+}

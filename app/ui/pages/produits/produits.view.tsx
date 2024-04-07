@@ -99,7 +99,8 @@ export default async function ProduitsView() {
                 lg: index < 4 ? "2px dashed rgb(229, 231, 235)" : "none",
               }}
             >
-              <Box
+              <Link
+                href={`/products/${product.id}`}
                 borderRadius="xl"
                 overflow="hidden"
                 bgColor="#f5f6f6"
@@ -117,14 +118,8 @@ export default async function ProduitsView() {
                     transition: "transform 0.2s",
                   }}
                   priority
-                  // onMouseOver={(e) => {
-                  //   e.currentTarget.style.transform = "scale(1.1)"
-                  // }}
-                  // onMouseOut={(e) => {
-                  //   e.currentTarget.style.transform = "scale(1)"
-                  // }}
                 />
-              </Box>
+              </Link>
               <HStack
                 justify="space-between"
                 align="center"
@@ -144,7 +139,7 @@ export default async function ProduitsView() {
                 >
                   {product.attributes.name}
                 </Text>
-                <Link href="/devis">
+                <Link href="/panier">
                   <Image src={icon} alt="" style={{ width: "25px" }} />
                 </Link>
               </HStack>
