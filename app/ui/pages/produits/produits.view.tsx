@@ -100,7 +100,7 @@ export default async function ProduitsView() {
               }}
             >
               <Link
-                href={`/products/${product.id}`}
+                href={`/produits/${product.id}`}
                 borderRadius="xl"
                 overflow="hidden"
                 bgColor="#f5f6f6"

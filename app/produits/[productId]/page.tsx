@@ -9,14 +9,17 @@ import {
   SimpleGrid,
   Heading,
   VStack,
-  Button,
   Tab,
   TabList,
   TabPanel,
   TabPanels,
+  Link,
   Tabs,
+  HStack,
+  Button,
 } from "@chakra-ui/react"
 import Image from "next/image"
+import NextLink from "next/link"
 
 export default async function product({
   params,
@@ -28,11 +31,11 @@ export default async function product({
   return (
     <Layout>
       <Container maxW="container.lg" py="20">
-        <SimpleGrid columns={2} spacing={20} alignItems="center">
+        <SimpleGrid columns={{ sm: 1, md: 2 }} spacing={20} alignItems="center">
           <Box
             borderRadius="xl"
             overflow="hidden"
-            height="450px"
+            height={{ base: "300px", md: "450px" }}
             position="relative"
           >
             <Image
@@ -48,6 +51,20 @@ export default async function product({
             </Text>
             <Heading>{product.attributes.name}</Heading>
             <BlocksRenderer content={product.attributes.intro} />
+            <Button
+              size="xl"
+              as={NextLink}
+              href="/panier"
+              letterSpacing="1px"
+              w="100%"
+              bg="#1799cf"
+              _hover={{ bg: "#0c84bd" }}
+              color="#fff"
+              fontSize="1rem"
+              p="1rem"
+            >
+              Ajouter au panier
+            </Button>
           </VStack>
         </SimpleGrid>
 
@@ -61,8 +78,20 @@ export default async function product({
               <TabPanel mt="5">
                 <BlocksRenderer content={product.attributes.details} />
               </TabPanel>
-              <TabPanel>
-                <p>two!</p>
+              <TabPanel mt="5">
+                <HStack justify="space-between" width="100%">
+                  <Heading as="h4" size={{ base: "sm", md: "md" }}>
+                    Fiche du produit {product.attributes.name}
+                  </Heading>
+
+                  <Link
+                    href={product.attributes.sheet.data.attributes.url}
+                    download={product.attributes.name}
+                    textDecor="underline"
+                  >
+                    Télécharger le fichier PDF
+                  </Link>
+                </HStack>
               </TabPanel>
             </TabPanels>
           </Tabs>
