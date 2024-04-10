@@ -1,7 +1,8 @@
+"use client"
+
+import { useAppSelector } from "@app/app/hooks/cart/hooks"
 import Layout from "@app/app/layout/layout.page"
-import { getProducts } from "@app/app/lib/api/products"
-import { Products } from "@app/app/types/products.types"
-import icon from "public/images/shoppingicon.gif"
+import { ProductsProps } from "@app/app/types/products.types"
 
 import {
   Container,
@@ -13,11 +14,19 @@ import {
   Link,
   VStack,
   Text,
+  Button,
 } from "@chakra-ui/react"
 import Image from "next/image"
+import NextLink from "next/link"
 
-export default async function ProduitsView() {
-  const { data: products } = await getProducts()
+export default function ProduitsView({
+  product,
+  index,
+}: {
+  product: ProductsProps
+  index: number
+}) {
+  const cartItems = useAppSelector((store) => store.store)
 
   return (
     <Layout>
@@ -79,69 +88,73 @@ export default async function ProduitsView() {
         </Container>
       </Box>
       <Container maxW="container.xl" my="20">
-        <SimpleGrid columns={{ base: 1, md: 2, lg: 4 }}>
-          {products.slice(0, 8).map((product: Products, index: number) => (
-            <VStack
-              key={product.id}
-              align="start"
-              p="1.5rem"
-              spacing="3"
-              borderRight={{
-                md: index % 2 === 0 ? "2px dashed rgb(229, 231, 235)" : "none",
-                lg:
-                  index !== 3 && index !== 7
-                    ? "2px dashed rgb(229, 231, 235)"
-                    : "none",
-              }}
-              borderBottom={{
-                base: index < 7 ? "2px dashed rgb(229, 231, 235)" : "none",
-                md: index < 6 ? "2px dashed rgb(229, 231, 235)" : "none",
-                lg: index < 4 ? "2px dashed rgb(229, 231, 235)" : "none",
-              }}
+        <VStack
+          key={product.id}
+          align="start"
+          p="1.5rem"
+          spacing="3"
+          borderRight={{
+            md: index % 2 === 0 ? "2px dashed rgb(229, 231, 235)" : "none",
+            lg:
+              index !== 3 && index !== 7
+                ? "2px dashed rgb(229, 231, 235)"
+                : "none",
+          }}
+          borderBottom={{
+            base: index < 7 ? "2px dashed rgb(229, 231, 235)" : "none",
+            md: index < 6 ? "2px dashed rgb(229, 231, 235)" : "none",
+            lg: index < 4 ? "2px dashed rgb(229, 231, 235)" : "none",
+          }}
+        >
+          <Link
+            href={`/produits/${product.id}`}
+            borderRadius="xl"
+            bgColor="#f5f6f6"
+            padding="5"
+          >
+            <Image
+              src={product.attributes.image.data.attributes.url}
+              width={product.attributes.image.data.attributes.width}
+              height={product.attributes.image.data.attributes.height}
+              alt={product.attributes.name}
+              priority
+            />
+          </Link>
+          <HStack
+            justify="space-between"
+            align="center"
+            w="full"
+            fontSize="0.7rem"
+          >
+            <Text color="#0b6999">
+              {product.attributes.category.data.attributes.name}
+            </Text>
+          </HStack>
+          <VStack align="start" spacing="5" w="full">
+            <Text
+              fontWeight="900"
+              letterSpacing="1px"
+              fontSize="15px"
+              textTransform="uppercase"
             >
-              <Link
-                href={`/produits/${product.id}`}
-                borderRadius="xl"
-                overflow="hidden"
-                bgColor="#f5f6f6"
-                position="relative"
-                padding="5"
-                h="230px"
-                w="100%"
-              >
-                <Image
-                  src={product.attributes.image.data.attributes.url}
-                  fill
-                  alt={product.attributes.name}
-                  priority
-                />
-              </Link>
-              <HStack
-                justify="space-between"
-                align="center"
-                w="full"
-                fontSize="0.7rem"
-              >
-                <Text color="#0b6999">
-                  {product.attributes.category.data.attributes.name}
-                </Text>
-              </HStack>
-              <HStack justify="space-between" align="center" w="full">
-                <Text
-                  fontWeight="900"
-                  letterSpacing="1px"
-                  fontSize="15px"
-                  textTransform="uppercase"
-                >
-                  {product.attributes.name}
-                </Text>
-                <Link href="/panier">
-                  <Image src={icon} alt="" style={{ width: "25px" }} />
-                </Link>
-              </HStack>
-            </VStack>
-          ))}
-        </SimpleGrid>
+              {product.attributes.name}
+            </Text>
+            <Button
+              size="md"
+              as={NextLink}
+              href="/cart"
+              letterSpacing="1px"
+              w="100%"
+              bg="#1799cf"
+              _hover={{ bg: "#0c84bd" }}
+              color="#fff"
+              fontSize="1rem"
+              p="1rem"
+            >
+              Ajouter au panier
+            </Button>
+          </VStack>
+        </VStack>
       </Container>
     </Layout>
   )

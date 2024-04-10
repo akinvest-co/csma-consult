@@ -10,6 +10,7 @@ export const metadata: Metadata = {
 }
 
 import { Providers } from "./providers"
+import StoreProvider from "./redux/Provider"
 
 export default function RootLayout({
   children,
@@ -19,7 +20,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <Providers>{children}</Providers>
+        <StoreProvider>
+          <Providers>{children}</Providers>
+        </StoreProvider>
       </body>
     </html>
   )
