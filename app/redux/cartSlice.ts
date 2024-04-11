@@ -4,7 +4,7 @@ import type { PayloadAction } from "@reduxjs/toolkit"
 export interface CounterState {
   id: number
   attributes: {
-    Titre: string
+    name: string
   }
   quantity: number
 }
@@ -18,11 +18,11 @@ export const cartSlice = createSlice({
     addToCart: (state, action) => {
       const {
         id,
-        attributes: { Titre },
+        attributes: { name },
         quantity = 1,
       } = action.payload
 
-      state.push({ id, attributes: { Titre }, quantity })
+      state.push({ id, attributes: { name }, quantity })
     },
 
     removeFromCart: (state, action) => {
