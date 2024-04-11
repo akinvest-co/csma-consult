@@ -10,9 +10,10 @@ export default function CartView() {
   return (
     <Layout>
       <Container maxW="container.xl">
-        {cartItems.map((product) => (
+        {/* {cartItems.map((product) => (
           <Heading key={product.id}>{product.attributes.name}</Heading>
-        ))}
+        ))} */}
+        Produit dans le panier
       </Container>
     </Layout>
   )
