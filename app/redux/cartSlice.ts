@@ -1,15 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit"
 import type { PayloadAction } from "@reduxjs/toolkit"
+import { Products } from "../types/products.types"
 
-export interface CounterState {
-  id: number
-  attributes: {
-    name: string
-  }
-  quantity: number
-}
-
-const initialState: CounterState[] = []
+const initialState: Products[] = []
 
 export const cartSlice = createSlice({
   name: "cart",
@@ -18,11 +11,11 @@ export const cartSlice = createSlice({
     addToCart: (state, action) => {
       const {
         id,
-        attributes: { name },
+        attributes: { name, slug, category, image },
         quantity = 1,
       } = action.payload
 
-      state.push({ id, attributes: { name }, quantity })
+      state.push({ id, attributes: { name, slug, category, image }, quantity })
     },
 
     removeFromCart: (state, action) => {

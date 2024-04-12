@@ -27,6 +27,8 @@ export interface ProductsProps {
     category: ProductCategory
     image: ImageProduct
   }
+
+  quantity: number
 }
 
 export type Products = ProductsProps
