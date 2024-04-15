@@ -52,13 +52,13 @@ export default function Cart() {
     <Layout>
       <Container maxW="container.xl" my="20">
         <Heading mb="10">Votre Panier</Heading>
+
         {cartItems.map((product, index) => (
-          <SimpleGrid
+          <HStack
             key={product.id}
-            columns={4}
+            w="100%"
             alignItems="center"
             gap="30"
-            w="100%"
             py={index !== cartItems.length ? "7" : "0"}
             borderBottom={
               index !== cartItems.length - 1
@@ -76,7 +76,7 @@ export default function Cart() {
               <Heading fontSize="md">{product.attributes.name}</Heading>
             </HStack>
 
-            <HStack spacing="4">
+            <HStack spacing="2">
               <Button
                 size="xs"
                 {...dec}
@@ -108,8 +108,9 @@ export default function Cart() {
                 </Button>
               </Box>
             </HStack>
-          </SimpleGrid>
+          </HStack>
         ))}
+        <Box>Formulaire Demande devis</Box>
       </Container>
     </Layout>
   )
