@@ -41,7 +41,7 @@ export default function Cart() {
 
   const { getInputProps, getIncrementButtonProps, getDecrementButtonProps } =
     useNumberInput({
-      // defaultValue: cartItems.map((item)=> item.quantity)
+      defaultValue: 1,
     })
 
   const inc = getIncrementButtonProps()
@@ -52,13 +52,19 @@ export default function Cart() {
     <Layout>
       <Container maxW="container.xl" my="20">
         <Heading mb="10">Votre Panier</Heading>
-        {cartItems.map((product) => (
+        {cartItems.map((product, index) => (
           <SimpleGrid
             key={product.id}
             columns={4}
             alignItems="center"
             gap="30"
-            mb="5"
+            w="100%"
+            py={index !== cartItems.length ? "7" : "0"}
+            borderBottom={
+              index !== cartItems.length - 1
+                ? "2px dashed rgb(229, 231, 235)"
+                : "none"
+            }
           >
             <HStack spacing="8">
               <Image
@@ -67,7 +73,6 @@ export default function Cart() {
                 borderRadius="xl"
                 w="80px"
               />
-
               <Heading fontSize="md">{product.attributes.name}</Heading>
             </HStack>
 
