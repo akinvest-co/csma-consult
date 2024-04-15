@@ -18,8 +18,10 @@ import {
   Input,
   Image,
   useNumberInput,
-  SimpleGrid,
   Flex,
+  FormControl,
+  FormLabel,
+  SimpleGrid,
 } from "@chakra-ui/react"
 
 export default function Cart() {
@@ -51,66 +53,72 @@ export default function Cart() {
   return (
     <Layout>
       <Container maxW="container.xl" my="20">
-        <Heading mb="10">Votre Panier</Heading>
-
-        {cartItems.map((product, index) => (
-          <HStack
-            key={product.id}
-            w="100%"
-            alignItems="center"
-            gap="30"
-            py={index !== cartItems.length ? "7" : "0"}
-            borderBottom={
-              index !== cartItems.length - 1
-                ? "2px dashed rgb(229, 231, 235)"
-                : "none"
-            }
-          >
-            <HStack spacing="8">
-              <Image
-                src={product.attributes.image.data.attributes.url}
-                alt={product.attributes.name}
-                borderRadius="xl"
-                w="80px"
-              />
-              <Heading fontSize="md">{product.attributes.name}</Heading>
-            </HStack>
-
-            <HStack spacing="2">
-              <Button
-                size="xs"
-                {...dec}
-                onClick={() => handleDecrementQty(product.id)}
+        <SimpleGrid columns={2} gap="20">
+          <Box>
+            <Heading mb="10">Votre Panier</Heading>
+            {cartItems.map((product, index) => (
+              <HStack
+                key={product.id}
+                // w="100%"
+                spacing="20"
+                alignItems="center"
+                py={index !== cartItems.length ? "5" : "0"}
+                borderTop="2px dashed rgb(229, 231, 235)"
               >
-                -
-              </Button>
-              <Input
-                {...input}
-                value={product.quantity}
-                size="sm"
-                height="25px"
-                width="50px"
-              />
-              <Button
-                size="xs"
-                {...inc}
-                onClick={() => handleIncrementQty(product.id)}
-              >
-                +
-              </Button>
-              <Box>
-                <Button
-                  color="red"
-                  bgColor="white"
-                  onClick={() => handleDeleteFromCart(product.id)}
-                >
-                  <DeleteIcon />
-                </Button>
-              </Box>
-            </HStack>
-          </HStack>
-        ))}
-        <Box>Formulaire Demande devis</Box>
+                <HStack spacing="5">
+                  <Image
+                    src={product.attributes.image.data.attributes.url}
+                    alt={product.attributes.name}
+                    borderRadius="xl"
+                    w="70px"
+                  />
+                  <Heading fontSize="md">{product.attributes.name}</Heading>
+                </HStack>
+
+                <HStack>
+                  <Button
+                    size="xs"
+                    {...dec}
+                    onClick={() => handleDecrementQty(product.id)}
+                  >
+                    -
+                  </Button>
+                  <Input
+                    {...input}
+                    value={product.quantity}
+                    size="sm"
+                    height="25px"
+                    width="50px"
+                  />
+                  <Button
+                    size="xs"
+                    {...inc}
+                    onClick={() => handleIncrementQty(product.id)}
+                  >
+                    +
+                  </Button>
+                  <Box>
+                    <Button
+                      bgColor="white"
+                      onClick={() => handleDeleteFromCart(product.id)}
+                    >
+                      <DeleteIcon />
+                    </Button>
+                  </Box>
+                </HStack>
+              </HStack>
+            ))}
+          </Box>
+          <FormControl isRequired w="60%">
+            <FormLabel>Nom</FormLabel>
+            <Input placeholder="First name" />
+            <FormLabel>Prenom</FormLabel>
+            <Input placeholder="First name" />
+            <FormLabel>First name</FormLabel>
+            <Input placeholder="First name" />
+            <Button>Button</Button>
+          </FormControl>
+        </SimpleGrid>
       </Container>
     </Layout>
   )
