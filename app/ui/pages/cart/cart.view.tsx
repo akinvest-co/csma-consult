@@ -7,12 +7,23 @@ import {
   incrementQty,
   removeFromCart,
 } from "@app/app/redux/cartSlice"
-import { Box, Container, Heading } from "@chakra-ui/react"
-import Image from "next/image"
+import { DeleteIcon } from "@chakra-ui/icons"
+
+import {
+  Box,
+  Button,
+  Container,
+  HStack,
+  Heading,
+  Input,
+  Image,
+  useNumberInput,
+  SimpleGrid,
+  Flex,
+} from "@chakra-ui/react"
 
 export default function Cart() {
   const cartItems = useAppSelector((store) => store.store)
-  console.log(cartItems)
 
   const dispatch = useAppDispatch()
 
@@ -28,29 +39,71 @@ export default function Cart() {
     dispatch(removeFromCart(producttId))
   }
 
+  const { getInputProps, getIncrementButtonProps, getDecrementButtonProps } =
+    useNumberInput({
+      // defaultValue: cartItems.map((item)=> item.quantity)
+    })
+
+  const inc = getIncrementButtonProps()
+  const dec = getDecrementButtonProps()
+  const input = getInputProps()
+
   return (
     <Layout>
-      <Container maxW="container.xl">
-        <Heading>Votre Panier</Heading>
+      <Container maxW="container.xl" my="20">
+        <Heading mb="10">Votre Panier</Heading>
         {cartItems.map((product) => (
-          <Box key={product.id}>
-            <Heading>{product.attributes.name}</Heading>
-            <Image
-              src={product.attributes.image.data.attributes.url}
-              width={100}
-              height={100}
-              alt={product.attributes.name}
-            />
+          <SimpleGrid
+            key={product.id}
+            columns={4}
+            alignItems="center"
+            gap="30"
+            mb="5"
+          >
+            <HStack spacing="8">
+              <Image
+                src={product.attributes.image.data.attributes.url}
+                alt={product.attributes.name}
+                borderRadius="xl"
+                w="80px"
+              />
 
-            <Box>
-              <button onClick={() => handleDecrementQty(product.id)}>-</button>
-              <p>{product.quantity}</p>
-              <button onClick={() => handleIncrementQty(product.id)}>+</button>
-              <button onClick={() => handleDeleteFromCart(product.id)}>
-                Delete Product
-              </button>
-            </Box>
-          </Box>
+              <Heading fontSize="md">{product.attributes.name}</Heading>
+            </HStack>
+
+            <HStack spacing="4">
+              <Button
+                size="xs"
+                {...dec}
+                onClick={() => handleDecrementQty(product.id)}
+              >
+                -
+              </Button>
+              <Input
+                {...input}
+                value={product.quantity}
+                size="sm"
+                height="25px"
+                width="50px"
+              />
+              <Button
+                size="xs"
+                {...inc}
+                onClick={() => handleIncrementQty(product.id)}
+              >
+                +
+              </Button>
+              <Box>
+                <Button
+                  color="red"
+                  bgColor="white"
+                  onClick={() => handleDeleteFromCart(product.id)}
+                >
+                  <DeleteIcon />
+                </Button>
+              </Box>
+            </HStack>
+          </SimpleGrid>
         ))}
       </Container>
     </Layout>
