@@ -60,7 +60,7 @@ export default function Cart() {
     <Layout>
       <Container maxW="container.xl" my="20">
         <SimpleGrid
-          columns={2}
+          columns={{ sm: 1, base: 1, md: 1, xl: 2 }}
           spacing="20"
           alignItems="center"
           justifyContent="space-between"
@@ -71,51 +71,58 @@ export default function Cart() {
               <HStack
                 key={product.id}
                 spacing="20"
+                w="100%"
                 alignItems="center"
                 py={index !== cartItems.length ? "5" : "0"}
                 borderTop="2px dashed rgb(229, 231, 235)"
               >
-                <HStack spacing="5">
-                  <Image
-                    src={product.attributes.image.data.attributes.url}
-                    alt={product.attributes.name}
-                    borderRadius="xl"
-                    w="70px"
-                  />
-                  <Heading fontSize="md">{product.attributes.name}</Heading>
-                </HStack>
+                <HStack spacing="20" align="center">
+                  <HStack spacing="5">
+                    <Image
+                      src={product.attributes.image.data.attributes.url}
+                      alt={product.attributes.name}
+                      borderRadius="xl"
+                      w="70px"
+                    />
+                    <Heading fontSize={{ base: "sm", md: "md" }}>
+                      {product.attributes.name}
+                    </Heading>
+                  </HStack>
 
-                <HStack>
-                  <Button
-                    size="xs"
-                    {...dec}
-                    onClick={() => handleDecrementQty(product.id)}
-                  >
-                    -
-                  </Button>
-                  <Input
-                    {...input}
-                    value={product.quantity}
-                    size="sm"
-                    height="25px"
-                    width="50px"
-                    borderRadius="xl"
-                  />
-                  <Button
-                    size="xs"
-                    {...inc}
-                    onClick={() => handleIncrementQty(product.id)}
-                  >
-                    +
-                  </Button>
-                  <Box>
-                    <Button
-                      bgColor="white"
-                      onClick={() => handleDeleteFromCart(product.id)}
-                    >
-                      <DeleteIcon />
-                    </Button>
-                  </Box>
+                  <HStack spacing="20" justify="center">
+                    <HStack>
+                      <Button
+                        size="xs"
+                        {...dec}
+                        onClick={() => handleDecrementQty(product.id)}
+                      >
+                        -
+                      </Button>
+                      <Input
+                        {...input}
+                        value={product.quantity}
+                        size="sm"
+                        height="25px"
+                        width="50px"
+                        borderRadius="xl"
+                      />
+                      <Button
+                        size="xs"
+                        {...inc}
+                        onClick={() => handleIncrementQty(product.id)}
+                      >
+                        +
+                      </Button>
+                    </HStack>
+                    <Box>
+                      <Button
+                        bgColor="white"
+                        onClick={() => handleDeleteFromCart(product.id)}
+                      >
+                        <DeleteIcon />
+                      </Button>
+                    </Box>
+                  </HStack>
                 </HStack>
               </HStack>
             ))}
