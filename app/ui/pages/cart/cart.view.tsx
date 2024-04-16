@@ -22,7 +22,11 @@ import {
   FormControl,
   FormLabel,
   SimpleGrid,
+  VStack,
+  FormErrorMessage,
+  Textarea,
 } from "@chakra-ui/react"
+import { useContactForm } from "@app/app/validation/contactForm"
 
 export default function Cart() {
   const cartItems = useAppSelector((store) => store.store)
@@ -50,16 +54,17 @@ export default function Cart() {
   const dec = getDecrementButtonProps()
   const input = getInputProps()
 
+  const { form, onSubmit } = useContactForm()
+
   return (
     <Layout>
       <Container maxW="container.xl" my="20">
-        <SimpleGrid columns={2} gap="20">
+        <SimpleGrid columns={2} spacing="20">
           <Box>
             <Heading mb="10">Votre Panier</Heading>
             {cartItems.map((product, index) => (
               <HStack
                 key={product.id}
-                // w="100%"
                 spacing="20"
                 alignItems="center"
                 py={index !== cartItems.length ? "5" : "0"}
@@ -89,6 +94,7 @@ export default function Cart() {
                     size="sm"
                     height="25px"
                     width="50px"
+                    borderRadius="xl"
                   />
                   <Button
                     size="xs"
@@ -109,15 +115,70 @@ export default function Cart() {
               </HStack>
             ))}
           </Box>
-          <FormControl isRequired w="60%">
-            <FormLabel>Nom</FormLabel>
-            <Input placeholder="First name" />
-            <FormLabel>Prenom</FormLabel>
-            <Input placeholder="First name" />
-            <FormLabel>First name</FormLabel>
-            <Input placeholder="First name" />
-            <Button>Button</Button>
-          </FormControl>
+          <Box
+            boxShadow="0px 0px 25px rgba(54, 91, 125, 0.2)"
+            p="6"
+            rounded="2xl"
+            w="70%"
+          >
+            <form onSubmit={form.onSubmit(onSubmit)}>
+              <VStack spacing="5">
+                <FormControl isInvalid={!!form.errors.user_name}>
+                  <FormLabel htmlFor="user_name">Prénom et Nom</FormLabel>
+                  <Input
+                    id="user_name"
+                    placeholder="Prénom et Nom"
+                    {...form.getInputProps("user_name")}
+                  />
+                  {form.errors.user_name && (
+                    <FormErrorMessage>{form.errors.user_name}</FormErrorMessage>
+                  )}
+                </FormControl>
+
+                <FormControl isInvalid={!!form.errors.user_email}>
+                  <FormLabel htmlFor="user_email">Email</FormLabel>
+                  <Input
+                    id="user_email"
+                    placeholder="Votre email"
+                    {...form.getInputProps("user_email")}
+                  />
+                  {form.errors.user_email && (
+                    <FormErrorMessage>
+                      {form.errors.user_email}
+                    </FormErrorMessage>
+                  )}
+                </FormControl>
+
+                <FormControl isInvalid={!!form.errors.user_message}>
+                  <FormLabel htmlFor="user_message">Message</FormLabel>
+                  <Textarea
+                    id="user_message"
+                    placeholder="Message"
+                    {...form.getInputProps("user_message")}
+                  />
+                  {form.errors.user_message && (
+                    <FormErrorMessage>
+                      {form.errors.user_message}
+                    </FormErrorMessage>
+                  )}
+                </FormControl>
+
+                <Button
+                  type="submit"
+                  w="full"
+                  bg="#1799cf"
+                  textTransform="uppercase"
+                  py="6"
+                  letterSpacing="1px"
+                  color="white"
+                  _hover={{ bg: "#0c84bd" }}
+                  borderRadius="999rem"
+                >
+                  Demande de devis
+                </Button>
+              </VStack>
+            </form>
+          </Box>
         </SimpleGrid>
       </Container>
     </Layout>
