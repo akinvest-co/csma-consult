@@ -59,7 +59,12 @@ export default function Cart() {
   return (
     <Layout>
       <Container maxW="container.xl" my="20">
-        <SimpleGrid columns={2} spacing="20">
+        <SimpleGrid
+          columns={2}
+          spacing="20"
+          alignItems="center"
+          justifyContent="space-between"
+        >
           <Box>
             <Heading mb="10">Votre Panier</Heading>
             {cartItems.map((product, index) => (
@@ -119,7 +124,7 @@ export default function Cart() {
             boxShadow="0px 0px 25px rgba(54, 91, 125, 0.2)"
             p="6"
             rounded="2xl"
-            w="70%"
+            alignSelf="self-start"
           >
             <form onSubmit={form.onSubmit(onSubmit)}>
               <VStack spacing="5">
