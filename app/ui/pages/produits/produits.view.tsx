@@ -15,7 +15,6 @@ export default function ProduitsView({
 }) {
   const dispatch = useAppDispatch()
   const cartItems = useAppSelector((store) => store.store)
-  console.log(cartItems)
 
   const isProductInCart = cartItems.some((item) => item.id === product.id)
 

@@ -25,14 +25,28 @@ export const cartSlice = createSlice({
 
     incrementQty: (state, action: PayloadAction<number>) => {
       const productId = action.payload
-      const findProduct = state.find((product) => product.id === productId)
-      if (findProduct) findProduct.quantity += 1
+      const findProductIndex = state.findIndex(
+        (product) => product.id === productId,
+      )
+      if (findProductIndex !== -1) {
+        state[findProductIndex] = {
+          ...state[findProductIndex],
+          quantity: state[findProductIndex].quantity + 1,
+        }
+      }
     },
 
     decrementQty: (state, action: PayloadAction<number>) => {
       const productId = action.payload
-      const findProduct = state.find((product) => product.id === productId)
-      if (findProduct && findProduct.quantity > 1) findProduct.quantity -= 1
+      const productIndex = state.findIndex(
+        (product) => product.id === productId,
+      )
+      if (productIndex !== -1 && state[productIndex].quantity > 1) {
+        state[productIndex] = {
+          ...state[productIndex],
+          quantity: state[productIndex].quantity - 1,
+        }
+      }
     },
   },
 })

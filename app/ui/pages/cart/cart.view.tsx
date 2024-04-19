@@ -30,6 +30,7 @@ import { useContactForm } from "@app/app/validation/contactForm"
 
 export default function Cart() {
   const cartItems = useAppSelector((store) => store.store)
+  console.log(cartItems)
 
   const dispatch = useAppDispatch()
 
