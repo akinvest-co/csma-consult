@@ -6,10 +6,10 @@ const Contact = () => {
   return (
     <Box>
       <VStack align="start" spacing="8" mb="8">
-        <Text color="#0b6999">Nous Rejoindre</Text>
-        <Heading size="2xl" lineHeight="shorter">
+        <Text color="#0b6999">Nous Joindre</Text>
+        {/* <Heading size="2xl" lineHeight="shorter">
           Discutons, nous sommes sympas !
-        </Heading>
+        </Heading> */}
         <Text color="rgba(107,114,128,1)">
           Nous sommes impatients d'avoir de vos nouvelles et de vous accompagner
           dans toutes vos démarches. Merci de nous faire confiance.

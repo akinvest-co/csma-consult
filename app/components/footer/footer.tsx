@@ -48,8 +48,8 @@ export default function Footer() {
                 key={id}
                 as={NextLink}
                 href={path}
-                marginRight={id === 5 ? 0 : "30px"}
-                marginBottom={id === 5 ? 0 : "1"}
+                marginRight={id === 6 ? 0 : "30px"}
+                marginBottom={id === 6 ? 0 : "1"}
                 fontWeight={{ base: "none", md: "bold" }}
               >
                 {label}
