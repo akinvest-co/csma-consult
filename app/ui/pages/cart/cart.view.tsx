@@ -87,7 +87,7 @@ export default function Cart() {
                       borderRadius="xl"
                       w={{ sm: "50px", base: "50px", md: "70px" }}
                     />
-                    <Heading fontSize={{ base: "x-small", md: "md" }}>
+                    <Heading fontSize={{ base: "x-small", md: "lg" }}>
                       {product.attributes.name}
                     </Heading>
                   </HStack>
