@@ -18,7 +18,7 @@ import {
   Input,
   Image,
   useNumberInput,
-  Flex,
+  Text,
   FormControl,
   FormLabel,
   SimpleGrid,
@@ -66,7 +66,10 @@ export default function Cart() {
           justifyContent="space-between"
         >
           <Box>
-            <Heading mb="10">Votre Panier</Heading>
+            <HStack mb="10" justify="space-between">
+              <Heading>Votre Panier </Heading>
+              <Text>{cartItems.length} produit(s)</Text>
+            </HStack>
             {cartItems.map((product, index) => (
               <HStack
                 key={product.id}
@@ -82,14 +85,14 @@ export default function Cart() {
                       src={product.attributes.image.data.attributes.url}
                       alt={product.attributes.name}
                       borderRadius="xl"
-                      w="70px"
+                      w={{ sm: "50px", base: "50px", md: "70px" }}
                     />
                     <Heading fontSize={{ base: "sm", md: "md" }}>
                       {product.attributes.name}
                     </Heading>
                   </HStack>
 
-                  <HStack spacing="20" justify="center">
+                  <HStack spacing="2" justify="center">
                     <HStack>
                       <Button
                         size="xs"

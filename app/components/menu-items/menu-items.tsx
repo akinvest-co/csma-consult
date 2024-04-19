@@ -4,6 +4,7 @@ export const menuItems = [
   { id: 3, label: "Contact", path: "/contact" },
   { id: 4, label: "Support", path: "/support" },
   { id: 5, label: "Blog", path: "/blog" },
+  { id: 6, label: "Panier", path: "/cart" },
 ]
 
 export const footerMenu = [
