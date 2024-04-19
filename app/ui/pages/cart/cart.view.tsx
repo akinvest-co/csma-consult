@@ -27,10 +27,10 @@ import {
   Textarea,
 } from "@chakra-ui/react"
 import { useContactForm } from "@app/app/validation/contactForm"
+import Link from "next/link"
 
 export default function Cart() {
   const cartItems = useAppSelector((store) => store.store)
-  console.log(cartItems)
 
   const dispatch = useAppDispatch()
 
@@ -63,7 +63,7 @@ export default function Cart() {
         <SimpleGrid
           columns={{ sm: 1, base: 1, md: 1, xl: 2 }}
           spacing="20"
-          alignItems="center"
+          // alignItems="center"
           justifyContent="space-between"
         >
           <Box>
@@ -71,6 +71,26 @@ export default function Cart() {
               <Heading>Votre Panier</Heading>
               <Text>{cartItems.length} produit(s)</Text>
             </HStack>
+
+            {cartItems.length === 0 && (
+              <VStack align="start" spacing="5">
+                <Text>Votre panier est vide !</Text>
+                <Button
+                  type="submit"
+                  // w="full"
+                  bg="#1799cf"
+                  textTransform="uppercase"
+                  py="6"
+                  letterSpacing="1px"
+                  color="white"
+                  _hover={{ bg: "#0c84bd" }}
+                  borderRadius="999rem"
+                >
+                  Parcourissez les produits
+                </Button>
+              </VStack>
+            )}
+
             {cartItems.map((product, index) => (
               <HStack
                 key={product.id}
