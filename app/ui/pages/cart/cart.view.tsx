@@ -66,8 +66,8 @@ export default function Cart() {
           justifyContent="space-between"
         >
           <Box>
-            <HStack mb="10" justify="space-between">
-              <Heading>Votre Panier </Heading>
+            <HStack mb="10" justify="space-between" alignItems="center">
+              <Heading>Votre Panier</Heading>
               <Text>{cartItems.length} produit(s)</Text>
             </HStack>
             {cartItems.map((product, index) => (
@@ -106,7 +106,7 @@ export default function Cart() {
                         value={product.quantity}
                         size="sm"
                         height="25px"
-                        width="50px"
+                        width="45px"
                         borderRadius="xl"
                       />
                       <Button
