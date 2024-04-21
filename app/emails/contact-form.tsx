@@ -1,4 +1,4 @@
-"use client"
+// "use client"
 
 import { useContactForm } from "@app/app/validation/contactForm"
 import {
@@ -12,8 +12,9 @@ import {
   Button,
 } from "@chakra-ui/react"
 import { sendEmail } from "./sendEmails"
+import { useAppSelector } from "../hooks/cart/hooks"
 
-export default function ContactFormEmail() {
+export default function ContactForm() {
   const { form, onSubmit } = useContactForm()
 
   return (
@@ -67,7 +68,7 @@ export default function ContactFormEmail() {
           <FormControl>
             <textarea
               name="titleProduct"
-              //   defaultValue={cartItems.map((product) => product.attributes.Titre)}
+              // defaultValue={cartItems.map((product) => product.attributes.name)}
               hidden
             />
           </FormControl>
