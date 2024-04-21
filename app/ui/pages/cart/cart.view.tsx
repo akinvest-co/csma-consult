@@ -1,5 +1,6 @@
 "use client"
 
+import ContactFormEmail from "@app/app/emails/contact-form"
 import { useAppDispatch, useAppSelector } from "@app/app/hooks/cart/hooks"
 import Layout from "@app/app/layout/layout.page"
 import {
@@ -19,15 +20,9 @@ import {
   Image,
   useNumberInput,
   Text,
-  FormControl,
-  FormLabel,
   SimpleGrid,
   VStack,
-  FormErrorMessage,
-  Textarea,
 } from "@chakra-ui/react"
-import { useContactForm } from "@app/app/validation/contactForm"
-import Link from "next/link"
 
 export default function Cart() {
   const cartItems = useAppSelector((store) => store.store)
@@ -55,8 +50,6 @@ export default function Cart() {
   const dec = getDecrementButtonProps()
   const input = getInputProps()
 
-  const { form, onSubmit } = useContactForm()
-
   return (
     <Layout>
       <Container maxW="container.xl" my="20">
@@ -68,8 +61,10 @@ export default function Cart() {
         >
           <Box>
             <HStack mb="10" justify="space-between" alignItems="center">
-              <Heading>Votre Panier</Heading>
-              <Text>{cartItems.length} produit(s)</Text>
+              <Heading fontSize={{ sm: "medium", base: "md", md: "larger" }}>
+                Votre Panier
+              </Heading>
+              <Text fontSize="small">{cartItems.length} produit(s)</Text>
             </HStack>
 
             {cartItems.length === 0 && (
@@ -77,7 +72,6 @@ export default function Cart() {
                 <Text>Votre panier est vide !</Text>
                 <Button
                   type="submit"
-                  // w="full"
                   bg="#1799cf"
                   textTransform="uppercase"
                   py="6"
@@ -100,7 +94,7 @@ export default function Cart() {
                 py={index !== cartItems.length ? "5" : "0"}
                 borderTop="2px dashed rgb(229, 231, 235)"
               >
-                <HStack spacing="20" align="center">
+                <HStack spacing="10" align="center">
                   <HStack spacing="5">
                     <Image
                       src={product.attributes.image.data.attributes.url}
@@ -108,7 +102,7 @@ export default function Cart() {
                       borderRadius="xl"
                       w={{ sm: "50px", base: "50px", md: "70px" }}
                     />
-                    <Heading fontSize={{ base: "x-small", md: "lg" }}>
+                    <Heading fontSize={{ base: "x-small", md: "md" }}>
                       {product.attributes.name}
                     </Heading>
                   </HStack>
@@ -151,70 +145,7 @@ export default function Cart() {
               </HStack>
             ))}
           </Box>
-          <Box
-            boxShadow="0px 0px 25px rgba(54, 91, 125, 0.2)"
-            p="6"
-            rounded="2xl"
-            alignSelf="self-start"
-          >
-            <form onSubmit={form.onSubmit(onSubmit)}>
-              <VStack spacing="5">
-                <FormControl isInvalid={!!form.errors.user_name}>
-                  <FormLabel htmlFor="user_name">Prénom et Nom</FormLabel>
-                  <Input
-                    id="user_name"
-                    placeholder="Prénom et Nom"
-                    {...form.getInputProps("user_name")}
-                  />
-                  {form.errors.user_name && (
-                    <FormErrorMessage>{form.errors.user_name}</FormErrorMessage>
-                  )}
-                </FormControl>
-
-                <FormControl isInvalid={!!form.errors.user_email}>
-                  <FormLabel htmlFor="user_email">Email</FormLabel>
-                  <Input
-                    id="user_email"
-                    placeholder="Votre email"
-                    {...form.getInputProps("user_email")}
-                  />
-                  {form.errors.user_email && (
-                    <FormErrorMessage>
-                      {form.errors.user_email}
-                    </FormErrorMessage>
-                  )}
-                </FormControl>
-
-                <FormControl isInvalid={!!form.errors.user_message}>
-                  <FormLabel htmlFor="user_message">Message</FormLabel>
-                  <Textarea
-                    id="user_message"
-                    placeholder="Message"
-                    {...form.getInputProps("user_message")}
-                  />
-                  {form.errors.user_message && (
-                    <FormErrorMessage>
-                      {form.errors.user_message}
-                    </FormErrorMessage>
-                  )}
-                </FormControl>
-
-                <Button
-                  type="submit"
-                  w="full"
-                  bg="#1799cf"
-                  textTransform="uppercase"
-                  py="6"
-                  letterSpacing="1px"
-                  color="white"
-                  _hover={{ bg: "#0c84bd" }}
-                  borderRadius="999rem"
-                >
-                  Demande de devis
-                </Button>
-              </VStack>
-            </form>
-          </Box>
+          <ContactFormEmail />
         </SimpleGrid>
       </Container>
     </Layout>

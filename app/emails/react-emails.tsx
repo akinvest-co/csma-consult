@@ -2,12 +2,14 @@ import { Container, Heading, Html, Text } from "@react-email/components"
 
 type ContactFormEmailProps = {
   name: string
+  message: string
   titleProduct: string
   qtyProduct: number
 }
 
 export function ContactFormEmail({
   name,
+  message,
   titleProduct,
   qtyProduct,
 }: ContactFormEmailProps) {
@@ -20,6 +22,7 @@ export function ContactFormEmail({
         <Heading>Produits Sélectionnés : </Heading>
 
         <Text>{titleProduct}</Text>
+        <Text>{message}</Text>
         <Text>{qtyProduct}</Text>
       </Container>
     </Html>
