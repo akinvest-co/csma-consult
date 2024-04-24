@@ -3,13 +3,9 @@ import ProduitsView from "./produits.view"
 import { Products } from "@app/app/types/products.types"
 import Layout from "@app/app/layout/layout.page"
 import { Box, Container, Heading, Select, SimpleGrid } from "@chakra-ui/react"
-import { getCategories } from "@app/app/lib/api/categories"
 
 export default async function Products() {
   const { data: products } = await getProducts()
-
-  const { data: categories } = await getCategories()
-  console.log(categories)
 
   return (
     <Layout>
