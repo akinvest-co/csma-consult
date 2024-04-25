@@ -8,9 +8,15 @@ import { getCategories, getSubCategories } from "@app/app/lib/api/categories"
 export default async function Products() {
   const { data: products } = await getProducts()
   const { data: categories } = await getCategories()
-  console.log(categories)
+  console.log(
+    categories.map((cat: any) =>
+      cat.attributes.sub_categories.data.map(
+        (category: any) => category.attributes.name,
+      ),
+    ),
+  )
 
-  // const { data: subcategories } = await getSubCategories()
+  const { data: subcategories } = await getSubCategories()
 
   return (
     <Layout>
@@ -36,12 +42,11 @@ export default async function Products() {
                 // placeholder="CDE & Convertisseur"
                 bg="white"
               >
-                <option
-                  value={cat.attributes.sub_categories.data.map(
+                <option value="">
+                  {cat.attributes.name} -{" "}
+                  {cat.attributes.sub_categories.data.map(
                     (category: any) => category.attributes.name,
                   )}
-                >
-                  {cat.attributes.name}
                 </option>
               </Select>
             ))}
