@@ -23,6 +23,7 @@ import {
   SimpleGrid,
   VStack,
 } from "@chakra-ui/react"
+import Link from "next/link"
 
 export default function Cart() {
   const cartItems = useAppSelector((store) => store.store)
@@ -56,7 +57,6 @@ export default function Cart() {
         <SimpleGrid
           columns={{ sm: 1, base: 1, md: 1, xl: 2 }}
           spacing="20"
-          // alignItems="center"
           justifyContent="space-between"
         >
           <Box>
@@ -72,6 +72,8 @@ export default function Cart() {
                 <Text>Votre panier est vide !</Text>
                 <Button
                   type="submit"
+                  as={Link}
+                  href="/produits"
                   bg="#1799cf"
                   textTransform="uppercase"
                   py="6"

@@ -8,15 +8,6 @@ import { getCategories, getSubCategories } from "@app/app/lib/api/categories"
 export default async function Products() {
   const { data: products } = await getProducts()
   const { data: categories } = await getCategories()
-  console.log(
-    categories.map((cat: any) =>
-      cat.attributes.sub_categories.data.map(
-        (category: any) => category.attributes.name,
-      ),
-    ),
-  )
-
-  const { data: subcategories } = await getSubCategories()
 
   return (
     <Layout>
@@ -33,21 +24,16 @@ export default async function Products() {
           <SimpleGrid
             columns={{ base: 2, md: 4 }}
             spacing={{ base: "5", md: "10" }}
+            justifyContent="center"
           >
             {categories.map((cat: any) => (
-              <Select
-                key={cat}
-                size="sm"
-                borderRadius="xl"
-                // placeholder="CDE & Convertisseur"
-                bg="white"
-              >
-                <option value="">
-                  {cat.attributes.name} -{" "}
-                  {cat.attributes.sub_categories.data.map(
-                    (category: any) => category.attributes.name,
-                  )}
-                </option>
+              <Select key={cat.id} size="sm" borderRadius="xl" bg="white">
+                <option value="">{cat.attributes.name}</option>
+                {cat.attributes.sub_categories.data.map((subcategory: any) => (
+                  <option key={subcategory.id} value={subcategory.id}>
+                    {subcategory.attributes.name}
+                  </option>
+                ))}
               </Select>
             ))}
           </SimpleGrid>
