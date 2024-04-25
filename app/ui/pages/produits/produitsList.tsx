@@ -3,7 +3,7 @@ import ProduitsView from "./produits.view"
 import { Products } from "@app/app/types/products.types"
 import Layout from "@app/app/layout/layout.page"
 import { Box, Container, Heading, Select, SimpleGrid } from "@chakra-ui/react"
-import { getCategories, getSubCategories } from "@app/app/lib/api/categories"
+import { getCategories } from "@app/app/lib/api/categories"
 
 export default async function Products() {
   const { data: products } = await getProducts()
@@ -28,7 +28,7 @@ export default async function Products() {
           >
             {categories.map((cat: any) => (
               <Select key={cat.id} size="sm" borderRadius="xl" bg="white">
-                <option value="">{cat.attributes.name}</option>
+                <option>{cat.attributes.name}</option>
                 {cat.attributes.sub_categories.data.map((subcategory: any) => (
                   <option key={subcategory.id} value={subcategory.id}>
                     {subcategory.attributes.name}
