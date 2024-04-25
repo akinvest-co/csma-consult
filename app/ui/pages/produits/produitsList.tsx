@@ -3,9 +3,14 @@ import ProduitsView from "./produits.view"
 import { Products } from "@app/app/types/products.types"
 import Layout from "@app/app/layout/layout.page"
 import { Box, Container, Heading, Select, SimpleGrid } from "@chakra-ui/react"
+import { getCategories, getSubCategories } from "@app/app/lib/api/categories"
 
 export default async function Products() {
   const { data: products } = await getProducts()
+  const { data: categories } = await getCategories()
+  console.log(categories)
+
+  // const { data: subcategories } = await getSubCategories()
 
   return (
     <Layout>
@@ -23,46 +28,23 @@ export default async function Products() {
             columns={{ base: 2, md: 4 }}
             spacing={{ base: "5", md: "10" }}
           >
-            <Select
-              size="sm"
-              borderRadius="xl"
-              placeholder="CDE & Convertisseur"
-              bg="white"
-            >
-              <option value="option1">Produits 1</option>
-              <option value="option2">Produits 2</option>
-              <option value="option3">Produits 3</option>
-            </Select>
-            <Select
-              size="sm"
-              borderRadius="xl"
-              placeholder="Modules Optiques"
-              bg="white"
-            >
-              <option value="option1">Produits 1</option>
-              <option value="option2">Produits 2</option>
-              <option value="option3">Produits 3</option>
-            </Select>
-            <Select
-              size="sm"
-              borderRadius="xl"
-              placeholder="Jarretiers & DAAC/AOC"
-              bg="white"
-            >
-              <option value="option1">Produits 1</option>
-              <option value="option2">Produits 2</option>
-              <option value="option3">Produits 3</option>
-            </Select>
-            <Select
-              size="sm"
-              borderRadius="xl"
-              placeholder="XMUX & DEMUX"
-              bg="white"
-            >
-              <option value="option1">Produits 1</option>
-              <option value="option2">Produits 2</option>
-              <option value="option3">Produits 3</option>
-            </Select>
+            {categories.map((cat: any) => (
+              <Select
+                key={cat}
+                size="sm"
+                borderRadius="xl"
+                // placeholder="CDE & Convertisseur"
+                bg="white"
+              >
+                <option
+                  value={cat.attributes.sub_categories.data.map(
+                    (category: any) => category.attributes.name,
+                  )}
+                >
+                  {cat.attributes.name}
+                </option>
+              </Select>
+            ))}
           </SimpleGrid>
         </Container>
       </Box>
