@@ -7,6 +7,11 @@ import { getCategories } from "@app/app/lib/api/categories"
 
 export default async function Products() {
   const { data: products } = await getProducts()
+  console.log(
+    products.map(
+      (produCat: any) => produCat.attributes.category.data.attributes,
+    ),
+  )
   const { data: categories } = await getCategories()
 
   return (
@@ -22,7 +27,7 @@ export default async function Products() {
             Par Catégories
           </Heading>
           <SimpleGrid
-            columns={{ base: 2, md: 4 }}
+            columns={{ base: 2, md: 3 }}
             spacing={{ base: "5", md: "10" }}
             justifyContent="center"
           >
