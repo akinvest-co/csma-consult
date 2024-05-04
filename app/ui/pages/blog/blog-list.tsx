@@ -1,9 +1,10 @@
-"use client"
+// "use client"
 
 import Layout from "@app/app/layout/layout.page"
-import { blogData } from "@app/app/lib/static-data/pages/blog"
-import useSearchActions from "@app/app/lib/static-data/pages/blog/actions"
-import { BlogItem } from "@app/app/lib/static-data/pages/blog/definitions"
+import { getArticles } from "@app/app/lib/api/blog"
+// import { blogData } from "@app/app/lib/static-data/pages/blog"
+// import { BlogItem } from "@app/app/lib/static-data/pages/blog/definitions"
+import { Articles } from "@app/app/types/blog.types"
 import { Link } from "@chakra-ui/next-js"
 import {
   Container,
@@ -20,14 +21,8 @@ import {
 import Image from "next/image"
 import { Search } from "tabler-icons-react"
 
-export default function BlogList() {
-  const {
-    searchTerm,
-    selectedCategory,
-    handleCategoryClick,
-    handleSearch,
-    filteredData,
-  } = useSearchActions(blogData)
+export default async function BlogList() {
+  const { data: articles } = await getArticles()
 
   return (
     <Layout>
@@ -43,7 +38,7 @@ export default function BlogList() {
             Actualités et Mises à Jour
           </Heading>
         </Flex>
-        <Box position="absolute" bottom="-20px">
+        {/* <Box position="absolute" bottom="-20px">
           <Input
             placeholder="Cherchez un produit, catégorie..."
             bgColor="white"
@@ -69,11 +64,11 @@ export default function BlogList() {
           >
             <Search size={22} color="#A0AEC0" />
           </Box>
-        </Box>
+        </Box> */}
       </Flex>
 
       <Container maxW="container.lg" my="20">
-        <HStack
+        {/* <HStack
           mb={{ base: "10", md: "20" }}
           spacing={{ base: "2", md: "8" }}
           justify={{ base: "flex-start", md: "center" }}
@@ -96,20 +91,20 @@ export default function BlogList() {
               {blog.category}
             </Button>
           ))}
-        </HStack>
+        </HStack> */}
 
         <SimpleGrid columns={{ sm: 2, md: 2, lg: 3 }} spacing="40px">
-          {filteredData.map((blog: BlogItem, index: number) => (
+          {articles.map((article: Articles) => (
             <Box
-              key={index}
+              key={article.id}
               padding="20px"
               borderRadius="xl"
               overflow="hidden"
               boxShadow="rgb(145 158 171 / 24%) 0px 0px 2px 0px,rgb(145 158 171 / 24%) 0px 16px 32px -4px"
             >
               <Image
-                src={blog.image}
-                alt={blog.title}
+                src={article.attributes.image.data.attributes.url}
+                alt={article.attributes.title}
                 objectFit="cover"
                 style={{
                   borderRadius: "5px",
@@ -131,19 +126,19 @@ export default function BlogList() {
                     borderRadius="md"
                     color="#0b6999"
                   >
-                    {blog.category}
+                    {article.attributes.blog_categories.data.attributes.name}
                   </Text>
                   <Text fontSize="small" color="hsl(0, 0%, 50%)">
-                    {blog.date}
+                    {article.attributes.date}
                   </Text>
                 </HStack>
-                <Link href={`blog/${blog.title}`}>
+                <Link href={`article/${article.attributes.title}`}>
                   <Heading fontSize="lg" lineHeight="short" noOfLines={2}>
-                    {blog.title}
+                    {article.attributes.title}
                   </Heading>
                 </Link>
                 <Text fontSize="sm" noOfLines={2} color="hsl(0, 0%, 50%)">
-                  {blog.description}
+                  {article.attributes.body}
                 </Text>
               </VStack>
             </Box>
