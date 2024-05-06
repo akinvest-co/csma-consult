@@ -17,6 +17,12 @@ export interface BlogCategory {
       slug: string
     }
   }
+
+  id: number
+  attributes: {
+    name: string
+    slug: string
+  }
 }
 
 export interface ArticlesProps {
