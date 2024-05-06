@@ -1,60 +1,62 @@
-import { useState } from 'react'
-import Fuse from 'fuse.js'
-import {
-  BlogItem,
-  SearchActions,
-} from '@app/app/lib/static-data/pages/blog/definitions'
-import { usePathname, useRouter, useSearchParams } from 'next/navigation'
+export const data = {}
 
-const useSearchActions = (blogData: BlogItem[]): SearchActions => {
-  const [searchTerm, setSearchTerm] = useState('')
-  const [selectedCategory, setSelectedCategory] = useState('')
+// import { useState } from 'react'
+// import Fuse from 'fuse.js'
+// import {
+//   BlogItem,
+//   SearchActions,
+// } from '@app/app/lib/static-data/pages/blog/definitions'
+// import { usePathname, useRouter, useSearchParams } from 'next/navigation'
 
-  const fuseOptions = {
-    keys: ['title', 'category'],
-  }
+// const useSearchActions = (blogData: BlogItem[]): SearchActions => {
+//   const [searchTerm, setSearchTerm] = useState('')
+//   const [selectedCategory, setSelectedCategory] = useState('')
 
-  const fuse = new Fuse(blogData, fuseOptions)
+//   const fuseOptions = {
+//     keys: ['title', 'category'],
+//   }
 
-  const searchData = searchTerm
-    ? fuse.search(searchTerm).map((result) => result.item)
-    : blogData
+//   const fuse = new Fuse(blogData, fuseOptions)
 
-  const filteredData =
-    selectedCategory && searchTerm === ''
-      ? blogData.filter((item) => item.category === selectedCategory)
-      : searchData
+//   const searchData = searchTerm
+//     ? fuse.search(searchTerm).map((result) => result.item)
+//     : blogData
 
-  const handleCategoryClick = (category: string) => {
-    setSelectedCategory(category === selectedCategory ? '' : category)
-    setSearchTerm('')
-  }
+//   const filteredData =
+//     selectedCategory && searchTerm === ''
+//       ? blogData.filter((item) => item.category === selectedCategory)
+//       : searchData
 
-  const searchParams = useSearchParams()
-  const pathname = usePathname()
-  const { replace } = useRouter()
+//   const handleCategoryClick = (category: string) => {
+//     setSelectedCategory(category === selectedCategory ? '' : category)
+//     setSearchTerm('')
+//   }
 
-  const handleSearch = (term: string) => {
-    const params = new URLSearchParams(searchParams)
-    if (term) {
-      params.set('query', term)
-    } else {
-      params.delete('query')
-    }
+//   const searchParams = useSearchParams()
+//   const pathname = usePathname()
+//   const { replace } = useRouter()
 
-    replace(`${pathname}?${params.toString()}`)
+//   const handleSearch = (term: string) => {
+//     const params = new URLSearchParams(searchParams)
+//     if (term) {
+//       params.set('query', term)
+//     } else {
+//       params.delete('query')
+//     }
 
-    setSearchTerm(term)
-    setSelectedCategory('')
-  }
+//     replace(`${pathname}?${params.toString()}`)
 
-  return {
-    searchTerm,
-    selectedCategory,
-    handleCategoryClick,
-    handleSearch,
-    filteredData,
-  }
-}
+//     setSearchTerm(term)
+//     setSelectedCategory('')
+//   }
 
-export default useSearchActions
+//   return {
+//     searchTerm,
+//     selectedCategory,
+//     handleCategoryClick,
+//     handleSearch,
+//     filteredData,
+//   }
+// }
+
+// export default useSearchActions

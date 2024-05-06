@@ -27,7 +27,7 @@ export interface ArticlesProps {
     date: string
     slug: string
     image: ImageBlog
-    blog_categories: BlogCategory
+    blog_category: BlogCategory
   }
 }
 

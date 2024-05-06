@@ -7,6 +7,8 @@ import { getCategories } from "@app/app/lib/api/categories"
 
 export default async function Products() {
   const { data: products } = await getProducts()
+  console.log(products.map((pr: Products) => pr.attributes.category))
+
   const { data: categories } = await getCategories()
 
   return (
