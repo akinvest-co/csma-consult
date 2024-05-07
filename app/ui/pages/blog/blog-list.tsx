@@ -77,25 +77,23 @@ export default async function BlogList() {
           justify={{ base: "flex-start", md: "center" }}
           flexWrap="wrap"
         >
-          {categories
-            .slice(0, 5)
-            .map((category: BlogCategory, index: number) => (
-              <Button
-                key={index}
-                // variant={blog.category === selectedCategory ? "solid" : "outline"}
-                // bgColor={blog.category === selectedCategory ? "#e1f2fd" : "white"}
-                // color={blog.category === selectedCategory ? "#0b6999" : "normal"}
-                _hover={{ bgColor: "#e1f2fd", color: "#0b6999" }}
-                // onClick={() => handleCategoryClick(blog.category)}
-                letterSpacing="1px"
-                textTransform="uppercase"
-                fontSize={{ base: "0.6rem", md: "0.9rem" }}
-                py={{ base: "0.5rem", md: "1rem" }}
-                px={{ base: "0.5rem", md: "1rem" }}
-              >
-                {category.attributes.name}
-              </Button>
-            ))}
+          {categories.map((category: BlogCategory, index: number) => (
+            <Button
+              key={index}
+              // variant={blog.category === selectedCategory ? "solid" : "outline"}
+              // bgColor={blog.category === selectedCategory ? "#e1f2fd" : "white"}
+              // color={blog.category === selectedCategory ? "#0b6999" : "normal"}
+              _hover={{ bgColor: "#e1f2fd", color: "#0b6999" }}
+              // onClick={() => handleCategoryClick(blog.category)}
+              letterSpacing="1px"
+              textTransform="uppercase"
+              fontSize={{ base: "0.6rem", md: "0.6rem" }}
+              py={{ base: "0.5rem", md: "0.8rem" }}
+              px={{ base: "0.5rem", md: "0.8rem" }}
+            >
+              {category.attributes.name}
+            </Button>
+          ))}
         </HStack>
 
         <SimpleGrid columns={{ sm: 2, md: 2, lg: 3 }} gap="10">
