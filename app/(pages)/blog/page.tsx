@@ -5,6 +5,14 @@ export const metadata: Metadata = {
   title: "Actualités",
 }
 
-export default function Blog() {
-  return <BlogList />
+export default function Blog({
+  searchParams,
+}: {
+  searchParams?: {
+    query?: string
+  }
+}) {
+  const query = searchParams?.query || ""
+
+  return <BlogList query={query} />
 }

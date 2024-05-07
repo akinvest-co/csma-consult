@@ -1,9 +1,9 @@
-import { getProducts } from "@app/app/lib/api/products"
 import ProduitsView from "./produits.view"
 import { Products } from "@app/app/types/products.types"
 import Layout from "@app/app/layout/layout.page"
 import { Box, Container, Heading, Select, SimpleGrid } from "@chakra-ui/react"
-import { getCategories } from "@app/app/lib/api/categories"
+import { getProducts } from "@app/app/lib/api/products/products"
+import { getCategories } from "@app/app/lib/api/products/categories"
 
 export default async function Products() {
   const { data: products } = await getProducts()

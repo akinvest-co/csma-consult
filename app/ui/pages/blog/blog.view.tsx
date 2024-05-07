@@ -3,6 +3,7 @@
 import { Articles } from "@app/app/types/blog.types"
 import { Link } from "@chakra-ui/next-js"
 import { Box, HStack, Heading, Text, VStack } from "@chakra-ui/react"
+import Fuse from "fuse.js"
 import Image from "next/image"
 
 export default function BlogView({ article }: { article: Articles }) {
@@ -13,10 +14,7 @@ export default function BlogView({ article }: { article: Articles }) {
   })
 
   return (
-    <Box
-      key={article.id}
-      // boxShadow="rgb(145 158 171 / 24%) 0px 0px 2px 0px,rgb(145 158 171 / 24%) 0px 16px 32px -4px"
-    >
+    <Box key={article.id}>
       <Image
         src={article.attributes.image.data.attributes.url}
         width={article.attributes.image.data.attributes.width}
@@ -42,7 +40,7 @@ export default function BlogView({ article }: { article: Articles }) {
             {formatDate.format(new Date(article.attributes.date))}
           </Text>
         </HStack>
-        <Link href={`article/${article.attributes.title}`}>
+        <Link href={`blog/${article.attributes.slug}`}>
           <Heading fontSize="lg" lineHeight="short" noOfLines={2}>
             {article.attributes.title}
           </Heading>

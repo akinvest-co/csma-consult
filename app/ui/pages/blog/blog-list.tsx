@@ -1,22 +1,20 @@
-import { Search } from "tabler-icons-react"
 import { getCategories } from "@app/app/lib/api/blog/categories"
 import { getArticles } from "@app/app/lib/api/blog/blog"
 import { Articles, BlogCategory } from "@app/app/types/blog.types"
 
 import {
-  Box,
   Button,
   Container,
   Flex,
   HStack,
   Heading,
-  Input,
   SimpleGrid,
 } from "@chakra-ui/react"
 import BlogView from "./blog.view"
 import Layout from "@app/app/layout/layout.page"
+import SearchInput from "../search/search"
 
-export default async function BlogList() {
+export default async function BlogList({ query }: { query: string }) {
   const { data: articles } = await getArticles()
   const { data: categories } = await getCategories()
 
@@ -24,6 +22,14 @@ export default async function BlogList() {
     (prevArticle: Articles, nextArticle: Articles) =>
       new Date(nextArticle.attributes.date).getTime() -
       new Date(prevArticle.attributes.date).getTime(),
+  )
+
+  const filteredArticles = sortedArticles.filter(
+    (article: Articles) =>
+      article.attributes.title.toLowerCase().includes(query.toLowerCase()) ||
+      article.attributes.blog_category.data.attributes.name
+        .toLowerCase()
+        .includes(query.toLowerCase()),
   )
 
   return (
@@ -41,33 +47,7 @@ export default async function BlogList() {
           </Heading>
         </Flex>
 
-        <Box position="absolute" bottom="-20px">
-          <Input
-            placeholder="Cherchez un produit, catégorie..."
-            bgColor="white"
-            borderRadius="xl"
-            focusBorderColor="#1799cf"
-            p="6"
-            w={{ base: "100%", md: "400px" }}
-            pl="12"
-            zIndex="2"
-            style={{ borderLeft: "none" }}
-            // onChange={(e) => {
-            //   handleSearch(e.target.value)
-            // }}
-            // defaultValue={searchTerm}
-          />
-          <Box
-            position="absolute"
-            top="50%"
-            transform="translateY(-50%)"
-            left="4"
-            pointerEvents="none"
-            zIndex="3"
-          >
-            <Search size={22} color="#A0AEC0" />
-          </Box>
-        </Box>
+        <SearchInput placeholder="Chercher un article, catégorie" />
       </Flex>
 
       <Container maxW="container.lg" my="20">
@@ -97,7 +77,7 @@ export default async function BlogList() {
         </HStack>
 
         <SimpleGrid columns={{ sm: 2, md: 2, lg: 3 }} gap="10">
-          {sortedArticles.map((article: Articles) => (
+          {filteredArticles.map((article: Articles) => (
             <BlogView key={article.id} article={article} />
           ))}
         </SimpleGrid>

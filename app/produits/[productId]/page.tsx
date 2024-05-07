@@ -1,5 +1,4 @@
 import Layout from "@app/app/layout/layout.page"
-import { getProduct } from "@app/app/lib/api/products"
 import { BlocksRenderer } from "@strapi/blocks-react-renderer"
 
 import {
@@ -20,6 +19,7 @@ import {
 } from "@chakra-ui/react"
 import Image from "next/image"
 import NextLink from "next/link"
+import { getProduct } from "@app/app/lib/api/products/products"
 
 export default async function product({
   params,
