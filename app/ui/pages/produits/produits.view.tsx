@@ -40,7 +40,7 @@ export default function ProduitsView({
       }}
     >
       <Link
-        href={`/produits/${product.id}`}
+        href={`/produits/${product.attributes.slug}`}
         borderRadius="xl"
         bgColor="#f5f6f6"
         padding="5"

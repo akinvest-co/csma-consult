@@ -9,7 +9,7 @@ import { getArticle } from "@app/app/lib/api/blog/blog"
 export default async function article({
   params,
 }: {
-  params: { slug: number }
+  params: { slug: string }
 }) {
   const { data: article } = await getArticle(params.slug)
   console.log(article)
@@ -20,7 +20,7 @@ export default async function article({
         <VStack align="start" spacing="8">
           <Heading lineHeight="shorter"></Heading>
           <HStack>
-            <Text>Categorie</Text>
+            <Text>{article.attributes.title}</Text>
             <Text
               color="grey"
               suppressHydrationWarning

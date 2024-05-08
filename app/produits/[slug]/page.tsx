@@ -24,9 +24,10 @@ import { getProduct } from "@app/app/lib/api/products/products"
 export default async function product({
   params,
 }: {
-  params: { productId: number }
+  params: { slug: string }
 }) {
-  const { data: product } = await getProduct(params.productId)
+  const { data: product } = await getProduct(params.slug)
+  console.log(product)
 
   return (
     <Layout>

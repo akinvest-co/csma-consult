@@ -7,9 +7,9 @@ export async function getProducts() {
   return res.json()
 }
 
-export async function getProduct(productId: number) {
+export async function getProduct(slug: string) {
   const res = await fetch(
-    `https://csma-consult.onrender.com/api/products/${productId}?populate=*`,
+    `https://csma-consult.onrender.com/api/products/${slug}?populate=*`,
     { cache: "no-store" },
   )
 
