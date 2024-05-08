@@ -1,7 +1,17 @@
 import Layout from "@app/app/layout/layout.page"
 import { BlocksRenderer } from "@strapi/blocks-react-renderer"
 
-import { Box, Container, HStack, Heading, Text, VStack } from "@chakra-ui/react"
+import {
+  Box,
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  Container,
+  HStack,
+  Heading,
+  Text,
+  VStack,
+} from "@chakra-ui/react"
 import Image from "next/image"
 import NextLink from "next/link"
 import { getArticle } from "@app/app/lib/api/blog/blog"
@@ -17,6 +27,21 @@ export default async function article({
   return (
     <Layout>
       <Container maxW="container.lg" py="20">
+        <Breadcrumb>
+          <BreadcrumbItem>
+            <BreadcrumbLink href="/blog">Blog</BreadcrumbLink>
+          </BreadcrumbItem>
+
+          <BreadcrumbItem>
+            <BreadcrumbLink href="/">
+              {article.attributes.blog_category.data.attributes.name}
+            </BreadcrumbLink>
+          </BreadcrumbItem>
+
+          <BreadcrumbItem isCurrentPage>
+            <BreadcrumbLink href="#">{article.attributes.title}</BreadcrumbLink>
+          </BreadcrumbItem>
+        </Breadcrumb>
         <VStack align="start" spacing="8">
           <Heading lineHeight="shorter"></Heading>
           <HStack>
