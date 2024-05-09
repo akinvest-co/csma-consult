@@ -1,17 +1,12 @@
 "use client"
 
 import { Articles } from "@app/app/types/blog.types"
+import { formatDate } from "@app/app/utils/utils"
 import { Link } from "@chakra-ui/next-js"
 import { Box, HStack, Heading, Text, VStack } from "@chakra-ui/react"
 import Image from "next/image"
 
 export default function BlogView({ article }: { article: Articles }) {
-  const formatDate = new Intl.DateTimeFormat("fr", {
-    year: "numeric",
-    month: "short",
-    day: "numeric",
-  })
-
   return (
     <Box key={article.id}>
       <Image
@@ -42,7 +37,7 @@ export default function BlogView({ article }: { article: Articles }) {
           </Text>
         </HStack>
         <Link
-          href={`blog/${article.attributes.slug}`}
+          href={`/blog/${article.attributes.slug}`}
           _hover={{ textDecor: "none" }}
         >
           <Heading fontSize="xl" lineHeight="short" noOfLines={2}>
