@@ -7,9 +7,9 @@ export async function getCategories() {
   return res.json()
 }
 
-export async function getCategorie(categoryId: number) {
+export async function getCategory(slug: string) {
   const res = await fetch(
-    `https://csma-consult.onrender.com/api/blog-categories/${categoryId}?populate=*`,
+    `https://csma-consult.onrender.com/api/blog-categories/${slug}?populate=*`,
     { cache: "no-store" },
   )
 

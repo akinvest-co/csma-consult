@@ -30,13 +30,13 @@ export default async function article({
           </BreadcrumbItem>
 
           <BreadcrumbItem>
-            <BreadcrumbLink href="/">
+            <BreadcrumbLink href="/category">
               {article.attributes.blog_category.data.attributes.name}
             </BreadcrumbLink>
           </BreadcrumbItem>
 
           <BreadcrumbItem isCurrentPage>
-            <BreadcrumbLink>{article.attributes.title}</BreadcrumbLink>
+            <span>{article.attributes.title}</span>
           </BreadcrumbItem>
         </Breadcrumb>
 

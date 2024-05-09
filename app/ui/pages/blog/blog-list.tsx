@@ -13,6 +13,7 @@ import {
 import BlogView from "./blog.view"
 import Layout from "@app/app/layout/layout.page"
 import SearchInput from "../search/search"
+import Link from "next/link"
 
 export default async function BlogList({ query }: { query: string }) {
   const { data: articles } = await getArticles()
@@ -50,31 +51,23 @@ export default async function BlogList({ query }: { query: string }) {
         <SearchInput placeholder="Chercher un article, catégorie" />
       </Flex>
 
-      <Container maxW="container.lg" my="20">
-        <HStack
+      <Container maxW="container.xl" my="20">
+        {/* <HStack
           mb={{ base: "10", md: "20" }}
           spacing={{ base: "2", md: "8" }}
           justify={{ base: "flex-start", md: "center" }}
           flexWrap="wrap"
         >
           {categories.map((category: BlogCategory, index: number) => (
-            <Button
+            <Link
               key={index}
-              // variant={blog.category === selectedCategory ? "solid" : "outline"}
-              // bgColor={blog.category === selectedCategory ? "#e1f2fd" : "white"}
-              // color={blog.category === selectedCategory ? "#0b6999" : "normal"}
-              _hover={{ bgColor: "#e1f2fd", color: "#0b6999" }}
-              // onClick={() => handleCategoryClick(blog.category)}
-              letterSpacing="1px"
-              textTransform="uppercase"
-              fontSize={{ base: "0.6rem", md: "0.6rem" }}
-              py={{ base: "0.5rem", md: "0.8rem" }}
-              px={{ base: "0.5rem", md: "0.8rem" }}
+              href={`/search/${category.id}`}
+              style={{ fontSize: "0.8rem", textTransform: "uppercase" }}
             >
               {category.attributes.name}
-            </Button>
+            </Link>
           ))}
-        </HStack>
+        </HStack> */}
 
         <SimpleGrid columns={{ sm: 2, md: 2, lg: 3 }} gap="10">
           {filteredArticles.map((article: Articles) => (
