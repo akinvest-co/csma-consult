@@ -1,3 +1,4 @@
+import { Metadata, ResolvingMetadata } from "next"
 import Layout from "@app/app/layout/layout.page"
 import { BlocksRenderer } from "@strapi/blocks-react-renderer"
 
@@ -20,6 +21,21 @@ import {
 import Image from "next/image"
 import NextLink from "next/link"
 import { getProduct } from "@app/app/lib/api/products/products"
+
+type Props = {
+  params: { slug: string }
+}
+
+export async function generateMetadata(
+  { params }: Props,
+  parent: ResolvingMetadata,
+): Promise<Metadata> {
+  const { data: product } = await getProduct(params.slug)
+
+  return {
+    title: product.attributes.name,
+  }
+}
 
 export default async function product({
   params,

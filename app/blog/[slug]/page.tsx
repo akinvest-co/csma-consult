@@ -1,5 +1,5 @@
+import { Metadata, ResolvingMetadata } from "next"
 import Layout from "@app/app/layout/layout.page"
-import { BlocksRenderer } from "@strapi/blocks-react-renderer"
 
 import {
   Breadcrumb,
@@ -12,8 +12,24 @@ import {
   VStack,
 } from "@chakra-ui/react"
 import Image from "next/image"
-import { getArticle } from "@app/app/lib/api/blog/blog"
 import Link from "next/link"
+import { getArticle } from "@app/app/lib/api/blog/blog"
+import { BlocksRenderer } from "@strapi/blocks-react-renderer"
+
+type Props = {
+  params: { slug: string }
+}
+
+export async function generateMetadata(
+  { params }: Props,
+  parent: ResolvingMetadata,
+): Promise<Metadata> {
+  const { data: article } = await getArticle(params.slug)
+
+  return {
+    title: article.attributes.title,
+  }
+}
 
 export default async function article({
   params,
