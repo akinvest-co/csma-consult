@@ -3,13 +3,16 @@ import { Products } from "@app/app/types/products.types"
 import Layout from "@app/app/layout/layout.page"
 import { Box, Container, Heading, Select, SimpleGrid } from "@chakra-ui/react"
 import { getProducts } from "@app/app/lib/api/products/products"
-import { getCategories } from "@app/app/lib/api/products/categories"
+import {
+  getCategories,
+  getSubCategories,
+} from "@app/app/lib/api/products/categories"
 
 export default async function Products() {
   const { data: products } = await getProducts()
-  console.log(products.map((pr: Products) => pr.attributes.category))
-
   const { data: categories } = await getCategories()
+  const { data: subCategories } = await getSubCategories()
+  console.log(categories)
 
   return (
     <Layout>
@@ -28,14 +31,14 @@ export default async function Products() {
             spacing={{ base: "5", md: "10" }}
             justifyContent="center"
           >
-            {categories.map((cat: any) => (
-              <Select key={cat.id} size="sm" borderRadius="xl" bg="white">
-                <option>{cat.attributes.name}</option>
-                {cat.attributes.sub_categories.data.map((subcategory: any) => (
+            {categories.map((category: Products) => (
+              <Select key={category.id} size="sm" borderRadius="xl" bg="white">
+                <option>{category.attributes.name}</option>
+                {/* {category.attributes.sub_categories.data.map((subcategory: any) => (
                   <option key={subcategory.id} value={subcategory.id}>
                     {subcategory.attributes.name}
                   </option>
-                ))}
+                ))} */}
               </Select>
             ))}
           </SimpleGrid>
