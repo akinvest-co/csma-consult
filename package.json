@@ -32,6 +32,7 @@
     "sharp": "^0.33.1",
     "styled-components": "^6.1.6",
     "tabler-icons-react": "^1.56.0",
+    "use-debounce": "^10.0.0",
     "zod": "^3.22.4"
   },
   "devDependencies": {

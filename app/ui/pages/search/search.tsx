@@ -3,13 +3,16 @@
 import { Box, Input } from "@chakra-ui/react"
 import { Search } from "tabler-icons-react"
 import { useSearchParams, usePathname, useRouter } from "next/navigation"
+import { useDebouncedCallback } from "use-debounce"
 
 export default function SearchInput({ placeholder }: { placeholder: string }) {
   const searchParams = useSearchParams()
   const pathname = usePathname()
   const { replace } = useRouter()
 
-  function handleSearch(term: string) {
+  const handleSearch = useDebouncedCallback((term: string) => {
+    console.log("Typing", term)
+
     const params = new URLSearchParams(searchParams)
     if (term) {
       params.set("query", term)
@@ -18,7 +21,7 @@ export default function SearchInput({ placeholder }: { placeholder: string }) {
     }
 
     replace(`${pathname}?${params.toString()}`)
-  }
+  }, 300)
 
   return (
     <Box position="absolute" bottom="-20px">
