@@ -31,7 +31,7 @@ export async function generateMetadata(
   }
 }
 
-export default async function article({
+export default async function Article({
   params,
 }: {
   params: { slug: string }

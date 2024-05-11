@@ -7,7 +7,7 @@ import { ContactFormEmail } from "./react-emails"
 
 const resend = new Resend("re_hKNEirr7_6wyrSAwqAJQmyvSK4A7o7spv")
 
-export async function sendEmail(formData: FormData) {
+export async function SendEmail(formData: FormData) {
   const name = formData.get("name") as string
   const email = formData.get("email") as string
   const message = formData.get("message") as string
