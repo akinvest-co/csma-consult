@@ -3,7 +3,7 @@
 import React from "react"
 import { Resend } from "resend"
 import { ContactFormEmail } from "./react-emails"
-import { useAppSelector } from "../hooks/cart/hooks"
+// import { useAppSelector } from "../hooks/cart/hooks"
 
 const resend = new Resend("re_hKNEirr7_6wyrSAwqAJQmyvSK4A7o7spv")
 
@@ -15,8 +15,7 @@ export async function sendEmail(formData: FormData) {
   const qtyProduct = Number(formData.get("qtyProduct"))
 
   console.log(name, email, message, titleProduct)
-  const cartItems = useAppSelector((store) => store.store)
-  console.log(cartItems)
+  // const cartItems = useAppSelector((store) => store.store)
 
   if (
     email !== null &&
