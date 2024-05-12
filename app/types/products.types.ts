@@ -14,6 +14,7 @@ export interface ProductCategory {
     attributes: {
       name: string
       slug: string
+      // sub_categories: ProductSubCategory
     }
   }
 }

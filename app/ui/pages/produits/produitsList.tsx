@@ -7,21 +7,11 @@ import {
 import Layout from "@app/app/layout/layout.page"
 import { Box, Container, Heading, Select, SimpleGrid } from "@chakra-ui/react"
 import { getProducts } from "@app/app/lib/api/products/products"
-import {
-  getCategories,
-  getSubCategories,
-} from "@app/app/lib/api/products/categories"
+import { getCategories } from "@app/app/lib/api/products/categories"
 
 export default async function Products() {
   const { data: products } = await getProducts()
   const { data: categories } = await getCategories()
-  const { data: subCategories } = await getSubCategories()
-
-  console.log(
-    products.map(
-      (pr: Products) => pr.attributes.sub_categorie.data.attributes.name,
-    ),
-  )
 
   return (
     <Layout>

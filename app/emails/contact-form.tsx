@@ -11,7 +11,7 @@ import {
   Textarea,
   Button,
 } from "@chakra-ui/react"
-import { sendEmail } from "./sendEmails"
+import { SendEmail } from "./sendEmails"
 import { useAppSelector } from "../hooks/cart/hooks"
 
 export default function ContactForm() {
@@ -24,7 +24,7 @@ export default function ContactForm() {
       rounded="2xl"
       alignSelf="self-start"
     >
-      <form onSubmit={form.onSubmit(onSubmit)} action={sendEmail}>
+      <form onSubmit={form.onSubmit(onSubmit)} action={SendEmail}>
         <VStack spacing="5">
           <FormControl isInvalid={!!form.errors.user_name}>
             <FormLabel htmlFor="user_name">Prénom et Nom</FormLabel>
