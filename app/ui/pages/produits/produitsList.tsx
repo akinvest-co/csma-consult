@@ -1,11 +1,14 @@
 import ProduitsView from "./produits.view"
-import {
-  ProductCategory,
-  ProductSubCategory,
-  Products,
-} from "@app/app/types/products.types"
+import { Products, categoryProduct } from "@app/app/types/products.types"
 import Layout from "@app/app/layout/layout.page"
-import { Box, Container, Heading, Select, SimpleGrid } from "@chakra-ui/react"
+import {
+  Box,
+  Container,
+  Heading,
+  Select,
+  SimpleGrid,
+  Link,
+} from "@chakra-ui/react"
 import { getProducts } from "@app/app/lib/api/products/products"
 import { getCategories } from "@app/app/lib/api/products/categories"
 
@@ -30,16 +33,25 @@ export default async function Products() {
             spacing={{ base: "5", md: "10" }}
             justifyContent="center"
           >
-            {categories.map((category: Products) => (
+            {categories.map((category: categoryProduct) => (
               <Select key={category.id} size="sm" borderRadius="xl" bg="white">
-                <option>{category.attributes.name}</option>
-                {/* {category.attributes} */}
+                <option style={{ cursor: "pointer" }}>
+                  <Link href={`/categories/${category.attributes.slug}`}>
+                    {category.attributes.name}
+                  </Link>
+                </option>
 
-                {/* {category.attributes.subCategory.data.map((subcategory: any) => (
-                  <option key={subcategory.id} value={subcategory.id}>
-                    {subcategory.attributes.name}
+                {category.attributes.sub_categories.data.map((subcategory) => (
+                  <option
+                    key={subcategory.id}
+                    value={subcategory.id}
+                    style={{ cursor: "pointer" }}
+                  >
+                    <Link href={`/categories/${category.attributes.slug}`}>
+                      {subcategory.attributes.name}
+                    </Link>
                   </option>
-                ))} */}
+                ))}
               </Select>
             ))}
           </SimpleGrid>
