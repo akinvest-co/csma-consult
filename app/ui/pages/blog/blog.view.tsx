@@ -40,7 +40,7 @@ export default function BlogView({ article }: { article: Articles }) {
           href={`/blog/${article.attributes.slug}`}
           _hover={{ textDecor: "none" }}
         >
-          <Heading fontSize="xl" lineHeight="short" noOfLines={2}>
+          <Heading fontSize="lg" lineHeight="short" noOfLines={2}>
             {article.attributes.title}
           </Heading>
         </Link>

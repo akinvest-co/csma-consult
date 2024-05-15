@@ -98,7 +98,7 @@ export default async function Article({
           />
         </SimpleGrid>
 
-        <Container>
+        <Container maxW="container.md">
           <BlocksRenderer content={article.attributes.body} />
         </Container>
       </Container>
