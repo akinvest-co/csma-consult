@@ -2,10 +2,13 @@ import { Metadata, ResolvingMetadata } from "next"
 import Layout from "@app/app/layout/layout.page"
 
 import {
+  Box,
   Breadcrumb,
   BreadcrumbItem,
   BreadcrumbLink,
   Container,
+  Flex,
+  HStack,
   Heading,
   SimpleGrid,
   Text,
