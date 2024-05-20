@@ -2,14 +2,12 @@ import { getArticles } from "@app/app/lib/api/blog/blog"
 import { Articles } from "@app/app/types/blog.types"
 
 import {
-  Box,
   Button,
   Container,
   Flex,
   HStack,
   Heading,
   SimpleGrid,
-  Text,
 } from "@chakra-ui/react"
 import BlogView from "./blog.view"
 import Layout from "@app/app/layout/layout.page"

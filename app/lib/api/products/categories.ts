@@ -14,12 +14,3 @@ export async function getCategory(slug: string) {
 
   return res.json()
 }
-
-export async function getSubCategories() {
-  const res = await fetch(
-    "https://csma-consult.onrender.com/api/sub-categories?populate=*",
-    { cache: "no-store" },
-  )
-
-  return res.json()
-}

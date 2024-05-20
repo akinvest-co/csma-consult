@@ -1,16 +1,16 @@
 import ProduitsView from "./produits.view"
-import { Products, categoryProduct } from "@app/app/types/products.types"
+import { Products } from "@app/app/types/products.types"
 import Layout from "@app/app/layout/layout.page"
 import {
   Box,
   Container,
   Heading,
-  Select,
   SimpleGrid,
   Link,
+  Grid,
 } from "@chakra-ui/react"
 import { getProducts } from "@app/app/lib/api/products/products"
-import { getCategories } from "@app/app/lib/api/products/categories"
+import { getCategories } from "@app/app/lib/api/blog/categories"
 
 export default async function Products() {
   const { data: products } = await getProducts()
@@ -28,33 +28,18 @@ export default async function Products() {
           <Heading fontSize="2xl" mb="7" color="white">
             Par Catégories
           </Heading>
-          <SimpleGrid
-            columns={{ base: 2, md: 3 }}
-            spacing={{ base: "5", md: "10" }}
-            justifyContent="center"
-          >
-            {categories.map((category: categoryProduct) => (
-              <Select key={category.id} size="sm" borderRadius="xl" bg="white">
-                <option style={{ cursor: "pointer" }}>
-                  <Link href={`/categories/${category.attributes.slug}`}>
-                    {category.attributes.name}
-                  </Link>
-                </option>
-
-                {category.attributes.sub_categories.data.map((subcategory) => (
-                  <option
-                    key={subcategory.id}
-                    value={subcategory.id}
-                    style={{ cursor: "pointer" }}
-                  >
-                    <Link href={`/categories/${category.attributes.slug}`}>
-                      {subcategory.attributes.name}
-                    </Link>
-                  </option>
-                ))}
-              </Select>
+          <Grid templateColumns="repeat(6, 1fr)">
+            {products.map((product: Products) => (
+              <Link
+                href={`/produits/category/${product.attributes.category.data.attributes.slug}`}
+                key={product.id}
+                _hover={{ textDecor: "none" }}
+                style={{ color: "white" }}
+              >
+                {product.attributes.category.data.attributes.name}
+              </Link>
             ))}
-          </SimpleGrid>
+          </Grid>
         </Container>
       </Box>
       <Container maxW="container.xl" my="20">

@@ -37,7 +37,7 @@ export default async function CategoryPage({
       <Container maxW="container.lg" my="20">
         <Breadcrumb color="rgba(89 106 149)" fontSize="md" mt="20">
           <BreadcrumbItem>
-            <BreadcrumbLink href="/blog">Blog</BreadcrumbLink>
+            <BreadcrumbLink href="/produits">Produits</BreadcrumbLink>
           </BreadcrumbItem>
 
           <BreadcrumbItem isCurrentPage>
@@ -65,7 +65,7 @@ export default async function CategoryPage({
                 w="100%"
               >
                 <Link
-                  href={`/categories/${product.attributes.category.data.attributes.slug}`}
+                  href={`/produits/category/${product.attributes.category.data.attributes.slug}`}
                   _hover={{ textDecor: "none" }}
                   fontSize="small"
                   bgColor="#e1f2fd"
