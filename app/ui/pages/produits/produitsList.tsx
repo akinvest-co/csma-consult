@@ -1,5 +1,5 @@
 import ProduitsView from "./produits.view"
-import { Products } from "@app/app/types/products.types"
+import { ProductCategory, Products } from "@app/app/types/products.types"
 import Layout from "@app/app/layout/layout.page"
 import {
   Box,
@@ -8,6 +8,7 @@ import {
   SimpleGrid,
   Link,
   Grid,
+  HStack,
 } from "@chakra-ui/react"
 import { getProducts } from "@app/app/lib/api/products/products"
 import { getCategories } from "@app/app/lib/api/blog/categories"
@@ -28,18 +29,18 @@ export default async function Products() {
           <Heading fontSize="2xl" mb="7" color="white">
             Par Catégories
           </Heading>
-          <Grid templateColumns="repeat(6, 1fr)">
-            {products.map((product: Products) => (
+          <HStack justify="space-between">
+            {categories.map((category: ProductCategory) => (
               <Link
-                href={`/produits/category/${product.attributes.category.data.attributes.slug}`}
-                key={product.id}
+                href={`/produits/category/${category.attributes.slug}`}
+                key={category.id}
                 _hover={{ textDecor: "none" }}
                 style={{ color: "white" }}
               >
-                {product.attributes.category.data.attributes.name}
+                {category.attributes.name}
               </Link>
             ))}
-          </Grid>
+          </HStack>
         </Container>
       </Box>
       <Container maxW="container.xl" my="20">

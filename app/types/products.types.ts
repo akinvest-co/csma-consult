@@ -1,10 +1,8 @@
 export interface ProductCategory {
-  data: {
-    id: number
-    attributes: {
-      name: string
-      slug: string
-    }
+  id: number
+  attributes: {
+    name: string
+    slug: string
   }
 }
 

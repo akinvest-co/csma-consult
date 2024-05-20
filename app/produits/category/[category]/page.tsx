@@ -22,15 +22,15 @@ export default async function CategoryPage({
   params: { category: string }
 }) {
   const { data: products } = await getProducts()
+  console.log(products)
 
-  const category = await getProduct(params.category)
+  const { data: category } = await getProduct(params.category)
 
-  const filteredProducts = products.filter((product: Products) => {
-    return (
-      product.attributes.category.data.attributes.name ===
-      category.data.attributes.name
-    )
-  })
+  // const filteredProducts = products.filter((product: Products) => {
+  //   return (
+  //     product.attributes.category.attributes.slug === category.attributes.slug
+  //   )
+  // })
 
   return (
     <Layout>
@@ -41,7 +41,7 @@ export default async function CategoryPage({
           </BreadcrumbItem>
 
           <BreadcrumbItem isCurrentPage>
-            <span>{category.data.attributes.name}</span>
+            <span>{category.attributes.name}</span>
           </BreadcrumbItem>
         </Breadcrumb>
 
@@ -50,7 +50,7 @@ export default async function CategoryPage({
         </Heading>
 
         <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} gap="10">
-          {filteredProducts.map((product: Products) => (
+          {/* {filteredProducts.map((product: Products) => (
             <VStack align="start" spacing="6" key={product.id}>
               <Image
                 src={product.attributes.image.data.attributes.url}
@@ -65,7 +65,7 @@ export default async function CategoryPage({
                 w="100%"
               >
                 <Link
-                  href={`/produits/category/${product.attributes.category.data.attributes.slug}`}
+                  href={`/produits/category/${product.attributes.category.attributes.slug}`}
                   _hover={{ textDecor: "none" }}
                   fontSize="small"
                   bgColor="#e1f2fd"
@@ -74,7 +74,7 @@ export default async function CategoryPage({
                   borderRadius="md"
                   color="#0b6999"
                 >
-                  {product.attributes.category.data.attributes.name}
+                  {product.attributes.category.attributes.name}
                 </Link>
               </HStack>
 
@@ -84,7 +84,7 @@ export default async function CategoryPage({
                 </Heading>
               </NextLink>
             </VStack>
-          ))}
+          ))} */}
         </SimpleGrid>
       </Container>
     </Layout>
