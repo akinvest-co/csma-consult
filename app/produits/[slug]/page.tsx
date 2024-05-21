@@ -43,6 +43,7 @@ export default async function Product({
   params: { slug: string }
 }) {
   const { data: product } = await getProduct(params.slug)
+  console.log(product)
 
   return (
     <Layout>
@@ -62,9 +63,13 @@ export default async function Product({
             />
           </Box>
           <VStack align="start" spacing="5">
-            <Text color="#0b6999" fontSize="sm">
-              {product.attributes.category.data.attributes.name}
-            </Text>
+            <NextLink
+              href={`/produits/category/${product.attributes.category.data.attributes.slug}`}
+            >
+              <Text color="#0b6999" fontSize="sm">
+                {product.attributes.category.data.attributes.name}
+              </Text>
+            </NextLink>
             <Heading>{product.attributes.name}</Heading>
             <BlocksRenderer content={product.attributes.intro} />
             <Button

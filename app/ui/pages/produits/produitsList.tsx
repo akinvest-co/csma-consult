@@ -11,7 +11,7 @@ import {
   HStack,
 } from "@chakra-ui/react"
 import { getProducts } from "@app/app/lib/api/products/products"
-import { getCategories } from "@app/app/lib/api/blog/categories"
+import { getCategories } from "@app/app/lib/api/products/categories"
 
 export default async function Products() {
   const { data: products } = await getProducts()

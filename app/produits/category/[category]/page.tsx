@@ -1,5 +1,6 @@
 import Layout from "@app/app/layout/layout.page"
-import { getProduct, getProducts } from "@app/app/lib/api/products/products"
+import { getCategory } from "@app/app/lib/api/products/categories"
+import { getProducts } from "@app/app/lib/api/products/products"
 import { Products } from "@app/app/types/products.types"
 
 import {
@@ -12,6 +13,7 @@ import {
   Heading,
   SimpleGrid,
   VStack,
+  Button,
 } from "@chakra-ui/react"
 import Image from "next/image"
 import NextLink from "next/link"
@@ -22,15 +24,14 @@ export default async function CategoryPage({
   params: { category: string }
 }) {
   const { data: products } = await getProducts()
-  console.log(products)
+  const { data: category } = await getCategory(params.category)
 
-  const { data: category } = await getProduct(params.category)
-
-  // const filteredProducts = products.filter((product: Products) => {
-  //   return (
-  //     product.attributes.category.attributes.slug === category.attributes.slug
-  //   )
-  // })
+  const filteredProducts = products.filter((product: Products) => {
+    return (
+      product.attributes.category.data.attributes.slug ===
+      category.attributes.slug
+    )
+  })
 
   return (
     <Layout>
@@ -46,26 +47,28 @@ export default async function CategoryPage({
         </Breadcrumb>
 
         <Heading textAlign="center" my="20">
-          {category.data.attributes.name}
+          {category.attributes.name}
         </Heading>
 
         <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} gap="10">
-          {/* {filteredProducts.map((product: Products) => (
+          {filteredProducts.map((product: Products) => (
             <VStack align="start" spacing="6" key={product.id}>
-              <Image
-                src={product.attributes.image.data.attributes.url}
-                width={product.attributes.image.data.attributes.width}
-                height={product.attributes.image.data.attributes.height}
-                alt={product.attributes.name}
-                style={{ borderRadius: "5px", overflow: "hidden" }}
-              />
+              <Link href={`/produits/${product.attributes.slug}`}>
+                <Image
+                  src={product.attributes.image.data.attributes.url}
+                  width={product.attributes.image.data.attributes.width}
+                  height={product.attributes.image.data.attributes.height}
+                  alt={product.attributes.name}
+                  style={{ borderRadius: "5px", overflow: "hidden" }}
+                />
+              </Link>
               <HStack
                 alignItems="center"
                 justifyContent="space-between"
                 w="100%"
               >
                 <Link
-                  href={`/produits/category/${product.attributes.category.attributes.slug}`}
+                  href={`/produits/category/${product.attributes.category.data.attributes.slug}`}
                   _hover={{ textDecor: "none" }}
                   fontSize="small"
                   bgColor="#e1f2fd"
@@ -74,7 +77,7 @@ export default async function CategoryPage({
                   borderRadius="md"
                   color="#0b6999"
                 >
-                  {product.attributes.category.attributes.name}
+                  {product.attributes.category.data.attributes.name}
                 </Link>
               </HStack>
 
@@ -84,7 +87,7 @@ export default async function CategoryPage({
                 </Heading>
               </NextLink>
             </VStack>
-          ))} */}
+          ))}
         </SimpleGrid>
       </Container>
     </Layout>
