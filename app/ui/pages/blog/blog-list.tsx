@@ -55,7 +55,7 @@ export default async function BlogList({ query }: { query: string }) {
             <Button
               key={article.id}
               as={Link}
-              href={`/category/${article.attributes.blog_category.data.attributes.slug}`}
+              href={`/blog/category/${article.attributes.blog_category.data.attributes.slug}`}
               variant="outline"
               _hover={{ bgColor: "#e1f2fd", color: "#0b6999" }}
               letterSpacing="1px"

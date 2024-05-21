@@ -51,7 +51,7 @@ export default async function Article({
 
           <BreadcrumbItem>
             <BreadcrumbLink
-              href={`/category/${article.attributes.blog_category.data.attributes.slug}`}
+              href={`/blog/category/${article.attributes.blog_category.data.attributes.slug}`}
             >
               {article.attributes.blog_category.data.attributes.name}
             </BreadcrumbLink>
@@ -70,7 +70,7 @@ export default async function Article({
         >
           <VStack align="start" spacing="6">
             <Link
-              href={`/category/${article.attributes.blog_category.data.attributes.slug}`}
+              href={`/blog/category/${article.attributes.blog_category.data.attributes.slug}`}
             >
               <Text
                 fontSize="small"

@@ -20,7 +20,7 @@ export default function BlogView({ article }: { article: Articles }) {
       <VStack spacing="6" mt="4" align="start">
         <HStack alignItems="center" justifyContent="space-between" w="100%">
           <Link
-            href={`/category/${article.attributes.blog_category.data.attributes.slug}`}
+            href={`/blog/category/${article.attributes.blog_category.data.attributes.slug}`}
             _hover={{ textDecor: "none" }}
             fontSize="small"
             bgColor="#e1f2fd"
