@@ -5,10 +5,6 @@ export const metadata: Metadata = {
   title: "Nos Produits",
 }
 
-export default function Produits({
-  searchParams,
-}: {
-  searchParams?: { category?: string }
-}) {
-  return <Products searchParams={searchParams} />
+export default function Produits() {
+  return <Products />
 }
