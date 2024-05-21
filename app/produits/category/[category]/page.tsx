@@ -1,3 +1,4 @@
+import { Metadata, ResolvingMetadata } from "next"
 import Layout from "@app/app/layout/layout.page"
 import { getCategory } from "@app/app/lib/api/products/categories"
 import { getProducts } from "@app/app/lib/api/products/products"
@@ -13,10 +14,24 @@ import {
   Heading,
   SimpleGrid,
   VStack,
-  Button,
 } from "@chakra-ui/react"
 import Image from "next/image"
 import NextLink from "next/link"
+
+type Props = {
+  params: { category: string }
+}
+
+export async function generateMetadata(
+  { params }: Props,
+  parent: ResolvingMetadata,
+): Promise<Metadata> {
+  const { data: product } = await getCategory(params.category)
+
+  return {
+    title: product.attributes.name,
+  }
+}
 
 export default async function CategoryPage({
   params,
@@ -39,6 +54,10 @@ export default async function CategoryPage({
         <Breadcrumb color="rgba(89 106 149)" fontSize="md" mt="20">
           <BreadcrumbItem>
             <BreadcrumbLink href="/produits">Produits</BreadcrumbLink>
+          </BreadcrumbItem>
+
+          <BreadcrumbItem>
+            <BreadcrumbLink>Category</BreadcrumbLink>
           </BreadcrumbItem>
 
           <BreadcrumbItem isCurrentPage>

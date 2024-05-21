@@ -43,7 +43,6 @@ export default async function Product({
   params: { slug: string }
 }) {
   const { data: product } = await getProduct(params.slug)
-  console.log(product)
 
   return (
     <Layout>
