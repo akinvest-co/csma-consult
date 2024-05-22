@@ -30,7 +30,7 @@ export default function SearchInput({
   }, 300)
 
   return (
-    <Box position="absolute" bottom="-20px">
+    <Box>
       <Input
         placeholder={placeholder}
         bgColor="white"

@@ -24,17 +24,17 @@ export default async function Products({ query }: { query: string }) {
 
   return (
     <Layout>
-      <Container maxW="container.xl" mt="10">
-        <SimpleGrid columns={{ md: 1, lg: 2 }} alignItems="center" w="100%">
+      <Container maxW="container.xl" my="10">
+        <Flex align="center" justify="space-between" px="1.5rem" my="10">
           <Box>
             <Heading size="xl">Solutions Matérielles</Heading>
           </Box>
-          <Box position="relative">
-            <SearchInput placeholder="Chercher un produit" width="600px" />
+          <Box pos="relative">
+            <SearchInput placeholder="Chercher un produit" width="400px" />
           </Box>
-        </SimpleGrid>
-      </Container>
-      {/* <Box bgColor="#1799cf" py="10" mt="10">
+        </Flex>
+
+        {/* <Box bgColor="#1799cf" py="10" mt="10">
         <Container maxW="container.xl">
           <Heading fontSize="2xl" mb="7" color="white">
             Par Catégories
@@ -53,7 +53,7 @@ export default async function Products({ query }: { query: string }) {
           </HStack>
         </Container>
       </Box> */}
-      <Container maxW="container.xl" my="20">
+
         <SimpleGrid columns={{ base: 1, md: 2, lg: 4 }}>
           {filteredProducts
             .slice(0, 8)

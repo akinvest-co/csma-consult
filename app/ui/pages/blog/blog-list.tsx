@@ -2,6 +2,7 @@ import { getArticles } from "@app/app/lib/api/blog/blog"
 import { Articles } from "@app/app/types/blog.types"
 
 import {
+  Box,
   Button,
   Container,
   Flex,
@@ -45,12 +46,13 @@ export default async function BlogList({ query }: { query: string }) {
             Actualités et Mises à Jour
           </Heading>
         </Flex>
-
-        <SearchInput placeholder="Chercher un article, catégorie" width="" />
+        <Box position="absolute" bottom="-20px">
+          <SearchInput placeholder="Chercher un article, catégorie" width="" />
+        </Box>
       </Flex>
 
       <Container maxW="container.lg" my="20">
-        <HStack justify={{ base: "flex-start", md: "center" }}>
+        <HStack justify={{ base: "flex-start", md: "center" }} wrap="wrap">
           {articles.map((article: Articles) => (
             <Button
               key={article.id}
