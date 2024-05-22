@@ -5,7 +5,13 @@ import { Search } from "tabler-icons-react"
 import { useSearchParams, usePathname, useRouter } from "next/navigation"
 import { useDebouncedCallback } from "use-debounce"
 
-export default function SearchInput({ placeholder }: { placeholder: string }) {
+export default function SearchInput({
+  placeholder,
+  width,
+}: {
+  placeholder: string
+  width: string
+}) {
   const searchParams = useSearchParams()
   const pathname = usePathname()
   const { replace } = useRouter()
@@ -31,7 +37,7 @@ export default function SearchInput({ placeholder }: { placeholder: string }) {
         borderRadius="xl"
         focusBorderColor="#1799cf"
         p="6"
-        w={{ base: "100%", md: "400px" }}
+        width={width}
         pl="12"
         zIndex="2"
         style={{ borderLeft: "none" }}

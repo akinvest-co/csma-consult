@@ -3,7 +3,7 @@
 import { useAppDispatch, useAppSelector } from "@app/app/hooks/cart/hooks"
 import { addToCart } from "@app/app/redux/cartSlice"
 import { Products } from "@app/app/types/products.types"
-import { Button, HStack, Link, Text, VStack } from "@chakra-ui/react"
+import { Button, Heading, Link, VStack } from "@chakra-ui/react"
 import Image from "next/image"
 
 export default function ProduitsView({
@@ -53,21 +53,29 @@ export default function ProduitsView({
           priority
         />
       </Link>
-      <HStack justify="space-between" align="center" w="full" fontSize="0.7rem">
-        <Text color="#0b6999">
-          {product.attributes.category.data.attributes.name}
-        </Text>
-      </HStack>
+      <Link
+        href={`/produits/category/${product.attributes.category.data.attributes.slug}`}
+        _hover={{ textDecor: "none" }}
+        color="#0b6999"
+        fontSize="0.7rem"
+      >
+        {product.attributes.category.data.attributes.name}
+      </Link>
 
       <VStack align="start" spacing="5" w="full">
-        <Text
-          fontWeight="900"
-          letterSpacing="1px"
-          fontSize="15px"
-          textTransform="uppercase"
+        <Link
+          href={`/produits/${product.attributes.slug}`}
+          _hover={{ textDecor: "none" }}
         >
-          {product.attributes.name}
-        </Text>
+          <Heading
+            fontWeight="900"
+            letterSpacing="1px"
+            fontSize="15px"
+            textTransform="uppercase"
+          >
+            {product.attributes.name}
+          </Heading>
+        </Link>
         {isProductInCart ? (
           <Button
             size="md"

@@ -4,13 +4,14 @@ import Layout from "@app/app/layout/layout.page"
 import {
   Box,
   Container,
-  Heading,
-  SimpleGrid,
-  Link,
-  Grid,
+  Flex,
   HStack,
+  Heading,
+  Link,
+  SimpleGrid,
 } from "@chakra-ui/react"
 import { getProducts } from "@app/app/lib/api/products/products"
+import SearchInput from "../search/search"
 import { getCategories } from "@app/app/lib/api/products/categories"
 
 export default async function Products() {
@@ -20,11 +21,16 @@ export default async function Products() {
   return (
     <Layout>
       <Container maxW="container.xl" mt="10">
-        <Box>
-          <Heading size="2xl">Solutions Matérielles</Heading>
-        </Box>
+        <SimpleGrid columns={{ md: 1, lg: 2 }} alignItems="center" w="100%">
+          <Box>
+            <Heading size="xl">Solutions Matérielles</Heading>
+          </Box>
+          <Box position="relative">
+            <SearchInput placeholder="Chercher un produit" width="600px" />
+          </Box>
+        </SimpleGrid>
       </Container>
-      <Box bgColor="#1799cf" py="10" mt="10">
+      {/* <Box bgColor="#1799cf" py="10" mt="10">
         <Container maxW="container.xl">
           <Heading fontSize="2xl" mb="7" color="white">
             Par Catégories
@@ -42,7 +48,7 @@ export default async function Products() {
             ))}
           </HStack>
         </Container>
-      </Box>
+      </Box> */}
       <Container maxW="container.xl" my="20">
         <SimpleGrid columns={{ base: 1, md: 2, lg: 4 }}>
           {products.slice(0, 8).map((product: Products, index: number) => (

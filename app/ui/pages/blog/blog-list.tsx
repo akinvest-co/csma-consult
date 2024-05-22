@@ -46,7 +46,7 @@ export default async function BlogList({ query }: { query: string }) {
           </Heading>
         </Flex>
 
-        <SearchInput placeholder="Chercher un article, catégorie" />
+        <SearchInput placeholder="Chercher un article, catégorie" width="" />
       </Flex>
 
       <Container maxW="container.lg" my="20">
