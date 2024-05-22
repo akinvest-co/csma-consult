@@ -14,9 +14,13 @@ import { getProducts } from "@app/app/lib/api/products/products"
 import SearchInput from "../search/search"
 import { getCategories } from "@app/app/lib/api/products/categories"
 
-export default async function Products() {
+export default async function Products({ query }: { query: string }) {
   const { data: products } = await getProducts()
   const { data: categories } = await getCategories()
+
+  const filteredProducts = products.filter((product: Products) =>
+    product.attributes.name.toLowerCase().includes(query.toLowerCase()),
+  )
 
   return (
     <Layout>
@@ -51,9 +55,11 @@ export default async function Products() {
       </Box> */}
       <Container maxW="container.xl" my="20">
         <SimpleGrid columns={{ base: 1, md: 2, lg: 4 }}>
-          {products.slice(0, 8).map((product: Products, index: number) => (
-            <ProduitsView key={product.id} product={product} index={index} />
-          ))}
+          {filteredProducts
+            .slice(0, 8)
+            .map((product: Products, index: number) => (
+              <ProduitsView key={product.id} product={product} index={index} />
+            ))}
         </SimpleGrid>
       </Container>
     </Layout>

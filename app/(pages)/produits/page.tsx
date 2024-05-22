@@ -5,6 +5,13 @@ export const metadata: Metadata = {
   title: "Nos Produits",
 }
 
-export default function Produits() {
-  return <Products />
+export default function Produits({
+  searchParams,
+}: {
+  searchParams?: {
+    query?: string
+  }
+}) {
+  const query = searchParams?.query || ""
+  return <Products query={query} />
 }
