@@ -41,7 +41,7 @@ export default async function Products({ query }: { query: string }) {
           <Box pos="relative">
             <SearchInput
               placeholder="Chercher un produit"
-              width={{ base: "100%", md: "100%", lg: "400px" }}
+              width={{ base: "100%", md: "100%", lg: "500px" }}
             />
           </Box>
         </Flex>
@@ -56,8 +56,15 @@ export default async function Products({ query }: { query: string }) {
               as={Link}
               href={`/produits/category/${category.attributes.slug}`}
               key={category.id}
-              _hover={{ textDecor: "none" }}
-              style={{ color: "black" }}
+              variant="outline"
+              _hover={{
+                bgColor: "#e1f2fd",
+                color: "#0b6999",
+                textDecor: "none",
+              }}
+              letterSpacing="1px"
+              textTransform="uppercase"
+              fontSize={{ base: "0.6rem", md: "0.7rem" }}
             >
               {category.attributes.name}
             </Button>
