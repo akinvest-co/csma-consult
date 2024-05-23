@@ -3,6 +3,7 @@ import { ProductCategory, Products } from "@app/app/types/products.types"
 import Layout from "@app/app/layout/layout.page"
 import {
   Box,
+  Button,
   Container,
   Flex,
   HStack,
@@ -45,25 +46,23 @@ export default async function Products({ query }: { query: string }) {
           </Box>
         </Flex>
 
-        {/* <Box bgColor="#1799cf" py="10" mt="10">
-        <Container maxW="container.xl">
-          <Heading fontSize="2xl" mb="7" color="white">
-            Par Catégories
-          </Heading>
-          <HStack justify="space-between">
-            {categories.map((category: ProductCategory) => (
-              <Link
-                href={`/produits/category/${category.attributes.slug}`}
-                key={category.id}
-                _hover={{ textDecor: "none" }}
-                style={{ color: "white" }}
-              >
-                {category.attributes.name}
-              </Link>
-            ))}
-          </HStack>
-        </Container>
-      </Box> */}
+        <HStack
+          justify={{ base: "flex-start", md: "center" }}
+          wrap="wrap"
+          my="20"
+        >
+          {categories.map((category: ProductCategory) => (
+            <Button
+              as={Link}
+              href={`/produits/category/${category.attributes.slug}`}
+              key={category.id}
+              _hover={{ textDecor: "none" }}
+              style={{ color: "black" }}
+            >
+              {category.attributes.name}
+            </Button>
+          ))}
+        </HStack>
 
         <SimpleGrid columns={{ base: 1, md: 2, lg: 4 }}>
           {filteredProducts
