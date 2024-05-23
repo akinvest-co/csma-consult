@@ -19,8 +19,12 @@ export default async function Products({ query }: { query: string }) {
   const { data: products } = await getProducts()
   const { data: categories } = await getCategories()
 
-  const filteredProducts = products.filter((product: Products) =>
-    product.attributes.name.toLowerCase().includes(query.toLowerCase()),
+  const filteredProducts = products.filter(
+    (product: Products) =>
+      product.attributes.name.toLowerCase().includes(query.toLowerCase()) ||
+      product.attributes.category.data.attributes.name
+        .toLowerCase()
+        .includes(query.toLowerCase()),
   )
 
   return (
@@ -40,7 +44,7 @@ export default async function Products({ query }: { query: string }) {
           </Box>
           <Box pos="relative">
             <SearchInput
-              placeholder="Chercher un produit"
+              placeholder="Chercher un produit, une catégorie"
               width={{ base: "100%", md: "100%", lg: "500px" }}
             />
           </Box>
