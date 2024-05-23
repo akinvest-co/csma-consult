@@ -42,6 +42,7 @@ export default function Footer() {
             justifyContent="center"
             flexDirection={{ base: "column", md: "row" }}
             mt={{ base: "5", md: 0 }}
+            wrap="wrap"
           >
             {menuItems.map(({ id, label, path }) => (
               <Link

@@ -25,12 +25,23 @@ export default async function Products({ query }: { query: string }) {
   return (
     <Layout>
       <Container maxW="container.xl" my="10">
-        <Flex align="center" justify="space-between" px="1.5rem" my="10">
+        <Flex
+          align={{ base: "center", md: "center", lg: "center" }}
+          justify="space-between"
+          px="1.5rem"
+          my="10"
+          flexDir={{ base: "column", md: "column", lg: "row" }}
+        >
           <Box>
-            <Heading size="xl">Solutions Matérielles</Heading>
+            <Heading size="xl" mb={{ base: "20px", md: "20px", lg: 0 }}>
+              Solutions Matérielles
+            </Heading>
           </Box>
           <Box pos="relative">
-            <SearchInput placeholder="Chercher un produit" width="400px" />
+            <SearchInput
+              placeholder="Chercher un produit"
+              width={{ base: "100%", md: "100%", lg: "400px" }}
+            />
           </Box>
         </Flex>
 

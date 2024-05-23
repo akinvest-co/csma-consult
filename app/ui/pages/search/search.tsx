@@ -10,7 +10,7 @@ export default function SearchInput({
   width,
 }: {
   placeholder: string
-  width: string
+  width: { base: string; md: string; lg: string }
 }) {
   const searchParams = useSearchParams()
   const pathname = usePathname()

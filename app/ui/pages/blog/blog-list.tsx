@@ -47,7 +47,10 @@ export default async function BlogList({ query }: { query: string }) {
           </Heading>
         </Flex>
         <Box position="absolute" bottom="-20px">
-          <SearchInput placeholder="Chercher un article, catégorie" width="" />
+          <SearchInput
+            placeholder="Chercher un article, catégorie"
+            width={{ base: "100%", md: "400px", lg: "400px" }}
+          />
         </Box>
       </Flex>
 
