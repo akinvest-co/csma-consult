@@ -1,5 +1,5 @@
-import ProduitsView from "@app/app/ui/home/produits/produits.view"
+import ProduitsList from "@app/app/ui/home/produits/produitsList"
 
 export default function Produits() {
-  return <ProduitsView />
+  return <ProduitsList />
 }
