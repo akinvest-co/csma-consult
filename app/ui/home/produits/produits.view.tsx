@@ -1,12 +1,8 @@
-import { HStack, Text, VStack, Box } from "@chakra-ui/react"
+import { Text, VStack, Box, Link } from "@chakra-ui/react"
 import Image from "next/image"
 import { Products } from "@app/app/types/products.types"
 
-export default async function ProduitsHomeView({
-  product,
-}: {
-  product: Products
-}) {
+export default function ProduitsHomeView({ product }: { product: Products }) {
   return (
     <VStack key={product.id} align="start" spacing="5">
       <Box
@@ -18,22 +14,28 @@ export default async function ProduitsHomeView({
         h="250px"
         w="100%"
       >
-        <Image
-          src={product.attributes.image.data.attributes.url}
-          fill
-          alt={product.attributes.name}
-          style={{
-            objectFit: "cover",
-            transition: "transform 0.2s",
-          }}
-          priority
-        />
+        <Link href={`/produits/${product.attributes.slug}`}>
+          <Image
+            src={product.attributes.image.data.attributes.url}
+            fill
+            alt={product.attributes.name}
+            style={{
+              objectFit: "cover",
+              transition: "transform 0.2s",
+            }}
+            priority
+          />
+        </Link>
       </Box>
-      <HStack justify="space-between" align="center" w="full">
+
+      <Link
+        href={`/produits/${product.attributes.slug}`}
+        _hover={{ textDecor: "none" }}
+      >
         <Text fontWeight="900" letterSpacing="1px">
           {product.attributes.name}
         </Text>
-      </HStack>
+      </Link>
     </VStack>
   )
 }
