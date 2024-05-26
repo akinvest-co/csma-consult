@@ -10,9 +10,9 @@ import {
   FormErrorMessage,
   Textarea,
   Button,
+  Heading,
 } from "@chakra-ui/react"
 import { SendEmail } from "./sendEmails"
-import { useAppSelector } from "../hooks/cart/hooks"
 
 export default function ContactForm() {
   const { form, onSubmit } = useContactForm()
@@ -24,6 +24,7 @@ export default function ContactForm() {
       rounded="2xl"
       alignSelf="self-start"
     >
+      <Heading mb="10">Demandez le devis</Heading>
       <form onSubmit={form.onSubmit(onSubmit)} action={SendEmail}>
         <VStack spacing="5">
           <FormControl isInvalid={!!form.errors.user_name}>
@@ -66,11 +67,7 @@ export default function ContactForm() {
           </FormControl>
 
           <FormControl>
-            <textarea
-              name="titleProduct"
-              // defaultValue={cartItems.map((product) => product.attributes.name)}
-              hidden
-            />
+            <textarea name="titleProduct" hidden />
           </FormControl>
 
           <Button
