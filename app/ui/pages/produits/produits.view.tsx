@@ -1,9 +1,10 @@
 "use client"
 
+import AddToCartButton from "@app/app/components/addToCartButton/cartButton"
 import { useAppDispatch, useAppSelector } from "@app/app/hooks/cart/hooks"
 import { addToCart } from "@app/app/redux/cartSlice"
 import { Products } from "@app/app/types/products.types"
-import { Button, Heading, Link, VStack } from "@chakra-ui/react"
+import { Heading, Link, VStack } from "@chakra-ui/react"
 import Image from "next/image"
 
 export default function ProduitsView({
@@ -76,34 +77,7 @@ export default function ProduitsView({
             {product.attributes.name}
           </Heading>
         </Link>
-        {isProductInCart ? (
-          <Button
-            size="md"
-            letterSpacing="1px"
-            w="100%"
-            bg="#1799cf"
-            _hover={{ bg: "#0c84bd" }}
-            color="#fff"
-            fontSize="1rem"
-            p="1rem"
-          >
-            Déjà au panier
-          </Button>
-        ) : (
-          <Button
-            size="md"
-            letterSpacing="1px"
-            w="100%"
-            bg="#1799cf"
-            _hover={{ bg: "#0c84bd" }}
-            color="#fff"
-            fontSize="1rem"
-            p="1rem"
-            onClick={() => handleAddCart()}
-          >
-            Ajouter au panier
-          </Button>
-        )}
+        <AddToCartButton product={product} size="md" />
       </VStack>
     </VStack>
   )

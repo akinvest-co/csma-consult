@@ -21,6 +21,7 @@ import {
 import Image from "next/image"
 import NextLink from "next/link"
 import { getProduct } from "@app/app/lib/api/products/products"
+import AddToCartButton from "@app/app/components/addToCartButton/cartButton"
 
 type Props = {
   params: { slug: string }
@@ -71,20 +72,7 @@ export default async function Product({
             </NextLink>
             <Heading>{product.attributes.name}</Heading>
             <BlocksRenderer content={product.attributes.intro} />
-            <Button
-              size="xl"
-              as={NextLink}
-              href="/panier"
-              letterSpacing="1px"
-              w="100%"
-              bg="#1799cf"
-              _hover={{ bg: "#0c84bd" }}
-              color="#fff"
-              fontSize="1rem"
-              p="1rem"
-            >
-              Ajouter au panier
-            </Button>
+            <AddToCartButton product={product} size="xl" />
           </VStack>
         </SimpleGrid>
 
