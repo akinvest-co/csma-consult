@@ -7,9 +7,9 @@ export async function getArticles() {
   return res.json()
 }
 
-export async function getArticle(articleId: string) {
+export async function getArticle(slug: string) {
   const res = await fetch(
-    `https://csma-consult.onrender.com/api/blogs/${articleId}?populate=*`,
+    `https://csma-consult.onrender.com/api/blogs/${slug}?populate=*`,
     { cache: "no-store" },
   )
 
