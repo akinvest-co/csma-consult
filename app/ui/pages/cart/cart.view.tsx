@@ -82,7 +82,7 @@ export default function Cart() {
                   _hover={{ bg: "#0c84bd" }}
                   borderRadius="999rem"
                 >
-                  Parcourissez les produits
+                  VOIR NOS SOLUTIONS MATERIELLES
                 </Button>
               </VStack>
             )}
