@@ -1,5 +1,3 @@
-// "use client"
-
 import { useContactForm } from "@app/app/validation/contactForm"
 import {
   Box,
@@ -12,10 +10,23 @@ import {
   Button,
   Heading,
 } from "@chakra-ui/react"
-import { SendEmail } from "./sendEmails"
+import { send } from "./sendEmails"
 
 export default function ContactForm() {
-  const { form, onSubmit } = useContactForm()
+  const { form, onSubmit, validate } = useContactForm()
+
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault()
+
+    const validationResult = validate()
+    if (validationResult.hasErrors) {
+      return
+    }
+
+    const values = form.values
+    onSubmit(values)
+    await send(values.user_email, values.user_name, values.user_message)
+  }
 
   return (
     <Box
@@ -25,7 +36,7 @@ export default function ContactForm() {
       alignSelf="self-start"
     >
       <Heading mb="10">Demandez le devis</Heading>
-      <form onSubmit={form.onSubmit(onSubmit)} action={SendEmail}>
+      <form onSubmit={handleSubmit}>
         <VStack spacing="5">
           <FormControl isInvalid={!!form.errors.user_name}>
             <FormLabel htmlFor="user_name">Prénom et Nom</FormLabel>

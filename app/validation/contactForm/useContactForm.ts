@@ -5,22 +5,21 @@ export function useContactForm() {
     initialValues: {
       user_name: "",
       user_email: "",
-      user_subject: "",
       user_message: "",
     },
 
     validate: {
-      user_name: (value) => (value ? null : "Entrez votre Prénom et Nom"),
-      user_email: (value) =>
+      user_name: (value: string) =>
+        value ? null : "Entrez votre Prénom et Nom",
+      user_email: (value: string) =>
         /^\S+@\S+$/.test(value) ? null : "Email invalide",
-      user_message: (value) => (value ? null : "Message est requis"),
+      user_message: (value: string) => (value ? null : "Message est requis"),
     },
   })
 
   const onSubmit = (values: any) => {
     console.log(values)
-    // Traitement des données du formulaire
   }
 
-  return { form, onSubmit }
+  return { form, onSubmit, validate: form.validate }
 }
