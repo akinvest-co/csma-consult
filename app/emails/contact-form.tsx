@@ -25,6 +25,27 @@ export default function ContactForm() {
 
     const values = form.values
     onSubmit(values)
+
+    const response = await fetch("/api/emails", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        to: values.user_email,
+        name: values.user_name,
+        subject: "Demande de devis",
+        body: values.user_message,
+      }),
+    })
+    if (response.ok) {
+      // Handle successful response
+      console.log("Email sent successfully")
+    } else {
+      // Handle error response
+      console.error("Failed to send email")
+    }
+
     await send(values.user_email, values.user_name, values.user_message)
   }
 
