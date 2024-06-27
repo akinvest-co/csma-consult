@@ -1,6 +1,6 @@
 "use server"
 
-import { sendEmail } from "../lib/api/emails/sendEmail"
+import { sendEmail } from "../nodemailer/emails/sendEmail"
 
 // import React from "react"
 // import { Resend } from "resend"

@@ -1,5 +1,5 @@
 import { NextApiRequest, NextApiResponse } from "next"
-import { sendEmail } from "./sendEmail"
+import { sendEmail } from "../nodemailer/emails/sendEmail"
 
 export default async function handler(
   req: NextApiRequest,

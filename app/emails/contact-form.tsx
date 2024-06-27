@@ -39,10 +39,8 @@ export default function ContactForm() {
       }),
     })
     if (response.ok) {
-      // Handle successful response
       console.log("Email sent successfully")
     } else {
-      // Handle error response
       console.error("Failed to send email")
     }
 
