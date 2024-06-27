@@ -2,10 +2,12 @@ import nodemailer from "nodemailer"
 
 export async function sendEmail({
   to,
+  from,
   name,
   body,
 }: {
   to: string
+  from: string
   name: string
   body: string
 }) {
@@ -31,6 +33,7 @@ export async function sendEmail({
     const sendResult = await transport.sendMail({
       from: SMTP_EMAIL,
       to,
+      replyTo: from,
       html: body,
     })
     console.log(sendResult)

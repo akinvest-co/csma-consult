@@ -26,15 +26,15 @@ export default function ContactForm() {
     const values = form.values
     onSubmit(values)
 
-    const response = await fetch("/api/emails", {
+    const response = await fetch("/api/email", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        to: values.user_email,
+        to: "nikuzediop@gmail.com",
+        from: values.user_email,
         name: values.user_name,
-        subject: "Demande de devis",
         body: values.user_message,
       }),
     })
