@@ -46,6 +46,6 @@ export const send = async (to: string, name: string, message: string) => {
   await sendEmail({
     to: "nikuzediop@gmail.com",
     name: name,
-    body: `<h1>Message de ${name}</h1><p>${message}</p>`,
+    body: `<p>${message}</p>`,
   })
 }
