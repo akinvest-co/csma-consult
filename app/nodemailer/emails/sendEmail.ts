@@ -1,17 +1,3 @@
-// import ContactForm from "@app/app/emails/contact-form"
-// import { Resend } from "resend"
-
-// const resend = new Resend(process.env.RESEND_API_KEY)
-
-// export async function POST() {
-//   await resend.emails.send({
-//     from: "Csma Consult <onboarding@resend.dev>",
-//     to: "nikuzediop@gmai.com",
-//     subject: "Message du client",
-//     react: ContactForm(),
-//   })
-// }
-
 import nodemailer from "nodemailer"
 
 export async function sendEmail({
@@ -38,7 +24,6 @@ export async function sendEmail({
     console.log(testResult)
   } catch (error) {
     console.log(error)
-
     return
   }
 
@@ -48,7 +33,6 @@ export async function sendEmail({
       to,
       html: body,
     })
-
     console.log(sendResult)
   } catch (error) {
     console.log(error)
