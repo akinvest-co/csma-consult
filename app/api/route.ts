@@ -1,10 +1,7 @@
 import { NextApiRequest, NextApiResponse } from "next"
 import { sendEmail } from "../nodemailer/emails/sendEmail"
 
-export default async function handler(
-  req: NextApiRequest,
-  res: NextApiResponse,
-) {
+export default async function POST(req: NextApiRequest, res: NextApiResponse) {
   if (req.method === "POST") {
     const { to, name, body } = req.body
 
