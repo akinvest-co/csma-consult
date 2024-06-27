@@ -1,5 +1,5 @@
 import ProduitsView from "./produits.view"
-import { ProductCategory, Products } from "@app/app/types/products.types"
+import type { ProductCategory, Products } from "@app/app/types/products.types"
 import Layout from "@app/app/layout/layout.page"
 import {
   Box,
