@@ -45,7 +45,7 @@ export default async function CategoryPage({
 
   const filteredArticles = articles.filter((article: Articles) => {
     return (
-      article.attributes.blog_category.data.attributes.name ===
+      article.attributes.blog_categories.data[0].attributes.name ===
       category.data.attributes.name
     )
   })
@@ -75,9 +75,9 @@ export default async function CategoryPage({
           {filteredArticles.map((article: Articles) => (
             <VStack align="start" spacing="6" key={article.id}>
               <Image
-                src={article.attributes.image.data.attributes.url}
-                width={article.attributes.image.data.attributes.width}
-                height={article.attributes.image.data.attributes.height}
+                src={article.attributes.image.data[0].attributes.url}
+                width={article.attributes.image.data[0].attributes.width}
+                height={article.attributes.image.data[0].attributes.height}
                 alt={article.attributes.title}
                 style={{ borderRadius: "5px", overflow: "hidden" }}
               />
@@ -87,7 +87,7 @@ export default async function CategoryPage({
                 w="100%"
               >
                 <Link
-                  href={`/category/${article.attributes.blog_category.data.attributes.slug}`}
+                  href={`/category/${article.attributes.blog_categories.data[0].attributes.slug}`}
                   _hover={{ textDecor: "none" }}
                   fontSize="small"
                   bgColor="#e1f2fd"
@@ -96,7 +96,7 @@ export default async function CategoryPage({
                   borderRadius="md"
                   color="#0b6999"
                 >
-                  {article.attributes.blog_category.data.attributes.name}
+                  {article.attributes.blog_categories.data[0].attributes.name}
                 </Link>
 
                 <Text fontSize="small" color="hsl(0, 0%, 50%)">

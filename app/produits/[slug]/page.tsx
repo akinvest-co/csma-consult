@@ -32,6 +32,7 @@ export async function generateMetadata(
   parent: ResolvingMetadata,
 ): Promise<Metadata> {
   const { data: product } = await getProduct(params.slug)
+  console.log(product)
 
   return {
     title: product.attributes.name,
@@ -56,7 +57,7 @@ export default async function Product({
             position="relative"
           >
             <Image
-              src={product.attributes.image.data.attributes.url}
+              src={product.attributes.image.data[0].attributes.url}
               alt=""
               fill
               priority
@@ -64,10 +65,10 @@ export default async function Product({
           </Box>
           <VStack align="start" spacing="5">
             <NextLink
-              href={`/produits/category/${product.attributes.category.data.attributes.slug}`}
+              href={`/produits/category/${product.attributes.product_categories.data[0].attributes.slug}`}
             >
               <Text color="#0b6999" fontSize="sm">
-                {product.attributes.category.data.attributes.name}
+                {product.attributes.product_categories.data[0].attributes.name}
               </Text>
             </NextLink>
             <Heading>{product.attributes.name}</Heading>
@@ -93,7 +94,7 @@ export default async function Product({
                   </Heading>
 
                   <Link
-                    href={product.attributes.sheet.data.attributes.url}
+                    href={product.attributes.sheet?.data?.attributes.url}
                     download={product.attributes.name}
                     textDecor="underline"
                   >

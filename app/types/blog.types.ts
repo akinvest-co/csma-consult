@@ -1,22 +1,26 @@
 export interface ImageBlog {
-  data: {
-    id: number
-    attributes: {
-      url: string
-      width: number
-      height: number
-    }
-  }
+  data: [
+    {
+      id: number
+      attributes: {
+        url: string
+        width: number
+        height: number
+      }
+    },
+  ]
 }
 
 export interface BlogCategory {
-  data: {
-    id: number
-    attributes: {
-      name: string
-      slug: string
-    }
-  }
+  data: [
+    {
+      id: number
+      attributes: {
+        name: string
+        slug: string
+      }
+    },
+  ]
 
   id: number
   attributes: {
@@ -33,7 +37,7 @@ export interface ArticlesProps {
     date: string
     slug: string
     image: ImageBlog
-    blog_category: BlogCategory
+    blog_categories: BlogCategory
   }
 }
 

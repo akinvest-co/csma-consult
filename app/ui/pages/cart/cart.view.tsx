@@ -27,6 +27,7 @@ import Link from "next/link"
 
 export default function Cart() {
   const cartItems = useAppSelector((store) => store.store)
+  console.log(cartItems)
 
   const dispatch = useAppDispatch()
 
@@ -99,7 +100,7 @@ export default function Cart() {
                 <HStack spacing="10" align="center">
                   <HStack spacing="5">
                     <Image
-                      src={product.attributes.image.data.attributes.url}
+                      src={product.attributes.image.data[0].attributes.url}
                       alt={product.attributes.name}
                       borderRadius="xl"
                       w={{ sm: "50px", base: "50px", md: "70px" }}

@@ -43,7 +43,7 @@ export default async function CategoryPage({
 
   const filteredProducts = products.filter((product: Products) => {
     return (
-      product.attributes.category.data.attributes.slug ===
+      product.attributes.product_categories.data[0].attributes.slug ===
       category.attributes.slug
     )
   })
@@ -74,9 +74,9 @@ export default async function CategoryPage({
             <VStack align="start" spacing="6" key={product.id}>
               <Link href={`/produits/${product.attributes.slug}`}>
                 <Image
-                  src={product.attributes.image.data.attributes.url}
-                  width={product.attributes.image.data.attributes.width}
-                  height={product.attributes.image.data.attributes.height}
+                  src={product.attributes.image.data[0].attributes.url}
+                  width={product.attributes.image.data[0].attributes.width}
+                  height={product.attributes.image.data[0].attributes.height}
                   alt={product.attributes.name}
                   style={{ borderRadius: "5px", overflow: "hidden" }}
                 />
@@ -87,7 +87,7 @@ export default async function CategoryPage({
                 w="100%"
               >
                 <Link
-                  href={`/produits/category/${product.attributes.category.data.attributes.slug}`}
+                  href={`/produits/category/${product.attributes.product_categories.data[0].attributes.slug}`}
                   _hover={{ textDecor: "none" }}
                   fontSize="small"
                   bgColor="#e1f2fd"
@@ -96,7 +96,10 @@ export default async function CategoryPage({
                   borderRadius="md"
                   color="#0b6999"
                 >
-                  {product.attributes.category.data.attributes.name}
+                  {
+                    product.attributes.product_categories.data[0].attributes
+                      .name
+                  }
                 </Link>
               </HStack>
 

@@ -27,7 +27,7 @@ export default async function BlogList({ query }: { query: string }) {
   const filteredArticles = sortedArticles.filter(
     (article: Articles) =>
       article.attributes.title.toLowerCase().includes(query.toLowerCase()) ||
-      article.attributes.blog_category.data.attributes.name
+      article.attributes.blog_categories.data[0].attributes.name
         .toLowerCase()
         .includes(query.toLowerCase()),
   )
@@ -60,7 +60,7 @@ export default async function BlogList({ query }: { query: string }) {
             <Button
               key={article.id}
               as={Link}
-              href={`/blog/category/${article.attributes.blog_category.data.attributes.slug}`}
+              href={`/blog/category/${article.attributes.blog_categories.data[0].attributes.slug}`}
               variant="outline"
               _hover={{ bgColor: "#e1f2fd", color: "#0b6999" }}
               letterSpacing="1px"
@@ -69,7 +69,7 @@ export default async function BlogList({ query }: { query: string }) {
               py={{ base: "0.5rem", md: "1rem" }}
               px={{ base: "0.5rem", md: "1rem" }}
             >
-              {article.attributes.blog_category.data.attributes.name}
+              {article.attributes.blog_categories.data[0].attributes.name}
             </Button>
           ))}
         </HStack>
