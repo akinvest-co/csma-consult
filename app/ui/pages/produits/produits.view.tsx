@@ -47,20 +47,20 @@ export default function ProduitsView({
         padding="5"
       >
         <Image
-          src={product.attributes.image.data.attributes.url}
-          width={product.attributes.image.data.attributes.width}
-          height={product.attributes.image.data.attributes.height}
+          src={product.attributes.image.data[0].attributes.url}
+          width={product.attributes.image.data[0].attributes.width}
+          height={product.attributes.image.data[0].attributes.height}
           alt={product.attributes.name}
           priority
         />
       </Link>
       <Link
-        href={`/produits/category/${product.attributes.category.data.attributes.slug}`}
+        href={`/produits/category/${product.attributes.product_categories.data[0].attributes.slug}`}
         _hover={{ textDecor: "none" }}
         color="#0b6999"
         fontSize="0.7rem"
       >
-        {product.attributes.category.data.attributes.name}
+        {product.attributes.product_categories.data[0].attributes.name}
       </Link>
 
       <VStack align="start" spacing="5" w="full">

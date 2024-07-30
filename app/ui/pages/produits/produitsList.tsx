@@ -22,7 +22,7 @@ export default async function Products({ query }: { query: string }) {
   const filteredProducts = products.filter(
     (product: Products) =>
       product.attributes.name.toLowerCase().includes(query.toLowerCase()) ||
-      product.attributes.category.data.attributes.name
+      product.attributes.product_categories.data[0].attributes.name
         .toLowerCase()
         .includes(query.toLowerCase()),
   )

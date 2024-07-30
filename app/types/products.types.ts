@@ -1,13 +1,15 @@
 export interface ProductCategory {
   id: number
 
-  data: {
-    id: number
-    attributes: {
-      name: string
-      slug: string
-    }
-  }
+  data: [
+    {
+      id: number
+      attributes: {
+        name: string
+        slug: string
+      }
+    },
+  ]
 
   attributes: {
     name: string
@@ -33,7 +35,7 @@ export interface ProductsProps {
   attributes: {
     name: string
     slug: string
-    category: ProductCategory
+    product_categories: ProductCategory
     image: ImageProduct
   }
 
