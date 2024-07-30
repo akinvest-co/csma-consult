@@ -11,13 +11,13 @@ export const cartSlice = createSlice({
     addToCart: (state, action) => {
       const {
         id,
-        attributes: { name, slug, category, image },
+        attributes: { name, slug, product_categories, image },
         quantity = 1,
       } = action.payload
 
       state.push({
         id,
-        attributes: { name, slug, category, image },
+        attributes: { name, slug, product_categories, image },
         quantity,
       })
     },
