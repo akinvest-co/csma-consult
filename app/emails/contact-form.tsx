@@ -32,7 +32,7 @@ export default function ContactForm() {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        to: "nikuzediop@gmail.com",
+        to: process.env.SMTP_EMAIL,
         from: values.user_email,
         name: values.user_name,
         body: values.user_message,

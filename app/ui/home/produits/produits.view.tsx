@@ -16,7 +16,7 @@ export default function ProduitsHomeView({ product }: { product: Products }) {
       >
         <Link href={`/produits/${product.attributes.slug}`}>
           <Image
-            src={product.attributes.image.data.attributes.url}
+            src={product.attributes.image.data[0].attributes.url}
             fill
             alt={product.attributes.name}
             style={{

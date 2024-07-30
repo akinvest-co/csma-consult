@@ -16,14 +16,16 @@ export interface ProductCategory {
 }
 
 export interface ImageProduct {
-  data: {
-    id: number
-    attributes: {
-      url: string
-      width: number
-      height: number
-    }
-  }
+  data: [
+    {
+      id: number
+      attributes: {
+        url: string
+        width: number
+        height: number
+      }
+    },
+  ]
 }
 
 export interface ProductsProps {
