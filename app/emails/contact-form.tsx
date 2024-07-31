@@ -11,9 +11,12 @@ import {
   Heading,
 } from "@chakra-ui/react"
 import { send } from "./sendEmails"
+import { useAppSelector } from "../hooks/cart/hooks"
 
 export default function ContactForm() {
   const { form, onSubmit, validate } = useContactForm()
+
+  const cartItems = useAppSelector((store) => store.store)
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault()
@@ -26,16 +29,33 @@ export default function ContactForm() {
     const values = form.values
     onSubmit(values)
 
+    const productsHtml = cartItems
+      .map(
+        (item) => `
+      <div>
+        <p>${item.attributes.name} (x${item.quantity})</p>
+        <img src="${item.attributes.image.data[0].attributes.url}" alt="${item.attributes.name}" style="width: 50px;"/>
+      </div>
+    `,
+      )
+      .join("")
+
+    const smtpEmail = "nikuzediop@gmail.com"
+    if (!smtpEmail) {
+      console.error("SMTP_EMAIL is not defined in environment variables.")
+      return
+    }
+
     const response = await fetch("/api/email", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        to: process.env.SMTP_EMAIL,
+        to: smtpEmail,
         from: values.user_email,
         name: values.user_name,
-        body: values.user_message,
+        body: `${values.user_message}<br/><br/>Produits:<br/>${productsHtml}`,
       }),
     })
     if (response.ok) {
@@ -44,7 +64,12 @@ export default function ContactForm() {
       console.error("Failed to send email")
     }
 
-    await send(values.user_email, values.user_name, values.user_message)
+    // await send(
+    //   smtpEmail,
+    //   values.user_name,
+    //   `${values.user_message}<br/><br/>Produits:<br/>${productsHtml}`,
+    //   values.user_email,
+    // )
   }
 
   return (

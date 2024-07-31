@@ -2,11 +2,16 @@
 
 import { sendEmail } from "../nodemailer/emails/sendEmail"
 
-export const send = async (to: string, name: string, message: string) => {
+export const send = async (
+  to: string,
+  from: string,
+  name: string,
+  message: string,
+) => {
   await sendEmail({
-    to: "nikuzediop@gmail.com",
-    from: "",
-    name: name,
+    to,
+    from,
+    name,
     body: `<p>${message}</p>`,
   })
 }

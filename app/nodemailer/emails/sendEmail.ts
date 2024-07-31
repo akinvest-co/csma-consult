@@ -1,17 +1,25 @@
 import nodemailer from "nodemailer"
 
-export async function sendEmail({
-  to,
-  from,
-  name,
-  body,
-}: {
+interface EmailProps {
   to: string
   from: string
   name: string
   body: string
-}) {
-  const { SMTP_EMAIL, SMTP_PASSWORD } = process.env
+}
+
+export async function sendEmail({ to, from, name, body }: EmailProps) {
+  const { SMTP_PASSWORD } = process.env
+  const SMTP_EMAIL = "nikuzediop@gmail.com"
+
+  if (!SMTP_EMAIL || !SMTP_PASSWORD) {
+    throw new Error(
+      "SMTP credentials are not defined in environment variables.",
+    )
+  }
+
+  if (!to) {
+    throw new Error("Recipient email is not defined.")
+  }
 
   const transport = nodemailer.createTransport({
     service: "gmail",
@@ -23,21 +31,22 @@ export async function sendEmail({
 
   try {
     const testResult = await transport.verify()
-    console.log(testResult)
+    console.log("Transport verified:", testResult)
   } catch (error) {
-    console.log(error)
+    console.error("Error verifying transport:", error)
     return
   }
 
   try {
     const sendResult = await transport.sendMail({
-      from: SMTP_EMAIL,
-      to,
+      to: SMTP_EMAIL,
+      from,
       replyTo: from,
+      subject: `Demande de devis de ${name}`,
       html: body,
     })
-    console.log(sendResult)
+    console.log("Email sent successfully:", sendResult)
   } catch (error) {
-    console.log(error)
+    console.error("Error sending email:", error)
   }
 }
