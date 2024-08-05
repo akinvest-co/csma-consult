@@ -1,4 +1,6 @@
-import product from "@app/public/images/banner.jpeg"
+import product from "@app/public/images/supportimage.jpg"
+import product1 from "@app/public/images/reseau.jpeg"
+import product2 from "@app/public/images/supervision.jpg"
 
 export const bureauDataIng = [
   {
@@ -15,7 +17,7 @@ export const bureauDataIng = [
 export const bureauDataInfr = [
   {
     id: 1,
-    img: product,
+    img: product1,
     title: "Audit Infrastructures",
     descr:
       "Pour les Infrastructures Optiques, notre audit évalue avec professionnalisme câbles et boîtes d'épissures. Remontées d'information, plans de boîte stratégiques, et mises à jour SIG basées sur des données terrain assurent une gestion proactive alignée sur les normes les plus strictes, incarnant notre engagement envers l'excellence professionnelle.",
@@ -39,7 +41,7 @@ export const bureauDataRecettes = [
 export const bureauDataCentre = [
   {
     id: 1,
-    img: product,
+    img: product2,
     title: "Centre de Supervision",
     descr:
       "La Surveillance de trafic assure un suivi attentif des services en activité et inactifs, avec une réponse rapide aux problèmes signalés. La gestion efficace des équipements et le dépannage à distance garantissent une réactivité, incluant la mobilisation d'équipes en cas de besoin tel qu’une maintenance réseau.",
