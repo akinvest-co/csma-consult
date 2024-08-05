@@ -20,7 +20,7 @@ export default function BlogView({ article }: { article: Articles }) {
       <VStack spacing="6" mt="4" align="start">
         <HStack alignItems="center" justifyContent="space-between" w="100%">
           <Link
-            href={`/blog/category/${article.attributes.blog_categories.data[0].attributes.slug}`}
+            href={`/blog/category/${article.attributes.blog_categories.data[0]?.attributes.slug}`}
             _hover={{ textDecor: "none" }}
             fontSize="small"
             bgColor="#e1f2fd"
@@ -29,7 +29,7 @@ export default function BlogView({ article }: { article: Articles }) {
             borderRadius="md"
             color="#0b6999"
           >
-            {article.attributes.blog_categories.data[0].attributes.name}
+            {article.attributes.blog_categories.data[0]?.attributes.name}
           </Link>
 
           <Text fontSize="small" color="hsl(0, 0%, 50%)">

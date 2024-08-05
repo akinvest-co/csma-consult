@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "prepare": "husky install"
   },
   "dependencies": {
     "@chakra-ui/icons": "^2.1.1",
@@ -16,7 +17,6 @@
     "@emotion/styled": "^11.11.0",
     "@mantine/form": "^7.4.1",
     "@nikolovlazar/chakra-ui-prose": "^1.2.1",
-    "@react-email/components": "0.0.16",
     "@reduxjs/toolkit": "^2.2.3",
     "@strapi/blocks-react-renderer": "^1.0.1",
     "@types/nodemailer": "^6.4.15",
@@ -42,6 +42,7 @@
     "@types/react-dom": "^18",
     "eslint": "^8",
     "eslint-config-next": "14.0.4",
+    "husky": "^9.1.4",
     "typescript": "^5"
   }
 }

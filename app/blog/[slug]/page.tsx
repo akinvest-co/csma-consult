@@ -51,9 +51,9 @@ export default async function Article({
 
           <BreadcrumbItem>
             <BreadcrumbLink
-              href={`/blog/category/${article.attributes.blog_categories.data[0].attributes.slug}`}
+              href={`/blog/category/${article.attributes.blog_categories.data[0]?.attributes.slug}`}
             >
-              {article.attributes.blog_categories.data[0].attributes.name}
+              {article.attributes.blog_categories.data[0]?.attributes.name}
             </BreadcrumbLink>
           </BreadcrumbItem>
 
@@ -70,7 +70,7 @@ export default async function Article({
         >
           <VStack align="start" spacing="6">
             <Link
-              href={`/blog/category/${article.attributes.blog_categories.data[0].attributes.slug}`}
+              href={`/blog/category/${article.attributes.blog_categories.data[0]?.attributes.slug}`}
             >
               <Text
                 fontSize="small"
@@ -80,7 +80,7 @@ export default async function Article({
                 borderRadius="md"
                 color="#0b6999"
               >
-                {article.attributes.blog_categories.data[0].attributes.name}
+                {article.attributes.blog_categories.data[0]?.attributes.name}
               </Text>
             </Link>
             <Heading
@@ -93,9 +93,9 @@ export default async function Article({
           </VStack>
 
           <Image
-            src={article.attributes.image.data[0].attributes.url}
-            width={article.attributes.image.data[0].attributes.width}
-            height={article.attributes.image.data[0].attributes.height}
+            src={article.attributes.image.data[0]?.attributes.url}
+            width={article.attributes.image.data[0]?.attributes.width}
+            height={article.attributes.image.data[0]?.attributes.height}
             alt={article.attributes.title}
             style={{ borderRadius: "10px" }}
           />
