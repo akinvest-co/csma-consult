@@ -39,7 +39,7 @@ export default function AuditView() {
 
           <Box>
             <Image
-              src="/images/banner.jpeg"
+              src="/images/reseau.jpeg"
               alt="Études et Ingénierie"
               borderRadius="xl"
             />

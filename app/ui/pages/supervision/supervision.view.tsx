@@ -36,7 +36,7 @@ export default function SupervisionView() {
 
           <Box>
             <Image
-              src="/images/banner.jpeg"
+              src="/images/super.jpg"
               alt="Études et Ingénierie"
               borderRadius="xl"
             />
