@@ -1,5 +1,5 @@
 import { getArticles } from "@app/app/lib/api/blog/blog"
-import { Articles} from "@app/app/types/blog.types"
+import { Articles, BlogCategory} from "@app/app/types/blog.types"
 
 import {
   Box,
@@ -14,9 +14,11 @@ import BlogView from "./blog.view"
 import Layout from "@app/app/layout/layout.page"
 import SearchInput from "../search/search"
 import Link from "next/link"
+import { getCategories } from "@app/app/lib/api/blog/categories"
 
 export default async function BlogList({ query }: { query: string }) {
   const { data: articles } = await getArticles()
+  const {data : categories} = await getCategories()
 
 
   const sortedArticles = articles.sort(
@@ -57,11 +59,11 @@ export default async function BlogList({ query }: { query: string }) {
 
       <Container maxW="container.lg" my="20">
         <HStack justify={{ base: "flex-start", md: "center" }} wrap="wrap">
-          {articles.map((article: Articles) => (
+          {categories.map((category: BlogCategory) => (
             <Button
-              key={article.id}
+              key={category.id}
               as={Link}
-              href={`/blog/category/${article.attributes.blog_categories.data[0]?.attributes.slug}`}
+              href={`/blog/category/${category.attributes.slug}`}
               variant="outline"
               _hover={{ bgColor: "#e1f2fd", color: "#0b6999" }}
               letterSpacing="1px"
@@ -70,7 +72,7 @@ export default async function BlogList({ query }: { query: string }) {
               py={{ base: "0.5rem", md: "1rem" }}
               px={{ base: "0.5rem", md: "1rem" }}
             >
-              {article.attributes.blog_categories.data[0]?.attributes.name}
+              {category.attributes.name}
             </Button>
           ))}
         </HStack>
