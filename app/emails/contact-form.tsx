@@ -10,8 +10,9 @@ import {
   Button,
   Heading,
 } from "@chakra-ui/react"
-import { send } from "./sendEmails"
 import { useAppSelector } from "../hooks/cart/hooks"
+import { render } from "@react-email/components"
+import EmailTemplate from "./emailTemplate"
 
 export default function ContactForm() {
   const { form, onSubmit, validate } = useContactForm()
@@ -29,16 +30,19 @@ export default function ContactForm() {
     const values = form.values
     onSubmit(values)
 
-    const productsHtml = cartItems
-      .map(
-        (item) => `
-      <div>
-        <p>${item.attributes.name} (x${item.quantity})</p>
-        <img src="${item.attributes.image.data[0].attributes.url}" alt="${item.attributes.name}" style="width: 50px;"/>
-      </div>
-    `,
-      )
-      .join("")
+    const productsHtml = cartItems.map((item) => ({
+      name: item.attributes.name,
+      quantity: item.quantity,
+      imageUrl: item.attributes.image.data[0].attributes.url,
+    }));
+
+    const emailHtml = render(
+      <EmailTemplate
+        name={values.user_name}
+        userMessage={values.user_message}
+        products={productsHtml}
+      />
+    );
 
     const smtpEmail = "nikuzediop@gmail.com"
     if (!smtpEmail) {
@@ -55,7 +59,7 @@ export default function ContactForm() {
         to: smtpEmail,
         from: values.user_email,
         name: values.user_name,
-        body: `${values.user_message}<br/><br/>Produits:<br/>${productsHtml}`,
+        body: emailHtml,
       }),
     })
     if (response.ok) {
@@ -63,13 +67,6 @@ export default function ContactForm() {
     } else {
       console.error("Failed to send email")
     }
-
-    // await send(
-    //   smtpEmail,
-    //   values.user_name,
-    //   `${values.user_message}<br/><br/>Produits:<br/>${productsHtml}`,
-    //   values.user_email,
-    // )
   }
 
   return (
