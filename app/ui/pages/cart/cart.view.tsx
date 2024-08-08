@@ -27,6 +27,7 @@ import Link from "next/link"
 
 export default function Cart() {
   const cartItems = useAppSelector((store) => store.store)
+  
 
   const dispatch = useAppDispatch()
 

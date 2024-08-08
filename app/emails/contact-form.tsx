@@ -29,16 +29,30 @@ export default function ContactForm() {
     const values = form.values
     onSubmit(values)
 
-    const productsHtml = cartItems
-    .map(
-      (item) => `
-    <div>
-      <p>${item.attributes.name} (x${item.quantity})</p>
-      <img src="${item.attributes.image.data[0].attributes.url}" alt="${item.attributes.name}" style="width: 50px;"/>
-    </div>
-  `,
-    )
-    .join("")
+    const productsHtml = `
+  <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; padding: 10px;">
+    ${cartItems
+      .map(
+        (item) => `
+        <div style="padding: 10px; border: 1px solid #ddd; border-radius: 10px; box-sizing: border-box;">
+          <img src="${item.attributes.image.data[0].attributes.url}" 
+               alt="${item.attributes.name}" 
+               style="width: 80px; height: 80px; object-fit: cover; border-radius: 100px; margin-bottom: 10px;" />
+          <div style="text-align: left;">
+            <p style="margin: 0; font-weight: bold;">${item.attributes.name}</p>
+            <p style="margin: 0; color: #555;">Quantité: ${item.quantity}</p>
+          </div>
+        </div>
+      `,
+      )
+      .join("")}
+  </div>
+`;
+
+  
+
+
+    
 
   
     const smtpEmail = "nikuzediop@gmail.com"
