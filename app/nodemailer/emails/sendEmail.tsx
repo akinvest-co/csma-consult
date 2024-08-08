@@ -3,14 +3,14 @@ import { render } from '@react-email/components';
 import EmailTemplate from "@app/app/emails/emailTemplate";
 
 interface EmailProps {
-  to: string;
-  from: string;
-  name: string;
-  userMessage: string;
-  products: { name: string; quantity: number; imageUrl: string }[];
+  to: string
+  from: string
+  name: string
+  body: string
+
 }
 
-export async function sendEmail({ to, from, name, userMessage, products }: EmailProps) {
+export async function sendEmail({ to, from, name, body }: EmailProps) {
   const { SMTP_PASSWORD } = process.env
   const SMTP_EMAIL = "nikuzediop@gmail.com"
 
@@ -32,7 +32,6 @@ export async function sendEmail({ to, from, name, userMessage, products }: Email
     },
   })
 
-  const emailHtml = render(<EmailTemplate name={name} userMessage={userMessage} products={products} />);
 
 
   try {
@@ -49,7 +48,7 @@ export async function sendEmail({ to, from, name, userMessage, products }: Email
       from,
       replyTo: from,
       subject: `Demande de devis de ${name}`,
-      html: emailHtml,
+      html: body,
     })
     console.log("Email sent successfully:", sendResult)
   } catch (error) {

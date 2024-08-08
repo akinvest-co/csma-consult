@@ -12,6 +12,6 @@ export const send = async (
     to,
     from,
     name,
-    body: `<p>${message}</p>`,
+    body: `<p>${message}</p>`
   })
 }
