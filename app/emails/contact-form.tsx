@@ -29,30 +29,25 @@ export default function ContactForm() {
     const values = form.values
     onSubmit(values)
 
-    const productsHtml = `
-  <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; padding: 10px;">
-    ${cartItems
-      .map(
-        (item) => `
-        <div style="padding: 10px; border: 1px solid #ddd; border-radius: 10px; box-sizing: border-box;">
-          <img src="${item.attributes.image.data[0].attributes.url}" 
-               alt="${item.attributes.name}" 
-               style="width: 80px; height: 80px; object-fit: cover; border-radius: 100px; margin-bottom: 10px;" />
-          <div style="text-align: left;">
-            <p style="margin: 0; font-weight: bold;">${item.attributes.name}</p>
-            <p style="margin: 0; color: #555;">Quantité: ${item.quantity}</p>
-          </div>
-        </div>
-      `,
-      )
-      .join("")}
-  </div>
-`;
-
-  
-
-
     
+    const productsHtml = `
+    <div style="display: flex;">
+      ${cartItems
+        .map(
+          (item, index) => `
+          <div style="padding: 10px; border-radius: 10px;">
+            <img src="${item.attributes.image.data[0].attributes.url}" 
+                 alt="${item.attributes.name}" 
+                 style="width: 90px; border-radius: 10px; margin-bottom: 10px;" />
+            <div>
+              <p style="margin: 0; font-weight: bold;">${item.attributes.name}</p>
+              <p style="margin: 0; color: #555;">Quantité: ${item.quantity}</p>
+            </div>
+          </div>
+        `,
+        )}
+    </div>
+  `;
 
   
     const smtpEmail = "nikuzediop@gmail.com"

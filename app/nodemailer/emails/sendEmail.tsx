@@ -1,6 +1,5 @@
 import nodemailer from "nodemailer"
 import { render } from '@react-email/components';
-import EmailTemplate from "@app/app/emails/emailTemplate";
 
 interface EmailProps {
   to: string
@@ -47,7 +46,7 @@ export async function sendEmail({ to, from, name, body }: EmailProps) {
       to: SMTP_EMAIL,
       from,
       replyTo: from,
-      subject: `Demande de devis de ${name}`,
+      subject: `Demande de devis pour ${name}`,
       html: body,
     })
     console.log("Email sent successfully:", sendResult)
