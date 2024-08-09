@@ -11,9 +11,10 @@ import {
   Heading,
 } from "@chakra-ui/react"
 import { useAppSelector } from "../hooks/cart/hooks"
-
+import { useTransition } from "react"
 
 export default function ContactForm() {
+  const [isPending, startTransition] = useTransition()
   const { form, onSubmit, validate } = useContactForm()
 
   const cartItems = useAppSelector((store) => store.store)
@@ -26,15 +27,14 @@ export default function ContactForm() {
       return
     }
 
-    const values = form.values
-    onSubmit(values)
+    startTransition(async () => {
+      const values = form.values
+      onSubmit(values)
 
-    
-    const productsHtml = `
+      const productsHtml = `
     <div style="display: flex;">
-      ${cartItems
-        .map(
-          (item, index) => `
+      ${cartItems.map(
+        (item, index) => `
           <div style="padding: 10px; border-radius: 10px;">
             <img src="${item.attributes.image.data[0].attributes.url}" 
                  alt="${item.attributes.name}" 
@@ -45,36 +45,35 @@ export default function ContactForm() {
             </div>
           </div>
         `,
-        )}
+      )}
     </div>
-  `;
+  `
 
-  
-    const smtpEmail = "nikuzediop@gmail.com"
-    if (!smtpEmail) {
-      console.error("SMTP_EMAIL is not defined in environment variables.")
-      return
-    }
+      const smtpEmail = "nikuzediop@gmail.com"
+      if (!smtpEmail) {
+        console.error("SMTP_EMAIL is not defined in environment variables.")
+        return
+      }
 
-    const response = await fetch("/api/email", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        to: smtpEmail,
-        from: values.user_email,
-        name: values.user_name,
-        body: `${values.user_message}<br/><br/>Produits:<br/>${productsHtml}`,
-
-      }),
+      const response = await fetch("/api/email", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          to: smtpEmail,
+          from: values.user_email,
+          name: values.user_name,
+          body: `${values.user_message}<br/><br/>Produits:<br/>${productsHtml}`,
+        }),
+      })
+      if (response.ok) {
+        console.log("Email sent successfully")
+        form.reset()
+      } else {
+        console.error("Failed to send email")
+      }
     })
-    if (response.ok) {
-      console.log("Email sent successfully")
-    } else {
-      console.error("Failed to send email")
-    }
-
   }
 
   return (
@@ -140,8 +139,10 @@ export default function ContactForm() {
             color="white"
             _hover={{ bg: "#0c84bd" }}
             borderRadius="999rem"
+            disabled={isPending}
+            aria-disabled={isPending}
           >
-            Demande de devis
+            {isPending ? "Envoi en cours..." : "Demande de devis"}
           </Button>
         </VStack>
       </form>
