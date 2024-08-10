@@ -32,12 +32,14 @@ export default function ProduitsView({
       borderRight={{
         md: index % 2 === 0 ? "2px dashed rgb(229, 231, 235)" : "none",
         lg:
-          index !== 3 && index !== 7 ? "2px dashed rgb(229, 231, 235)" : "none",
+          index !== 3 && index !== 7 && index !== 11
+            ? "2px dashed rgb(229, 231, 235)"
+            : "none",
       }}
       borderBottom={{
-        base: index < 7 ? "2px dashed rgb(229, 231, 235)" : "none",
-        md: index < 6 ? "2px dashed rgb(229, 231, 235)" : "none",
-        lg: index < 4 ? "2px dashed rgb(229, 231, 235)" : "none",
+        base: index < 11 ? "2px dashed rgb(229, 231, 235)" : "none",
+        md: index < 10 ? "2px dashed rgb(229, 231, 235)" : "none",
+        lg: index < 8 ? "2px dashed rgb(229, 231, 235)" : "none",
       }}
     >
       <Link

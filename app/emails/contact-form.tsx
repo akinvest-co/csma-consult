@@ -12,6 +12,7 @@ import {
 } from "@chakra-ui/react"
 import { useAppSelector } from "../hooks/cart/hooks"
 import { useTransition } from "react"
+import toast from "react-hot-toast"
 
 export default function ContactForm() {
   const [isPending, startTransition] = useTransition()
@@ -68,10 +69,13 @@ export default function ContactForm() {
         }),
       })
       if (response.ok) {
-        console.log("Email sent successfully")
+        toast.success("Email envoyé avec succès!", {
+          duration: 5000,
+        })
+
         form.reset()
       } else {
-        console.error("Failed to send email")
+        toast.error("Échec de l'envoi de l'email.")
       }
     })
   }

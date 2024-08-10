@@ -77,7 +77,7 @@ export default async function Products({ query }: { query: string }) {
 
         <SimpleGrid columns={{ base: 1, md: 2, lg: 4 }}>
           {filteredProducts
-            .slice(0, 8)
+            .slice(0, 12)
             .map((product: Products, index: number) => (
               <ProduitsView key={product.id} product={product} index={index} />
             ))}

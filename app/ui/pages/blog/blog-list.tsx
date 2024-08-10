@@ -1,5 +1,5 @@
 import { getArticles } from "@app/app/lib/api/blog/blog"
-import { Articles, BlogCategory} from "@app/app/types/blog.types"
+import { Articles, BlogCategory } from "@app/app/types/blog.types"
 
 import {
   Box,
@@ -18,8 +18,7 @@ import { getCategories } from "@app/app/lib/api/blog/categories"
 
 export default async function BlogList({ query }: { query: string }) {
   const { data: articles } = await getArticles()
-  const {data : categories} = await getCategories()
-
+  const { data: categories } = await getCategories()
 
   const sortedArticles = articles.sort(
     (prevArticle: Articles, nextArticle: Articles) =>
@@ -32,7 +31,8 @@ export default async function BlogList({ query }: { query: string }) {
       article.attributes.title.toLowerCase().includes(query.toLowerCase()) ||
       (article.attributes.blog_categories.data[0]?.attributes.name
         .toLowerCase()
-        .includes(query.toLowerCase()) ?? false),
+        .includes(query.toLowerCase()) ??
+        false),
   )
 
   return (

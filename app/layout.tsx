@@ -11,6 +11,7 @@ export const metadata: Metadata = {
 
 import { Providers } from "./providers"
 import StoreProvider from "./redux/Provider"
+import { Toaster } from "react-hot-toast"
 
 export default function RootLayout({
   children,
@@ -22,6 +23,8 @@ export default function RootLayout({
       <body>
         <StoreProvider>
           <Providers>{children}</Providers>
+
+          <Toaster position="bottom-right" />
         </StoreProvider>
       </body>
     </html>
