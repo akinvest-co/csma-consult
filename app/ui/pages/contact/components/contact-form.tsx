@@ -11,13 +11,58 @@ import {
   Box,
 } from "@chakra-ui/react"
 import { useContactForm } from "@app/app/validation/contactForm"
+import { useTransition } from "react"
+import toast from "react-hot-toast"
 
 const ContactForm = () => {
-  const { form, onSubmit } = useContactForm()
+  const [isPending, startTransition] = useTransition()
+  const { form, onSubmit, validate } = useContactForm()
+
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault()
+
+    const validationResult = validate()
+    if (validationResult.hasErrors) {
+      return
+    }
+
+    startTransition(async () => {
+      const values = form.values
+      onSubmit(values)
+
+      const smtpEmail = "nikuzediop@gmail.com"
+      if (!smtpEmail) {
+        console.error("SMTP_EMAIL is not defined in environment variables.")
+        return
+      }
+
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          to: smtpEmail,
+          from: values.user_email,
+          subject: values.user_subject || "Contactez-nous",
+          body: values.user_message,
+        }),
+      })
+      if (response.ok) {
+        toast.success("Email envoyé avec succès!", {
+          duration: 5000,
+        })
+
+        form.reset()
+      } else {
+        toast.error("Échec de l'envoi de l'email.")
+      }
+    })
+  }
 
   return (
     <Box boxShadow="0px 0px 25px rgba(54, 91, 125, 0.2)" p="6" rounded="2xl">
-      <form onSubmit={form.onSubmit(onSubmit)}>
+      <form onSubmit={handleSubmit}>
         <VStack spacing="5">
           <FormControl isInvalid={!!form.errors.user_name}>
             <FormLabel htmlFor="user_name">Prénom et Nom</FormLabel>
@@ -74,8 +119,10 @@ const ContactForm = () => {
             color="white"
             _hover={{ bg: "#0c84bd" }}
             borderRadius="999rem"
+            disabled={isPending}
+            aria-disabled={isPending}
           >
-            Envoyer
+            {isPending ? "Envoi en cours..." : "Envoyer"}
           </Button>
         </VStack>
       </form>

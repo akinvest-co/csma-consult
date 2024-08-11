@@ -1,7 +1,7 @@
-import Layout from '@app/app/layout/layout.page'
-import { Container, SimpleGrid } from '@chakra-ui/react'
-import ContactInfo from './contact-info'
-import ContactForm from './contact-form'
+import Layout from "@app/app/layout/layout.page"
+import { Container, SimpleGrid } from "@chakra-ui/react"
+import ContactInfo from "./contact-info"
+import ContactForm from "./contact-form"
 
 const ContactView = () => {
   return (

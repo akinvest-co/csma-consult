@@ -1,15 +1,14 @@
 import nodemailer from "nodemailer"
-import { render } from '@react-email/components';
 
 interface EmailProps {
   to: string
   from: string
   name: string
+  subject?: string
   body: string
-
 }
 
-export async function sendEmail({ to, from, name, body }: EmailProps) {
+export async function sendEmail({ to, from, subject, name, body }: EmailProps) {
   const { SMTP_PASSWORD } = process.env
   const SMTP_EMAIL = "nikuzediop@gmail.com"
 
@@ -31,8 +30,6 @@ export async function sendEmail({ to, from, name, body }: EmailProps) {
     },
   })
 
-
-
   try {
     const testResult = await transport.verify()
     console.log("Transport verified:", testResult)
@@ -46,7 +43,7 @@ export async function sendEmail({ to, from, name, body }: EmailProps) {
       to: SMTP_EMAIL,
       from,
       replyTo: from,
-      subject: `Demande de devis pour ${name}`,
+      subject: subject,
       html: body,
     })
     console.log("Email sent successfully:", sendResult)

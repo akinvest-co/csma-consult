@@ -65,6 +65,7 @@ export default function ContactForm() {
           to: smtpEmail,
           from: values.user_email,
           name: values.user_name,
+          subject: `Demande de devis pour ${values.user_name}`,
           body: `${values.user_message}<br/><br/>Produits:<br/>${productsHtml}`,
         }),
       })
