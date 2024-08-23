@@ -35,7 +35,7 @@ export default function RecettesView() {
 
           <Box>
             <Image
-              src="/images/banner.jpeg"
+              src="/images/recette.jpeg"
               alt="Études et Ingénierie"
               borderRadius="xl"
             />
@@ -54,6 +54,16 @@ export default function RecettesView() {
           assurer la fiabilité et la performance de vos installations tout au
           long du processus de réception et de mise en service.
         </Text>
+        <Box boxSize="100%" mt="10">
+          <Image
+            src="/images/recet.png"
+            w="100%"
+            h="500px"
+            objectFit="cover"
+            alt="Études et Ingénierie"
+            borderRadius="xl"
+          />
+        </Box>
       </Container>
     </Layout>
   )

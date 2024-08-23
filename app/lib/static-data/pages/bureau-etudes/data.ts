@@ -1,6 +1,7 @@
 import product from "@app/public/images/supportimage.jpg"
-import product1 from "@app/public/images/reseau.jpeg"
-import product2 from "@app/public/images/supervision.jpg"
+import product1 from "@app/public/images/audit.jpeg"
+import product2 from "@app/public/images/centre.jpg"
+import product3 from "@app/public/images/recette.jpeg"
 
 export const bureauDataIng = [
   {
@@ -29,7 +30,7 @@ export const bureauDataInfr = [
 export const bureauDataRecettes = [
   {
     id: 1,
-    img: product,
+    img: product3,
     title: "Recettes et Réception",
     descr:
       "La Réception commence par une vérification minutieuse de la conformité aux normes en vigueur, suivie de tests et de validations garantissant un fonctionnement optimal. La prise en main des équipements, validée et mise en service en mode isolé, est réalisée avec précision. ",

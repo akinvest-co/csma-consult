@@ -55,6 +55,16 @@ export default function EtudesIngVIew() {
           expertise pour des interventions précises et des solutions
           d'ingénierie de pointe.
         </Text>
+        <Box boxSize="100%" mt="10">
+          <Image
+            src="/images/banner2.png"
+            w="100%"
+            h="500px"
+            objectFit="cover"
+            alt="Études et Ingénierie"
+            borderRadius="xl"
+          />
+        </Box>
       </Container>
     </Layout>
   )

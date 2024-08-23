@@ -36,7 +36,7 @@ export default function BureauView() {
             lineHeight="1.6"
             fontSize={{ base: "16px", md: "18px" }}
           >
-            Nos équipes veille à la pérennité et la fiabilité des informations
+            Nos équipes veillent à la pérennité et la fiabilité des informations
             intégrées. En coordination avec les équipes terrains, chaque étape
             est soigneusement orchestrée.
           </Text>

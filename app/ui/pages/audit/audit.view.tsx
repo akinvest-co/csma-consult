@@ -39,7 +39,7 @@ export default function AuditView() {
 
           <Box>
             <Image
-              src="/images/reseau.jpeg"
+              src="/images/audit.jpeg"
               alt="Études et Ingénierie"
               borderRadius="xl"
             />
@@ -57,6 +57,16 @@ export default function AuditView() {
           d'entretien, notre engagement envers l'excellence garantit des
           résultats fiables et durables.
         </Text>
+        <Box boxSize="100%" mt="10">
+          <Image
+            src="/images/reseau.jpeg"
+            w="100%"
+            h="500px"
+            objectFit="cover"
+            alt="Études et Ingénierie"
+            borderRadius="xl"
+          />
+        </Box>
       </Container>
     </Layout>
   )

@@ -67,8 +67,10 @@ export default function Footer() {
         >
           <Stack>
             <Heading fontSize="lg">Adresse</Heading>
-            <Text color="rgba(107,114,128,1)">324 Rue de Dublin</Text>
-            <Text color="rgba(107,114,128,1)">77550 MOISSY-CRAMAYEL</Text>
+            <Text color="rgba(107,114,128,1)">
+              66 avenue des Champs Elysées - Lot 41
+            </Text>
+            <Text color="rgba(107,114,128,1)">75008 PARIS</Text>
           </Stack>
           <Stack mt={{ base: "5", md: "5", lg: 0 }}>
             <Heading fontSize="lg">Contact</Heading>
@@ -77,7 +79,7 @@ export default function Footer() {
                 contact@csmaconsult.com
               </a>
             </Text>
-            <Text color="rgba(107,114,128,1)">+01 88 61 10 56</Text>
+            <Text color="rgba(107,114,128,1)">+33 1 88 61 10 87</Text>
           </Stack>
 
           <HStack spacing="3" mt={{ base: "5", md: "5", lg: 0 }}>

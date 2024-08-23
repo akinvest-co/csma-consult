@@ -36,7 +36,7 @@ export default function SupervisionView() {
 
           <Box>
             <Image
-              src="/images/super.jpg"
+              src="/images/centre.jpg"
               alt="Études et Ingénierie"
               borderRadius="xl"
             />
@@ -52,6 +52,16 @@ export default function SupervisionView() {
           continue, nous cherchons constamment à optimiser nos services pour
           vous offrir une expérience client toujours plus performante.
         </Text>
+        <Box boxSize="100%" mt="10">
+          <Image
+            src="/images/centre1.jpg"
+            w="100%"
+            h="500px"
+            objectFit="cover"
+            alt="Études et Ingénierie"
+            borderRadius="xl"
+          />
+        </Box>
       </Container>
     </Layout>
   )
