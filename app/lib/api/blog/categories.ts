@@ -1,6 +1,6 @@
 export async function getCategories() {
   const res = await fetch(
-    "https://csma-consult.onrender.com/api/blog-categories?populate=*",
+    "https://admin-csma-consult.fly.dev/api/blog-categories?populate=*",
     { cache: "no-store" },
   )
 
@@ -9,7 +9,7 @@ export async function getCategories() {
 
 export async function getCategory(slug: string) {
   const res = await fetch(
-    `https://csma-consult.onrender.com/api/blog-categories/${slug}?populate=*`,
+    `https://admin-csma-consult.fly.dev/api/blog-categories/${slug}?populate=*`,
     { cache: "no-store" },
   )
 

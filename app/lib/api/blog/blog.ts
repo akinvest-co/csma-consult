@@ -1,6 +1,6 @@
 export async function getArticles() {
   const res = await fetch(
-    "https://csma-consult.onrender.com/api/blogs?populate=*",
+    "https://admin-csma-consult.fly.dev/api/blogs?populate=*",
     { cache: "no-store" },
   )
 
@@ -9,7 +9,7 @@ export async function getArticles() {
 
 export async function getArticle(slug: string) {
   const res = await fetch(
-    `https://csma-consult.onrender.com/api/blogs/${slug}?populate=*`,
+    `https://admin-csma-consult.fly.dev/api/blogs/${slug}?populate=*`,
     { cache: "no-store" },
   )
 

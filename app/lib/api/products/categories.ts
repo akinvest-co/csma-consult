@@ -1,6 +1,6 @@
 export async function getCategories() {
   const res = await fetch(
-    "https://csma-consult.onrender.com/api/product-categories?populate=*",
+    "https://admin-csma-consult.fly.dev/api/product-categories?populate=*",
   )
 
   return res.json()
@@ -8,7 +8,7 @@ export async function getCategories() {
 
 export async function getCategory(category: string) {
   const res = await fetch(
-    `https://csma-consult.onrender.com/api/product-categories/${category}?populate=*`,
+    `https://admin-csma-consult.fly.dev/api/product-categories/${category}?populate=*`,
     { cache: "no-store" },
   )
 
