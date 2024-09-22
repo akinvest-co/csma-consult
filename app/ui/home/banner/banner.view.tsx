@@ -42,22 +42,6 @@ const BannerView = () => {
               <Text fontSize={{ base: "lg", md: "xl" }} lineHeight="1.7">
                 {intro}
               </Text>
-
-              <Button
-                size="xl"
-                as={NextLink}
-                href="/produits"
-                letterSpacing="1px"
-                textTransform="uppercase"
-                bg="#1799cf"
-                _hover={{ bg: "#0c84bd" }}
-                color="#fff"
-                fontSize="1rem"
-                py="1rem"
-                px="2rem"
-              >
-                Voir Nos Solutions
-              </Button>
             </VStack>
 
             <Box borderRadius="md" overflow="hidden">
