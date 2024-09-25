@@ -72,7 +72,7 @@ export default async function Product({
               </Text>
             </NextLink>
             <Heading>{product.attributes.name}</Heading>
-            <BlocksRenderer content={product.attributes.intro} />
+            <BlocksRenderer content={product.attributes.details} />
             <AddToCartButton product={product} size="xl" />
           </VStack>
         </SimpleGrid>

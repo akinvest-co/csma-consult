@@ -2,7 +2,7 @@ import { Metadata, ResolvingMetadata } from "next"
 import Layout from "@app/app/layout/layout.page"
 import { getCategory } from "@app/app/lib/api/products/categories"
 import { getProducts } from "@app/app/lib/api/products/products"
-import { Products } from "@app/app/types/products.types"
+import { ProductCategory, Products } from "@app/app/types/products.types"
 
 import {
   Breadcrumb,
@@ -14,10 +14,11 @@ import {
   Heading,
   SimpleGrid,
   VStack,
+  Button,
 } from "@chakra-ui/react"
 import Image from "next/image"
 import NextLink from "next/link"
-
+import { getCategories } from "@app/app/lib/api/products/categories"
 type Props = {
   params: { category: string }
 }
@@ -40,7 +41,7 @@ export default async function CategoryPage({
 }) {
   const { data: products } = await getProducts()
   const { data: category } = await getCategory(params.category)
-
+  const { data: categories } = await getCategories()
   const filteredProducts = products.filter((product: Products) => {
     return (
       product.attributes.product_categories.data[0].attributes.slug ===
@@ -64,7 +65,30 @@ export default async function CategoryPage({
             <span>{category.attributes.name}</span>
           </BreadcrumbItem>
         </Breadcrumb>
-
+        <HStack
+          justify={{ base: "flex-start", md: "center" }}
+          wrap="wrap"
+          my="20"
+        >
+          {categories.map((category: ProductCategory) => (
+            <Button
+              as={Link}
+              href={`/produits/category/${category.attributes.slug}`}
+              key={category.id}
+              variant="outline"
+              _hover={{
+                bgColor: "#e1f2fd",
+                color: "#0b6999",
+                textDecor: "none",
+              }}
+              letterSpacing="1px"
+              textTransform="uppercase"
+              fontSize={{ base: "0.6rem", md: "0.7rem" }}
+            >
+              {category.attributes.name}
+            </Button>
+          ))}
+        </HStack>
         <Heading textAlign="center" my="20">
           {category.attributes.name}
         </Heading>
