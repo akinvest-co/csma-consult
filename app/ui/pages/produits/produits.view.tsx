@@ -47,11 +47,13 @@ export default function ProduitsView({
         borderRadius="xl"
         bgColor="#f5f6f6"
         padding="5"
+        boxShadow="md"
+        _hover={{ boxShadow: "lg" }}
       >
         <Image
           src={product.attributes.image.data[0].attributes.url}
-          width={product.attributes.image.data[0].attributes.width}
-          height={product.attributes.image.data[0].attributes.height}
+          width={320}
+          height={300}
           alt={product.attributes.name}
           priority
         />
