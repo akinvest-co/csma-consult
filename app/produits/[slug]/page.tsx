@@ -32,8 +32,6 @@ export async function generateMetadata(
   parent: ResolvingMetadata,
 ): Promise<Metadata> {
   const { data: product } = await getProduct(params.slug)
-  console.log(product)
-
   return {
     title: product.attributes.name,
   }
@@ -93,13 +91,17 @@ export default async function Product({
                     Fiche du produit {product.attributes.name}
                   </Heading>
 
-                  <Link
-                    href={product.attributes.sheet?.data?.attributes.url}
-                    download={product.attributes.name}
-                    textDecor="underline"
-                  >
-                    Télécharger le fichier PDF
-                  </Link>
+                  {product.attributes.sheet?.data?.attributes.url ? (
+                    <Link
+                      href={product.attributes.sheet?.data?.attributes.url}
+                      download={product.attributes.name}
+                      textDecor="underline"
+                    >
+                      Télécharger le fichier PDF
+                    </Link>
+                  ) : (
+                    <Text>Fiche produit indisponible</Text>
+                  )}
                 </HStack>
               </TabPanel>
             </TabPanels>

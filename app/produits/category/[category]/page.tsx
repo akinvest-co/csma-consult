@@ -96,7 +96,13 @@ export default async function CategoryPage({
         <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} gap="10">
           {filteredProducts.map((product: Products) => (
             <VStack align="start" spacing="6" key={product.id}>
-              <Link href={`/produits/${product.attributes.slug}`}>
+              <Link
+                href={`/produits/${product.attributes.slug}`}
+                boxShadow="md"
+                _hover={{ boxShadow: "lg" }}
+                bgColor="#f5f6f6"
+                padding="5"
+              >
                 <Image
                   src={product.attributes.image.data[0].attributes.url}
                   width={product.attributes.image.data[0].attributes.width}
