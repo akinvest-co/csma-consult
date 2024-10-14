@@ -3,3 +3,5 @@ export const formatDate = new Intl.DateTimeFormat("fr", {
   month: "short",
   day: "numeric",
 })
+
+console.log({ formatDate })
