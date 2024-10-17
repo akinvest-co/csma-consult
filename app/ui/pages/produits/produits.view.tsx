@@ -51,11 +51,11 @@ export default function ProduitsView({
         _hover={{ boxShadow: "lg" }}
       >
         <Image
-          src={product.attributes.image.data[0].attributes.url}
-          width={320}
-          height={300}
-          alt={product.attributes.name}
-          priority
+           src={product.attributes.image.data[0].attributes.url}
+           width={product.attributes.image.data[0].attributes.width}
+           height={product.attributes.image.data[0].attributes.height}
+           alt={product.attributes.name}
+           priority
         />
       </Link>
       <Link
