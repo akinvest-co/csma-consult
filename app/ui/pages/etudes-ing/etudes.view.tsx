@@ -57,9 +57,9 @@ export default function EtudesIngVIew() {
         </Text>
         <Box boxSize="100%" mt="10">
           <Image
-            src="/images/banner2.png"
+            src="/images/soudures.png"
             w="100%"
-            h="500px"
+  
             objectFit="cover"
             alt="Études et Ingénierie"
             borderRadius="xl"

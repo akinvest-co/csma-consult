@@ -30,7 +30,7 @@ const ContactForm = () => {
       const values = form.values
       onSubmit(values)
 
-      const smtpEmail = "nikuzediop@gmail.com"
+      const smtpEmail = "fama.tall@csmaconsult.com"
       if (!smtpEmail) {
         console.error("SMTP_EMAIL is not defined in environment variables.")
         return
@@ -49,7 +49,7 @@ const ContactForm = () => {
         }),
       })
       if (response.ok) {
-        toast.success("Email envoyé avec succès!", {
+        toast.success("Merci! Votre demande a bien été prise en compte. Notre èquipe vous contactera sous peu!", {
           duration: 5000,
         })
 

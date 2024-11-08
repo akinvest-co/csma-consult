@@ -10,7 +10,7 @@ interface EmailProps {
 
 export async function sendEmail({ to, from, subject, name, body }: EmailProps) {
   const { SMTP_PASSWORD } = process.env
-  const SMTP_EMAIL = "nikuzediop@gmail.com"
+  const SMTP_EMAIL = "fama.tall@csmaconsult.com"
 
   if (!SMTP_EMAIL || !SMTP_PASSWORD) {
     throw new Error(
@@ -24,9 +24,10 @@ export async function sendEmail({ to, from, subject, name, body }: EmailProps) {
 
   const transport = nodemailer.createTransport({
     service: "gmail",
+    port:465,
     auth: {
-      user: SMTP_EMAIL,
-      pass: SMTP_PASSWORD,
+      user:process.env.SMTP_EMAIL,
+      pass:process.env.SMTP_PASSWORD,
     },
   })
 

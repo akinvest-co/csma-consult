@@ -12,7 +12,7 @@ import {
 } from "@chakra-ui/react"
 import { useAppSelector } from "../hooks/cart/hooks"
 import { useTransition } from "react"
-import toast from "react-hot-toast"
+import toast,{Toaster} from "react-hot-toast"
 
 export default function ContactForm() {
   const [isPending, startTransition] = useTransition()
@@ -50,7 +50,7 @@ export default function ContactForm() {
     </div>
   `
 
-      const smtpEmail = "nikuzediop@gmail.com"
+      const smtpEmail = "fama.tall@csmaconsult.com"
       if (!smtpEmail) {
         console.error("SMTP_EMAIL is not defined in environment variables.")
         return
@@ -70,8 +70,23 @@ export default function ContactForm() {
         }),
       })
       if (response.ok) {
-        toast.success("Email envoyé avec succès!", {
+        toast.success("Nous vous remercions pour l'intérêt que vous portez.\nNotre Commercial dédié viendra vers vous dans les plus brefs délais.", {
           duration: 5000,
+          position: "top-center",
+  style: {
+    background: "#0C84BD", 
+    color: "#fff",         
+    width: "500px",
+    height: "200px",
+    padding: "16px",
+    fontSize: "16px",
+    borderRadius: "8px",
+    boxShadow: "0 4px 12px rgba(0, 0, 0, 0.15)", 
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    textAlign: "center",
+  },
         })
 
         form.reset()
@@ -151,6 +166,7 @@ export default function ContactForm() {
           </Button>
         </VStack>
       </form>
+      
     </Box>
   )
 }

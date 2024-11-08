@@ -2,12 +2,10 @@ import { Metadata, ResolvingMetadata } from "next"
 import Layout from "@app/app/layout/layout.page"
 import { getArticles } from "@app/app/lib/api/blog/blog"
 import { getCategory } from "@app/app/lib/api/blog/categories"
-import { Articles } from "@app/app/types/blog.types"
+import { Articles, BlogCategory } from "@app/app/types/blog.types"
 import { formatDate } from "@app/app/utils/utils"
 import {
-  Breadcrumb,
-  BreadcrumbItem,
-  BreadcrumbLink,
+
   Container,
   Link,
   HStack,
@@ -15,10 +13,11 @@ import {
   Text,
   SimpleGrid,
   VStack,
+  Button,
 } from "@chakra-ui/react"
 import Image from "next/image"
 import NextLink from "next/link"
-
+import { getCategories } from "@app/app/lib/api/blog/categories"
 type Props = {
   params: { category: string }
 }
@@ -42,7 +41,7 @@ export default async function CategoryPage({
   const { data: articles } = await getArticles()
 
   const category = await getCategory(params.category)
-
+  const { data: categories } = await getCategories()
   const filteredArticles = articles.filter((article: Articles) => {
     return (
       article.attributes.blog_categories.data[0].attributes.name ===
@@ -53,20 +52,24 @@ export default async function CategoryPage({
   return (
     <Layout>
       <Container maxW="container.lg" my="20">
-        <Breadcrumb color="rgba(89 106 149)" fontSize="md" mt="20">
-          <BreadcrumbItem>
-            <BreadcrumbLink href="/blog">Blog</BreadcrumbLink>
-          </BreadcrumbItem>
-
-          <BreadcrumbItem>
-            <BreadcrumbLink>Category</BreadcrumbLink>
-          </BreadcrumbItem>
-
-          <BreadcrumbItem isCurrentPage>
-            <span>{category.data.attributes.name}</span>
-          </BreadcrumbItem>
-        </Breadcrumb>
-
+      <HStack justify={{ base: "flex-start", md: "center" }} wrap="wrap">
+          {categories.map((category: BlogCategory) => (
+            <Button
+              key={category.id}
+              as={Link}
+              href={`/blog/category/${category.attributes.slug}`}
+              variant="outline"
+              _hover={{ bgColor: "#e1f2fd", color: "#0b6999" }}
+              letterSpacing="1px"
+              textTransform="uppercase"
+              fontSize={{ base: "0.6rem", md: "0.7rem" }}
+              py={{ base: "0.5rem", md: "1rem" }}
+              px={{ base: "0.5rem", md: "1rem" }}
+            >
+              {category.attributes.name}
+            </Button>
+          ))}
+        </HStack>
         <Heading textAlign="center" my="20">
           {category.data.attributes.name}
         </Heading>

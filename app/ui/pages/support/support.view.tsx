@@ -11,8 +11,6 @@ import {
   FormControl,
   FormLabel,
   Input,
-  FormHelperText,
-  Textarea,
   Button,
 } from "@chakra-ui/react"
 import NextImage from "next/image"
@@ -61,22 +59,7 @@ const Support = () => {
 
         <Container maxW="container.lg" my="28">
           <Box my="28">
-            <VStack align="center" textAlign="center" mb="12" spacing="8">
-              <Heading
-                w={{ md: "100%", lg: "50%" }}
-                lineHeight="shorter"
-                size="2xl"
-              >
-                Nos Coordonnées Support de base
-              </Heading>
-              <Text
-                w={{ base: "inherit", md: "inherit", lg: "400px" }}
-                color="rgba(107,114,128,1)"
-              >
-                Pour obtenir les infos de support internationaux pour nos
-                produits
-              </Text>
-            </VStack>
+            
             <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} spacing="10">
               {contactInfo.map(({ id, icon, title, intro, address }) => (
                 <VStack
