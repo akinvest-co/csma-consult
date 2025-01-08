@@ -5,7 +5,8 @@ import logo from "public/images/csma.png"
 
 export function Logo() {
   return (
-    <Box w="100px">
+    <Box w="180px" h="auto" 
+    objectFit="contain" >
       <Image src={logo} alt="CSMA logo" placeholder="blur" priority />
     </Box>
   )
