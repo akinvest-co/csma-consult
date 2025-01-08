@@ -1,12 +1,31 @@
 export const menuItems = [
-  { id: 1, label: "Bureau d’Études", path: "/bureau-etudes" },
-  { id: 2, label: "Produits", path: "/produits" },
-  { id: 3, label: "Contact", path: "/contact" },
-  { id: 4, label: "Support", path: "/support" },
-  { id: 5, label: "Blog", path: "/blog" },
-  { id: 6, label: "Panier", path: "/cart" },
-]
+  {
+    id: 1,
+    label: "Ingénierie Télécoms",
+    path: "/bureau-etudes",
+  
+  },
 
+  { id: 2, label: "Nos expertises", path: "/",
+
+    submenu: [
+      { id: 1.1, label: "Bureau d'étude", path: "/bureau-etudes" },
+      { id: 1.2, label: "Conseils", path: "/conseils" },
+      { id: 1.3, label: "Solutions Matérielles", path: "/conseils" },
+    ],
+   },
+
+   { id: 3, label: "Support", path: "/",
+    submenu: [
+      { id: 1.1, label: "Build & Run", path: "#" },
+      { id: 1.2, label: "SAV", path: "#" },
+    
+    ],
+   },
+  { id: 5, label: "Contact", path: "/contact" },
+  { id: 6, label: "Blog", path: "/blog" },
+
+];
 export const footerMenu = [
   { id: 1, label: "CSMA CONSULT" },
   { id: 2, label: " Plan du site", path: "/plan" },

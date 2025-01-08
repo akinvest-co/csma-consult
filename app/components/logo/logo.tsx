@@ -1,7 +1,7 @@
 import { Box } from "@chakra-ui/react"
 import { Link } from "@chakra-ui/next-js"
 import Image from "next/image"
-import logo from "public/images/logo1.jpeg"
+import logo from "public/images/csma.png"
 
 export function Logo() {
   return (

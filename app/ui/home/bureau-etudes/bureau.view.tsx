@@ -41,7 +41,7 @@ export default function BureauView() {
           <Divider
             orientation="vertical"
             display={{ base: "none", md: "none", lg: "block" }}
-            border="1px dashed #1799cf"
+            border="1px dashed #F7871A"
             mx="10"
           />
         </Box>

@@ -2,7 +2,7 @@ export const statsData = [
   {
     id: 1,
     stats: "200+",
-    description: "Projets Délivrés",
+    description: "Projets délivrés",
   },
   {
     id: 2,
@@ -12,11 +12,11 @@ export const statsData = [
   {
     id: 3,
     stats: "24h/24",
-    description: "Support et Interventions",
+    description: "Support et Intervention",
   },
   {
     id: 4,
     stats: "10+",
-    description: "Partenaires Satisfaits",
+    description: "Partenaires satisfaits",
   },
 ]

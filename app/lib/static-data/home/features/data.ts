@@ -1,4 +1,10 @@
-import icon from "public/images/analytics-icon.gif"
+import icon from "public/images/ico.png"
+import icone from "public/images/inge.png"
+import icon1 from "public/images/qualite.png"
+import icon2 from "public/images/temps.png"
+import icon3 from "public/images/personnalisation.png"
+import icon4 from "public/images/audit.png"
+
 
 export const featuresData = [
   {
@@ -11,35 +17,35 @@ export const featuresData = [
   {
     id: 2,
     title: "Qualité",
-    icon: icon,
+    icon: icon1,
     description:
       "Chaque services et produits que nous fournissons, est imprégné d'un engagement inébranlable envers l'excellence. ",
   },
   {
     id: 3,
     title: "Rapidité",
-    icon: icon,
+    icon: icon2,
     description:
       "Le temps est votre allié, et le nôtre aussi. Des solutions promptes, des délais tenus. Votre projet avance à la vitesse de vos aspirations.",
   },
   {
     id: 4,
     title: "Sur mesure",
-    icon: icon,
+    icon: icon3,
     description:
       "Des besoins créés sur mesure, fusionnant technologie et savoir-faire pour donner vie à des produits de qualité supérieure.",
   },
   {
     id: 5,
     title: "Ingénierie fibre",
-    icon: icon,
+    icon: icone,
     description:
       "De la conception à l'installation, pour offrir des solutions polyvalentes, prêtes à transformer votre vision en réalité.",
   },
   {
     id: 6,
     title: "Audit d’infrastructures",
-    icon: icon,
+    icon: icon4,
     description:
       "Une installation impeccable. Faites confiance à notre équipe pour des préparatifs dossiers ingénierie pour du raccordement sans accroc.",
   },

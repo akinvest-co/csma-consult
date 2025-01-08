@@ -8,4 +8,5 @@ export enum Routes {
   contact = "/contact",
   support = "/support",
   blog = "/blog",
+  conseils="/conseils"
 }
