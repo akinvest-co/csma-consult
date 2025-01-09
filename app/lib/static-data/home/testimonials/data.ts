@@ -1,6 +1,6 @@
 const srcImage = "https://bit.ly/dan-abramov"
 
-import arc from "public/images/arc.jpeg"
+import arc from "public/images/arc.png"
 import enedis from "public/images/enedis.jpeg"
 import netgeo from "public/images/netgeo.jpeg"
 import ratp from "public/images/ratp.jpeg"
@@ -25,6 +25,7 @@ export const partnersImages = [
     alt: "Arc Log",
     image: arc,
   },
+ 
   {
     id: 2,
     alt: "Enedis Logo",

@@ -34,24 +34,24 @@ const FeaturesView = () => {
             spacing={5}
             borderRight={{
               base: "none",
-              md: id % 2 !== 0 ? "2px dashed rgb(229, 231, 235)" : "none",
+              md: id % 2 !== 0 ? "1.8px dashed rgb(229, 231, 235)" : "none",
               lg:
                 id === 1 || id === 2 || id === 4 || id === 5
-                  ? "2px dashed #F7871A"
+                  ? "1.8px dashed #F7871A"
                   : "none",
             }}
             borderBottom={{
               base:
                 id === 1 || id === 2 || id === 3 || id === 4 || id === 5
-                  ? "2px dashed #F7871A"
+                  ? "1.8px dashed #F7871A"
                   : "none",
               md:
                 id === 1 || id === 2 || id === 3 || id === 4
-                  ? "2px dashed #F7871A"
+                  ? "1.8px dashed #F7871A"
                   : "none",
               lg:
                 id === 1 || id === 2 || id === 3
-                  ? "2px dashed #F7871A"
+                  ? "1.8px dashed #F7871A"
                   : "none",
             }}
           >

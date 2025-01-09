@@ -6,7 +6,7 @@ const Contact = () => {
   return (
     <Box>
       <VStack align="start" spacing="8" mb="8">
-        <Text color="#0b6999">Nous Joindre</Text>
+
         <Text color="rgba(107,114,128,1)">
           Nous sommes impatients d'avoir de vos nouvelles et de vous accompagner
           dans toutes vos démarches. Merci de nous faire confiance.
@@ -25,7 +25,7 @@ const Contact = () => {
           >
             <Box
               overflow="hidden"
-              border="1px solid #bde6fa"
+              border="1px dashed #F7871A"
               bg="#e1f2fd"
               padding={2}
               borderRadius="full"
@@ -33,7 +33,7 @@ const Contact = () => {
               h="45px"
               textAlign="center"
             >
-              <NextImage src={icon} alt="" />
+              <NextImage src={icon} alt=""  width={45}  height={45}/>
             </Box>
             <Heading size="md">{title}</Heading>
             <Box color="rgba(107,114,128,1)">

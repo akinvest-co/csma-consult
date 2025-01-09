@@ -1,11 +1,11 @@
-import emailIcon from "public/images/icon-email.gif"
-import callIcon from "public/images/call-icon.gif"
-import locationIcon from "public/images/location-icon.gif"
+import email from "public/images/mail2.png"
+import callIcon from "public/images/telephone1.png"
+import locationIcon from "public/images/lieu1.png"
 
 export const contactInfo = [
   {
     id: 1,
-    icon: emailIcon,
+    icon: email,
     title: "Notre adresse e-mail",
     intro: "Ecrivez-nous sur",
     address: "contact@csmaconsult.com",
@@ -23,7 +23,7 @@ export const contactInfo = [
     id: 3,
     icon: locationIcon,
     title: "Rencontrez-nous",
-    intro: " 66 avenue des Champs Elysées - Lot 41",
+    intro: " 66 avenue des Champs Elysées",
     address: "75008 PARIS",
   },
 ]

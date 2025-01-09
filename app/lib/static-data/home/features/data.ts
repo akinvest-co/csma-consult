@@ -1,9 +1,9 @@
-import icon from "public/images/ico.png"
-import icone from "public/images/inge.png"
-import icon1 from "public/images/qualite.png"
-import icon2 from "public/images/temps.png"
-import icon3 from "public/images/personnalisation.png"
-import icon4 from "public/images/audit.png"
+import icon from "public/images/COMPATIBILITE.png"
+import icone from "public/images/PARAMETRE.png"
+import icon1 from "public/images/QUALITE1.png"
+import icon2 from "public/images/RAPIDITE.png"
+import icon3 from "public/images/surmesure.png"
+import icon4 from "public/images/audite.png"
 
 
 export const featuresData = [

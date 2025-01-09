@@ -25,39 +25,7 @@ const Support = () => {
   return (
     <Layout>
       <Box>
-        {supportDataContact.map(({ id, bgImage, title }) => (
-          <Box key={id} position="relative">
-            <Box
-              bgImage={bgImage}
-              bgRepeat="no-repeat"
-              bgPos="bottom"
-              bgSize="cover"
-              h="40vh"
-              filter="brightness(45%)"
-            ></Box>
-            <Flex
-              position="absolute"
-              top="20"
-              color="white"
-              flexDirection="column"
-              align="center"
-              justify="center"
-              textAlign="center"
-              w="full"
-            >
-              <VStack spacing="10">
-                <Heading
-                  fontSize={{ base: "4xl", md: "6xl" }}
-                  w={{ md: "100%", lg: "70%" }}
-                >
-                  {title}
-                </Heading>
-              </VStack>
-            </Flex>
-          </Box>
-        ))}
-
-        <Container maxW="container.lg" my="28">
+       <Container maxW="container.lg" my="28">
           <Box my="28">
             
             <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} spacing="10">
@@ -72,7 +40,7 @@ const Support = () => {
                 >
                   <Box
                     overflow="hidden"
-                    border="1px solid #bde6fa"
+                    border="1px dashed #F7871A"
                     bg="#e1f2fd"
                     padding={2}
                     borderRadius="full"

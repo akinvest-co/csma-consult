@@ -28,7 +28,7 @@ export default function BureauView() {
       <Container maxW="container.xl" mt="20">
         <VStack align="center" spacing="5">
           <Heading letterSpacing="1px" size="xl">
-            BUREAU D’ÉTUDES
+            Bureau d'études Télécom
           </Heading>
           <Text
             textAlign="center"
@@ -149,7 +149,7 @@ export default function BureauView() {
             mb={{ base: "7", md: "7", lg: "0" }}
           >
             <Heading textAlign={{ base: "center", md: "left" }}>
-              Gestion d’Infrastructures télécom privées
+              Gestion d’infrastructures télécom privées
             </Heading>
             <Text textAlign={{ base: "center", md: "center", lg: "left" }}>
               Des mises à jour en temps réel à la supervision 24/7/365 des
