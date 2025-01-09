@@ -136,7 +136,7 @@ const Support = () => {
                 color="white"
                 _hover={{ bg: "#0c84bd" }}
               >
-                Suivre votre ticket
+                Connecter
               </Button>
             </VStack>
           </SimpleGrid>

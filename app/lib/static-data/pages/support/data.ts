@@ -13,7 +13,7 @@ export const supportDataContact = [
 export const supportDataAccount = [
   {
     id: 1,
-    title: 'Connectez vous pour suivre votre stock',
+    title: 'Portail client',
     items: [
       {
         id: 1,
@@ -29,7 +29,7 @@ export const supportDataAccount = [
       },
       {
         id: 4,
-        label: 'Vous recevez un feed-back régulièrement.',
+        label: 'Vous recevez régulièrement un feed-back .',
       },
     ],
   },
