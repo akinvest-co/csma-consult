@@ -17,7 +17,7 @@ export default async function ProduitsList() {
     <Container maxW="container.xl" my="28">
       <HStack justify="space-between" align="center">
         <Heading textTransform="uppercase" size="xl" letterSpacing="1px">
-          Nos produits phares
+          Nos produits 
         </Heading>
 
         <Button
