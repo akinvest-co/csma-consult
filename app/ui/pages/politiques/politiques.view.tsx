@@ -69,7 +69,7 @@ export default function PolitiquesView() {
 
           <Box>
             <Heading as="h2" size="md" color="orange.500" mb={2}>
-              Responsabilité
+              Responsabilités
             </Heading>
             <Text>
               La plateforme de CSMA CONSULT s&apos;efforce de fournir des informations fiables et à jour,
