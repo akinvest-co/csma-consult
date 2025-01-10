@@ -17,7 +17,6 @@ import NextImage from "next/image"
 import { contactInfo } from "@app/app/lib/static-data/pages/conctact"
 import {
   supportDataAccount,
-  supportDataContact,
 } from "@app/app/lib/static-data/pages/support"
 import Layout from "@app/app/layout/layout.page"
 
@@ -136,7 +135,7 @@ const Support = () => {
                 color="white"
                 _hover={{ bg: "#0c84bd" }}
               >
-                Connecter
+                Se connecter
               </Button>
             </VStack>
           </SimpleGrid>
