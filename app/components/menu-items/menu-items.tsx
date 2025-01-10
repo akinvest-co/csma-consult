@@ -1,8 +1,8 @@
 export const menuItems = [
   { id: 1, label: "Bureau d’études", path: "/bureau-etudes" },
-  { id: 2, label: "Contact", path: "/contact" },
-  { id: 3, label: "Support", path: "/support" },
-  { id: 4, label: "Blog", path: "/blog" },
+  { id: 2, label: "Support", path: "/support" },
+  { id: 3, label: "Blog", path: "/blog" },
+  { id: 4, label: "Contact", path: "/contact" },
 
 ]
 
