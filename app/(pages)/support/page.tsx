@@ -1,5 +1,6 @@
-import { Metadata } from "next"
 import SupportView from "@app/app/ui/pages/support/support.view"
+import { Metadata } from "next"
+
 
 export const metadata: Metadata = {
   title: "Support",
