@@ -6,7 +6,6 @@ const Contact = () => {
   return (
     <Box>
       <VStack align="start" spacing="8" mb="8">
-
         <Text color="rgba(107,114,128,1)">
           Nous sommes impatients d'avoir de vos nouvelles et de vous accompagner
           dans toutes vos démarches. Merci de nous faire confiance.
