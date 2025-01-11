@@ -1,5 +1,5 @@
 import email from "public/images/mail2.png"
-import callIcon from "public/images/telephone1.png"
+import callIcon from "public/images/Telephone1.png"
 import locationIcon from "public/images/lieu1.png"
 
 export const contactInfo = [
