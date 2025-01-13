@@ -37,9 +37,7 @@ export default function PolitiquesView() {
             <Heading as="h2" size="md" color="orange.500" mb={2}>
               Hébergeur du site
             </Heading>
-            <p>les insformations de l'hebergeur</p>
-            <p>les insformations de l'hebergeur</p>
-            <p>les insformations de l'hebergeur</p>
+    
             <Text>
               Le site est accessible en tout endroit 24h/24, 7J/7 sauf en cas de force majeure,
               interruption programmée ou non et pouvant découler d&apos;une maintenance.
