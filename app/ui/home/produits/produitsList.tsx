@@ -16,12 +16,12 @@ export default async function ProduitsList() {
   return (
     <Container maxW="container.xl" my="28">
       <HStack justify="space-between" align="center">
-        <Heading textTransform="uppercase" size="xl" letterSpacing="1px">
-          Nos produits 
+        <Heading  size="xl" letterSpacing="1px">
+          Nos produits phares
         </Heading>
 
         <Button
-          textTransform="uppercase"
+          
           display={{ base: "none", md: "inherit" }}
           href="/produits"
           as={NextLink}

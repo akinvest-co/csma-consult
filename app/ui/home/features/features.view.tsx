@@ -15,7 +15,6 @@ const FeaturesView = () => {
     <Container maxW="container.xl" my="28">
       <VStack align="center">
         <Heading
-          textTransform="uppercase"
           size="xl"
           letterSpacing={{ base: "0", md: "1px" }}
           textAlign="center"
