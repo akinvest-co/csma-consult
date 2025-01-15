@@ -17,7 +17,7 @@ export const bureauData = {
       descr:
         "Équipez-vous pour l'avenir avec notre sélection exclusive de matériel réseau. Performant, fiable, et à la pointe de la technologie pour vos futurs projets.",
       linkText: "Explorer le Catalogue",
-      path: "#",
+      path: "https://csma-shop.vercel.app/",
     },
   ],
 }
