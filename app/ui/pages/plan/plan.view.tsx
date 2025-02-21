@@ -24,7 +24,7 @@ export default function PlanSiteView() {
             </ListItem>
             <ListItem>
               <Link href="/bureau-etudes" color="#F7871A" _hover={{ textDecoration: "underline" }}>
-                Bureau d'études
+                La société
               </Link>
             </ListItem>
             <ListItem>
