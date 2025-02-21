@@ -17,6 +17,6 @@ export const statsData = [
   {
     id: 4,
     stats: "20+",
-    description: "Partenaires satisfaits",
+    description: "Personnes mobilisées",
   },
 ]
