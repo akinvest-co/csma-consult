@@ -19,12 +19,12 @@ export default function PlanSiteView() {
           <List spacing={2}>
           <ListItem>
               <Link href="/" color="#F7871A" _hover={{ textDecoration: "underline" }}>
-                Accueil 
+              La société
               </Link>
             </ListItem>
             <ListItem>
               <Link href="/bureau-etudes" color="#F7871A" _hover={{ textDecoration: "underline" }}>
-                La société
+              Nos services
               </Link>
             </ListItem>
             <ListItem>
