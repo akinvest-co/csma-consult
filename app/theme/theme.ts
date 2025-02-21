@@ -1,5 +1,5 @@
 import { extendTheme } from "@chakra-ui/react"
-import { Plus_Jakarta_Sans } from "next/font/google"
+import {  Plus_Jakarta_Sans } from "next/font/google"
 import { withProse } from "@nikolovlazar/chakra-ui-prose"
 
 const font = Plus_Jakarta_Sans({

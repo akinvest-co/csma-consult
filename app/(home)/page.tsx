@@ -13,7 +13,6 @@ export default function Home() {
       <BureauEtudes />
       <Stats />
       <Features />
-      <Produits />
       <Testimonials />
     </Layout>
   )

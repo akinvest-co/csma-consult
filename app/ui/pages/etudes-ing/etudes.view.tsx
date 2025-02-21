@@ -1,71 +1,191 @@
-import Layout from "@app/app/layout/layout.page"
+"use client";
+
+import Layout from "@app/app/layout/layout.page";
 import {
-  Box,
   Container,
-  Image,
-  Heading,
   SimpleGrid,
-  Text,
   VStack,
-} from "@chakra-ui/react"
+  Text,
+  Image,
+  Box,
+  Heading,
+  Divider,
+  Button,
+  Flex,Icon,List, ListItem, ListIcon 
+  
+} from "@chakra-ui/react";
+import { motion } from "framer-motion";
+
+import { FaQuoteLeft, FaQuoteRight } from "react-icons/fa";
+import { CheckCircleIcon } from "@chakra-ui/icons";
+import { FaArrowRight } from "react-icons/fa";
+const MotionBox = motion(Box);
 
 export default function EtudesIngVIew() {
   return (
     <Layout>
-      <Container maxW="container.xl" my="20">
-        <SimpleGrid
-          columns={{ base: 1, md: 1, lg: 2 }}
-          spacing="20"
-          alignItems="center"
+      <Container maxW="container.xl" my="10">
+        <Flex
+          direction={{ base: "column", md: "row" }}
+          align="center"
+          justify="space-between"
+          p={8}
+          borderRadius="lg"
+          mb={10}
+          position="relative"
+          overflow="hidden"
+          minHeight="330px"
         >
-          <VStack spacing="5" align="start">
-            <Heading>Études et Ingénierie</Heading>
-            <Text lineHeight="1.7" fontSize="16px">
-              Notre entreprise se spécialise dans la gestion complète des
-              dossiers d'intervention sur les infrastructures Orange. Cela
-              englobe la gestion des dossiers d'accès (FCI) avec un suivi
-              méticuleux et une clôture efficace. Nous sommes également
-              compétents dans la mise à jour (MàJ), la TFX, et l'intégration en
-              "live" pour assurer des opérations fluides. Le relevé précis des
-              infrastructures existantes et de leur occupation est une de nos
-              spécialités, garantissant une approche professionnelle à chaque
-              étape.
+          <Box
+            position="absolute"
+            top="0"
+            left="0"
+            right="0"
+            bottom="0"
+            bg="linear-gradient(90deg, rgba(69, 196, 238, 0.8) 0%, rgba(245, 136, 25, 0.8) 100%)"
+            zIndex="1"
+          />
+          <Box
+            position="absolute"
+            top="0"
+            left="0"
+            right="0"
+            bottom="0"
+            backgroundImage="url('/images/bureaux.png')"
+            backgroundSize="cover"
+            backgroundPosition="center"
+            zIndex="0"
+          />
+          <Box
+            textAlign={{ base: "center", md: "left" }}
+            position="relative"
+            zIndex="2"
+          >
+            <Heading as="h1" size="2xl" fontWeight="bold" lineHeight="short" color="white">
+              Etude et Ingénierie
+            </Heading>
+            <Text fontSize="lg" color="gray.50">
+            Des solutions d'ingénierie innovantes, <br/> une expertise approfondie, et une
+passion pour l'excellence.
+            </Text>
+            
+          </Box>
+        </Flex>
+      </Container>
+      <Container maxW="6xl" my="20">
+        <SimpleGrid columns={{ base: 1, lg: 2 }} spacing="16" alignItems="center">
+          <VStack spacing="6" align="start" as={motion.div} initial={{ opacity: 0, x: -50 }} animate={{ opacity: 1, x: 0 }}>
+            <Heading size="xl" >
+            Dossiers d’intervention sur infrastructures Orange
+
+            </Heading>
+            <Text fontSize="lg" color="gray.700" lineHeight="1.8" textAlign="justify">
+           <List spacing={3} ml={4}>
+               <ListItem>
+                   <ListIcon as={CheckCircleIcon } color="#45C4EB" />
+                   Gestion de dossiers d’accès (FCI), Suivi et Clôture
+               </ListItem>
+               <ListItem>
+                   <ListIcon as={CheckCircleIcon} color="#45C4EB" />
+                   Relevé d’infrastructures existantes, taux occupation
+               </ListItem>
+               <ListItem>
+                   <ListIcon as={CheckCircleIcon} color="#45C4EB" />
+                   MàJ, TFX, Intégration SIG
+               </ListItem> 
+           </List>
             </Text>
           </VStack>
-
-          <Box w="100%">
-            <Image
-              src="/images/banner.jpeg"
-              alt="Études et Ingénierie"
-              borderRadius="xl"
-            />
-          </Box>
+          <MotionBox whileHover={{ scale: 1.05 }} transition={{ duration: 0.3 }}>
+            <Image src="/images/person.jpeg" w="100%" h="350px" alt="Audit Infrastructures" borderRadius="xl" boxShadow="lg" />
+          </MotionBox>
         </SimpleGrid>
 
-        <Text mt="20" lineHeight="1.7" fontSize="16px">
-          Notre expertise s'étend à l'ingénierie d'architecture et de production
-          de routes optiques. Nous réalisons des études Géomarketing (potentiel
-          commercial) et des dimensionnements de capacités précis. La création
-          de shapes dans Qgis et l'intégration SIG font partie de nos
-          compétences, tout comme la conception de synoptiques et de routes
-          optiques. Nous sommes également spécialisés dans l'intégration de
-          solutions telles que NetGeo, GeoFibre et Networks, répondant ainsi aux
-          exigences spécifiques de nos clients dans le domaine des réseaux de
-          télécommunications sur support fibre optique. Faites confiance à notre
-          expertise pour des interventions précises et des solutions
-          d'ingénierie de pointe.
-        </Text>
-        <Box boxSize="100%" mt="10">
-          <Image
-            src="/images/soudures.png"
-            w="100%"
-  
-            objectFit="cover"
-            alt="Études et Ingénierie"
-            borderRadius="xl"
-          />
-        </Box>
+        <Divider my="12" borderColor="gray.300" />
+
+        <SimpleGrid columns={{ base: 1, lg: 2 }} spacing="16" alignItems="center">
+          <MotionBox whileHover={{ scale: 1.03 }} transition={{ duration: 0.3 }}>
+            <Image src="/images/csma1.png" w="100%" h="350px" objectFit="cover" alt="Génie Civil" borderRadius="xl" boxShadow="xl" />
+          </MotionBox>
+          <VStack spacing="6" align="start" as={motion.div} initial={{ opacity: 0, x: 50 }} animate={{ opacity: 1, x: 0 }}>
+            <Heading size="lg" >
+            Ingénierie d’architecture et de route optique
+            </Heading>
+            
+<List spacing={3} ml={4}>
+    <ListItem>
+        <ListIcon as={CheckCircleIcon } color="#45C4EB" />
+        Dimensionnement, Étude de potentiel commercial
+    </ListItem>
+    <ListItem>
+        <ListIcon as={CheckCircleIcon} color="#45C4EB" />
+        Création de shapesdans Qgis et Intégration SIG
+    </ListItem>
+    <ListItem>
+    <ListIcon as={CheckCircleIcon} color="#45C4EB" />
+        Création de synoptiques et routes Optiques
+    </ListItem>
+    <ListItem>
+    <ListIcon as={CheckCircleIcon} color="#45C4EB" />
+    Intégration NetGeo, GeoFibre, Networks
+    </ListItem>
+    
+</List>
+          </VStack>
+        </SimpleGrid>
+       
+        <Divider my="12" borderColor="gray.300" />
+        <VStack>
+          <Heading>
+            Paroles inspirantes
+          </Heading>
+        </VStack>
+        <Flex justify="center" align="center" gap={6} flexWrap="wrap" mt={10}>
+          <Box
+             maxW="600px"
+             minH="150px"
+            flex="1"
+            p={6}
+            borderLeft="4px solid"
+            borderColor="orange.400"
+            bg="gray.50"
+            borderRadius="md"
+            boxShadow="md"
+            position="relative"
+          >
+            <Icon as={FaQuoteLeft} color="orange.400" fontSize="2xl" position="absolute" top={4} left={4} />
+            <Text fontSize="lg" fontStyle="italic" color="gray.700" pl={10} pr={10}>
+              "Implémentez la qualité en englobant vos fournisseurs et vos clients dans le système."
+            </Text>
+            <Text mt={4} textAlign="right" fontWeight="bold" color="#2fa3d1" pr={10}>
+              – Armand V. Feigenbaum
+            </Text>
+            <Icon as={FaQuoteRight} color="orange.400" fontSize="2xl" position="absolute" bottom={4} right={4} />
+          </Box>
+
+          <Box
+             maxW="600px"
+             minH="150px"
+            flex="1"
+            p={6}
+            borderLeft="4px solid"
+            borderColor="orange.400"
+            bg="gray.50"
+            borderRadius="md"
+            boxShadow="md"
+            position="relative"
+          >
+            <Icon as={FaQuoteLeft} color="orange.400" fontSize="2xl" position="absolute" top={4} left={4} />
+            <Text fontSize="lg" fontStyle="italic" color="gray.700" pl={10} pr={10}>
+              "Un problème sans solution est un problème mal posé"
+            </Text>
+            <Text mt={4} textAlign="right" fontWeight="bold" color="#2fa3d1" pr={10}>
+              – Albert Einstein
+            </Text>
+            <Icon as={FaQuoteRight} color="orange.400" fontSize="2xl" position="absolute" bottom={4} right={4} />
+          </Box>
+          </Flex>
       </Container>
     </Layout>
-  )
+  );
 }

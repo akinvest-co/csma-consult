@@ -1,21 +1,45 @@
-const srcImage = "https://bit.ly/dan-abramov"
+const srcImage = "https://deming.org/wp-content/uploads/2020/05/deming-the-man.jpg"
+const srcImage1 = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQO4jq00EGYyDosLnsHYNryE-eRLmIWqFt7bg&s"
+const srcImage2 = "https://deming.org/wp-content/uploads/2020/05/deming-the-man.jpg"
+const srcImage3="https://www.union.edu/sites/default/files/styles/large/public/union-marketing-layer/201911/armand-feigenbaum.jpg?itok=b6YIVP1u"
+const srcImage4="https://qmc.binus.ac.id/files/2017/01/Philip-Bayard-Crosby.jpg"
 
-import arc from "public/images/arc.png"
-import enedis from "public/images/enedis.jpeg"
-import netgeo from "public/images/netgeo.jpeg"
-import ratp from "public/images/ratp.jpeg"
-import trademark from "public/images/trademark.jpeg"
-import orange from "public/images/orange-logo.jpg"
+import arc from "public/images/camusat.png"
+import enedis from "public/images/enedis1.png"
+import netgeo from "public/images/netgeo1.png"
+import ratp from "public/images/ratp1.png"
+import trademark from "public/images/trademark1.png"
+import orange from "public/images/orange.png"
 
 export const testimonialsData = [
   {
     id: 1,
     title: "La satisfaction de nos clients est notre priorité",
     quote:
-      "La disponibilité des équipes et leurs expertises ont été très marquantes pour la réalisation des projets confiés à CSMA. Leurs propositions ont permis une amélioration significative de nos performances de déploiement et d'audit de réseaux.",
+      "On améliore rarement la qualité en diminuant les coûts, mais on peut souvent diminuer les coûts en améliorant la qualité",
+    imageProfile: srcImage2,
+    nomDirecteur: "Karl Albrecht",
+    role: "Homme d'affaires allemand",
+  },
+
+ 
+  {
+    id: 3,
+    title: "La satisfaction de nos clients est notre priorité",
+    quote:
+      "Implémentez la qualité en englobant vos fournisseurs et vos clients dans le système. ",
     imageProfile: srcImage,
-    nomDirecteur: "Nabil Nikuze",
-    role: "Directeur Exécutif InfraCorp",
+    nomDirecteur: "W. Edwards Deming",
+    role: "Statisticien américain",
+  },
+  {
+    id: 5,
+    title: "La satisfaction de nos clients est notre priorité",
+    quote:
+      "La qualité c’est la perception qu’à le client de ce qu’est la qualité, pas ce que l’entreprise pense. ",
+    imageProfile: srcImage3,
+    nomDirecteur: "Armand V. Feigenbaum",
+    role: "Statisticien américain",
   },
 ]
 

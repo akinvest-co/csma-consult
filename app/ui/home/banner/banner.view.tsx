@@ -15,7 +15,7 @@ import NextLink from "next/link"
 const BannerView = () => {
   return (
     <Box>
-      <Container maxW="container.xl" mt="20" mb="28">
+      <Container maxW="container.xl"  mb="5" >
         {bannerData.map(({ id, title, intro, image }) => (
           <SimpleGrid
             columns={{ base: 1, lg: 2 }}
@@ -38,15 +38,16 @@ const BannerView = () => {
               >
                 {title}
               </Heading>
-
-              <Text fontSize={{ base: "lg", md: "xl" }} lineHeight="1.7">
+              <Text fontSize={{ base: "lg", md: "xl" }} lineHeight="1.4">
                 {intro}
               </Text>
+             
             </VStack>
 
-            <Box borderRadius="md" overflow="hidden">
+            <Box borderRadius="xl" overflow="hidden">
               <Image
                 src={image}
+                
                 alt="Illustration Banner"
                 placeholder="blur"
                 priority

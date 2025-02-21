@@ -1,3 +1,4 @@
+"use client"
 import {
   Box,
   Flex,
@@ -11,7 +12,11 @@ import {
   FormControl,
   FormLabel,
   Input,
-  Button,
+  Button,useToast,
+  Alert,
+  AlertIcon,
+  AlertTitle,
+  AlertDescription
 } from "@chakra-ui/react"
 import NextImage from "next/image"
 import { contactInfo } from "@app/app/lib/static-data/pages/conctact"
@@ -19,8 +24,29 @@ import {
   supportDataAccount,
 } from "@app/app/lib/static-data/pages/support"
 import Layout from "@app/app/layout/layout.page"
-
+import { useState } from "react";
 const Support = () => {
+  const [showAlert, setShowAlert] = useState(false);
+  const toast = useToast();
+
+  const handleClick = () => {
+    // Affichage du toast
+    toast({
+      title: "Message de l'évenement Portail Client:",
+      description: "Votre compte n'est pas encore créé, merci de contacter notre commercial dédié.",
+      status: "error",
+      duration: 5000,
+      isClosable: true,
+      position: "bottom-right",
+    });
+
+    setShowAlert(true);
+
+    // Cacher l'alert après 3 secondes
+    setTimeout(() => {
+      setShowAlert(false);
+    }, 3000);
+  };
   return (
     <Layout>
       <Box>
@@ -115,8 +141,8 @@ const Support = () => {
             >
               <VStack as="form" spacing="5" w="full">
                 <FormControl isRequired>
-                  <FormLabel>Prénom et Nom</FormLabel>
-                  <Input type="text" placeholder="Nom et prénom" />
+                  <FormLabel>Login</FormLabel>
+                  <Input type="text" placeholder="Email" />
                 </FormControl>
 
                 <FormControl isRequired>
@@ -134,9 +160,11 @@ const Support = () => {
                 borderRadius="999rem"
                 color="white"
                 _hover={{ bg: "#0c84bd" }}
+                onClick={handleClick}
               >
                 Connecter
               </Button>
+             
             </VStack>
           </SimpleGrid>
         </Container>

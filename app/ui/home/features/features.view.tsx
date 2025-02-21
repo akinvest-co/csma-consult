@@ -12,7 +12,7 @@ import Image from "next/image"
 
 const FeaturesView = () => {
   return (
-    <Container maxW="container.xl" my="28">
+    <Container maxW="container.xl" my="10">
       <VStack align="center">
         <Heading
           size="xl"
@@ -21,7 +21,7 @@ const FeaturesView = () => {
         >
           Nos atouts
         </Heading>
-        <Text color="#0b6999">Nos points forts</Text>
+        <Box width="70px" height="5px" bg="#F8861A" mx="auto" mt="2"   />
       </VStack>
 
       <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} mt="20">

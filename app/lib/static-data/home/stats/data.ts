@@ -16,7 +16,7 @@ export const statsData = [
   },
   {
     id: 4,
-    stats: "10+",
+    stats: "20+",
     description: "Partenaires satisfaits",
   },
 ]

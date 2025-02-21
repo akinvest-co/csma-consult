@@ -1,11 +1,11 @@
-import imageBanner from "public/images/bureaux.png"
+import imageBanner from "public/images/azz.jpg"
 
 export const bannerData = [
   {
     id: 1,
-    title: "Découvrez nos expertises et solutions avancées",
+    title: "Expertise en ingénierie et infrastructures télécoms",
     intro:
-      "L'excellence de notre bureau en télécommunication vous assure les meilleures solutions et produits, garantissant ainsi performance et fiabilité.",
+      "De la conception à la réalisation jusqu'à l'exploitation des réseaux, nous accompagnons nos clients de bout en bout afin de leur garantir fiabilité et performance",
     image: imageBanner,
   },
 ]

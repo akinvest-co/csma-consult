@@ -17,7 +17,7 @@ import { Menu2 } from 'tabler-icons-react';
 import NextLink from "next/link";
 import { useActive } from "@app/app/hooks/use-active";
 import { Routes } from "@app/app/config/routes/routes";
-import { menuItems } from "../menu-items/menu-items";
+import { menuItems1 } from "../menu-items/menu-items";
 
 export default function HumbergerMenu() {
   const ref = useRef<any | null>();
@@ -43,7 +43,7 @@ export default function HumbergerMenu() {
 
           <DrawerBody pt="20">
             <VStack spacing="3" align="start">
-              {menuItems.map(({ id, label, path }) => {
+              {menuItems1.map(({ id, label, path }) => {
                 return (
                   <Button
                     key={id}

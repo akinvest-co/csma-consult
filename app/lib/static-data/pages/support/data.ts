@@ -17,7 +17,7 @@ export const supportDataAccount = [
     items: [
       {
         id: 1,
-        label: 'Vous obtenez une réponse en moins de deux heures seulement.',
+        label: 'Vous obtenez une réponse en moins de deux heures.',
       },
       {
         id: 2,
