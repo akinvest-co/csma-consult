@@ -54,7 +54,7 @@ export default function RecettesView() {
             zIndex="2"
           >
             <Heading as="h1" size="2xl" fontWeight="bold" lineHeight="short" color="white">
-            Gestion de projet télécoms
+            Gestion de projet
             </Heading>
             <Text fontSize="lg" color="gray.50">
             De la vision à la réalisation : organiser et piloter des projets avec précision
