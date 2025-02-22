@@ -105,7 +105,7 @@ passion pour l'excellence.
 
         <SimpleGrid columns={{ base: 1, lg: 2 }} spacing="16" alignItems="center">
           <MotionBox whileHover={{ scale: 1.03 }} transition={{ duration: 0.3 }}>
-            <Image src="/images/csma1.png" w="100%" h="350px" objectFit="cover" alt="Génie Civil" borderRadius="xl" boxShadow="xl" />
+            <Image src="/images/soudures.png" w="100%" h="350px" objectFit="cover" alt="Génie Civil" borderRadius="xl" boxShadow="xl" />
           </MotionBox>
           <VStack spacing="6" align="start" as={motion.div} initial={{ opacity: 0, x: 50 }} animate={{ opacity: 1, x: 0 }}>
             <Heading size="lg" >
