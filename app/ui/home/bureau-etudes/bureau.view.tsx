@@ -53,7 +53,7 @@ export default function BureauView() {
               </Heading>
              
               <Text 
-                lineHeight="1.6"  
+                lineHeight="1.7"  
                 fontSize="16px" 
                 color="gray.600" 
                 flex="1"  
@@ -61,6 +61,7 @@ export default function BureauView() {
                 maxW="90%" 
                 textAlign="left" 
                 mb={5}
+                
                 whiteSpace="pre-line"
               >
                 {descr}
