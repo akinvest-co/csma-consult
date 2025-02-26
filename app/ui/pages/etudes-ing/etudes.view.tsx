@@ -104,35 +104,53 @@ passion pour l'excellence.
         <Divider my="12" borderColor="gray.300" />
 
         <SimpleGrid columns={{ base: 1, lg: 2 }} spacing="16" alignItems="center">
-          <MotionBox whileHover={{ scale: 1.03 }} transition={{ duration: 0.3 }}>
-            <Image src="/images/soudures.png" w="100%" h="350px" objectFit="cover" alt="Génie Civil" borderRadius="xl" boxShadow="xl" />
-          </MotionBox>
-          <VStack spacing="6" align="start" as={motion.div} initial={{ opacity: 0, x: 50 }} animate={{ opacity: 1, x: 0 }}>
-            <Heading size="lg" >
-            Ingénierie d’architecture et de route optique
-            </Heading>
-            
-<List spacing={3} ml={4}>
-    <ListItem>
-        <ListIcon as={CheckCircleIcon } color="#45C4EB" />
-        Dimensionnement, Étude de potentiel commercial
-    </ListItem>
-    <ListItem>
+  <MotionBox 
+    whileHover={{ scale: 1.03 }} 
+    transition={{ duration: 0.3 }} 
+    order={{ base: 2, lg: 1 }} // L'image sera en deuxième position sur les petits écrans
+  >
+    <Image 
+      src="/images/soudures.png" 
+      w="100%" 
+      h="350px" 
+      objectFit="cover" 
+      alt="Génie Civil" 
+      borderRadius="xl" 
+      boxShadow="xl" 
+    />
+  </MotionBox>
+
+  <VStack 
+    spacing="6" 
+    align="start" 
+    as={motion.div} 
+    initial={{ opacity: 0, x: 50 }} 
+    animate={{ opacity: 1, x: 0 }} 
+    order={{ base: 1, lg: 2 }} // Le texte sera en première position sur les petits écrans
+  >
+    <Heading size="lg">
+      Ingénierie d’architecture et de route optique
+    </Heading>
+    <List spacing={3} ml={4}>
+      <ListItem>
         <ListIcon as={CheckCircleIcon} color="#45C4EB" />
-        Création de shapesdans Qgis et Intégration SIG
-    </ListItem>
-    <ListItem>
-    <ListIcon as={CheckCircleIcon} color="#45C4EB" />
+        Dimensionnement, Étude de potentiel commercial
+      </ListItem>
+      <ListItem>
+        <ListIcon as={CheckCircleIcon} color="#45C4EB" />
+        Création de shapes dans Qgis et Intégration SIG
+      </ListItem>
+      <ListItem>
+        <ListIcon as={CheckCircleIcon} color="#45C4EB" />
         Création de synoptiques et routes Optiques
-    </ListItem>
-    <ListItem>
-    <ListIcon as={CheckCircleIcon} color="#45C4EB" />
-    Intégration NetGeo, GeoFibre, Networks
-    </ListItem>
-    
-</List>
-          </VStack>
-        </SimpleGrid>
+      </ListItem>
+      <ListItem>
+        <ListIcon as={CheckCircleIcon} color="#45C4EB" />
+        Intégration NetGeo, GeoFibre, Networks
+      </ListItem>
+    </List>
+  </VStack>
+</SimpleGrid>
        
         <Divider my="12" borderColor="gray.300" />
         <VStack>

@@ -114,38 +114,57 @@ export default function AuditView() {
         <Divider my="12" borderColor="gray.300" />
 
         <SimpleGrid columns={{ base: 1, lg: 2 }} spacing="16" alignItems="center">
-          <MotionBox whileHover={{ scale: 1.03 }} transition={{ duration: 0.3 }}>
-            <Image src="/images/ch.jpg" w="100%" h="350px" objectFit="cover" alt="Génie Civil" borderRadius="xl" boxShadow="xl" height="400px" width="100%" />
-          </MotionBox>
-          <VStack spacing="6" align="start" as={motion.div} initial={{ opacity: 0, x: 50 }} animate={{ opacity: 1, x: 0 }}>
-            <Heading size="lg" >
-            Infrastructures Génie Civil
-            </Heading>
-            <Text fontSize="lg" color="gray.700" lineHeight="1.8" textAlign="justify">
-           <List spacing={3} ml={4}>
-               <ListItem>
-                   <ListIcon as={CheckCircleIcon } color="#45C4EB" />
-                   Détection et relevé de fourreaux et chambres : Identification et cartographie précise des infrastructures souterraines.
-               </ListItem>
-               <ListItem>
-                   <ListIcon as={CheckCircleIcon} color="#45C4EB" />
-                   Tests de continuité et d'exploitabilité : Vérification approfondie pour assurer la robustesse et la fiabilité des installations.
-               </ListItem>
-               <ListItem>
-                   <ListIcon as={CheckCircleIcon} color="#45C4EB" />
-                   Émission et levée de réserves : Gestion efficace des observations et corrections pour optimiser les interventions.
-               </ListItem>
-               <ListItem>
-                   <ListIcon as={CheckCircleIcon} color="#45C4EB" />
-                   Interventions sur projets variés : Expertise en construction, rénovation et entretien des infrastructures.
-               </ListItem>
-              
-              
-               
-           </List>
-            </Text>
-          </VStack>
-        </SimpleGrid>
+  <MotionBox 
+    whileHover={{ scale: 1.03 }} 
+    transition={{ duration: 0.3 }} 
+    order={{ base: 2, lg: 1 }} // L'image sera en deuxième position sur les petits écrans
+  >
+    <Image 
+      src="/images/ch.jpg" 
+      w="100%" 
+      h="350px" 
+      objectFit="cover" 
+      alt="Génie Civil" 
+      borderRadius="xl" 
+      boxShadow="xl" 
+      height="400px" 
+      width="100%" 
+    />
+  </MotionBox>
+
+  <VStack 
+    spacing="6" 
+    align="start" 
+    as={motion.div} 
+    initial={{ opacity: 0, x: 50 }} 
+    animate={{ opacity: 1, x: 0 }} 
+    order={{ base: 1, lg: 2 }} // Le texte sera en première position sur les petits écrans
+  >
+    <Heading size="lg">
+      Infrastructures Génie Civil
+    </Heading>
+    <Text fontSize="lg" color="gray.700" lineHeight="1.8" textAlign="justify">
+      <List spacing={3} ml={4}>
+        <ListItem>
+          <ListIcon as={CheckCircleIcon} color="#45C4EB" />
+          Détection et relevé de fourreaux et chambres : Identification et cartographie précise des infrastructures souterraines.
+        </ListItem>
+        <ListItem>
+          <ListIcon as={CheckCircleIcon} color="#45C4EB" />
+          Tests de continuité et d'exploitabilité : Vérification approfondie pour assurer la robustesse et la fiabilité des installations.
+        </ListItem>
+        <ListItem>
+          <ListIcon as={CheckCircleIcon} color="#45C4EB" />
+          Émission et levée de réserves : Gestion efficace des observations et corrections pour optimiser les interventions.
+        </ListItem>
+        <ListItem>
+          <ListIcon as={CheckCircleIcon} color="#45C4EB" />
+          Interventions sur projets variés : Expertise en construction, rénovation et entretien des infrastructures.
+        </ListItem>
+      </List>
+    </Text>
+  </VStack>
+</SimpleGrid>
         <Divider my="12" borderColor="gray.300" />
         <VStack>
           <Heading>

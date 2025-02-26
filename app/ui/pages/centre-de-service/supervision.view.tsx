@@ -111,32 +111,51 @@ export default function SupervisionVIew() {
         <Divider my="12" borderColor="gray.300" />
 
         <SimpleGrid columns={{ base: 1, lg: 2 }} spacing="16" alignItems="center">
-          <MotionBox whileHover={{ scale: 1.03 }} transition={{ duration: 0.3 }}>
-            <Image src="/images/centre.png" w="100%" h="350px" objectFit="cover" alt="Génie Civil" borderRadius="xl" boxShadow="xl" />
-          </MotionBox>
-          <VStack spacing="6" align="start" as={motion.div} initial={{ opacity: 0, x: 50 }} animate={{ opacity: 1, x: 0 }}>
-            <Heading size="xl" >
-            Notre Centre de Service
-            </Heading>
-            <Text fontSize="lg" color="gray.700" lineHeight="1.8" textAlign="justify">
-           <List spacing={3} ml={4}>
-               <ListItem>
-                   <ListIcon as={CheckCircleIcon } color="#45C4EB" />
-                   Flexibilité clientèle : Mise en place Process de traitement et Formation des équipes 
-               </ListItem>
-               <ListItem>
-                   <ListIcon as={CheckCircleIcon} color="#45C4EB" />
-                   Migration, Gestion du récurrent, Absorption des pics de charge
-               </ListItem>
-               <ListItem>
-                   <ListIcon as={CheckCircleIcon} color="#45C4EB" />
-                   Mise en place d’actions d’amélioration continues
-               </ListItem>
-               
-           </List>
-            </Text>
-          </VStack>
-        </SimpleGrid>
+  <MotionBox 
+    whileHover={{ scale: 1.03 }} 
+    transition={{ duration: 0.3 }} 
+    order={{ base: 2, lg: 1 }} // L'image sera en deuxième position sur les petits écrans
+  >
+    <Image 
+      src="/images/centre.png" 
+      w="100%" 
+      h="350px" 
+      objectFit="cover" 
+      alt="Génie Civil" 
+      borderRadius="xl" 
+      boxShadow="xl" 
+    />
+  </MotionBox>
+
+  <VStack 
+    spacing="6" 
+    align="start" 
+    as={motion.div} 
+    initial={{ opacity: 0, x: 50 }} 
+    animate={{ opacity: 1, x: 0 }} 
+    order={{ base: 1, lg: 2 }} // Le texte sera en première position sur les petits écrans
+  >
+    <Heading size="xl">
+      Notre Centre de Service
+    </Heading>
+    <Text fontSize="lg" color="gray.700" lineHeight="1.8" textAlign="justify">
+      <List spacing={3} ml={4}>
+        <ListItem>
+          <ListIcon as={CheckCircleIcon} color="#45C4EB" />
+          Flexibilité clientèle : Mise en place Process de traitement et Formation des équipes
+        </ListItem>
+        <ListItem>
+          <ListIcon as={CheckCircleIcon} color="#45C4EB" />
+          Migration, Gestion du récurrent, Absorption des pics de charge
+        </ListItem>
+        <ListItem>
+          <ListIcon as={CheckCircleIcon} color="#45C4EB" />
+          Mise en place d’actions d’amélioration continues
+        </ListItem>
+      </List>
+    </Text>
+  </VStack>
+</SimpleGrid>
 
         <Divider my="12" borderColor="gray.300" />
         <VStack>

@@ -97,35 +97,53 @@ export default function RecettesView() {
         <Divider my="12" borderColor="gray.300" />
 
         <SimpleGrid columns={{ base: 1, lg: 2 }} spacing="16" alignItems="center">
-          <MotionBox whileHover={{ scale: 1.03 }} transition={{ duration: 0.3 }}>
-            <Image src="/images/csma1.png" w="100%" h="350px" objectFit="cover" alt="Génie Civil" borderRadius="xl" boxShadow="xl" />
-          </MotionBox>
-          <VStack spacing="6" align="start" as={motion.div} initial={{ opacity: 0, x: 50 }} animate={{ opacity: 1, x: 0 }}>
-            <Heading size="lg" >
-            Support projet
-            </Heading>
-            <List spacing={3} ml={4}>
-            <ListItem>
-                   <ListIcon as={CheckCircleIcon } color="#45C4EB" />
-                   Suivi de la mise en production et configuration des composants des réseaux.
-               </ListItem>
+  <MotionBox 
+    whileHover={{ scale: 1.03 }} 
+    transition={{ duration: 0.3 }} 
+    order={{ base: 2, lg: 1 }} // L'image sera en deuxième position sur les petits écrans
+  >
+    <Image 
+      src="/images/csma1.png" 
+      w="100%" 
+      h="350px" 
+      objectFit="cover" 
+      alt="Génie Civil" 
+      borderRadius="xl" 
+      boxShadow="xl" 
+    />
+  </MotionBox>
 
-               <ListItem>
-                   <ListIcon as={CheckCircleIcon } color="#45C4EB" />
-                   Surveillance de l'avancement des travaux, du respect du calendrier et du budget.
-               </ListItem>
-               <ListItem>
-                   <ListIcon as={CheckCircleIcon } color="#45C4EB" />
-                   Configuration et intégration des systèmes ou composants réseaux.
-               </ListItem>
-               <ListItem>
-                   <ListIcon as={CheckCircleIcon } color="#45C4EB" />
-                   Traitement les demandes de changement et ajuster le plan de projet si nécessaire.
-               </ListItem>
-               
-               </List>
-          </VStack>
-        </SimpleGrid>
+  <VStack 
+    spacing="6" 
+    align="start" 
+    as={motion.div} 
+    initial={{ opacity: 0, x: 50 }} 
+    animate={{ opacity: 1, x: 0 }} 
+    order={{ base: 1, lg: 2 }} // Le texte sera en première position sur les petits écrans
+  >
+    <Heading size="lg">
+      Support projet
+    </Heading>
+    <List spacing={3} ml={4}>
+      <ListItem>
+        <ListIcon as={CheckCircleIcon} color="#45C4EB" />
+        Suivi de la mise en production et configuration des composants des réseaux.
+      </ListItem>
+      <ListItem>
+        <ListIcon as={CheckCircleIcon} color="#45C4EB" />
+        Surveillance de l'avancement des travaux, du respect du calendrier et du budget.
+      </ListItem>
+      <ListItem>
+        <ListIcon as={CheckCircleIcon} color="#45C4EB" />
+        Configuration et intégration des systèmes ou composants réseaux.
+      </ListItem>
+      <ListItem>
+        <ListIcon as={CheckCircleIcon} color="#45C4EB" />
+        Traitement les demandes de changement et ajuster le plan de projet si nécessaire.
+      </ListItem>
+    </List>
+  </VStack>
+</SimpleGrid>
         <Divider my="12" borderColor="gray.300" />
         <VStack>
           <Heading>
