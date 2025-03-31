@@ -23,7 +23,7 @@ export default function PlanSiteView() {
               </Link>
             </ListItem>
             <ListItem>
-              <Link href="/bureau-etudes" color="#F7871A" _hover={{ textDecoration: "underline" }}>
+              <Link href="/services" color="#F7871A" _hover={{ textDecoration: "underline" }}>
               Nos services
               </Link>
             </ListItem>
@@ -37,11 +37,13 @@ export default function PlanSiteView() {
                 Contact
               </Link>
             </ListItem>
+
             <ListItem>
-              <Link href="/blog" color="#F7871A" _hover={{ textDecoration: "underline" }}>
-                Blog
+              <Link href="https://csma-shop.vercel.app/" color="#F7871A" _hover={{ textDecoration: "underline" }}>
+              Solutions matérielles
               </Link>
             </ListItem>
+           
           </List>
               </Box>
     
@@ -73,11 +75,7 @@ export default function PlanSiteView() {
             Autres Sections
           </Heading>
           <List spacing={2}>
-            <ListItem>
-              <Link href="/blog" color="#F7871A" _hover={{ textDecoration: "underline" }}>
-                Blog
-              </Link>
-            </ListItem>
+           
             <ListItem>
               <Link href="/faq" color="#F7871A" _hover={{ textDecoration: "underline" }}>
                 FAQ
