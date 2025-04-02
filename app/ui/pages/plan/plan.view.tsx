@@ -70,24 +70,7 @@ export default function PlanSiteView() {
           </List>
               </Box>
     
-              <Box>
-              <Heading as="h2" size="md" mb={2}>
-            Autres Sections
-          </Heading>
-          <List spacing={2}>
-           
-            <ListItem>
-              <Link href="/faq" color="#F7871A" _hover={{ textDecoration: "underline" }}>
-                FAQ
-              </Link>
-            </ListItem>
-            <ListItem>
-              <Link href="/portfolio" color="#F7871A" _hover={{ textDecoration: "underline" }}>
-                Portfolio
-              </Link>
-            </ListItem>
-          </List>
-              </Box>
+             
             </Stack>
           </Container>
         </Box>
