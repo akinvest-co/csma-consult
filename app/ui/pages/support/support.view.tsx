@@ -153,7 +153,6 @@ const handleRedirectLogin = () => {
   justify="center"
   wrap="wrap"
 >
- 
   <VStack
     spacing="5"
     w="full"
@@ -163,6 +162,7 @@ const handleRedirectLogin = () => {
     p="6"
     rounded="xl"
     boxShadow="md"
+    borderTop="4px solid #1799cf"
   >
     <Text fontSize="xl" fontWeight="bold" color="#1799cf">
       Se connecter sur notre portail
@@ -176,12 +176,11 @@ const handleRedirectLogin = () => {
       borderRadius="999rem"
       color="white"
       _hover={{ bg: "#0c84bd" }}
-       onClick={handleRedirectLogin}
+      onClick={handleRedirectLogin}
     >
       Se connecter
     </Button>
   </VStack>
-
 
   <VStack
     spacing="5"
@@ -192,41 +191,50 @@ const handleRedirectLogin = () => {
     p="6"
     rounded="xl"
     boxShadow="md"
+    borderTop="4px solid #F68719"
   >
-    <Text fontSize="xl" fontWeight="bold" color="#1799cf">
+    <Text fontSize="xl" fontWeight="bold" color="#F68719">
       Obtenir un compte
     </Text>
     <Button
       w="full"
       variant="outline"
-      borderColor="#1799cf"
-      color="#1799cf"
+      borderColor="#F68719"
+      color="#F68719"
       textTransform="uppercase"
       py="6"
       letterSpacing="1px"
       borderRadius="999rem"
-      _hover={{ bg: "#e6f7fc" }}
+      _hover={{ bg: "#fff4e5", borderColor: "#F68719" }}
       onClick={onOpen}
     >
       Obtenir un compte
     </Button>
   </VStack>
-</HStack>
+            </HStack>
+
 <Modal isOpen={isOpen} onClose={onClose} isCentered>
-      <ModalOverlay />
-      <ModalContent>
-        <ModalHeader>Création de compte</ModalHeader>
-        <ModalCloseButton />
-        <ModalBody>
-          Pour obtenir un compte, veuillez vous rapprocher de votre commercial dédié.
-        </ModalBody>
-        <ModalFooter>
-          <Button colorScheme="blue" mr={3} onClick={onClose}>
-            Fermer
-          </Button>
-        </ModalFooter>
-      </ModalContent>
-    </Modal>
+  <ModalOverlay />
+  <ModalContent borderTop="4px solid #F68719">
+    <ModalHeader color="#1799cf">Création de compte</ModalHeader>
+    <ModalCloseButton />
+    <ModalBody>
+      Pour obtenir un compte, veuillez vous rapprocher de votre commercial dédié.
+    </ModalBody>
+    <ModalFooter>
+      <Button
+        bg="#F68719"
+        color="white"
+        _hover={{ bg: "#F68719" }}
+        borderRadius="md"
+        onClick={onClose}
+      >
+        Fermer
+      </Button>
+    </ModalFooter>
+  </ModalContent>
+</Modal>
+
 
           </SimpleGrid>
         </Container>
