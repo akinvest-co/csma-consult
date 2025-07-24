@@ -182,7 +182,7 @@ const handleRedirectLogin = () => {
     </Button>
   </VStack>
 
-  {/* Section Obtenir un compte */}
+
   <VStack
     spacing="5"
     w="full"
