@@ -16,7 +16,15 @@ import {
   Alert,
   AlertIcon,
   AlertTitle,
-  AlertDescription
+  AlertDescription,
+  HStack,  useDisclosure,
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalHeader,
+  ModalBody,
+  ModalCloseButton,
+  ModalFooter,
 } from "@chakra-ui/react"
 import NextImage from "next/image"
 import { contactInfo } from "@app/app/lib/static-data/pages/conctact"
@@ -28,7 +36,10 @@ import { useState } from "react";
 const Support = () => {
   const [showAlert, setShowAlert] = useState(false);
   const toast = useToast();
-
+const { isOpen, onOpen, onClose } = useDisclosure();
+const handleRedirectLogin = () => {
+  window.location.href = "https://www.dashboard.csmaconsult.com/";
+};
   const handleClick = () => {
     // Affichage du toast
     toast({
@@ -133,39 +144,90 @@ const Support = () => {
               ))}
             </Box>
 
-            <VStack
-              spacing="10"
-              boxShadow="0px 0px 25px rgba(54, 91, 125, 0.2)"
-              p="8"
-              rounded="2xl"
-            >
-              <VStack as="form" spacing="5" w="full">
-                <FormControl isRequired>
-                  <FormLabel>Login</FormLabel>
-                  <Input type="text" placeholder="Email" />
-                </FormControl>
+            <HStack
+  spacing="10"
+  boxShadow="0px 0px 25px rgba(54, 91, 125, 0.2)"
+  p="8"
+  rounded="2xl"
+  align="stretch"
+  justify="center"
+  wrap="wrap"
+>
+ 
+  <VStack
+    spacing="5"
+    w="full"
+    maxW="md"
+    align="stretch"
+    bg="white"
+    p="6"
+    rounded="xl"
+    boxShadow="md"
+  >
+    <Text fontSize="xl" fontWeight="bold" color="#1799cf">
+      Se connecter sur notre portail
+    </Text>
+    <Button
+      w="full"
+      bg="#1799cf"
+      textTransform="uppercase"
+      py="6"
+      letterSpacing="1px"
+      borderRadius="999rem"
+      color="white"
+      _hover={{ bg: "#0c84bd" }}
+       onClick={handleRedirectLogin}
+    >
+      Se connecter
+    </Button>
+  </VStack>
 
-                <FormControl isRequired>
-                  <FormLabel>Mot de passe</FormLabel>
-                  <Input type="password" placeholder="Mot de passe" />
-                </FormControl>
-              </VStack>
-              <Button
-                type="submit"
-                w="full"
-                bg="#1799cf"
-                textTransform="uppercase"
-                py="6"
-                letterSpacing="1px"
-                borderRadius="999rem"
-                color="white"
-                _hover={{ bg: "#0c84bd" }}
-                onClick={handleClick}
-              >
-                Connecter
-              </Button>
-             
-            </VStack>
+  {/* Section Obtenir un compte */}
+  <VStack
+    spacing="5"
+    w="full"
+    maxW="md"
+    align="stretch"
+    bg="white"
+    p="6"
+    rounded="xl"
+    boxShadow="md"
+  >
+    <Text fontSize="xl" fontWeight="bold" color="#1799cf">
+      Obtenir un compte
+    </Text>
+    <Button
+      w="full"
+      variant="outline"
+      borderColor="#1799cf"
+      color="#1799cf"
+      textTransform="uppercase"
+      py="6"
+      letterSpacing="1px"
+      borderRadius="999rem"
+      _hover={{ bg: "#e6f7fc" }}
+      onClick={onOpen}
+    >
+      Obtenir un compte
+    </Button>
+  </VStack>
+</HStack>
+<Modal isOpen={isOpen} onClose={onClose} isCentered>
+      <ModalOverlay />
+      <ModalContent>
+        <ModalHeader>Création de compte</ModalHeader>
+        <ModalCloseButton />
+        <ModalBody>
+          Pour obtenir un compte, veuillez vous rapprocher de votre commercial dédié.
+        </ModalBody>
+        <ModalFooter>
+          <Button colorScheme="blue" mr={3} onClick={onClose}>
+            Fermer
+          </Button>
+        </ModalFooter>
+      </ModalContent>
+    </Modal>
+
           </SimpleGrid>
         </Container>
       </Box>
