@@ -93,7 +93,7 @@ const TestimonialsView = () => {
           ))}
         </Slider>
         <Heading size="xl" letterSpacing="1px" lineHeight="short" textAlign="center" mt={20}>
-            Nos partenaires
+            Nos réseaux et outils d’intervention
         </Heading>
         <Box width="70px" height="5px" bg="#F8861A" mx="auto" mt="2"   />
         <HStack justifyContent="space-around" mt="20" flexWrap="wrap" spacing={{ base: "5", md: "0" }} mb={10}>
