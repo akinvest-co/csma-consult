@@ -40,34 +40,46 @@ export default function Footer() {
         <Flex
   alignItems="center"
   justifyContent={{ base: "flex-start", md: "flex-end" }}
-  direction="row"   
-  wrap="nowrap"     
-  overflowX="auto"  
-  gap={4}           
+  width="100%"
+  minWidth="0"
 >
-  {menuItemsFooter.map(({ id, label, path }, index) => (
-    <Box key={id} display="flex" alignItems="center">
-      <Link
-        as={NextLink}
-        href={path}
-        color="#F78719"
-        fontWeight="bold"
-        whiteSpace="nowrap" // ✅ évite que le texte casse
+  <Flex
+    direction="row"
+    overflowX="auto"
+    gap={4}
+    flexShrink={0}
+    minWidth="min-content"
+  >
+    {menuItemsFooter.map(({ id, label, path }, index) => (
+      <Box
+        key={id}
+        display="flex"
+        alignItems="center"
+        flexShrink={0} // Empêche le texte de se réduire
       >
-        {label}
-      </Link>
+        <Link
+          as={NextLink}
+          href={path}
+          color="#F78719"
+          fontWeight="bold"
+          whiteSpace="nowrap"
+        >
+          {label}
+        </Link>
 
-      {index < menuItemsFooter.length - 1 && (
-        <Box
-          borderRight="2px solid"
-          borderColor="gray.300"
-          height="20px"
-          mx={3}
-        />
-      )}
-    </Box>
-  ))}
+        {index < menuItemsFooter.length - 1 && (
+          <Box
+            borderRight="2px solid"
+            borderColor="gray.300"
+            height="20px"
+            mx={3}
+          />
+        )}
+      </Box>
+    ))}
+  </Flex>
 </Flex>
+
       </SimpleGrid>
 
       <Flex
