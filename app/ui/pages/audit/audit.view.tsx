@@ -1,5 +1,5 @@
 "use client";
-
+import NextLink from "next/link";
 import Layout from "@app/app/layout/layout.page";
 import {
   Container,
@@ -15,7 +15,7 @@ import {
  
 } from "@chakra-ui/react";
 import { motion } from "framer-motion";
-import { FaQuoteLeft, FaQuoteRight } from "react-icons/fa";
+import { FaChartLine, FaClipboardCheck, FaQuoteLeft, FaQuoteRight, FaSearch, FaTools } from "react-icons/fa";
 const MotionBox = motion(Box);
 import { CheckCircleIcon } from "@chakra-ui/icons";
 export default function AuditView() {
@@ -166,56 +166,125 @@ export default function AuditView() {
   </VStack>
 </SimpleGrid>
         <Divider my="12" borderColor="gray.300" />
-        <VStack>
-          <Heading>
-            Paroles inspirantes
+        <VStack spacing={8} textAlign="center" mb={12}>
+          <Heading size="xl" >
+            Notre méthodologie d'audit
           </Heading>
+          <Text fontSize="xl" color="gray.600" maxW="3xl">
+            Une approche systématique pour garantir la fiabilité et la performance de vos infrastructures
+          </Text>
         </VStack>
-        <Flex justify="center" align="center" gap={6} flexWrap="wrap" mt={10}>
-          <Box
-            maxW="600px"
-            minH="150px" 
-            flex="1"
-            p={6}
-            borderLeft="4px solid"
-            borderColor="orange.400"
-            bg="gray.50"
-            borderRadius="md"
-            boxShadow="md"
-            position="relative"
-          >
-            <Icon as={FaQuoteLeft} color="orange.400" fontSize="2xl" position="absolute" top={4} left={4} />
-            <Text fontSize="lg" fontStyle="italic" color="gray.700" pl={10} pr={10}>
-            "Implémentez la qualité en englobant vos fournisseurs et vos clients dans le système. "
-            </Text>
-            <Text mt={4} textAlign="right" fontWeight="bold" color="#2fa3d1" pr={10}>
-              – Armand V. Feigenbaum
-            </Text>
-            <Icon as={FaQuoteRight} color="orange.400" fontSize="2xl" position="absolute" bottom={4} right={4} />
-          </Box>
 
-          <Box
-             maxW="600px"
-             minH="150px" 
-            flex="1"
+        <SimpleGrid columns={{ base: 1, md: 2, lg: 4 }} spacing={8} mb={16}>
+          <MotionBox
+            whileHover={{ y: -5 }}
+            transition={{ duration: 0.2 }}
             p={6}
+            borderRadius="lg"
+            boxShadow="md"
+            bg="white"
+            textAlign="center"
+          >
+            <VStack spacing={4}>
+              <Icon as={FaSearch} color="orange.400" boxSize={8} />
+              <Heading size="md" color="blue.800">
+                Diagnostic Précis
+              </Heading>
+              <Text color="gray.600">
+                Analyse approfondie de l'état des infrastructures avec des outils spécialisés
+              </Text>
+            </VStack>
+          </MotionBox>
+
+          <MotionBox
+            whileHover={{ y: -5 }}
+            transition={{ duration: 0.2 }}
+            p={6}
+            borderRadius="lg"
+            boxShadow="md"
+            bg="white"
+            textAlign="center"
+          >
+            <VStack spacing={4}>
+              <Icon as={FaClipboardCheck} color="orange.400" boxSize={8} />
+              <Heading size="md" color="blue.800">
+                Conformité 
+              </Heading>
+              <Text color="gray.600">
+                Vérification du respect des standards et réglementations en vigueur
+              </Text>
+            </VStack>
+          </MotionBox>
+
+          <MotionBox
+            whileHover={{ y: -5 }}
+            transition={{ duration: 0.2 }}
+            p={6}
+            borderRadius="lg"
+            boxShadow="md"
+            bg="white"
+            textAlign="center"
+          >
+            <VStack spacing={4}>
+              <Icon as={FaChartLine} color="orange.400" boxSize={8} />
+              <Heading size="md" color="blue.800">
+                Optimisation
+              </Heading>
+              <Text color="gray.600">
+                Recommandations personnalisées pour améliorer performance et durabilité
+              </Text>
+            </VStack>
+          </MotionBox>
+
+          <MotionBox
+            whileHover={{ y: -5 }}
+            transition={{ duration: 0.2 }}
+            p={6}
+            borderRadius="lg"
+            boxShadow="md"
+            bg="white"
+            textAlign="center"
+          >
+            <VStack spacing={4}>
+              <Icon as={FaTools} color="orange.400" boxSize={8} />
+              <Heading size="md" color="blue.800">
+                Solutions Pratiques
+              </Heading>
+              <Text color="gray.600">
+                Préconisations opérationnelles adaptées à vos contraintes techniques
+              </Text>
+            </VStack>
+          </MotionBox>
+        </SimpleGrid>
+
+        <Flex justify="center" mt={8}>
+          <Box 
+            bg="blue.50" 
+            p={8} 
+            borderRadius="xl" 
+            textAlign="center"
             borderLeft="4px solid"
             borderColor="orange.400"
-            bg="gray.50"
-            borderRadius="md"
-            boxShadow="md"
-            position="relative"
+            maxW="2xl"
           >
-            <Icon as={FaQuoteLeft} color="orange.400" fontSize="2xl" position="absolute" top={4} left={4} />
-            <Text fontSize="lg" fontStyle="italic" color="gray.700" pl={10} pr={10}>
-              "La qualité c’est la perception qu’à le client de ce qu’est la qualité, pas ce que l’entreprise pense."
+            <Heading size="lg" mb={4} color="blue.800">
+              Notre engagement qualité
+            </Heading>
+            <Text fontSize="lg" fontStyle="italic" color="gray.700">
+              "Un audit rigoureux est la première étape vers l'optimisation durable 
+              de vos infrastructures télécoms"
             </Text>
-            <Text mt={4} textAlign="right" fontWeight="bold" color="#2fa3d1" pr={10}>
-              – Armand V. Feigenbaumcd
-            </Text>
-            <Icon as={FaQuoteRight} color="orange.400" fontSize="2xl" position="absolute" bottom={4} right={4} />
+            <Button 
+              colorScheme="orange" 
+              mt={6}
+              as={NextLink}
+              href="/contact"
+              size="lg"
+            >
+              Demander un audit
+            </Button>
           </Box>
-          </Flex>
+        </Flex>
       </Container>
     </Layout>
   );

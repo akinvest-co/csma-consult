@@ -48,24 +48,24 @@ export default function BureauView() {
                 <Icon as={icon} boxSize={8} color="#F78719" />
               </Circle>
               
-              <Heading letterSpacing="1px" fontSize={{ base: "xl", md: "2xl" }} textAlign="center">
+              <Heading letterSpacing="1px" fontSize={{ base: "xl", md: "xl" }} textAlign="center">
                 {title}
               </Heading>
              
               <Text 
-                lineHeight="1.7"  
-                fontSize="16px" 
-                color="gray.600" 
-                flex="1"  
-                minH="50px" 
-                maxW="90%" 
-                textAlign="left" 
-                mb={5}
-                
-                whiteSpace="pre-line"
-              >
-                {descr}
-              </Text>
+          lineHeight="1.7"  
+          fontSize="16px" 
+          color="gray.600" 
+          flex="1"  
+          minH="50px" 
+          maxW="90%" 
+           
+          mb={5}
+          whiteSpace="pre-line"
+        >
+          {descr}
+        </Text>
+
             </VStack>
             {/* Bouton */}
             <Button
@@ -89,7 +89,9 @@ export default function BureauView() {
 
       {/* Section CSMA */}
       <Box
-        bg="linear-gradient(to bottom, #FF7F00, #FF6000)"
+       bg="linear-gradient(to bottom, #FF7F00, #FF6000)"
+
+
         color="white"
         textAlign="center"
         py={{ base: "8", md: "12" }}

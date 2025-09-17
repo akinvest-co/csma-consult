@@ -4,12 +4,18 @@ const srcImage2 = "https://deming.org/wp-content/uploads/2020/05/deming-the-man.
 const srcImage3="https://www.union.edu/sites/default/files/styles/large/public/union-marketing-layer/201911/armand-feigenbaum.jpg?itok=b6YIVP1u"
 const srcImage4="https://qmc.binus.ac.id/files/2017/01/Philip-Bayard-Crosby.jpg"
 
-import arc from "public/images/camusat.png"
+import arc from "public/images/docker.png"
 import enedis from "public/images/enedis1.png"
 import netgeo from "public/images/netgeo1.png"
 import ratp from "public/images/ratp1.png"
 import trademark from "public/images/trademark1.png"
 import orange from "public/images/orange.png"
+import post from "public/images/postg.png"
+import arcpro from "public/images/arcpro.jpeg"
+import arge from "public/images/arg.png"
+import comac from "public/images/coma.png"
+import leat from "public/images/lett.png"
+import file from "public/images/filee.png"
 
 export const testimonialsData = [
   {
@@ -74,5 +80,36 @@ export const partnersImages = [
     id: 6,
     alt: "Orange Logo",
     image: orange,
+  },
+
+  {
+    id: 7,
+    alt: "Postgresql Logo",
+    image: post,
+  },
+  {
+    id: 8,
+    alt: "Comac Logo",
+    image: comac,
+  },
+  {
+    id: 9,
+    alt: "arcGis pro",
+    image: arcpro,
+  },
+  {
+    id: 10,
+    alt: "leatflet logo",
+    image: leat,
+  },
+  {
+    id: 11,
+    alt: "Comac Logo",
+    image: file,
+  },
+  {
+    id: 12,
+    alt: "Comac Logo",
+    image: arge,
   },
 ]

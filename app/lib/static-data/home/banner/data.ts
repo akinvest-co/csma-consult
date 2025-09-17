@@ -1,4 +1,4 @@
-import imageBanner from "public/images/azz.jpg"
+import imageBanner from "public/images/test1.jpeg"
 
 export const bannerData = [
   {

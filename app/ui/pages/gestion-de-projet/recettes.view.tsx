@@ -9,7 +9,7 @@ import {
   Box,
   Heading,Flex,Icon,Divider,List, ListItem, ListIcon
 } from "@chakra-ui/react"
-import { FaQuoteLeft, FaQuoteRight } from "react-icons/fa"
+import { FaHandshake, FaLightbulb, FaMedal, FaQuoteLeft, FaQuoteRight, FaRocket } from "react-icons/fa"
 import { motion } from "framer-motion";
 import { CheckCircleIcon } from "@chakra-ui/icons";
 const MotionBox = motion(Box);
@@ -145,57 +145,105 @@ export default function RecettesView() {
   </VStack>
 </SimpleGrid>
         <Divider my="12" borderColor="gray.300" />
-        <VStack>
-          <Heading>
-            Paroles inspirantes
-          </Heading>
-        </VStack>
-        <Flex justify="center" align="center" gap={6} flexWrap="wrap" mt={10}>
-          <Box
-            maxW="600px"
-            minH="150px" 
-            flex="1"
-            p={6}
-            borderLeft="4px solid"
-            borderColor="orange.400"
-            bg="gray.50"
-            borderRadius="md"
-            boxShadow="md"
-            position="relative"
-          >
-            <Icon as={FaQuoteLeft} color="orange.400" fontSize="2xl" position="absolute" top={4} left={4} />
-            <Text fontSize="lg" fontStyle="italic" color="gray.700" pl={10} pr={10}>
-              "Implémentez la qualité en englobant vos fournisseurs et vos clients dans le système."
-            </Text>
-            <Text mt={4} textAlign="right" fontWeight="bold" color="#2fa3d1" pr={10}>
-              – Armand V. Feigenbaum
+       <VStack spacing={8} textAlign="center" mb={12}>
+    <Heading size="2xl" color="blue.800">
+      Notre philosophie d'action
+    </Heading>
+    <Text fontSize="xl" color="gray.600" maxW="3xl">
+      Des principes fondamentaux qui guident chaque projet vers l'excellence
+    </Text>
+  </VStack>
 
-            </Text>
-            <Icon as={FaQuoteRight} color="orange.400" fontSize="2xl" position="absolute" bottom={4} right={4} />
-          </Box>
+  <SimpleGrid columns={{ base: 1, md: 3 }} spacing={10} mt={8}>
+    <MotionBox
+      whileHover={{ y: -5 }}
+      transition={{ duration: 0.2 }}
+      p={6}
+      borderRadius="lg"
+      boxShadow="lg"
+      bg="white"
+      borderTop="4px solid"
+      borderColor="orange.400"
+    >
+      <VStack spacing={4} align="center">
+        <Box p={3} bg="blue.50" borderRadius="full">
+          <Icon as={FaRocket} color="orange.400" boxSize={6} />
+        </Box>
+        <Heading size="md" color="blue.800">
+          Innovation Continue
+        </Heading>
+        <Text textAlign="center" color="gray.600">
+          Au cœur de notre bureau d’études télécom, l’innovation continue est plus qu’un principe : c’est une culture.
+        </Text>
+      </VStack>
+    </MotionBox>
 
-          <Box
-             maxW="600px"
-             minH="150px" 
-            flex="1"
-            p={6}
-            borderLeft="4px solid"
-            borderColor="orange.400"
-            bg="gray.50"
-            borderRadius="md"
-            boxShadow="md"
-            position="relative"
-          >
-            <Icon as={FaQuoteLeft} color="orange.400" fontSize="2xl" position="absolute" top={4} left={4} />
-            <Text fontSize="lg" fontStyle="italic" color="gray.700" pl={10} pr={10}>
-              "La qualité est obtenue par la prévention, pas par le contrôle. "
-            </Text>
-            <Text mt={4} textAlign="right" fontWeight="bold" color="#2fa3d1" pr={10}>
-              – Philip Crosby
-            </Text>
-            <Icon as={FaQuoteRight} color="orange.400" fontSize="2xl" position="absolute" bottom={4} right={4} />
-          </Box>
-          </Flex>
+    <MotionBox
+      whileHover={{ y: -5 }}
+      transition={{ duration: 0.2 }}
+      p={6}
+      borderRadius="lg"
+      boxShadow="lg"
+      bg="white"
+      borderTop="4px solid"
+      borderColor="blue.400"
+    >
+      <VStack spacing={4} align="center">
+        <Box p={3} bg="orange.50" borderRadius="full">
+          <Icon as={FaHandshake} color="blue.400" boxSize={6} />
+        </Box>
+        <Heading size="md" color="blue.800">
+          Collaboration Authentique
+        </Heading>
+        <Text textAlign="center" color="gray.600">
+          Chez nous, la réussite d’un projet ne se mesure pas seulement en livrables techniques, mais aussi dans la qualité des relations que nous construisons.
+        </Text>
+      </VStack>
+    </MotionBox>
+
+    <MotionBox
+      whileHover={{ y: -5 }}
+      transition={{ duration: 0.2 }}
+      p={6}
+      borderRadius="lg"
+      boxShadow="lg"
+      bg="white"
+      borderTop="4px solid"
+      borderColor="orange.400"
+    >
+      <VStack spacing={4} align="center">
+        <Box p={3} bg="blue.50" borderRadius="full">
+          <Icon as={FaMedal} color="orange.400" boxSize={6} />
+        </Box>
+        <Heading size="md" color="blue.800">
+          Excellence Opérationnelle
+        </Heading>
+        <Text textAlign="center" color="gray.600">
+          L’excellence opérationnelle, c’est allier rigueur, efficacité et maîtrise pour garantir qualité, respect des délais et performance durable.
+        </Text>
+      </VStack>
+    </MotionBox>
+  </SimpleGrid>
+
+  <Flex justify="center" mt={16}>
+    <Box 
+      bg="blue.50" 
+      p={8} 
+      borderRadius="xl" 
+      textAlign="center"
+      borderLeft="4px solid"
+      borderColor="orange.400"
+      maxW="2xl"
+    >
+      <Icon as={FaLightbulb} color="orange.400" boxSize={8} mb={4} />
+      <Heading size="lg" mb={4} color="blue.800">
+        Notre vision
+      </Heading>
+      <Text fontSize="lg" fontStyle="italic" color="gray.700">
+        Notre vision : offrir des solutions télécoms durables en alliant innovation, collaboration et excellence, pour être un partenaire de confiance et créateur de valeur
+      </Text>
+    </Box>
+  </Flex>
       </Container>
     </Layout>
   )

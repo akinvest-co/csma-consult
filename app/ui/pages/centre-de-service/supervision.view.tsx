@@ -15,7 +15,7 @@ import {
   Icon,List, ListItem, ListIcon 
 } from "@chakra-ui/react";
 import { motion } from "framer-motion";
-import { FaQuoteLeft, FaQuoteRight } from "react-icons/fa";
+import { FaQuoteLeft, FaQuoteRight, FaEye, FaBolt, FaCogs, FaHeadset } from "react-icons/fa";
 const MotionBox = motion(Box);
 import { CheckCircleIcon } from "@chakra-ui/icons";
 export default function SupervisionVIew() {
@@ -158,57 +158,108 @@ export default function SupervisionVIew() {
 </SimpleGrid>
 
         <Divider my="12" borderColor="gray.300" />
-        <VStack>
-          <Heading>
-            Paroles inspirantes
-          </Heading>
-        </VStack>
+        <VStack spacing={8} textAlign="center" mb={12}>
+    <Heading size="xl" >
+      Notre engagement opérationnel
+    </Heading>
+    <Text fontSize="xl" color="gray.600" maxW="3xl">
+      Des principes directeurs qui assurent excellence et réactivité dans chaque intervention
+    </Text>
+  </VStack>
 
-        <Flex justify="center" align="center" gap={6} flexWrap="wrap" mt={10}>
-          <Box
-            maxW="600px"
-             minH="150px"
-            flex="1"
-            p={6}
-            borderLeft="4px solid"
-            borderColor="orange.400"
-            bg="gray.50"
-            borderRadius="md"
-            boxShadow="md"
-            position="relative"
-          >
-            <Icon as={FaQuoteLeft} color="orange.400" fontSize="2xl" position="absolute" top={4} left={4} />
-            <Text fontSize="lg" fontStyle="italic" color="gray.700" pl={10} pr={10}>
-              "Le client est la partie la plus importante de la ligne de production."
-            </Text>
-            <Text mt={4} textAlign="right" fontWeight="bold" color="#2fa3d1" pr={10}>
-              – W. Edwards Deming
-            </Text>
-            <Icon as={FaQuoteRight} color="orange.400" fontSize="2xl" position="absolute" bottom={4} right={4} />
-          </Box>
+  <SimpleGrid columns={{ base: 1, md: 3 }} spacing={10} mt={8}>
+    <MotionBox
+      whileHover={{ y: -5 }}
+      transition={{ duration: 0.2 }}
+      p={6}
+      borderRadius="lg"
+      boxShadow="lg"
+      bg="white"
+      borderTop="4px solid"
+      borderColor="orange.400"
+    >
+      <VStack spacing={4} align="center">
+        <Box p={3} bg="blue.50" borderRadius="full">
+          <Icon as={FaEye} color="orange.400" boxSize={6} />
+        </Box>
+        <Heading size="md" color="blue.800">
+          Vigilance Continue
+        </Heading>
+        <Text textAlign="center" color="gray.600">
+          Surveillance proactive 24/7 pour anticiper les incidents 
+          avant qu'ils n'affectent vos services
+        </Text>
+      </VStack>
+    </MotionBox>
 
-          <Box
-             maxW="600px"
-             minH="150px"
-            flex="1"
-            p={6}
-            borderLeft="4px solid"
-            borderColor="orange.400"
-            bg="gray.50"
-            borderRadius="md"
-            boxShadow="md"
-            position="relative"
-          >
-            <Icon as={FaQuoteLeft} color="orange.400" fontSize="2xl" position="absolute" top={4} left={4} />
-            <Text fontSize="lg" fontStyle="italic" color="gray.700" pl={10} pr={10}>
-              "La qualité signifie faire les choses bien même quand personne ne regarde."
-            </Text>
-            <Text mt={4} textAlign="right" fontWeight="bold" color="#2fa3d1" pr={10}>
-              – Henry Ford
-            </Text>
-            <Icon as={FaQuoteRight} color="orange.400" fontSize="2xl" position="absolute" bottom={4} right={4} />
-          </Box>
-        </Flex>
+    <MotionBox
+      whileHover={{ y: -5 }}
+      transition={{ duration: 0.2 }}
+      p={6}
+      borderRadius="lg"
+      boxShadow="lg"
+      bg="white"
+      borderTop="4px solid"
+      borderColor="blue.400"
+    >
+      <VStack spacing={4} align="center">
+        <Box p={3} bg="orange.50" borderRadius="full">
+          <Icon as={FaBolt} color="blue.400" boxSize={6} />
+        </Box>
+        <Heading size="md" color="blue.800">
+          Réactivité Immédiate
+        </Heading>
+        <Text textAlign="center" color="gray.600">
+          Intervention rapide et résolution efficace des incidents 
+          pour minimiser tout impact sur vos opérations
+        </Text>
+      </VStack>
+    </MotionBox>
+
+    <MotionBox
+      whileHover={{ y: -5 }}
+      transition={{ duration: 0.2 }}
+      p={6}
+      borderRadius="lg"
+      boxShadow="lg"
+      bg="white"
+      borderTop="4px solid"
+      borderColor="orange.400"
+    >
+      <VStack spacing={4} align="center">
+        <Box p={3} bg="blue.50" borderRadius="full">
+          <Icon as={FaCogs} color="orange.400" boxSize={6} />
+        </Box>
+        <Heading size="md" color="blue.800">
+          Adaptation Sur Mesure
+        </Heading>
+        <Text textAlign="center" color="gray.600">
+          Processus flexibles adaptés spécifiquement à vos besoins 
+          et évoluant avec votre environnement
+        </Text>
+      </VStack>
+    </MotionBox>
+  </SimpleGrid>
+
+  <Flex justify="center" mt={16}>
+    <Box 
+      bg="blue.50" 
+      p={8} 
+      borderRadius="xl" 
+      textAlign="center"
+      borderLeft="4px solid"
+      borderColor="orange.400"
+      maxW="2xl"
+    >
+      <Icon as={FaHeadset} color="orange.400" boxSize={8} mb={4} />
+      <Heading size="lg" mb={4} color="blue.800">
+        Notre promesse de service
+      </Heading>
+      <Text fontSize="lg" fontStyle="italic" color="gray.700">
+        Des solutions  fiables et performantes, livrées avec innovation, collaboration et excellence
+      </Text>
+    </Box>
+  </Flex>
         
       </Container>
     </Layout>

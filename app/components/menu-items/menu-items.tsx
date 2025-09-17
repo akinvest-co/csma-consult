@@ -42,7 +42,6 @@ export const menuItemsFooter = [
   { id: 2, label: "Bureau d'Etudes", path: "/etudes-ingenierie",},
   { id: 1, label: "Audit d'insfrastructures", path: "/audit-infrastructures" },
   { id: 3, label: "Gestion de projet", path: "/gestion-de-projet" },
-  { id: 4, label: "Solutions matérielles", path: "https://csma-shop.vercel.app/" },
-  { id: 4, label: "Centre de service opérationnel", path: "/centre-de-service" },
+  { id: 4, label: "Centre de service ", path: "/centre-de-service" },
 
 ]

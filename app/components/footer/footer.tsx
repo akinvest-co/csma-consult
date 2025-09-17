@@ -34,37 +34,35 @@ export default function Footer() {
           <Heading as="h1" fontSize="2xl" color="#F78719">
             CSMA CONSULT
           </Heading>
-          <Text color="white" >Expertise et Solutions Télécom</Text>
+          <Text color="white" >L’expertise qui valorise et sécurise vos réseaux</Text>
         </Stack>
 
         <Flex
-  alignItems={{ base: "flex-start", md: "center" }}
-  justifyContent="center"
-  flexDirection={{ base: "column", md: "row" }}
-  mt={{ base: "5", md: 0 }}
-  wrap="wrap"
+  alignItems="center"
+  justifyContent={{ base: "flex-start", md: "flex-end" }}
+  direction="row"   
+  wrap="nowrap"     
+  overflowX="auto"  
+  gap={4}           
 >
   {menuItemsFooter.map(({ id, label, path }, index) => (
     <Box key={id} display="flex" alignItems="center">
       <Link
         as={NextLink}
-        color="#F78719"
         href={path}
-        marginLeft={id === 6 ? 0 : "10px"}
-        marginBottom={id === 6 ? 0 : "1"}
-        fontWeight={{ base: "none", md: "bold" }}
+        color="#F78719"
+        fontWeight="bold"
+        whiteSpace="nowrap" // ✅ évite que le texte casse
       >
         {label}
       </Link>
 
-      
       {index < menuItemsFooter.length - 1 && (
         <Box
           borderRight="2px solid"
-          borderColor="gray.300" 
-          height="20px" 
-          mx={3} 
-          display={{ base: "none", md: "block" }} 
+          borderColor="gray.300"
+          height="20px"
+          mx={3}
         />
       )}
     </Box>

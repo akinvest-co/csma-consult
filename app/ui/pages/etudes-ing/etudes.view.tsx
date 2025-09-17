@@ -1,5 +1,5 @@
 "use client";
-
+import NextLink from "next/link";
 import Layout from "@app/app/layout/layout.page";
 import {
   Container,
@@ -73,6 +73,58 @@ passion pour l'excellence.
         </Flex>
       </Container>
       <Container maxW="6xl" my="20">
+        
+<SimpleGrid columns={{ base: 1, lg: 2 }} spacing="16" alignItems="center">
+          <MotionBox 
+            whileHover={{ scale: 1.03 }} 
+            transition={{ duration: 0.3 }} 
+            order={{ base: 2, lg: 1 }} // L'image sera en deuxième position sur les petits écrans
+          >
+            <Image 
+              src="/images/soudures.png" 
+              w="100%" 
+              h="350px" 
+              objectFit="cover" 
+              alt="Génie Civil" 
+              borderRadius="xl" 
+              boxShadow="xl" 
+            />
+          </MotionBox>
+
+          <VStack 
+            spacing="6" 
+            align="start" 
+            as={motion.div} 
+            initial={{ opacity: 0, x: 50 }} 
+            animate={{ opacity: 1, x: 0 }} 
+            order={{ base: 1, lg: 2 }} // Le texte sera en première position sur les petits écrans
+          >
+            <Heading size="lg">
+              Ingénierie d’architecture et de route optique
+            </Heading>
+            <List spacing={3} ml={4}>
+              <ListItem>
+                <ListIcon as={CheckCircleIcon} color="#45C4EB" />
+                Dimensionnement, Étude de potentiel commercial
+              </ListItem>
+              <ListItem>
+                <ListIcon as={CheckCircleIcon} color="#45C4EB" />
+                Création de shapes dans Qgis et Intégration SIG
+              </ListItem>
+              <ListItem>
+                <ListIcon as={CheckCircleIcon} color="#45C4EB" />
+                Création de synoptiques et routes Optiques
+              </ListItem>
+              <ListItem>
+                <ListIcon as={CheckCircleIcon} color="#45C4EB" />
+                Intégration NetGeo, GeoFibre, Networks
+              </ListItem>
+            </List>
+          </VStack>
+        </SimpleGrid>
+
+        <Divider my="12" borderColor="gray.300" />
+
         <SimpleGrid columns={{ base: 1, lg: 2 }} spacing="16" alignItems="center">
           <VStack spacing="6" align="start" as={motion.div} initial={{ opacity: 0, x: -50 }} animate={{ opacity: 1, x: 0 }}>
             <Heading size="xl" >
@@ -100,109 +152,131 @@ passion pour l'excellence.
             <Image src="/images/person.jpeg" w="100%" h="350px" alt="Audit Infrastructures" borderRadius="xl" boxShadow="lg" />
           </MotionBox>
         </SimpleGrid>
-
-        <Divider my="12" borderColor="gray.300" />
-
-        <SimpleGrid columns={{ base: 1, lg: 2 }} spacing="16" alignItems="center">
-  <MotionBox 
-    whileHover={{ scale: 1.03 }} 
-    transition={{ duration: 0.3 }} 
-    order={{ base: 2, lg: 1 }} // L'image sera en deuxième position sur les petits écrans
-  >
-    <Image 
-      src="/images/soudures.png" 
-      w="100%" 
-      h="350px" 
-      objectFit="cover" 
-      alt="Génie Civil" 
-      borderRadius="xl" 
-      boxShadow="xl" 
-    />
-  </MotionBox>
-
-  <VStack 
-    spacing="6" 
-    align="start" 
-    as={motion.div} 
-    initial={{ opacity: 0, x: 50 }} 
-    animate={{ opacity: 1, x: 0 }} 
-    order={{ base: 1, lg: 2 }} // Le texte sera en première position sur les petits écrans
-  >
-    <Heading size="lg">
-      Ingénierie d’architecture et de route optique
-    </Heading>
-    <List spacing={3} ml={4}>
-      <ListItem>
-        <ListIcon as={CheckCircleIcon} color="#45C4EB" />
-        Dimensionnement, Étude de potentiel commercial
-      </ListItem>
-      <ListItem>
-        <ListIcon as={CheckCircleIcon} color="#45C4EB" />
-        Création de shapes dans Qgis et Intégration SIG
-      </ListItem>
-      <ListItem>
-        <ListIcon as={CheckCircleIcon} color="#45C4EB" />
-        Création de synoptiques et routes Optiques
-      </ListItem>
-      <ListItem>
-        <ListIcon as={CheckCircleIcon} color="#45C4EB" />
-        Intégration NetGeo, GeoFibre, Networks
-      </ListItem>
-    </List>
-  </VStack>
-</SimpleGrid>
        
         <Divider my="12" borderColor="gray.300" />
-        <VStack>
-          <Heading>
-            Paroles inspirantes
-          </Heading>
-        </VStack>
-        <Flex justify="center" align="center" gap={6} flexWrap="wrap" mt={10}>
-          <Box
-             maxW="600px"
-             minH="150px"
-            flex="1"
-            p={6}
-            borderLeft="4px solid"
-            borderColor="orange.400"
-            bg="gray.50"
-            borderRadius="md"
-            boxShadow="md"
-            position="relative"
-          >
-            <Icon as={FaQuoteLeft} color="orange.400" fontSize="2xl" position="absolute" top={4} left={4} />
-            <Text fontSize="lg" fontStyle="italic" color="gray.700" pl={10} pr={10}>
-              "Implémentez la qualité en englobant vos fournisseurs et vos clients dans le système."
-            </Text>
-            <Text mt={4} textAlign="right" fontWeight="bold" color="#2fa3d1" pr={10}>
-              – Armand V. Feigenbaum
-            </Text>
-            <Icon as={FaQuoteRight} color="orange.400" fontSize="2xl" position="absolute" bottom={4} right={4} />
-          </Box>
+       <VStack spacing={8} textAlign="center" mb={12}>
+    <Heading size="xl" >
+      Notre excellence technique
+    </Heading>
+    <Text fontSize="xl" color="gray.600" maxW="3xl">
+      Une approche méthodique alliant innovation et précision pour des solutions sur mesure
+    </Text>
+  </VStack>
 
-          <Box
-             maxW="600px"
-             minH="150px"
-            flex="1"
-            p={6}
-            borderLeft="4px solid"
-            borderColor="orange.400"
-            bg="gray.50"
-            borderRadius="md"
-            boxShadow="md"
-            position="relative"
-          >
-            <Icon as={FaQuoteLeft} color="orange.400" fontSize="2xl" position="absolute" top={4} left={4} />
-            <Text fontSize="lg" fontStyle="italic" color="gray.700" pl={10} pr={10}>
-              "Un problème sans solution est un problème mal posé"
-            </Text>
-            <Text mt={4} textAlign="right" fontWeight="bold" color="#2fa3d1" pr={10}>
-              – Albert Einstein
-            </Text>
-            <Icon as={FaQuoteRight} color="orange.400" fontSize="2xl" position="absolute" bottom={4} right={4} />
-          </Box>
-          </Flex>
+  <SimpleGrid columns={{ base: 1, md: 2 }} spacing={10} mt={8}>
+    <MotionBox
+      whileHover={{ y: -5 }}
+      transition={{ duration: 0.2 }}
+      p={6}
+      borderRadius="lg"
+      boxShadow="lg"
+      bg="white"
+      borderLeft="4px solid"
+      borderColor="orange.400"
+    >
+      <VStack spacing={4} align="start">
+        <Heading size="md" color="blue.800">
+          Expertise Technique
+        </Heading>
+        <Text color="gray.600">
+          Maîtrise des technologies fibre optique et des outils SIG pour des 
+          conceptions précises et conformes aux standards industriels
+        </Text>
+      </VStack>
+    </MotionBox>
+
+    <MotionBox
+      whileHover={{ y: -5 }}
+      transition={{ duration: 0.2 }}
+      p={6}
+      borderRadius="lg"
+      boxShadow="lg"
+      bg="white"
+      borderLeft="4px solid"
+      borderColor="blue.400"
+    >
+      <VStack spacing={4} align="start">
+        <Heading size="md" color="blue.800">
+          Innovation Méthodologique
+        </Heading>
+        <Text color="gray.600">
+          Développement de processus optimisés pour la gestion de dossiers 
+          d'intervention et l'intégration de données techniques
+        </Text>
+      </VStack>
+    </MotionBox>
+
+    <MotionBox
+      whileHover={{ y: -5 }}
+      transition={{ duration: 0.2 }}
+      p={6}
+      borderRadius="lg"
+      boxShadow="lg"
+      bg="white"
+      borderLeft="4px solid"
+      borderColor="orange.400"
+    >
+      <VStack spacing={4} align="start">
+        <Heading size="md" color="blue.800">
+          Précision Dimensionnelle
+        </Heading>
+        <Text color="gray.600">
+          Analyses précises et dimensionnements optimaux pour garantir 
+          la performance et la pérennité des infrastructures déployées
+        </Text>
+      </VStack>
+    </MotionBox>
+
+    <MotionBox
+      whileHover={{ y: -5 }}
+      transition={{ duration: 0.2 }}
+      p={6}
+      borderRadius="lg"
+      boxShadow="lg"
+      bg="white"
+      borderLeft="4px solid"
+      borderColor="blue.400"
+    >
+      <VStack spacing={4} align="start">
+        <Heading size="md" color="blue.800">
+          Intégration Système
+        </Heading>
+        <Text color="gray.600">
+          Expertise dans l'interfaçage des différents outils (Qgis, NetGeo, 
+          GeoFibre, Networks) pour une gestion unifiée des données
+        </Text>
+      </VStack>
+    </MotionBox>
+  </SimpleGrid>
+
+  <Flex justify="center" mt={16}>
+    <Box 
+      bg="blue.50" 
+      p={8} 
+      borderRadius="xl" 
+      textAlign="center"
+      borderLeft="4px solid"
+      borderColor="orange.400"
+      maxW="2xl"
+    >
+      <Heading size="lg" mb={4} color="blue.800">
+        Notre engagement qualité
+      </Heading>
+      <Text fontSize="lg" fontStyle="italic" color="gray.700">
+        "Chaque étude technique est menée avec rigueur et précision, 
+        transformant les défis complexes en solutions opérationnelles efficaces"
+      </Text>
+      <Button 
+        rightIcon={<FaArrowRight />} 
+        colorScheme="orange" 
+        mt={6}
+        as={NextLink}
+        href="/contact"
+      >
+        Discutons de votre projet
+      </Button>
+    </Box>
+  </Flex>
       </Container>
     </Layout>
   );

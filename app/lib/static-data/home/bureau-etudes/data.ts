@@ -11,7 +11,7 @@ export const solutionsData = [
   },
   {
     id: 2,
-    title: "Audit",
+    title: "Audit d'infrastrutures",
     descr: "Pour la pérennité des réseaux, un audit d'infrastructures génie civil et optiques permet d'évaluer l'état,  la fiabilité et la conformité de réseaux existants dans le but d'identifier d'éventuelles failles.",
     buttonText: "En savoir plus",
     path: "/audit-infrastructures",
