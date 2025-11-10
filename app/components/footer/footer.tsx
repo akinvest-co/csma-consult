@@ -34,7 +34,7 @@ export default function Footer() {
           <Heading as="h1" fontSize="2xl" color="#F78719">
             CSMA CONSULT
           </Heading>
-          <Text color="white" >L’expertise qui valorise et sécurise vos réseaux</Text>
+          <Text color="white" >Expertises valorisant vos Réseaux</Text>
         </Stack>
 
         <Flex
