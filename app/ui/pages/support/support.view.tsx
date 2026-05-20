@@ -38,7 +38,7 @@ const Support = () => {
   const toast = useToast();
 const { isOpen, onOpen, onClose } = useDisclosure();
 const handleRedirectLogin = () => {
-  window.location.href = "https://www.dashboard.csmaconsult.com/";
+  window.location.href = "https://www.dashboard.csmaconsult.com/login";
 };
   const handleClick = () => {
     // Affichage du toast
