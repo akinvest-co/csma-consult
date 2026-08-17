@@ -1,0 +1,40 @@
+{
+  "eyebrow": "ASSISTANCE TECHNIQUE",
+  "hero_title": "Les compétences expertes pour sécuriser vos projets",
+  "hero_text": "CSMA CONSULT accompagne ses clients dans la mobilisation de compétences spécialisées pour répondre à leurs besoins ponctuels ou renforcer durablement leurs équipes. Nos consultants interviennent directement auprès des directions techniques, opérationnelles et de projets, en assistance individuelle, en équipe dédiée ou dans le cadre d'un centre de compétences.",
+
+  "promesse_titre": "Notre promesse",
+  "promesse1_titre": "Renforcer",
+  "promesse1_desc": "Apporter rapidement les compétences manquantes sans désorganiser les équipes en place.",
+  "promesse2_titre": "Sécuriser",
+  "promesse2_desc": "Fiabiliser la réalisation, les délais, la qualité, la communication et le reporting.",
+  "promesse3_titre": "Pérenniser",
+  "promesse3_desc": "Transférer les savoir-faire et outiller vos équipes pour l'avenir.",
+
+  "profils_titre": "Profils à mettre en avant",
+  "profil1_titre": "Télécoms & fibre",
+  "profil1_desc": "Ingénieurs télécoms, experts fibre, responsables production et exploitation.",
+  "profil1_items": [
+    "Conception et déploiement FTTH/FTTx",
+    "Optimisation des réseaux optiques",
+    "Gestion de la production et de la maintenance"
+  ],
+  "profil2_titre": "Réseaux actifs",
+  "profil2_desc": "Ingénieurs réseaux, experts équipements, supervision et troubleshooting.",
+  "profil2_items": [
+    "Administration et supervision (SNMP, NetFlow)",
+    "Configuration et optimisation des équipements",
+    "Troubleshooting et résolution d'incidents"
+  ],
+  "profil3_titre": "SIG & données",
+  "profil3_desc": "Consultants métiers, process, qualité, performance et transformation.",
+  "profil3_items": [
+    "Collecte et intégration de données géoréférencées",
+    "Mise en place de processus qualité",
+    "Accompagnement à la transformation numérique"
+  ],
+
+  "cta_title": "Besoin de compétences pour vos projets ?",
+  "cta_desc": "Contactez-nous pour échanger sur vos besoins et découvrir nos profils.",
+  "cta_btn": "Nous contacter"
+}

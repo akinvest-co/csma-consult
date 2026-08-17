@@ -17,15 +17,15 @@ export const supportDataAccount = [
     items: [
       {
         id: 1,
-        label: 'Vous obtenez une réponse en moins de deux heures.',
+        label: 'Suivi des Taches livrées par jour',
       },
       {
         id: 2,
-        label: 'Rassembler des compétences diverses et complémentaires.',
+        label: 'Indicateurs clés (totaux, synthèses)',
       },
       {
         id: 3,
-        label: 'Nous communiquons de manière transparente et cohérente.',
+        label: 'Tableau récapitulatif détaillé',
       },
       {
         id: 4,

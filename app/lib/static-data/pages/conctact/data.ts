@@ -23,7 +23,7 @@ export const contactInfo = [
     id: 3,
     icon: locationIcon,
     title: "Rencontrez-nous",
-    intro: " 66 avenue des Champs Elysées",
-    address: "75008 PARIS",
+    intro: " Tour d'Asnières, 4 Avenue Laurent Cely",
+    address: "92600 ASNIERES SUR SEINE",
   },
 ]

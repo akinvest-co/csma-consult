@@ -21,7 +21,7 @@ import {
 import Image from "next/image"
 import NextLink from "next/link"
 import { getProduct } from "@app/app/lib/api/products/products"
-import AddToCartButton from "@app/app/components/addToCartButton/cartButton"
+import AddToCartButton from "@app/app/[locale]/components/addToCartButton/cartButton"
 
 type Props = {
   params: { slug: string }

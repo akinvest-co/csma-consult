@@ -1,0 +1,29 @@
+{
+  
+    "eyebrow": "Infrastructures",
+    "hero_title": "Des infrastructures fiables, du réseau au data center",
+    "hero_text": "Nous concevons, déployons et exploitons les infrastructures télécoms et énergétiques qui font tourner vos opérations — de la fibre optique aux data centers, avec la même exigence de continuité.",
+
+    "offre1_title": "Réseaux télécoms",
+    "offre1_desc": "Conception, déploiement et supervision de réseaux fixes et mobiles : fibre optique, faisceaux hertziens, cœur de réseau et interconnexions.",
+    "offre1_cta": "Découvrir nos solutions réseau",
+
+    "offre2_title": "Data centers & Énergie",
+    "offre2_desc": "Conception et exploitation d'infrastructures énergétiques et de data centers : alimentation, climatisation, redondance et continuité de service.",
+    "offre2_cta": "Découvrir nos solutions data center",
+
+    "method_title": "Notre approche",
+    "etape1_titre": "Audit & étude de faisabilité",
+    "etape1_desc": "Analyse de l'existant, contraintes techniques et objectifs de performance.",
+    "etape2_titre": "Conception & ingénierie",
+    "etape2_desc": "Architecture détaillée, dimensionnement et choix technologiques.",
+    "etape3_titre": "Déploiement & installation",
+    "etape3_desc": "Mise en œuvre sur site avec équipes qualifiées et suivi qualité.",
+    "etape4_titre": "Exploitation & maintenance",
+    "etape4_desc": "Supervision continue, SLA et maintenance préventive et corrective.",
+
+    "reassurance_technologies": "Multi-technologies",
+    "reassurance_geographies": "Déploiement multi-pays",
+    "reassurance_continuite": "Continuité de service garantie"
+  
+}

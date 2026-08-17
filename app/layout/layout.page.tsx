@@ -1,8 +1,9 @@
 import { ReactNode } from "react"
 import { Flex, Box } from "@chakra-ui/react"
+import Header from "../[locale]/components/header/header"
+import Footer from "../[locale]/components/footer/footer"
 
-import Footer from "@components/footer/footer"
-import Header from "../components/header/header"
+
 type PageLayoutProps = {
   children?: ReactNode
 }

@@ -1,0 +1,84 @@
+{
+  "eyebrow": "STRATÉGIE & PARTENARIATS",
+  "hero_title": "Structurer et accélérer les projets d'infrastructures en Afrique",
+  "hero_text": "CSMA CONSULT accompagne les entreprises, investisseurs, opérateurs et institutions dans le développement de projets d'infrastructures, avec une expertise particulière des secteurs des télécommunications, du numérique et de l'énergie en Afrique. Notre intervention associe compréhension technique, connaissance des environnements locaux, développement de partenariats et coordination des parties prenantes.",
+
+  "positionnement_title": "Notre positionnement",
+  "pos1_title": "Une lecture technique des projets",
+  "pos1_desc": "Les opportunités sont analysées à partir de leur faisabilité, de leur modèle opérationnel et de leurs besoins réels en infrastructures.",
+  "pos2_title": "Une capacité de mobilisation",
+  "pos2_desc": "CSMA CONSULT identifie, met en relation et coordonne les partenaires utiles à la concrétisation du projet.",
+
+  "progression_title": "Notre progression logique",
+  "etape1_titre": "Identifier & qualifier",
+  "etape1_items": [
+    "Analyse des besoins et du contexte local",
+    "Identification de projets publics et privés",
+    "Étude préliminaire de faisabilité",
+    "Évaluation des enjeux techniques et commerciaux",
+    "Cartographie des parties prenantes"
+  ],
+  "etape2_titre": "Structurer le projet",
+  "etape2_items": [
+    "Définition du périmètre et du modèle opérationnel",
+    "Construction de la feuille de route",
+    "Analyse des besoins d'investissement",
+    "Élaboration du modèle de partenariat",
+    "Préparation des dossiers de présentation"
+  ],
+  "etape3_titre": "Rechercher les partenaires",
+  "etape3_items": [
+    "Partenaires techniques et industriels",
+    "Opérateurs et exploitants",
+    "Investisseurs et partenaires financiers",
+    "Bailleurs et institutions de développement",
+    "Entreprises et sous-traitants locaux"
+  ],
+  "etape4_titre": "Constituer & piloter un consortium",
+  "etape4_items": [
+    "Identification des compétences complémentaires",
+    "Définition des rôles et responsabilités",
+    "Coordination des partenaires",
+    "Réponses aux manifestations d'intérêt et appels d'offres",
+    "Suivi des engagements"
+  ],
+  "etape5_titre": "Accompagner & sécuriser",
+  "etape5_items": [
+    "Préparation des échanges avec les autorités",
+    "Coordination des réunions de travail",
+    "Appui à l'implantation locale",
+    "Identification des contraintes administratives et réglementaires",
+    "Suivi de la mise en œuvre"
+  ],
+
+  "cibles_title": "Cibles prioritaires",
+  "cibles_list": [
+    "États et institutions publiques",
+    "Opérateurs télécoms",
+    "Entreprises d'infrastructures",
+    "Investisseurs",
+    "Industriels",
+    "Bailleurs et institutions de développement"
+  ],
+
+  "accompagnement_title": "Accompagnement institutionnel",
+  "accompagnement_items": [
+    "Préparation des échanges avec les autorités",
+    "Coordination des réunions de travail",
+    "Appui à l'implantation locale",
+    "Identification des contraintes administratives et réglementaires"
+  ],
+
+  "financement_title": "Recherche & structuration du financement",
+  "financement_items": [
+    "Identification de sources de financement",
+    "Mise en relation avec fonds et institutions",
+    "Préparation des supports de présentation",
+    "Coordination des audits techniques préalables",
+    "Appui aux échanges avec les partenaires financiers"
+  ],
+
+  "cta_title": "Parlons de votre projet en Afrique",
+  "cta_desc": "Contactez-nous pour échanger sur vos besoins et vos opportunités.",
+  "cta_btn": "Nous contacter"
+}

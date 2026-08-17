@@ -1,0 +1,139 @@
+{
+  "eyebrow": "RÉSEAUX & TÉLÉCOMMUNICATIONS",
+  "heading1": "Infrastructures",
+  "heading2": "Trés Haut Débit",
+  "hero_desc": "Nous concevons, déployons et optimisons vos réseaux fixes et mobiles, de l'architecture fibre à la 5G, en passant par les systèmes d'information géographique.",
+  "cta_btn": "Nous contacter",
+  
+  "prestations": "NOS PRESTATIONS",
+  
+  "p1": "Audit et analyse des réseaux existants",
+  "p1_items": [
+    "Inventaire des équipements et câblages",
+    "Analyse des performances (débit, latence, disponibilité)",
+    
+    "Rapport de préconisations"
+  ],
+  "p2": "Dimensionnement et planification",
+  "p2_items": [
+    "Étude de capacité et de croissance du trafic",
+    "Définition des besoins en bande passante",
+    "Plan d'extension et de mutualisation"
+    
+  ],
+  "p3": "Déploiement FTTH / FTTx",
+  "p3_items": [
+    "Conception du réseau de distribution",
+    "Plan de pose et de raccordement",
+    "Suivi de chantier et réception",
+    "Tests de conformité et de performance"
+  ],
+  "p4": "Réseaux mobiles (4G, 5G)",
+  "p4_items": [
+    "Planification radio et dimensionnement des sites",
+    "Études de couverture et de capacité",
+    "Optimisation des paramètres réseau"
+    
+  ],
+  "p5": "Sécurité et résilience",
+  "p5_items": [
+    "Analyse des vulnérabilités",
+    "Mise en place de pare-feux et de filtrage",
+    "Tests d'intrusion et audits de sécurité"
+  ],
+  "p6": "Supervision et maintenance",
+  "p6_items": [
+    "Mise en place d'une solution de supervision ",
+    "Maintenance préventive et corrective",
+    "Gestion des incidents et des SLA"
+  ],
+  
+  "p7": "Architecture optique et DWDM",
+  "p7_items": [
+    "Conception de réseaux longue distance",
+    "Choix des multiplexeurs et amplificateurs",
+    "Plan de gestion des longueurs d'onde",
+    "Optimisation des performances optiques"
+  ],
+  "p8": "Gestion de projet SIG",
+  "p8_items": [
+    "Collecte et intégration de données géoréférencées",
+    "Cartographie des infrastructures existantes",
+    "Planification des nouveaux déploiements",
+    "Mise à jour et maintenance des bases de données"
+  ],
+  "p9": "Ingénierie de détail FTTH",
+  "p9_items": [
+    "Études d'architecture détaillées (schémas, plans)",
+    "Dimensionnement des chambres et fourreaux",
+    "Calculs de pertes et bilans optiques",
+    "Dossiers d'exécution"
+  ],
+  "p10": "Conception et supervision des réseaux optiques passifs",
+  "p10_items": [
+    "Étude de la topologie PON",
+    "Dimensionnement des splitter et des ODF",
+    "Plans de câblage et de raccordement",
+    "Suivi de la qualité de service"
+  ],
+  "p11": "Réalisation de cartographie SIG",
+  "p11_items": [
+    "Numérisation et géoréférencement des réseaux",
+    "Création de couches thématiques (fibre, cuivre, radio)",
+    "Mise à jour dynamique avec les données terrain",
+    "Intégration dans des outils de gestion (QGIS, ArcGIS)"
+  ],
+  "p12": "Raccordement des sites clients",
+  "p12_items": [
+    "Étude de la faisabilité technique",
+    "Plan de raccordement au réseau existant",
+    "Coordination avec les opérateurs et les fournisseurs",
+    "Mise en service et tests de bout en bout"
+  ],
+  "p13": "Audit et optimisation des réseaux optiques",
+  "p13_items": [
+    "Mesures de puissance et de qualité optique (OTDR, OSA)",
+    "Analyse des pertes et de la dispersion",
+    "Recommandations de correction",
+    "Plan d'optimisation"
+  ],
+  "p14": "Gestion de projet d'infrastructure",
+  "p14_items": [
+    "Planification, budget et ressources",
+    "Coordination des intervenants (entreprises, fournisseurs)",
+    "Suivi des jalons et des risques",
+    "Réception et recette des travaux"
+  ],
+  "p15": "Raccordement complexe",
+  "p15_items": [
+    "Gestion des raccordements fibre optique complexes",
+    "Interventions techniques sur le terrain",
+    "Documentation technique et procédures",
+    "Suivi et accompagnement post-raccordement"
+  ],
+
+  "livrables_title": "NOS LIVRABLES",
+  "l1": "Audit et architecture réseau sur mesure",
+  "l2": "Déploiement et configuration complète",
+  "l3": "Supervision, maintenance et SLA",
+
+  "stat1_num": "200+",
+  "stat1_label": "Projets réalisés",
+  "stat2_num": "99,99%",
+  "stat2_label": "Disponibilité",
+  "stat3_num": "10 ans",
+  "stat3_label": "D'expérience",
+
+  "cta_title": "Prêt à moderniser vos réseaux ?",
+  "cta_desc": "Contactez-nous pour un audit gratuit de votre infrastructure.",
+  "cta_btn": "Nous contacter",
+
+  "w1_title": "Expertise multicouche",
+  "w1_desc": "Des équipes maîtrisant les réseaux fixes, mobiles, optiques et SIG.",
+  "w2_title": "Méthodologie éprouvée",
+  "w2_desc": "Des processus standardisés pour des livrables de qualité.",
+  "w3_title": "Accompagnement de bout en bout",
+  "w3_desc": "De l'audit à la maintenance, nous restons à vos côtés.",
+  "w4_title": "Innovation continue",
+  "w4_desc": "Veille technologique et adoption des meilleures pratiques du marché."
+}

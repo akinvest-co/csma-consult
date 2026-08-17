@@ -1,0 +1,110 @@
+{
+"eyebrow": "EXPERTISE ÉNERGIE & TÉLÉCOMMUNICATIONS",
+"heading1": "Télécoms et ",
+"heading2": "Energies",
+"hero_desc": "Nous concevons et déployons des solutions énergétiques adaptées aux infrastructures télécoms : sites radio, pylônes, shelters, réseaux fibre et data centers. Nos solutions combinent énergie solaire, stockage, alimentation conventionnelle et systèmes de secours pour garantir la disponibilité de vos infrastructures.",
+
+"prestations": "NOS PRESTATIONS",
+
+"p1": "Alimentation hybride des sites télécoms",
+"p1_items": [
+"Étude et dimensionnement solaire, batteries et groupes électrogènes",
+"Intégration des différentes sources d'alimentation",
+"Optimisation automatique des sources d'énergie",
+"Supervision des performances et de la disponibilité"
+],
+
+"p2": "Optimisation énergétique des infrastructures télécoms",
+"p2_items": [
+"Audit et analyse des consommations des sites",
+"Identification des sources de surconsommation",
+"Optimisation des équipements et des cycles énergétiques",
+"Réduction des coûts d'exploitation et de l'empreinte carbone"
+],
+
+"p3": "Supervision et comptage intelligent",
+"p3_items": [
+"Installation de compteurs et capteurs communicants",
+"Collecte et centralisation des données énergétiques",
+"Suivi des consommations en temps réel",
+"Alertes, tableaux de bord et rapports de performance"
+],
+
+"p4": "Solutions solaires photovoltaïques",
+"p4_items": [
+"Étude de faisabilité et dimensionnement photovoltaïque",
+"Installation de panneaux et équipements associés",
+"Intégration avec les infrastructures électriques existantes",
+"Maintenance et suivi des installations photovoltaïques"
+],
+
+"p5": "Énergie pour data centers et infrastructures critiques",
+"p5_items": [
+"Conception d'architectures d'alimentation sécurisées",
+"Solutions UPS, batteries et groupes électrogènes",
+"Redondance et sécurisation de l'alimentation électrique",
+"Optimisation de la consommation et du refroidissement"
+],
+
+"p6": "Audit énergétique des sites télécoms",
+"p6_items": [
+"Mesure et analyse des consommations énergétiques",
+"Évaluation de la performance des équipements",
+"Identification des potentiels d'économies",
+"Élaboration d'un plan d'actions priorisé"
+],
+
+"p7": "Smart Energy et monitoring à distance",
+"p7_items": [
+"Supervision centralisée des infrastructures énergétiques",
+"Monitoring des panneaux, batteries et groupes électrogènes",
+"Suivi des indicateurs de performance énergétique",
+"Détection des anomalies et génération d'alertes"
+],
+
+"p8": "Maintenance des infrastructures énergie & télécoms",
+"p8_items": [
+"Maintenance préventive et corrective",
+"Contrôle des équipements et paramètres critiques",
+"Détection anticipée des dysfonctionnements",
+"Planification et suivi des interventions terrain"
+],
+
+"livrables_title": "NOS LIVRABLES",
+
+"l1": "Étude et dimensionnement énergétique",
+"l1_desc": "Analyse des besoins, étude des consommations et dimensionnement des systèmes solaires, batteries et solutions de secours.",
+
+"l2": "Architecture d'alimentation et plan de déploiement",
+"l2_desc": "Schémas électriques, architecture énergétique, sélection des équipements et planification du déploiement.",
+
+"l3": "Rapport de performance énergétique",
+"l3_desc": "Analyse des consommations, indicateurs de performance, recommandations d'optimisation et plan de suivi.",
+
+"stat1_num": "200+",
+"stat1_label": "Sites accompagnés",
+
+"stat2_num": "99,9%",
+"stat2_label": "Objectif de disponibilité",
+
+"stat3_num": "8 ans",
+"stat3_label": "D'expérience",
+
+"cta_title": "Sécuriser l'alimentation de vos réseaux ?",
+"cta_desc": "Contactez-nous pour réaliser un diagnostic de vos infrastructures et identifier les solutions énergétiques adaptées à vos besoins.",
+"cta_btn": "Nous contacter",
+
+"why_title": "POURQUOI NOUS CHOISIR ?",
+
+"w1_title": "Continuité de service",
+"w1_desc": "Des solutions énergétiques conçues pour garantir la disponibilité des équipements télécoms et des infrastructures critiques.",
+
+"w2_title": "Performance énergétique",
+"w2_desc": "Nous optimisons les consommations et intégrons les énergies renouvelables pour réduire les coûts d'exploitation.",
+
+"w3_title": "Expertise énergie & télécoms",
+"w3_desc": "Notre double expertise nous permet de proposer des solutions adaptées aux contraintes techniques des infrastructures télécoms.",
+
+"w4_title": "Supervision & maintenance",
+"w4_desc": "Une surveillance continue et une maintenance préventive pour détecter les anomalies, réduire les interruptions et prolonger la durée de vie des équipements."
+}

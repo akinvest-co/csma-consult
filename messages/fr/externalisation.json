@@ -1,0 +1,84 @@
+{
+"eyebrow": "EXTERNALISATION DE RESSOURCES RÉSEAUX & TÉLÉCOMS",
+"heading1": "Renforcez vos équipes",
+"heading2": "avec des experts réseaux et télécoms",
+"hero_desc": "Nous mettons à votre disposition des profils qualifiés pour accompagner vos projets réseaux et télécoms, du déploiement à l’exploitation, en passant par la maintenance et la supervision.",
+"cta_btn": "Nous contacter",
+
+"prestations": "NOS PRESTATIONS D’EXTERNALISATION",
+
+"p1": "Ingénierie et déploiement réseaux",
+"p1_items": [
+"Étude et conception d’architectures réseaux",
+"Déploiement et configuration des équipements réseau",
+"Installation et mise en service des infrastructures",
+"Tests, recette et documentation technique"
+],
+
+"p2": "Fibre optique et infrastructures télécoms",
+"p2_items": [
+"Études et déploiement de réseaux fibre optique",
+"Raccordement et mise en service des infrastructures",
+"Mesures, tests et qualification des liaisons",
+"Maintenance préventive et corrective des infrastructures"
+],
+
+"p3": "Exploitation et supervision réseau",
+"p3_items": [
+"Supervision des infrastructures réseaux et télécoms",
+"Gestion et résolution des incidents N1, N2 et N3",
+"Monitoring des équipements et des performances",
+"Reporting et suivi des indicateurs de performance"
+],
+
+"p4": "Administration systèmes et réseaux",
+"p4_items": [
+"Administration des serveurs et équipements réseau",
+"Configuration des routeurs, switches, firewalls et VPN",
+"Gestion des sauvegardes et de la disponibilité",
+"Optimisation et évolution des infrastructures"
+],
+
+"p5": "Cybersécurité et sécurité des infrastructures",
+"p5_items": [
+"Audit et analyse de la sécurité des infrastructures",
+"Configuration et administration des firewalls",
+"Gestion des accès, VPN et politiques de sécurité",
+"Surveillance et traitement des événements de sécurité"
+],
+
+"p6": "Assistance technique et renforcement d’équipes",
+"p6_items": [
+"Mise à disposition d’ingénieurs et techniciens spécialisés",
+"Renforcement ponctuel ou permanent de vos équipes",
+"Accompagnement de projets de déploiement et de migration",
+"Transfert de compétences et accompagnement des équipes internes"
+],
+
+"livrables_title": "NOS LIVRABLES",
+"l1": "Rapports d’intervention et documentation technique",
+"l2": "Dossiers d’architecture, schémas et configurations",
+"l3": "Rapports de supervision, KPI et suivi des SLA",
+
+"stat1_num": "100+",
+"stat1_label": "Ressources mobilisables",
+"stat2_num": "24/7",
+"stat2_label": "Supervision et support",
+"stat3_num": "15 ans",
+"stat3_label": "D’expérience",
+
+"cta_title": "Besoin de renforcer vos équipes réseaux & télécoms ?",
+"cta_desc": "Contactez-nous pour définir les profils, compétences et ressources adaptés à vos projets.",
+
+"w1_title": "Expertise technique",
+"w1_desc": "Des ingénieurs et techniciens expérimentés dans les environnements réseaux, télécoms et infrastructures.",
+
+"w2_title": "Ressources sur mesure",
+"w2_desc": "Des profils adaptés à vos besoins, à la durée de vos projets et à vos contraintes opérationnelles.",
+
+"w3_title": "Réactivité et disponibilité",
+"w3_desc": "Une capacité à mobiliser rapidement les compétences nécessaires pour accompagner vos projets et vos opérations.",
+
+"w4_title": "Qualité et engagement",
+"w4_desc": "Un suivi rigoureux des prestations avec des KPI, des SLA et un reporting régulier."
+}
