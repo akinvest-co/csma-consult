@@ -143,7 +143,7 @@ export default function ConseilPage() {
                 height={{ base: "200px", md: "300px", lg: "360px" }}
               >
                 <Box position="absolute" inset={0} bgGradient={`linear(to-r, ${brandCyan}15, ${brandOrange}10)`} zIndex={1} />
-                <Image src="/images/banner.jpeg" alt="Conseil en réseaux et télécoms" fill style={{ objectFit: "cover" }} priority />
+                <Image src="/images/conseil.jpeg" alt="Conseil en réseaux et télécoms" fill style={{ objectFit: "cover" }} priority />
               </MotionBox>
             </Grid>
           </Container>

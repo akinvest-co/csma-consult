@@ -152,7 +152,7 @@ export default function ConseilInfrastructuresPage() {
                   zIndex={1}
                 />
                 <Image
-                  src="/images/banner.jpeg"
+                  src="/images/conseil.jpeg"
                   alt="Conseil infrastructures"
                   fill
                   style={{ objectFit: "cover" }}
