@@ -1,6 +1,7 @@
 import { hasLocale, NextIntlClientProvider } from 'next-intl'
 import { getMessages, } from 'next-intl/server'
 import { notFound } from 'next/navigation'
+import { GoogleAnalytics } from '@next/third-parties/google'
 
 import { Providers } from "../providers"
 import StoreProvider from "../redux/Provider"
@@ -36,6 +37,7 @@ export default async function LocaleLayout({
           </Providers>
           <Toaster position="bottom-right" />
         </StoreProvider>
+        <GoogleAnalytics gaId="G-C4XPRG1H2G" />
       </body>
     </html>
   )
